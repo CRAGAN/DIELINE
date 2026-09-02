@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define e = Character("Eileen",  callback=name_callback,cb_name="Eileen", color="#c8ffc8")
 
 
 # The game starts here.
@@ -20,14 +20,17 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show ken default at center
+
 
     # These display lines of dialogue.
 
     e "You've created a new Ren'Py game."
-
+    show ken defaultt at forward
+    kendra "yeah!!"
+    show ken default
     e "Once you add a story, pictures, and music, you can release it to the world!"
-
+    
     # This ends the game.
 
     return

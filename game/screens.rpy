@@ -278,6 +278,87 @@ style quick_button_text:
     properties gui.text_properties("quick_button")
 
 
+## Email Minigame screens #######################################################
+
+## This one is just the inbox list
+screen email_inbox():
+    frame:
+        background("#f5f0d0")
+        pos(100,100)
+        xpadding(40)
+        ypadding(20)
+        xysize(1300,900)
+        
+        vbox:
+            spacing(20)
+            style_prefix "email"
+            style "email_inbox"
+
+            button:
+                style "email_inbox"
+                text "email 1" style "email_subject"
+                # idle "gui/minigame/email_pholder.png"
+                # hover "gui/minigame/email_pholder_hover.png"
+                action ToggleScreen("email_sort")
+            button:
+                style "email_inbox"
+                text "email 2" style "email_subject"
+            button:
+                style "email_inbox"
+                text "email 3" style "email_subject"
+
+style email_inbox:
+    xysize(330,90)
+    background("gui/minigame/email_pholder.png")
+
+style email_subject:
+    offset(90,25)
+    color("#000000")
+
+## Now were sortin
+screen email_sort():
+    zorder 1
+    frame:
+        background("#F0DAB7")
+        pos(500,120)
+        padding(25,25)
+        xysize(850,820)
+        
+        vbox:
+            spacing(10)
+            style "email_body"
+
+            text "{b}Please help me whats happening{/b}" style "email_body"
+            text "{i}From: Yours Truly\n{/i}" style "email_body"
+            text "Oh yeah i can newline it how long can text be will it wrap lalalalalalala yayyyyy yayyyyy yippeee yiayyyy ajhajajajfhhsdfjdksksk" style "email_body"
+            text "IT WRAPSSSS lfgggggg" style "email_body"
+        
+        hbox:
+            align(0.0,1.0)
+            spacing(10)
+            style "email_opts"
+
+            button:
+                style "email_opts"
+                text "{image=gui/minigame/reply_pholder.png} {i}Accept{/i}" style "email_opts_text"
+            button:
+                style "email_opts"
+                text "{image=gui/minigame/trash_pholder.png} {i}Delete{/i}" style "email_opts_text"
+            button:
+                style "email_opts"
+                text "{image=gui/minigame/fwd_pholder.png} {i}Forward{/i}" style "email_opts_text"
+                
+            
+style email_body:
+    color("#000000")
+
+style email_opts:
+    xysize(270,90)
+    background("gui/minigame/opt_pholder.png")
+
+style email_opts_text:
+    color("#000000")
+
 ################################################################################
 ## Main and Game Menu Screens
 ################################################################################

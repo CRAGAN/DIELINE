@@ -1,36 +1,25 @@
-﻿# The script of the game goes in this file.
+﻿define b = Character("Barby")
+define a = Character("Apollo")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen",  callback=name_callback,cb_name="Eileen", color="#c8ffc8")
-
-
-# The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    #scene bg barbyclocksin
+    #sfx clockin
 
-    scene bg room
+    b "Shucks… I haven’t seen her since we got discharged."
+    b "It should be fine. It should be normal."
+    b "I can’t waste time overthinking."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    # Barby walks into manager room cg
+    #sfx walking
 
-    show ken default at center
-
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-    show ken defaultt at forward
-    kendra "yeah!!"
-    show ken default
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-    
-    # This ends the game.
-
-    return
+    b "...Hiya, Apollo—I mean—boss! Good to see you again!"
+    a "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
+    b "Oh! Snap! Sorry, boss. SHOOT! AH!"
+    a "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
+    b "Aw—hey, you know it was an accident… You have my account, too. How’d {i}you{/i} not get confused?"
+    a "I triple dipple check all the time!"
+    b "Wow! Please don’t say that word again." 
+    a "Uhh… okay? But really, Apollo’s just fine and dandy."
+     

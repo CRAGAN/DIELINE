@@ -8,12 +8,12 @@ transform rcc:
     xoffset 0.60
     yoffset 170
 transform down:
-  linear 0.3 yoffset 30
-  linear 0.5 yoffset 35
+    linear 0.3 yoffset 30
+    linear 0.5 yoffset 35
 
 transform up:
-  linear 0.3 yoffset 5
-  linear 0.5 yoffset 0
+    linear 0.3 yoffset 5
+    linear 0.5 yoffset 0
 transform shaking:
     linear 0.1 xoffset -5 yoffset 5
     linear 0.1 xoffset -6 yoffset -1
@@ -64,15 +64,15 @@ transform snow3:
     linear 9 alpha 1.0
     repeat
 transform jumper:
- yoffset 0
- linear 0.05 yoffset 20
- linear 0.09 yoffset 18
- linear 0.3 yoffset 0
+    yoffset 0
+    linear 0.05 yoffset 20
+    linear 0.09 yoffset 18
+    linear 0.3 yoffset 0
 
 transform jump:
- linear 0.09 yoffset 10
- linear 0.05 yoffset 20
- linear 0.08 yoffset 0
+    linear 0.09 yoffset 10
+    linear 0.05 yoffset 20
+    linear 0.08 yoffset 0
 
 transform wavy:
 

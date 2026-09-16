@@ -182,7 +182,7 @@ label officewalk:
     b "Just gotta meet people, old and new, with the new little position of assistant manager."
     b "Easy peasy…!"
     # point and click section
-    jump meeting
+    jump meeting #replace after done with office walk
 
     # call screen officewalk
     # if current_id == "M.J Grey":
@@ -468,15 +468,15 @@ label clockingout:
     b "Yeah… alright. But- it’s not that big of a deal! Please don’t be worried about me."
     a "But Barby! I AM worried about you! I care about you lots! C’mon, just… {i}how do you say ‘be normal… ‘but nicer… {/i}"
     a "Beee… you know— Let me worry about you!" 
-
+    
     b "Okay… yeah… I-I get it. Sorry… thank you."
     b "You can… you can talk about it…! I’m here if you need to chat…!" 
     a "..."
     a "Thank you…"
     a "So, it all started in the hospital…"
-
+    
     a "Oh! Don’t flashback, man, I gotchu!"
-
+    
     a "It aaalll started when I woke up in the hospital! I was wrapped like a mummy, and you were there too! Still knocked out, though." 
     a "Suddenly, a SFC agent came in with a stack of papers—and some flowers!"
     b "That was kind of them to bring you flowers. Not a lot of workplaces would do that."
@@ -501,9 +501,9 @@ label clockingout:
     b "I’m sorry for, like, being weird about it. Man. I’m really, really sorry. Sorry that it happened and how I’ve been acting about it."
     a "Awhh, it’s okay Barbs! I mean, I get why you’d be weird about it, I just wanted to talk to you properly."
     a "Sorry it took me so long… I had to gather my thoughts."
-    a "And illustrating the post-it-notes. It was my daily hand therapy activity for today." 
+    a "And illustrating the post-it-notes. It was my daily hand therapy activity for today."
     a "It’s not like I didn’t think you weren’t qualified to do it, it was the opposite! I just wasn’t sure you wanted to, either… I swear I wasn’t gonna sign you up without your consent."
-    a "You know how I am with boundaries! That’s the first priority in any friendship."	
+    a "You know how I am with boundaries! That’s the first priority in any friendship."
     b "Yeah. Yeah, that’s true!"
     b "Thanks, Apollo. You’re right. You… always try your best to be a good friend."
     a "Aww, really Barby? Do you… forgive me?"
@@ -516,7 +516,7 @@ label clockingout:
     b "Haha! Yeah! See you tomorrow, Aporrow!"
     b "That was bad, sorry, haha."
     a "Oh, you’re so funny Barby—..."
-
+    
     a "But to be honest? I’ve… oooh it hurts tummy just to say this but! I’ve kinda got… like, 99 bad feelings about all of this."
     a "But! I got one good feeling ‘bout it, and that's all we need to stay positive."
     a "So let’s focus on that, and not the 99 bad ones!"

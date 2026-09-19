@@ -1,48 +1,61 @@
 default current_id = ""
 
+transform hoverup:
+    on hover:
+        linear 0.15 yoffset -20
+    on idle:
+        linear 0.15 yoffset 0
+
 screen id_screen():
     tag menu
+   
+    imagebutton:
+        idle "barby_id.png"
+        xpos 200
+        ypos 400
+        action [ SetVariable("current_id", "Fredrick Ibarra"), Jump("read_id") ]
+        at hoverup
 
     imagebutton:
         idle "apollo_id.png"
-        xpos 200
-        ypos 400
-        action [ SetVariable("current_id", "Apollo Knight"), Jump("read_id") ]
-    
-    imagebutton:
-        idle "barby_id.png"
         xpos 400
         ypos 400
-        action [ SetVariable("current_id", "Fredrick Ibarra"), Jump("read_id") ]
+        action [ SetVariable("current_id", "Apollo Knight"), Jump("read_id") ]
+        at hoverup
     
     imagebutton:
         idle "kendra_id.png"
         xpos 600
         ypos 400
         action [ SetVariable("current_id", "Kendra Bell"), Jump("read_id") ]
+        at hoverup
     
     imagebutton:
         idle "mj_id.png"
         xpos 800
         ypos 400
         action [ SetVariable("current_id", "M.J Grey"), Jump("read_id") ]
+        at hoverup
     
     imagebutton:
         idle "dave_id.png"
         xpos 1000
         ypos 400
         action [ SetVariable("current_id", "Dave"), Jump("read_id") ]
+        at hoverup
     
     imagebutton:
         idle "deez_id.png"
         xpos 1200
         ypos 400
         action [ SetVariable("current_id", "Deez"), Jump("read_id") ]
+        at hoverup
 
     textbutton "Done looking?":
         xalign 0.5
         yalign 0.95
         action [ SetVariable("current_id", "done"), Jump("read_id") ]
+        at hoverup
 
 
 

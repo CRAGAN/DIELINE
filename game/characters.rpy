@@ -46,13 +46,13 @@ image m hm =At("images/mj/mj hm.png", Transform(zoom=0.8), sprite_highlight("MJ"
 #t for talk MJ
 image m defaultt = At(
     Animation("images/mj/mj default.png", 0.15, 
-    "images/mj/mj default.png", 0.15,),
+    "images/mj/mj defaultm.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("MJ")
 )
 image m hmt = At(
     Animation("images/mj/mj hm.png", 0.15, 
-    "images/mj/mj hm.png", 0.15,),
+    "images/mj/mj hmm.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("MJ")
 )

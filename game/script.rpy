@@ -9,7 +9,12 @@ label start:
 
     #scene bg barbyclocksin
     #sfx clockin
-
+    label rooms:
+        $ storage = False
+        $ janitor = False
+        $ bathroom = False
+        $ managerroom = False
+        call screen rooms
     b "Shucks… I haven’t seen her since we got discharged."
     b "It should be fine. It should be normal."
     b "I can’t waste time overthinking."

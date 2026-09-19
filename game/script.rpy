@@ -503,7 +503,7 @@ label clockingout:
     a "Sorry it took me so long… I had to gather my thoughts."
     a "And illustrating the post-it-notes. It was my daily hand therapy activity for today." 
     a "It’s not like I didn’t think you weren’t qualified to do it, it was the opposite! I just wasn’t sure you wanted to, either… I swear I wasn’t gonna sign you up without your consent."
-    a "You know how I am with boundaries! That’s the first priority in any friendship."	
+    a "You know how I am with boundaries! That's the first priority in any friendship."
     b "Yeah. Yeah, that’s true!"
     b "Thanks, Apollo. You’re right. You… always try your best to be a good friend."
     a "Aww, really Barby? Do you… forgive me?"

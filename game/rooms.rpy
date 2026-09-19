@@ -5,7 +5,7 @@ default talkedtokendra = False
 default bathroom = False
 default storage = False
 default janitor = False
-
+define pants = False
 screen rooms():
 
     if overlay_visible:
@@ -15,12 +15,19 @@ screen rooms():
 
         # ROOM 1
         if current_room == 1:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.5 xpos 0.2 ypos 0.24
 
             imagebutton:
-                xpos 0.0
+                focus_mask True 
+                xpos 0.6
+                ypos 0.24
                 idle "images/apollo/standing/apollo_standing.png"
+                hover "images/apollo/standing/apollo_standing_hover.png"
                 action Call("deeztalking")
+                at transform:
+                    zoom 0.7
             imagebutton:
+                focus_mask True 
                 idle "images/apollo/standing/apollotemp.png"
                 action Call("managerroom")
 
@@ -30,35 +37,50 @@ screen rooms():
 
         # ROOM 2
         elif current_room == 2:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.25 xpos 0.2 ypos 0.44
 
             imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.45
                 idle "images/mj/standing/mj_standing.png"
-                action Call("barbytalking")
+                hover "images/mj/standing/mj_standing_hover.png"
+                action Call("mjtalking")
+                at transform:
+                    zoom 0.35
             
 
         # ROOM 3
         elif current_room == 3:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
 
             imagebutton:
-                idle "images/kendra/standing/kendra_standing.png"
-                action Call("kendratalking")
-            imagebutton:
+                focus_mask True 
                 idle "images/apollo/standing/apollotemp.png"
                 action Call("storage")
             imagebutton:
+                focus_mask True 
                 xpos 0.3
                 idle "images/apollo/standing/apollotemp.png"
                 action Call("bathroom")
             imagebutton:
+                focus_mask True 
                 xpos 0.6
                 idle "images/apollo/standing/apollotemp.png"
                 action Call("janitor")
         # ROOM 4
         elif current_room == 4:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.4 xpos 0.2 ypos 0.24
 
             imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.3
                 idle "images/deez/standing/deez_standing.png"
+                hover "images/deez/standing/deez_standing_hover.png"
                 action Call("deeztalking")
+                at transform:
+                    zoom 0.4
         
         # LEFT ARROW
         if current_room not in [1]:
@@ -147,27 +169,39 @@ screen storage():
     
     add "images/bg overworld/storage.png":
             align (0.5, 0.5)
+    add "images/barby/standing/barby_standing_pants.png" zoom 0.5 xpos 0.2 ypos 0.26
+
     imagebutton:
+        xpos 0.5
+        ypos 0.23
+        focus_mask True
         idle "images/kendra/standing/kendra_standing.png"
+        hover "images/kendra/standing/kendra_standing_hover.png"
         action Call("kendratalking")
+        at transform:
+                    zoom 0.7
     imagebutton:
         idle "images/apollo/standing/apollotemp.png"
         action Call("rooms")
 screen bathroom():
     add "images/bg overworld/bathroom.png":
             align (0.5, 0.5)
+    add "images/barby/standing/barby_standing_pants.png" zoom 0.4 xpos 0.2 ypos 0.38
     imagebutton:
         idle "images/apollo/standing/apollotemp.png"
         action Call("rooms")
 screen janitor():
     add "images/bg overworld/janitor.png":
             align (0.5, 0.5)
+    add "images/barby/standing/barby_standing_pants.png" zoom 0.5 xpos 0.2 ypos 0.24
+
     imagebutton:
         idle "images/apollo/standing/apollotemp.png"
         action Call("rooms")
 screen managerroom():
     add "images/bg overworld/managersroom.png":
             align (0.5, 0.5)
+    add "images/barby/standing/barby_standing_pants.png" zoom 0.33 xpos 0.25 ypos 0.32
     imagebutton:
         idle "images/apollo/standing/apollotemp.png"
         action Call("rooms")

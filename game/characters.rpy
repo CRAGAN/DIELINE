@@ -174,3 +174,26 @@ image barby worriedt = At(
     Transform(zoom=0.8),
 
 )  
+
+# INTRO 
+
+image deezcoffee:
+    
+    contains:
+        Movie(play="images/cg/deezintrobg.webm", loop=True)
+    contains:
+        "images/cg/deezintro.png"
+
+image apollomanagersroom:
+    
+    contains:
+        Movie(play="images/cg/apollointrobg.webm", loop=True)
+    contains:
+        "images/cg/apollointro.png"
+
+image mjcubicle:
+    
+    contains:
+        Movie(play="images/cg/mjintrobg.webm", loop=True)
+    contains:
+        "images/cg/mjintro.png"

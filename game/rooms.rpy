@@ -130,6 +130,7 @@ screen rooms():
 
 
 label deeztalking:
+    scene deezcoffee with fade
     if talkedtodeez == False:
         $ talkedtodeez = True
         "ayyaayya im talkin heeeereee"
@@ -144,6 +145,7 @@ label deeztalking:
 
 
 label apollotalking:
+    scene apollomanagersroom with fade
     if talkedtoapollo == False:
         $ talkedtoapollo = True
         a "oh hehehe hi"
@@ -157,7 +159,8 @@ label apollotalking:
 
 
 label mjtalking:
-    
+    scene mjcubicle with fade
+    m "hmmmmm"
     scene room_2
     show overlay:
         blend 'multiply'

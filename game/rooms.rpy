@@ -128,7 +128,7 @@ screen rooms():
                 focus_mask True
 
 
-
+# DEEZ
 label deeztalking:
     scene deezcoffee with fade
     if talkedtodeez == False:
@@ -142,7 +142,7 @@ label deeztalking:
         "we've already talked!"
     jump rooms
 
-
+# APOLLO
 
 label apollotalking:
     scene apollomanagersroom with fade
@@ -156,7 +156,7 @@ label apollotalking:
     else:
         "we've already talked!"
     jump rooms
-
+# MJ
 
 label mjtalking:
     scene mjcubicle with fade
@@ -197,9 +197,9 @@ label mjtalking:
     
     jump rooms
     
-
+# KENDRA
 label kendratalking:
-
+    
     if talkedtokendra == False:
         $ talkedtokendra = True
         "hey there!"
@@ -405,3 +405,41 @@ screen alloftheminbreakroom():
                 
                     
                 focus_mask True
+
+screen hallwaysdeez():
+    default time_passed = False
+    timer 7.0 action SetScreenVariable("time_passed", True)
+
+    add "images/bg overworld/room_3.png"
+    if not time_passed:
+        imagebutton: 
+            idle "images/deez/standing/deez_standing.png"
+            hover "images/deez/standing/deez_standing_hover.png"
+            action Jump("youdied")
+            at deezwalk
+    else:
+        imagebutton:
+                idle "arrow_idle.png"
+                hover "arrow_hover.png"
+                action ("kendratalking")
+        
+label youdied:
+    "f you died."
+    return
+
+transform deezwalk:
+    zoom 0.4
+    xoffset 300 
+    linear 0.3 xoffset 290
+    pause 2
+    xoffset 600
+    linear 0.3 xoffset 590
+    pause 2.0
+    xoffset 900
+    linear 0.3 xoffset 890
+    pause 2.0
+    xoffset 1200
+    linear 0.3 xoffset 1190
+    pause 2.0
+    alpha 0.0
+    pause 2.0

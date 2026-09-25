@@ -94,60 +94,60 @@ image apo worriedt = At(
     sprite_highlight("Apollo")
 )
 ##DEEZ SPRITES
-image de default =At("images/deez/deez default.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de angry =At("images/deez/deez angry.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de sad =At("images/deez/deez sad.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de shy =At("images/deez/deez shy.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de thinking =At("images/deez/deez thinking.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de angry2 =At("images/deez/deez angry2.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de surprised =At("images/deez/deez surprised.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
-image de happy =At("images/deez/deez happy.png", Transform(zoom=0.8, ypos= 1.5), sprite_highlight("Deez"))
+image de default =At("images/deez/deez default.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de angry =At("images/deez/deez angry.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de sad =At("images/deez/deez sad.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de shy =At("images/deez/deez shy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de thinking =At("images/deez/deez thinking.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de angry2 =At("images/deez/deez angry2.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de surprised =At("images/deez/deez surprised.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de happy =At("images/deez/deez happy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de defaultt = At(
     Animation("images/deez/deez default.png", 0.15, 
     "images/deez/deez defaultm.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de angryt = At(
     Animation("images/deez/deez angry.png", 0.15, 
     "images/deez/deez angrym.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de sadt = At(
     Animation("images/deez/deez sad.png", 0.15, 
     "images/deez/deez sadm.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de shyt = At(
     Animation("images/deez/deez shy.png", 0.15, 
     "images/deez/deez shym.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de thinkingt = At(
     Animation("images/deez/deez thinking.png", 0.15, 
     "images/deez/deez thinkingm.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de angry2t = At(
     Animation("images/deez/deez angry2.png", 0.15, 
     "images/deez/deez angrym2.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de surprisedt = At(
     Animation("images/deez/deez surprised.png", 0.15, 
     "images/deez/deez surprisedm.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 image de happyt = At(
     Animation("images/deez/deez happy.png", 0.15, 
     "images/deez/deez happym.png", 0.15,),
-    Transform(zoom=0.8, ypos= 1.5),
+    Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
 

@@ -114,6 +114,10 @@ label rooms:
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
         b "Just gotta get on my computer."
         $ current_room = 2
+        $ talkedtokendra = False
+        $ talkedtoapollo = False
+        $ talkedtomj = False
+        $ talkedtodeez = False
         jump breaktime1
 
     call screen rooms with fade

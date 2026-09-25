@@ -5,10 +5,7 @@ label breaktime1:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
-    $ talkedtokendra = False
-    $ talkedtoapollo = False
-    $ talkedtomj = False
-    $ talkedtodeez = False
+
     if talkedtodeez and talkedtokendra and talkedtomj and talkedtoapollo:
         b "Ough... I gotta go to the conference room... team meeting..."
         b "So much talking to people..."
@@ -23,8 +20,11 @@ label deezandapollo:
         scene room_1 
         show overlay:
             blend 'multiply' alpha 0.3
-        show apo defaultt at right
-        show de shy at left, downward
+        show apo defaultt at right:
+            xoffset -250
+        show de shy at left, downward:
+            
+            xoffset 250
         
         a "Oh! Hi Deez, what’s up?"
         show apo default
@@ -33,27 +33,28 @@ label deezandapollo:
         d "This is so sweet. So spectacular. I love it so much..."
 
         #VA: like he’s declining a gift 
-        show de defaultt
+        show de defaultt at up
         d "But I do not need this."
         d "Ms. Apollo Knight. Manager, Ms. Apollo Knight." 
         show de default
-        show apo awkwardt
+        show apo awkwardt at downward
         a"Oh! Just Apollo’s fine—uhm... You don’t like it, then? I’m sorry, I know my handwriting is a mess, but I could try to just print it out and—"
         show de surprisedt
-        show apo awkward
+        show apo awkward at jumper
         d "Noo! No!!! It’s, it’s— I love. It’s... I love it. This ID, I’ll treasure it so bad. So good."
-        show apo awkwardt
+        show apo awkwardt at downward
+        show de surprised 
         a"Are... are you sure? You said you didn’t need it; I don’t want to force you or anything"
         show apo awkward
         #VA: Almost like he’s hyperventilating, like its very clear he is pretending he likes it but doing a terrible job at it 
         show de thinkingt
         d "I want it. So bad. I just... I’ll keep it."
-        show apo defaultt
+        show apo defaultt at up
         a "Ah! Erm... okay! Do what you want with it, alright?"
         show de defaultt
         d "A firm nation." 
-        show apo default
-        show de default
+        show apo default at jumper
+        show de default at jump
         b "Hiya, folks! Do you need anything?"
         a "Oh! Hi, Barby! Just talking about the IDs. What’s up?"
         default aboutids = False
@@ -67,51 +68,83 @@ label deezandapollo:
                     b "MJ’s is already fading out, and it’s just the first day."
 
                     #VA: a bit proudly
+                    show de happyt at jumper
                     d "Well, mine never fades."
+                    show de calmt
                     d "It’s laminated."
+                    show de calm
+                    show apo defaultt
                     a"Laminated with love."
+                    show apo default at jumper
+                    show de default at jump
                 # return
 
                 "Ears?" if not ears:
                     $ ears = True
                     b "Happy Halloween, by the way!"
                     b "I noticed your costumes! You’ve both got little pointy ears?"
+                    show apo defaultt 
                     a"My older brother plays a table top roleplaying game with his friends sometimes; it looks so fun!"
                     a"I’ve always wanted to try it, so I went as an elf!"
+                    show apo default
                     b "Ohh... that sounds so fun..."
                     b "Maybe after work,we could try it out together sometime? For fun? We have enough people in the office for a party, after all." 
                     b "How about you, Deez?"
 
                     #VA Deez: randomly saying the movie, kind of tuning out the conversation  
-
+        
+                    show de defaultt at downward
                     d "Elf the Movie."
+                    show apo default at jumper
+                    show de default at jump
                 # return
 
                 "Small talk?" if not smalltalk:
                     $ smalltalk = True
+
                     b "Right! Deez, have you heard about how Apollo and I met?"
+                    show de defaultt
                     d "I know you guys are familiar with each other."
+         
+                    show de default at jump
                     b "Yeah! Familiar enough."
                     b "But have you heard how we met?"
+                    show de thinkingt at downward
                     d "I’ve heard something, but you can share more details."
                     b "Oh... Well, it was ‘cause Apollo was really cool."
                     d "Yeah."
+                    show apo defaultt at downward
+
                     a"Aw... Barbs..."
                     a"Well, Barby here got hired after a while of internship, but basically continued to work as a glorified intern for the next couple of years..."
+                    show apo default
                     b "Yeah! It kind of... wasn’t the best, but when I started working with Apollo, well, I tried my best to help her out. Especially with her... technology." 
                     b "How’d the Skycloud meet go, by the way?"
+                    show apo defaultt
                     a"I’ll host a team meeting to talk about that later!"
+                    show apo default at jumper
+                    show de defaultt
                     d "I’m really good at using Skycloud, too. I’ve met so many meetings in that app."
+                    show de default at jump
                     b "Woah! An expert!?" 
+                    show apo defaultt
                     a"Anyways, he helped me out a bunch and I helped tidy up his... reputation, so he’d start getting paid better, haha!"
+                    show apo defaultt
                     b "Teamwork makes the dreamwork!"
                     b "Everyone else knows the gist of the story at this point. Just needed to catch you up so things make more sense while you’re here!"
+                    show apo default at jumper
+                
+                    show de defaultt
                     d "Oh, yeah, I knew that."
                     b "Aw. He’s so knowledgeable. Apollo, you gotta hear him talk about things more."
+                    show apo default at jumper
+                    show de default at jump
                     a"I’m sure you did, you– you... geenieweenie, you Alberto Einsteino!" 
                     b "I’m so sorry. What is a geenieweenie."
                     d "I know what that is. Arigathanks for the compliment."
                     a"Oh Barby, you silly goose! It means a wonderful genius!"
+                    show apo default at jumper
+                    show de default at jump
                     # return
 
         a"Oh right! Now that you’re here, Deez... Do you wanna set up your email soon?"
@@ -120,6 +153,20 @@ label deezandapollo:
 
         jump breaktime1
     else:
+        scene room_1
+        show lighter:
+            blend 'add' alpha 0.3
+        show barby_standing_pants:
+            zoom 0.6 xpos 0.2 ypos 0.16
+            xpos 0.5
+            ypos 0.2
+        show apollo_standing:
+            zoom 0.8
+                
+        show deez_standing:
+            xpos 0.35
+            ypos 0.1    
+            zoom 0.65 xzoom -1
         b "they seem busy."
         jump breaktime1
 
@@ -150,7 +197,7 @@ label mjandkendra:
         default related = False
         default costumes = False
         default mjsfamily = False
-        while not (related and costumes and mjfamily):
+        while not (related and costumes and mjsfamily):
             menu:
                 "Related" if not related:
                     $ related = True
@@ -219,7 +266,7 @@ label mjandkendra:
         jump breaktime1
     else :
         
-        show room_3 
+        scene room_3 
         show lighter:
             blend 'add' alpha 0.3
         show borders1

@@ -69,7 +69,7 @@ screen rooms():
                 ypos 0.33
                 idle "images/mj/standing/mj_standing.png"
                 hover "images/mj/standing/mj_standing_hover.png"
-                action Call("mjtalking")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking")]
                 at transform:
                     zoom 0.6
                     
@@ -77,40 +77,40 @@ screen rooms():
 
         # ROOM 3
         elif current_room == 3:
-            add "images/bg overworld/borders.png"
+            add "images/bg overworld/borders1.png"
             
 
             imagebutton:
     
-                xpos 0.223
-                ypos 0.501
+                xpos 0.176
+                ypos 0.409
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("storage")]
                 at transform:
                     blend 'add'
-                    zoom 0.25
+                    zoom 0.29
             imagebutton:
-                xpos 0.593
-                ypos 0.5
+                xpos 0.597
+                ypos 0.4087
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("bathroom")]
                 at transform:
                     blend 'add'
-                    zoom 0.25
+                    zoom 0.293
             imagebutton:
-                xpos 0.756
-                ypos 0.5
+                xpos 0.79
+                ypos 0.408
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("janitor")]
                 at transform:
                     blend 'add'
-                    zoom 0.25
+                    zoom 0.297
             add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
         # ROOM 4
         elif current_room == 4:
@@ -122,7 +122,7 @@ screen rooms():
                 ypos 0.2
                 idle "images/deez/standing/deez_standing.png"
                 hover "images/deez/standing/deez_standing_hover.png"
-                action Call("deeztalking")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking")]
                 at transform:
                     zoom 0.5
             add "images/bg overworld/chairs.png"
@@ -234,7 +234,7 @@ screen storage():
         focus_mask True
         idle "images/kendra/standing/kendra_standing.png"
         hover "images/kendra/standing/kendra_standing_hover.png"
-        action Call("kendratalking")
+        action [With(Fade(0.4, 0.0, 0.4)), Call("kendratalking")]
         at transform:
             zoom 0.7
     imagebutton:
@@ -340,7 +340,7 @@ screen breaktime1():
                 ypos 0.2
                 idle "images/apollo/standing/apollo_standing.png"
                 hover "images/apollo/standing/apollo_standing_hover.png"
-                action Call("deezandapollo")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deezandapollo")]
                 at transform:
                         zoom 0.8
             imagebutton:
@@ -350,7 +350,7 @@ screen breaktime1():
                 ypos 0.1
                 idle "images/deez/standing/deez_standing.png"
                 hover "images/deez/standing/deez_standing_hover.png"
-                action Call("deezandapollo")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deezandapollo")]
                 at transform:
                     zoom 0.65 xzoom -1
 
@@ -376,7 +376,7 @@ screen breaktime1():
                 ypos 0.45
                 idle "images/mj/standing/mj_standing.png"
                 hover "images/mj/standing/mj_standing_hover.png"
-                action Call("mjandkendra")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjandkendra")]
                 at transform:
                     zoom 0.3
             imagebutton:
@@ -385,7 +385,7 @@ screen breaktime1():
                 ypos 0.45
                 idle "images/kendra/standing/kendra_standing.png"
                 hover "images/kendra/standing/kendra_standing_hover.png"
-                action Call("mjandkendra")
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjandkendra")]
                 at transform:
                     zoom 0.3
                     

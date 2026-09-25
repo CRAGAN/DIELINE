@@ -102,9 +102,17 @@ image de thinking =At("images/deez/deez thinking.png", Transform(zoom=0.8, yoffs
 image de angry2 =At("images/deez/deez angry2.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de surprised =At("images/deez/deez surprised.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de happy =At("images/deez/deez happy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de calm =At("images/deez/deez calm.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+
 image de defaultt = At(
     Animation("images/deez/deez default.png", 0.15, 
     "images/deez/deez defaultm.png", 0.15,),
+    Transform(zoom=0.8, yoffset= 130),
+    sprite_highlight("Deez")
+)
+image de calmt = At(
+    Animation("images/deez/deez calm.png", 0.15, 
+    "images/deez/deez calmm.png", 0.15,),
     Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )

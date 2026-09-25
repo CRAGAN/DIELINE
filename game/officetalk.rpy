@@ -30,16 +30,19 @@ label mjtalking:
         m "Yes? What about it?"
         b "That’s what I thought! Just jogging my memory."
         m "Huh? It wasn’t that long ago though."
-        b "Yeah... time flies!"
-        hide mj_id
+        
+        hide mj_id with dissolve
         scene room_2 
         show lighter:
             blend 'add' alpha 0.3
+        show borders:
+            blend 'multiply'
         show overlay:
             blend 'multiply'
         
         show m default at up, center
         with fade
+        b "Yeah... time flies!"
         default whatdoesitstandfor = False
         default whatdepartmentareyoufrom = False
         default howsworkmj = False
@@ -154,6 +157,14 @@ label kendratalking:
 
 
         k "Oh! Uhm, thank you." 
+        hide kendra_id with dissolve
+        scene storage 
+        show lighter:
+            blend 'add' alpha 0.3
+        show overlay:
+            blend 'multiply' alpha 0.3
+        show ken default at center, up
+        with fade
 
         #ID goes away, UI comes out
         default compliment = False
@@ -251,7 +262,7 @@ label deeztalking:
 
         b "AHEM— I don't think we’ve met before. I’m Fredrick Ibarra! But people just call me Barby." 
         b "What’s your name?"
-        d "Right…introductions. I am a fresh catch, as they say in um. Finance."
+        d "Right...introductions. I am a fresh catch, as they say in um. Finance."
         d "Daniel Emil Elazar Zémiermalng."
         d "My name is too long so you can call me {i}Deez{/i} for short."
 
@@ -269,13 +280,22 @@ label deeztalking:
 
         d "...Oh."
         d "It looks low budget. I-I don’t like it."
-        b "Oh! Yes! The. Interns don’t actually get IDs… So our manager, Ms. Apollo Knight, made this for you herself!"
+        b "Oh! Yes! The. Interns don’t actually get IDs... So our manager, Ms. Apollo Knight, made this for you herself!"
         #VA Deez: Flustered tone to feigning interest 
+        
         d "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
-        d "She got my…pupils, my orbs right."
+        d "She got my...pupils, my orbs right."
         d "I love it."
         # deadpan
-
+        scene room_4
+        show chairs
+        show lighter:
+            blend 'add' alpha 0.3
+        show overlay:
+            blend 'multiply' alpha 0.3
+        show de default at center, up
+        
+        with fade
         b "I’ll be sure to tell her!"
 
         #ID goes away, UI comes out
@@ -287,78 +307,116 @@ label deeztalking:
             menu:
                 "Welcome!" if not welcome:
                     $ welcome = True
+                    
                     b "Welcome to the team! I also started out as an unpaid intern, so I understand the boat you’re in."
                     b "Please let me know if you need anything!"
+                    show de defaultt
                     d "Thank you for the warm regards."
                     d "But I disagree. I’m not on the boat, I’m paid."
+                    show de default
                     b "... Paid {i}money{/i}?"
+                    show de defaultt
                     d "What else would I be paid in?"
+                    show de default
                     b "A sense of fulfilment."
                     b "Resume fodder?" 
+                    show de defaultt at downward
                     d "Oh. That, too, but economic currency is also there on the list."
 
                     #VA: Switch up is super fast! "I gotta tell the boss - Apollo about this" is happy and excited, and "DAMN IT" is stupidly sudden and fast yell before it goes back to normal 
-
+                    show de default
                     b "Well, it’s good to know that the system’s changing for the better! I gotta tell the boss- DAMN IT- Apollo about this!" 
+                    show de shyt
                     d "Until further notice, I will not be paid yet. But I will when they do compensate me. Which is soon. It will happen. Percentagely."
+                    show de shy
                     b "Oh."
                     b "Cool."
+                    show de default at up
                     d "Likewise."
                     # return to question menu
 
                 "Where did you learn to fix coffee machines?" if not fixcoffeemachine:
                     $ fixcoffeemachine = True
                 # pan to coffee machine
-
+                
                     b "Haha. So. Um. Where'd ya learn how to fix coffee machines?"
+                    show de shyt
                     d "Di- Du- I’m a neutral born learner. I’m very complement in the ways of engineering machinery."
+                    show de shy
                     b "Oh! Alright?!"
                     b "You do engineering! That’s awesome! I took mechanics courses in an early college program during senior high- not the same thing, but you get me?"
                     b "Never went to college past that, though."
                     b "More convenient to pursue a job instead, am I right?" 
                     #VA Deez: say the words in italics as a whisper, or a mumble to himself 
+                    show de surprisedt at jumper
                     d "{i}Oh no{/i}—uh! I mean. Yeah! I relate to that experience, we are quart similar, like, like. Uh. I’m in college, and I’m doing a job!"
+                    show de surprised at downward
                     b "Wow! That’s commendable, really! Don’t go into debt though, haha!"
+                    show de defaultt at up
                     d "Impossible for me to do that. It’s very easy not to."
+                    show de default
                     b "{i}Right.{/i}"
                     # back to questions?
 
                 "How's work?" if not howsworkdeez:
                     $ howsworkdeez = True
+                    
                     b "How’s work been for you?"
+                    show de calmt
                     d "It’s an experience of ease."
+                    show de calm
                     b "That’s words. In a sentence." 
+                    show de default
                     d "Paragraph."
                     # back to questions?
 
                 "How's life?" if not howslifedeez:
                     #VA: said like "how’s the wife?" 
                     $ howslifedeez = True
-                    b "So… how’s the life? Outside of work, y’know." 
+
+                    b "So... how’s the life? Outside of work, y’know." 
+                    show de defaultt
                     d "I’m not deceased yet. So it’s going as it should."
+                    show de default
                     b "Congratulations, then! What’ve you been up to? Hobbies, other responsibilities?"
-                    d "I do a lot of things. Like. Uhhhhhhh…."
+                    show de defaultt
+                    d "I do a lot of things. Like. Uhhhhhhh...."
+                    show de shy
                     d "..."
+                    show de shyt
                     d "An abundant amount. It’s a lot I can’t think of because there are so surplus."
                     #VA: Barby feels sad for Deez
+                    show de shy
                     b "...Sounds like you’re drowning in abundance."
+                    show de defaultt
                     d "You look like you have hobbies."
+                    show de default
                     b "Depends who you ask!"
+                    show de defaultt
                     d "I’m asking you."
+                    show de default
                     b "Well. Well- what do you consider a hobby?"
                     b "Haha, why are we talking about me." 
+                    show de defaultt
                     d "You keep talking at me so I’m talking at you."
+                    show de default
                     b "That’s. So. Cool."
+
                     b "Since you asked so nicely, my favorite hobbies are making the work environment a friendly place for you and your work family."
+                    show de defaultt
                     d "That’s one hobby. You said it like it was plural."
                     #VA Barby: coughs
+                    show de default
                     b " "
+                
                     d "Why."
                     # back to questions?
 
         b "It was nice chatting with you, but I gotta get back to work."
         b "Thanks, Deez! I’ll be sure to hold onto that. Your name. Tryna be better at remembering things."
+        show de defaultt
         d "Clockwise."
+        show de default
         jump rooms
 
     else:

@@ -69,39 +69,52 @@ label start:
     show apo worried
     b "Agh, don’t be worried!"
     b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others." 
+    show apo worriedt at downward
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
+    show apo worried
     b "You’ve got a whole team to handle. I'd be happy to help out!"
     b "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
+    show apo defaultt at downward, center
     a "I—you’re right. We got this, we have to stay positive for our first day! Well, if you’re up for it... here!"
     # IDs come out
     # sfx_id1
     a "I know we just clocked in, but it’s a pretty easy task. Could you distribute the new IDs to the team?" 
     a "I’d do it myself, but I have to attend this online conference with corporate. I have yet to figure out how to log into Skycloud Meet, haha..."
-
+    show apo default
     $ picked = []
     menu idchoice:
         set picked
         "Skycloudmeet?":
             b "We switched to Skycloud Meet already?"
+            show apo awkwardt at downward
             a "Err, yeah. It’s supposed to work better with the other Sera, Fim & Co. software we’re using, yet..."
+            show apo defaultt
             a "It’s kinda complicated. I’m not good at technology— but I’m positive I’ll figure it out!"
+            show apo default
             jump idchoice
             # return to choices
 
         "But I don't know the team.":
             b "Ah, but I don’t even know who’s part of the team yet."
+            show apo defaultt
             a "It’s okay, you already know most of them by now! All their names and faces are on their IDs too, so you can figure it out easy peasy!"
+            show apo default
             jump idchoice
             # return to choices
 
         "Sure! Easy!":
-            jump id_see
+            
+            jump id_see 
+            
 
 label id_see:
     b "Alright, no problem, then! I can do that."
+    show apo defaultt
     a "Sweet! Here you go!"
+    show apo default
+    hide apo with dissolve
 
-    call screen id_screen
+    call screen id_screen with dissolve
 
    
 label rooms:

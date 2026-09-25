@@ -25,6 +25,7 @@ label deezandapollo:
         show de shy at left, downward:
             
             xoffset 250
+        with fade
         
         a "Oh! Hi Deez, what’s up?"
         show apo default
@@ -70,9 +71,9 @@ label deezandapollo:
                     #VA: a bit proudly
                     show de happyt at jumper
                     d "Well, mine never fades."
-                    show de calmt
+                    show de calmt at downward
                     d "It’s laminated."
-                    show de calm
+                    show de calm 
                     show apo defaultt
                     a"Laminated with love."
                     show apo default at jumper
@@ -111,6 +112,7 @@ label deezandapollo:
                     b "But have you heard how we met?"
                     show de thinkingt at downward
                     d "I’ve heard something, but you can share more details."
+                    show de thinking
                     b "Oh... Well, it was ‘cause Apollo was really cool."
                     d "Yeah."
                     show apo defaultt at downward
@@ -125,7 +127,7 @@ label deezandapollo:
                     show apo default at jumper
                     show de defaultt
                     d "I’m really good at using Skycloud, too. I’ve met so many meetings in that app."
-                    show de default at jump
+                    show de thinking at jump
                     b "Woah! An expert!?" 
                     show apo defaultt
                     a"Anyways, he helped me out a bunch and I helped tidy up his... reputation, so he’d start getting paid better, haha!"
@@ -141,14 +143,21 @@ label deezandapollo:
                     show de default at jump
                     a"I’m sure you did, you– you... geenieweenie, you Alberto Einsteino!" 
                     b "I’m so sorry. What is a geenieweenie."
+                    show de calmt
                     d "I know what that is. Arigathanks for the compliment."
+                    show de calm
+                    show apo defaultt at jumper
                     a"Oh Barby, you silly goose! It means a wonderful genius!"
                     show apo default at jumper
                     show de default at jump
                     # return
-
+        show apo defaultt at jumper
         a"Oh right! Now that you’re here, Deez... Do you wanna set up your email soon?"
+        show apo default at downward
+        show de thinkingt at jumper
         d "I know how to do that, too, but you can, like. Watch if you want."
+        show apo default at up
+        show de shy
         b "I’ll leave you to it, then!"
 
         jump breaktime1
@@ -158,10 +167,11 @@ label deezandapollo:
             blend 'add' alpha 0.3
         show barby_standing_pants:
             zoom 0.6 xpos 0.2 ypos 0.16
-            xpos 0.5
-            ypos 0.2
+            
         show apollo_standing:
             zoom 0.8
+            xpos 0.5
+            ypos 0.2
                 
         show deez_standing:
             xpos 0.35
@@ -180,8 +190,12 @@ label mjandkendra:
         scene room_3 
         show overlay:
             blend 'multiply' alpha 0.3
-        show m hmt at right
-        show ken surprised at jumper, left
+        show borders1
+        show m hmt at right:
+            xoffset -250
+        show ken surprised at jumper, left:
+            xoffset 250
+        with fade
         m "You ever think it’s crazy how we kinda look related?"
         show m hm
         show ken surprisedt at downward

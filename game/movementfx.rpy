@@ -7,9 +7,9 @@ transform rc:
 transform rcc:
     xoffset 0.60
     yoffset 170
-transform down:
-    linear 0.3 yoffset 30
-    linear 0.5 yoffset 35
+transform downward:
+    easein 0.1 yoffset 0
+    easein 0.5 yoffset 5
 
 transform up:
     linear 0.3 yoffset 5

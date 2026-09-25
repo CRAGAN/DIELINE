@@ -7,47 +7,48 @@ transform hoverup:
         linear 0.15 yoffset 0
 
 screen id_screen():
+    add "images/bg overworld/overlay.png" blend 'multiply' alpha 0.4
     tag menu
    
     imagebutton:
         idle "barby_id.png"
-        xpos 200
-        ypos 400
+        xpos 100
+        ypos 300
         action [ SetVariable("current_id", "Fredrick Ibarra"), Jump("read_id") ]
         at hoverup
 
     imagebutton:
         idle "apollo_id.png"
-        xpos 400
-        ypos 400
+        xpos 300
+        ypos 300
         action [ SetVariable("current_id", "Apollo Knight"), Jump("read_id") ]
         at hoverup
     
     imagebutton:
         idle "kendra_id.png"
-        xpos 600
-        ypos 400
+        xpos 500
+        ypos 300
         action [ SetVariable("current_id", "Kendra Bell"), Jump("read_id") ]
         at hoverup
     
     imagebutton:
         idle "mj_id.png"
-        xpos 800
-        ypos 400
+        xpos 700
+        ypos 300
         action [ SetVariable("current_id", "M.J Grey"), Jump("read_id") ]
         at hoverup
     
     imagebutton:
         idle "dave_id.png"
-        xpos 1000
-        ypos 400
+        xpos 900
+        ypos 300
         action [ SetVariable("current_id", "Dave"), Jump("read_id") ]
         at hoverup
     
     imagebutton:
         idle "deez_id.png"
-        xpos 1200
-        ypos 400
+        xpos 1100
+        ypos 300
         action [ SetVariable("current_id", "Deez"), Jump("read_id") ]
         at hoverup
 
@@ -158,6 +159,7 @@ label read_id(item_name=None):
         a "I’m sure! Now go on, Barby, those IDs aren’t going to distribute themselves."
         b "If you say so. Well, good luck with the meeting!"
         a "Thank you!"
-        jump officewalk
+        scene black with fade
+        jump rooms
     
     call screen id_screen

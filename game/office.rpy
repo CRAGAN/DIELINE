@@ -15,7 +15,7 @@ screen officewalk():
 
 label officemeet(item_name=None):
     hide screen officewalk
-    window auto hide
+    window auto hideO
 
     if employee_id == "M.J Grey":
         show mj default at down

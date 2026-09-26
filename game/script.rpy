@@ -448,36 +448,58 @@ label clockingout:
     show apo worried
     b "Oh! Aw, c’mon, Apollo... It's just stress. The usual, the normal."
     b "Am I really acting that odd!? I don’t mean to... ough... it’s really nothing I can’t handle—"
+    show apo worriedt at downward
     a "Maybe... but— maybe it’s something {i}we{/i} can handle? Like... as friends, you know?"
+    show apo worried
     b "Ough... uhm..."
     
     a "..."
+    show apo worriedt at up
     a "Is it... is it about you being promoted to assistant manager?"
     a "I’m sorry. I don’t think I properly explained to you, um, what happened there..."
     a "Could you give me a chance to explain? Please? Just hear me out!" 
+    show apo worried
     b "Yeah... alright. But- it’s not that big of a deal! Please don’t be worried about me."
+    show apo worriedt at downward
     a "But Barby! I AM worried about you! I care about you lots! C’mon, just... {i}how do you say ‘be normal... ‘but nicer... {/i}"
     a "Beee... you know— Let me worry about you!" 
-    
+    show apo worried
     b "Okay... yeah... I-I get it. Sorry... thank you."
     b "You can... you can talk about it...! I’m here if you need to chat...!" 
     a "..."
+    show apo worriedt
     a "Thank you..."
     a "So, it all started in the hospital..."
+
+    show black with fade
+
+    "..."
+
+    hide black
     
+    show apo defaultt at jumper
     a "Oh! Don’t flashback, man, I gotchu!"
     
     a "It aaalll started when I woke up in the hospital! I was wrapped like a mummy, and you were there too! Still knocked out, though." 
     a "Suddenly, a SFC agent came in with a stack of papers—and some flowers!"
+    show apo default
     b "That was kind of them to bring you flowers. Not a lot of workplaces would do that."
+    show apo defaultt
     a "That's exactly what they told me!"
     a "But I was like—"
+    show apo worriedt
     a "Oh my death!! Aaah! WHY AM I HERE?!"
+    show apo defaultt at jumper
     a "Then the agent said oho, you know your Mr. Sensin the manager died, right? And you’re the assistant manager, riiighht?"
+    show apo worriedt
     a "And I went oh no! He died? I’m so sorry! Does he have a preplanned mortuary or funeral home because I can totally hook him up—"
+    show apo default
     b "Apollo, your advertisement is showing."
+    show apo defaultt
     a "Hey, that’s exactly what the agent said! Anyway, they told me that I’m the new manager for the team! It was shock after shock after shock!" 
+    show apo default
     b "Oh no, that sounds pretty scary..."
+    show apo defaultt
     a "That’s the least of it! They strutted up to me and asked {i}’So who’s your new assistant manager?’{/i} Like WHAT? I can’t decide that fast!"
     a "I didn't know what to do! I was like running through different people in my head and then I thought, oh! Barby’s really cool and loves helping people!"
     a "But, all I did was turn my head to look you in your bed, and and—" 
@@ -486,30 +508,39 @@ label clockingout:
     a "{i}’Oh its okay, we signed it for him! Come to work within 6-7 weeks or you’re BOTH fired! Goodbye!’{/i}"
     a "The worst part is that they didn't even leave the flowers, they just brought them in, showed them, and left..."
     a "And that’s the end of my flashback via post-it-notes." 
+    show apo default
     b "Oh... man... I didn’t..."
     b "I didn’t realize it... all happened like that..."
     b "I’m sorry for, like, being weird about it. Man. I’m really, really sorry. Sorry that it happened and how I’ve been acting about it."
+    show apo defaultt
     a "Awhh, it’s okay Barbs! I mean, I get why you’d be weird about it, I just wanted to talk to you properly."
     a "Sorry it took me so long... I had to gather my thoughts."
     a "And illustrating the post-it-notes. It was my daily hand therapy activity for today."
     a "It’s not like I didn’t think you weren’t qualified to do it, it was the opposite! I just wasn’t sure you wanted to, either... I swear I wasn’t gonna sign you up without your consent."
     a "You know how I am with boundaries! That's the first priority in any friendship."
+    show apo default
     b "Yeah. Yeah, that’s true!"
     b "Thanks, Apollo. You’re right. You... always try your best to be a good friend."
+    show apo defaultt
     a "Aww, really Barby? Do you... forgive me?"
+    show apo default
     b "Of course! I’m sorry, too, it’s been real weird and stressful, and you having to be the manager and all..."
     b "But, hey! We got this!"
     b "We got a few weeks to work on this, and a few really cool people; we can do this! Teamwork!"
+    show apo defaultt
     a "Yay! Teamwork!"
     a "Amazing! Amaze amaze!"
     a "See you tomorrow, Barby!"
+    show apo default
     b "Haha! Yeah! See you tomorrow, Aporrow!"
     b "That was bad, sorry, haha."
+    show apo defaultt
     a "Oh, you’re so funny Barby—..."
     
     a "But to be honest? I’ve... oooh it hurts tummy just to say this but! I’ve kinda got... like, 99 bad feelings about all of this."
     a "But! I got one good feeling ‘bout it, and that's all we need to stay positive."
     a "So let’s focus on that, and not the 99 bad ones!"
+    
     jump day2
 
 label day2:

@@ -101,7 +101,7 @@ label deezandapollo:
                 # return
 
                 "Small talk?" if not smalltalk:
-                    $ smalltalk = True
+                    $ smalltalk = True 
 
                     b "Right! Deez, have you heard about how Apollo and I met?"
                     show de defaultt
@@ -112,7 +112,7 @@ label deezandapollo:
                     b "But have you heard how we met?"
                     show de thinkingt at downward
                     d "I’ve heard something, but you can share more details."
-                    show de thinking
+                    show de thinkingk
                     b "Oh... Well, it was ‘cause Apollo was really cool."
                     d "Yeah."
                     show apo defaultt at downward
@@ -201,10 +201,16 @@ label mjandkendra:
         show ken surprisedt at downward
         k "We-we do?" 
         show m defaultt
+        show ken surprised
         m "Y’know. Blonde hair, green eyes. Everyone in my family has green eyes, which is kind of weird since it’s recessive to brown." 
+        show m default
+        show ken awkwardt
         k "Huh. Barby also has green eyes."
+        show ken awkward
         m "Yeah, but, everyone in my family also has either blonde or brown hair, and he doesn’t exactly... well, maybe..." 
+        show ken defaultt at jumper
         k "Oh! Speaking of! Hi Barby!" 
+        show ken default
         b "Hiya!"
 
         #Related?
@@ -215,63 +221,102 @@ label mjandkendra:
             menu:
                 "Related" if not related:
                     $ related = True
+                    show ken default
+                    show m default
                     b "Maybe you could trace each other’s family trees?"
+                    show ken defaultt
                     k "Oh, you know I- I don’t have one...!"
+                    show ken default
                     b "Right..." 
+                    show m hmt
                     m "Aw man. It would’ve been really fun to find out if we were cousins."
+                    
                     m "How about your family tree?"
+                    show m hm
                     b "Me?"
+                    show ken awkwardt
                     k "He doesn’t, um, have one either...I think?" 
 
                         #VA Barby: happily said, not in an offended way. 
-
+                    show ken surprised at jumper
                     b "I have parents."
+                    show ken surprisedt
                     k "Oh! You told me you were adopted?"
+                    show ken awkward at downward
                     b "Yeah!"
                     b "Wait... ohh... okay, I see." 
                     # return
-
+                    show ken default
+                    show m default
         #MJ’s Family?
                 "MJ's Family" if not mjsfamily:
                     $ mjsfamily = True
+
                     b "Everyone in your family has green eyes?" 
+                    show m defaultt
                     m "Yeah. The grass is green, the trees are green, the Greys are green." 
 
                     #VA Kendra: attempting to make a joke
-
+                    show ken defaultt
                     k "Are they Greens grey?"
+                    show ken default
+                    show m defaultt
                     m "No. They’re green, too."
+                    show m default
                     # return
 
                 "Costumes" if not costumes:
                     $ costumes = True
+
                     b "Happy Halloween, guys! What’re your costumes, if you don’t mind me asking?"
+                    show m defaultt
                     m "My costume? Um... oh! Yes. I am a guardian of the night."
+                    show m default
                     b "Oh! A night guard."
+                    show m defaultt
                     m "Yes. Totally."
                     m "Cinco Noches con Alfredo."
+                    show m default
                     b "How about you, Kendra?"
 
                     #VA Kendra: She is flustered because she forgot about Halloween
-
+                    show ken awkwardt at downward
                     k "C-costumes?! Oh pfft, yeah I remember that—"
+                    show ken awkwardt
                     k "I ahh—I'm uhm, a garden? Yes, totally."
+                    show ken awkward
                     b "Oh yeah! That checks out! Is that why you’re wearing the flower clips?"
+                    show ken awkwardt
                     k "Mm... Mhm! Yes, nothing... else."
-
+                    show ken surprised at up
                     k "Oh, my break is almost done...!"
+                    show m hmt at jumper
                     m "We have the same break?"
+                    show m hm
+                    show ken awkwardt at jumper
                     k "R-right; I cut my break in half so I can spend the rest of it finishing things."
+                    show m defaultt
                     m "I can help if you need?" 
+                    show m default
                     b "I can help, too...!"
+                    show ken awkwardt
                     k "Oh, um, thanks— both of you— but I think I can handle it... it’s not for this job, it’s for my other work..." 
+                    show ken awkward at downward
                     b "Oh... I’d love to help but..."
+                    show m defaultt at jumper
                     m "I can still help!" 
+                    show m default at downward
                     b "MJ, I don’t know if we’re allowed to; we wouldn't want to do anything against company policy... right?"
                     m ":)"
+                    show m defaultt at up
                     m "You’re right, Barby."
+                    show ken awkwardt at jumper
                     k "Well, I’ll have to do that now!" 
+                    show ken awkward
+                    show m defaultt at downward
                     m "I can help by supporting you."
+                    show m default
+                    show ken awkwardt at downward
                     k "Um... okay!"
                     b "Ah- I’d... like to do that, too, but... I’ve got things I need to do..."
                     # what does he need to do i dont know chat how do we close off this part i dont know they need to stop talking </3

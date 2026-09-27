@@ -10,6 +10,7 @@ default storage = False
 default janitor = False
 define pants = False
 default day = 1
+define breakroom_unlocked = False
 transform add_door:
     blend 'add'
 
@@ -53,10 +54,6 @@ screen rooms():
                 # action Call("apollotalking")
                 # at transform:
                     #    zoom 0.8
-
-
-            
-
             
 
 
@@ -112,7 +109,7 @@ screen rooms():
                 at transform:
                     blend 'add'
                     zoom 0.297
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.43
         # ROOM 4
         elif current_room == 4:
             add "images/barby/standing/barby_standing_pants.png" zoom 0.43 xpos 0.2 ypos 0.3
@@ -442,6 +439,7 @@ screen breaktime1():
                 focus_mask True
 
 # DAY 2
+screen rooms2():
 
     if overlay_visible:
 
@@ -461,42 +459,29 @@ screen breaktime1():
                 action [With(Fade(0.4, 0.0, 0.4)), Call("managerroom")]
                 at transform:
                     blend 'add'
-
-            ##imagebutton:
-                # focus_mask True 
-                # xpos 0.6
-                #  ypos 0.2
-                # idle "images/apollo/standing/apollo_standing.png"
-                # hover "images/apollo/standing/apollo_standing_hover.png"
-                # action Call("apollotalking")
-                # at transform:
-                    #    zoom 0.8
-
-
-            
-
-            
-
-
         # ROOM 2
         elif current_room == 2:
             add "images/barby/standing/barby_standing_pants.png" zoom 0.45 xpos 0.2 ypos 0.3
             add "images/bg overworld/borders.png" blend 'multiply'
             imagebutton:
+                focus_mask True
+                idle "images/computer.png"
+                hover "images/computer_hover.png"
+                if talkedtoapollo and talkedtokendra and talkedtodeez and talkedtomj:
+                    action [With(Fade(0.4, 0.0, 0.4)), Call("minigametime")]
+                else:
+                    action [Notify("I'd better check on everybody first!")]
+                    
+            
+            imagebutton:
                 focus_mask True 
-                xpos 0.5
+                xpos 0.6
                 ypos 0.33
                 idle "images/mj/standing/mj_standing.png"
                 hover "images/mj/standing/mj_standing_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking2")]
                 at transform:
                     zoom 0.6
-            imagebutton:
-                focus_mask True
-                idle "images/images/computer.png"
-                hover "images/images/computer.png_hover"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
-                    
             
 
         # ROOM 3
@@ -536,22 +521,20 @@ screen breaktime1():
                     blend 'add'
                     zoom 0.297
             add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
-        # ROOM 4
-        elif current_room == 4:
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.43 xpos 0.2 ypos 0.3
-
             imagebutton:
                 focus_mask True 
                 xpos 0.5
                 ypos 0.2
                 idle "images/deez/standing/deez_standing.png"
                 hover "images/deez/standing/deez_standing_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking")]
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking2")]
                 at transform:
-                    zoom 0.5
+                    zoom 0.4
+        # ROOM 4             
+        # ROOM 4
+        elif current_room == 4:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.43 xpos 0.2 ypos 0.3
             add "images/bg overworld/chairs.png"
-       
-        
         # LEFT ARROW
         if current_room not in [1]:
             imagebutton:
@@ -572,22 +555,159 @@ screen breaktime1():
 
 
         # RIGHT ARROW
-        if current_room not in [4]: #brain fog
+        if current_room != 4:
             imagebutton:
                 idle "arrow_idle.png"
                 hover "arrow_hover.png"
 
+                if current_room == 3 and not breakroom_unlocked:
+                    action [Notify("It's not your break yet"),]
+                else:
+                    action [
+                        SetVariable(
+                            "current_room",
+                            (current_room + 1) if current_room < total_rooms else 1
+                        ),
+                        With(Fade(0.3, 0.2, 0.3))
+                    ]
+
+                xpos 0.8
+                ypos 0.5
+                focus_mask True
+#BREAKTIME2
+screen breaktime2():
+
+    if overlay_visible:
+
+        add "room_[current_room]":
+            align (0.5, 0.5)
+        add "images/lighter.png" blend 'add' alpha 0.3
+
+        # ROOM 1
+        if current_room == 1:
+            
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.6 xpos 0.2 ypos 0.16
+            imagebutton:
+                xpos 0.388
+                ypos 0.07
+                idle "images/door_idle.png"
+                hover "images/door_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("managerroom")]
+                at transform:
+                    blend 'add'
+        # ROOM 2
+        elif current_room == 2:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.45 xpos 0.2 ypos 0.3
+            add "images/bg overworld/borders.png" blend 'multiply'
+            imagebutton:
+                focus_mask True
+                idle "images/computer.png"
+                hover "images/computer_hover.png"
+                if talkedtoapollo and talkedtokendra and talkedtodeez and talkedtomj:
+                    action [With(Fade(0.4, 0.0, 0.4)), Call("minigametime")]
+                else:
+                    action [Notify("I'd better check on everybody first!")]
+                    
+            
+            imagebutton:
+                focus_mask True 
+                xpos 0.6
+                ypos 0.33
+                idle "images/mj/standing/mj_standing.png"
+                hover "images/mj/standing/mj_standing_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
+                at transform:
+                    zoom 0.6
+            
+
+        # ROOM 3
+        elif current_room == 3:
+            add "images/bg overworld/borders1.png"
+            
+
+            imagebutton:
+    
+                xpos 0.176
+                ypos 0.409
+                
+                idle "images/door_idle.png"
+                hover "images/door_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("storage")]
+                at transform:
+                    blend 'add'
+                    zoom 0.29
+            imagebutton:
+                xpos 0.597
+                ypos 0.4087
+                
+                idle "images/door_idle.png"
+                hover "images/door_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("bathroom")]
+                at transform:
+                    blend 'add'
+                    zoom 0.293
+            imagebutton:
+                xpos 0.79
+                ypos 0.408
+                
+                idle "images/door_idle.png"
+                hover "images/door_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("janitor")]
+                at transform:
+                    blend 'add'
+                    zoom 0.297
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
+            imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.2
+                idle "images/deez/standing/deez_standing.png"
+                hover "images/deez/standing/deez_standing_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking22")]
+                at transform:
+                    zoom 0.5
+        # ROOM 4             
+        # ROOM 4
+        elif current_room == 4:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.43 xpos 0.2 ypos 0.3
+            add "images/bg overworld/chairs.png"
+        # LEFT ARROW
+        if current_room not in [1]:
+            imagebutton:
+                idle "arrowl_idle.png"
+                hover "arrowl_hover.png"
+
                 action [
                     SetVariable(
                         "current_room",
-                        (current_room + 1) if current_room < total_rooms else 1
+                        (current_room - 1) if current_room > 1 else total_rooms
                     ),
                     With(Fade(0.3, 0.2, 0.3))
                 ]
 
+                xpos 0.09
+                ypos 0.5
+                focus_mask True
+
+
+        # RIGHT ARROW
+        if current_room != 4:
+            imagebutton:
+                idle "arrow_idle.png"
+                hover "arrow_hover.png"
+
+                if current_room == 3 and not breakroom_unlocked:
+                    action [Notify("It's not your break yet"),]
+                else:
+                    action [
+                        SetVariable(
+                            "current_room",
+                            (current_room + 1) if current_room < total_rooms else 1
+                        ),
+                        With(Fade(0.3, 0.2, 0.3))
+                    ]
+
                 xpos 0.8
                 ypos 0.5
-                
-                    
                 focus_mask True
     

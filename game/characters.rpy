@@ -9,10 +9,37 @@ image ken awkward =At("images/kendra/kendra awkward.png", Transform(zoom=0.8), s
 image ken awkwardm =At("images/kendra/kendra awkwardm.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
 image ken worried =At("images/kendra/kendra worried.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
 image ken worriedm =At("images/kendra/kendra worriedm.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
+image ken fearm =At("images/kendra/kendra fearm.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
+image ken fear =At("images/kendra/kendra fear.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
+image ken stressed =At("images/kendra/kendra stressed.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
+image ken stressedm =At("images/kendra/kendra stressedm.png", Transform(zoom=0.8), sprite_highlight("Kendra"))
+image ken monster =At("images/kendra/kendra monster.png", sprite_highlight("Kendra"))
+image ken monsterr =At("images/kendra/kendra monster.png")
 #t for talk KENDRA
+image ken monstertt = At(
+    Animation("images/kendra/kendra monster.png", 0.5, 
+    "images/kendra/kendra monster2.png", 0.5,)
+)
+image ken monstert = At(
+    Animation("images/kendra/kendra monster.png", 0.5, 
+    "images/kendra/kendra defaultm.png", 0.5,),
+    sprite_highlight("Kendra")
+)
 image ken defaultt = At(
     Animation("images/kendra/kendra default.png", 0.15, 
     "images/kendra/kendra defaultm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Kendra")
+)
+image ken stressedt = At(
+    Animation("images/kendra/kendra stressed.png", 0.15, 
+    "images/kendra/kendra stressedm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Kendra")
+)
+image ken feart = At(
+    Animation("images/kendra/kendra fear.png", 0.15, 
+    "images/kendra/kendra fearm.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("Kendra")
 )
@@ -43,7 +70,47 @@ image ken worriedt = At(
 ## MJ SPRITES
 image m default =At("images/mj/mj default.png", Transform(zoom=0.8), sprite_highlight("MJ"))
 image m hm =At("images/mj/mj hm.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+image m happy =At("images/mj/mj happy.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+image m fear=At("images/mj/mj fear.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+image m worried =At("images/mj/mj worried.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+image m toohappy =At("images/mj/mj toohappy.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+image m monster =At("images/mj/mj monster.png", sprite_highlight("MJ"))
+image m thinking =At("images/mj/mj thinking.png", Transform(zoom=0.8), sprite_highlight("MJ"))
+
 #t for talk MJ
+image m monstertt = At(
+    Animation("images/mj/mj monster.png", 0.15, 
+    "images/mj/mj monsterm.png", 0.15,)
+)
+image m thinkingt = At(
+    Animation("images/mj/mj thinking.png", 0.15, 
+    "images/mj/mj thinkingm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
+image m monstert = At(
+    Animation("images/mj/mj monster.png", 0.15, 
+    "images/mj/mj monsterm.png", 0.15,),
+    sprite_highlight("MJ")
+)
+image m worriedt = At(
+    Animation("images/mj/mj worried.png", 0.15, 
+    "images/mj/mj worriedm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
+image m feart = At(
+    Animation("images/mj/mj fear.png", 0.15, 
+    "images/mj/mj fearm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
+image m happyt = At(
+    Animation("images/mj/mj happy.png", 0.15, 
+    "images/mj/mj happym.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
 image m defaultt = At(
     Animation("images/mj/mj default.png", 0.15, 
     "images/mj/mj defaultm.png", 0.15,),
@@ -58,14 +125,23 @@ image m hmt = At(
 )
 ##APOLLO SPRITES
 image apo default =At("images/apollo/apollo default.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
-image apo hm=At("images/apollo/apollo hm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo hm =At("images/apollo/apollo hm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo awkward =At("images/apollo/apollo awkward.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo serious =At("images/apollo/apollo serious.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo worried =At("images/apollo/apollo worried.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
-#t for talk APOLLO
+image apo nervous =At("images/apollo/apollo nervous.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo surprised =At("images/apollo/apollo surprised.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo fear =At("images/apollo/apollo fear.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+
 image apo defaultt = At(
     Animation("images/apollo/apollo default.png", 0.15, 
     "images/apollo/apollo defaultm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Apollo")
+)
+image apo nervoust = At(
+    Animation("images/apollo/apollo nervous.png", 0.15, 
+    "images/apollo/apollo nervousm.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("Apollo")
 )
@@ -103,6 +179,7 @@ image de angry2 =At("images/deez/deez angry2.png", Transform(zoom=0.8, yoffset= 
 image de surprised =At("images/deez/deez surprised.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de happy =At("images/deez/deez happy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de calm =At("images/deez/deez calm.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de fear =At("images/deez/deez fear.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 
 image de defaultt = At(
     Animation("images/deez/deez default.png", 0.15, 
@@ -110,6 +187,13 @@ image de defaultt = At(
     Transform(zoom=0.8, yoffset= 130),
     sprite_highlight("Deez")
 )
+image de feart = At(
+    Animation("images/deez/deez fear.png", 0.15, 
+    "images/deez/deez fearm.png", 0.15,),
+    Transform(zoom=0.8, yoffset= 130),
+    sprite_highlight("Deez")
+)
+
 image de calmt = At(
     Animation("images/deez/deez calm.png", 0.15, 
     "images/deez/deez calmm.png", 0.15,),

@@ -83,3 +83,45 @@ transform wavy:
         repeat
 transform forward:
     linear 0.3 zoom 1.05
+
+transform small_wobble:
+    subpixel True
+    anchor (0.5, 0.5)
+    align (0.5, 0.5)
+    zoom 1.05
+    block:
+        linear 1.0 xoffset 5 yoffset 3 rotate 1.3 blur 2
+    block:
+        linear 1.0 xoffset 0 yoffset 0 rotate 0 blur 1
+    block:
+        linear 1.0 xoffset -5 yoffset -3 rotate -1.3 blur 4
+    block:
+        linear 1.0 xoffset 0 yoffset 0 rotate 0 blur 2
+    repeat
+transform small_wobble1:
+    subpixel True
+    anchor (0.5, 0.5)
+    align (0.5, 0.5)
+    zoom 1.05
+    block:
+        linear 1.2 xoffset 5 yoffset 3 rotate 1.5 blur 4
+    block:
+        linear 1.2 xoffset 0 yoffset 0 rotate 0 blur 2
+    block:
+        linear 1.2 xoffset -5 yoffset -3 rotate -1.5 blur 4
+    block:
+        linear 1.2 xoffset 0 yoffset 0 rotate 0 blur 2
+    repeat
+transform small_wobbletrans:
+    subpixel True
+    anchor (0.5, 0.5)
+    align (0.5, 0.5)
+    zoom 1.05
+    block:
+        linear 1.0 xoffset 3 yoffset 2 rotate 0.5 blur 5
+    block:
+        linear 1.0 xoffset 0 yoffset 0 rotate 0 blur 3
+    block:
+        linear 1.0 xoffset -3 yoffset -2 rotate -0.5 blur 4
+    block:
+        easein 1.0 xoffset 0 yoffset 0 rotate 0 blur 0

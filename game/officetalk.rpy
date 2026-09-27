@@ -58,9 +58,9 @@ label mjtalking:
                     m "Oh, it’s nothing special. Just plain old MJ, haha!"
                     show m default at jumper
                     b "They didn’t answer the question. Aww..." 
-                    show m defaultt
+                    show m happyt at downward
                     m "I’m surprised it isn’t written on my ID, actually. Not that it’s an issue. I like being MJ more anyway."
-                    show m default
+                    show m happy
                     b "Oh! If that’s the case, then you can just be MJ."
                     b "Follow your heart."
                     show m defaultt at downward, center
@@ -69,38 +69,56 @@ label mjtalking:
                     b "Yeah."
                 "What department are you from?" if not whatdepartmentareyoufrom:
                     $ whatdepartmentareyoufrom = True
+
                     b "Just to make sure— with the whole name being faded and everything— what exactly {i}is{/i} your job title?"
+                    
                     m "Hmm? What do you mean?"
+                    show m happyt at downward
                     m "I am a part of the team, if that’s what you were wondering."
+                    show m happy
                     b "Oh yes, of course."
      
                 "How's work?" if not howsworkmj:
                     $ howsworkmj = True
                     b "So, how's work been so far?"
+                    show m hmt
                     m "Well, we don't know what our job actually is yet, but we're making good progress!"
+                    show m hm
                     b "That's true—I just got here, but it looks like a lot’s already being done?"
+                    show m defaultt at jumper
                     m "Yep! Everyone here is so hardworking."
                     m "You know, the intern offered me coffee even though I didn’t ask for it. How kind." 
+                    show m default
                     b "I’m glad you’ve been experiencing a positive work environment. It looks like the intern got the memo!"
                     b "We’ve... always tried to make things as nice as possible for each other. We’re all in the same boat, after all."
                 
                 "How's life?" if not howslifemj:
                     $ howslifemj = True
                     b "Outside all of that, how are you?"
+                    show m defaultt at jumper
                     m "It’s all been fine and dandy on my end!"
                     m "Though the recent uptick in work has left me with less time to practice my music, which is a bummer."
+                    show m default
                     b "Aw, I’m sorry to hear that. Hopefully you can play some more... after this project? I mean- I’d love to hear you play!"
+                    show m happyt at jumper
                     m "Aww, thank you. Maybe one day. Though I’m probably rusty by now."
                     m "How about you?" 
+                    show m happy
                     b "Me? Like... if I do any music?"
+                    show m thinkingt
                     m "I meant how’s your life."
+                    show m thinking
                     b "My life... oh god... the life insurance..."
                     b "Sorry ‘bout that! Talkin’ to myself again, haha! Classic. Haha! Hah!"
                     b "... MJ. Why am I like this?"
+                    show m defaultt at up
                     m "What? No, it's fine you’re not cringe or anything. It’s okay, I’ve been tuning out when you talk to yourself, so no worries about me hearing anything I’m not supposed to!"
+                    show m default
                     b "Oh, phew."
                     b "... wait...! Have you been doing that this whole conversation?!"
+                    show m happyt at jumper
                     m "xD"
+                    show m default at downward
                     
 
         b "Alright, gotta go check on some things!"
@@ -243,6 +261,7 @@ label kendratalking:
         jump rooms
     else:
         m "I'm a little busy right now..."
+        jump rooms
 #DEEZ
 label deeztalking:
     scene deezcoffee with fade
@@ -425,40 +444,41 @@ label deeztalking:
     
 #DAY 2
 
-label officewalk2:
-label mjtalking22 #:
+
+   
+label mjtalking2:
     b "Good morning, MJ!"
     m "Good morning! How are you?"
     b "Good! How are you?"
     m "Good!"
-label deeztalking22:
+label deeztalking2:
     #Click Deez
     b "Good morning, Deez!"
     d "Good morning."
     b "Do you need any help with anything?"
     d "Never." 
     b "Cool!"
-label kendratalking22:
+label kendratalking2:
     #Click Kendra
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
     b "Hiya!"
     k "Hi!" 
 
-    # click computer and didnt talk to everyone
-
-label minigametime:
-    if talkedtoapollo and talkedtomj and talkedtodeez and talkedtokendra:
-        b "I'd better check on everybody first!"
-        return
-
-    # click the breakroom
-    
-    b "That's the breakroom... It's not break time yet! I should get back to work..."
-
-    # click computer and talked to everyone
-    b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
-    b "Odd."
-    b "Well, I better get back to work!"
     jump breaktime2
-   
+#DAY 5
+label kendratalking5:
+    b "Good morning, Kendra."
+    
+label mjtalking5:
+    b "Good morning, MJ."
+
+label deeztalking5:
+    b "..."
+    
+    #if you click anyone a second time barby goes "..."
+    #sfx_dooropen
+    #Managers room
+    # cutscene plays, doesnt need to be voice acted, but could be
+    #b "Uhh, hiya Apollo...! Sorry for sleeping—"
+    # a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"

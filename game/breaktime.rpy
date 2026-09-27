@@ -548,9 +548,13 @@ label kendratalking22:
     #Apollo 
 label apollotalking22: #apollo at cubicles
     $ talkedtoapollo = True
+    show apo default
     b "Hiya, Apollo! It's break time."
+    show apo defaultt
     a "Oh hi Barbs! Aaahhh it is? Oh cracker jackers, I lost track of time!"
+    show apo default
     b "Ah! Haha! You really need to stop saying things like that!"
+    show apo defaultt
     a "I'll just finish up over here, first! Moving my things from the cubicle to the new office is taking a bit, but I need to catch a breath, anyway. How ‘bout a chat?"
     $ kendraworry = False
     $ amiweird = False
@@ -559,6 +563,7 @@ label apollotalking22: #apollo at cubicles
         menu yappy:
             "Kendra" if not kendraworry:
                 $ kendraworry = True
+
                 b "I'm a little concerned... that was a lot of roles we pushed on Kendra, wasn't it?"
                 a "Yeah... I'm a big bunch worried, too."
                 a "But I don't know who else we could've given it to. She's, like, the best and only pick for all those tasks, after all."

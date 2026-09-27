@@ -136,10 +136,7 @@ label mjtalking:
 #Kendra
 label kendratalking:
     scene kendraintro
-    show lighting:
-        blend 'add' alpha 0.3
-    show lighting1:
-        blend 'add' alpha 0.5
+    
     if talkedtokendra == False:
         $ talkedtokendra = True
         

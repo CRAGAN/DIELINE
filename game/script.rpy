@@ -295,8 +295,8 @@ label meeting:
     k "I was thinking, maybe, i-if we did it through emails we can have a more cohesive backlog of all the information they give us...! All our questions included."
     d "Uhm, actually— some of us still have A LOT of other responsibilities besides the project - like uhh, general work... things."
 
-    k "Kendra “Yeah, that's true! I have some uhh, prior commitments I gotta do for SFC, too! I promised to help account for all the losses when the truck..."
-    k "Kendra “Yeah... a lot of things inside it got damaged, too. Not to mention..."
+    k "Yeah, that's true! I have some uhh, prior commitments I gotta do for SFC, too! I promised to help account for all the losses when the truck..."
+    k "Yeah... a lot of things inside it got damaged, too. Not to mention..."
     b "Is she looking at me—"
     b "Oh, nevermind, she looked away."
     k "Ahem— not to mention things outside work..."
@@ -543,26 +543,30 @@ label clockingout:
     a "So let’s focus on that, and not the 99 bad ones!"
     
     jump day2
-
+# DAY 2
 label day2:
     #Calendar appears: October 27th, Tuesday
     # Deadline: >30 days
     # idea to just make it generally greater than because its like, people don't feel the pressure that much knowing there's a lot of time left
+    scene black
+    centered "October 27th, Tuesday"
+    centered "Deadline: >30 days"
+    
     b "Another day at work. Alright, we got this!"
-    b "Huh… no reply from Dave, yet. Wonder where he is."
+    b "Huh... no reply from Dave, yet. Wonder where he is."
     b "Well I better get to work, soon. Let’s not dilly dally."
     #jump officewalkday2
     jump teammeeting2
 
 label teammeeting2:
-    Apollo “I called this meeting to announce some… changes that corporate called me about today and it’s not the uhm—”
-    b "Oh gosh, don’t tell me it’s more bad news…"
+    a "I called this meeting to announce some... changes that corporate called me about today and it’s not the uhm—"
+    b "Oh gosh, don’t tell me it’s more bad news..."
     a "I-it’s not!! I swear haha, It’s nothing {i}too horrible{/i}, Just a deadline change—"
-    d "Deadline change?! That’s cucumbersome…"
+    d "Deadline change?! That’s cucumbersome..."
     m "Do you mean cumbersome?"
-    d "MJ you can’t say that in the office…"
-    b "W-wait, maybe it’s an extension! They saw how unreasonable the project's due date was so… they gave us more time?"
-    a "Aahh, I love your optimism, but… they pushed it back just a smidge— Just, like… in two days."
+    d "MJ you can’t say that in the office..."
+    b "W-wait, maybe it’s an extension! They saw how unreasonable the project's due date was so... they gave us more time?"
+    a "Aahh, I love your optimism, but... they pushed it back just a smidge— Just, like... in two days."
     b "WHAAAT?!"
     d "this is chickeneyed!"
     m "Oh! Oh dear. That’s NOT a smidge."
@@ -570,62 +574,62 @@ label teammeeting2:
     "SHUT UP APOLLOOO"
     b "Four days isn’t enough time to do ANYTHING! Especially since Kendra aaaa"
     d "Yeah what he said"
-    a "onhgh sorrsies…"
+    a "onhgh sorrsies..."
     m "It’s no problem, I can pick up all the slack."
  
 label teammeeting3:
-    a "Ahaha… thank you all again for uhm, coming to the team meeting everyone…!"
-    b "Ahh, but… Kendra’s not here, yet…"
+    a "Ahaha... thank you all again for uhm, coming to the team meeting everyone...!"
+    b "Ahh, but... Kendra’s not here, yet..."
     m "I don’t think Kendra’s currently available to participate. No worries, I’m happy to relay anything to her."
     a "Knowing our deadline is in two days, I can’t help but be just a little bit worried over our pace so far!"
 
 label wakeupday5:
-    Kendra:
-    b "Good morning, Kendra."
+    #Kendra:
+    #b "Good morning, Kendra."
     
-    MJ:
-    b "Good morning, MJ."
+   # MJ:
+   # b "Good morning, MJ."
 
-    Deez:
-    b "..."
+    #Deez:
+    #b "..."
     
-    #if you click anyone a second time barby goes “...”
+    #if you click anyone a second time barby goes "..."
     #sfx_dooropen
-    Managers room
+    #Managers room
     # cutscene plays, doesnt need to be voice acted, but could be
-    b "Uhh, hiya Apollo…! Sorry for sleeping—"
-    a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
+    #b "Uhh, hiya Apollo...! Sorry for sleeping—"
+   # a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
 
 # Not yet transformed fully but hints she's in the process
 
-    a "Oh goodness… I’m so very sorry Barby!! You must’ve been utterly exhausted, working nonstop like that?! It’s GOOD you slept. I… I truly wouldn’t know what to do with myself if you…"
-    b "Apollo…"
-    a "I-I couldn’t have pushed you any harder than I already have, hahaha— {i}{b}I’m such a bad manager.{/i}{/b} I’m so sorry… I’ll be better, I promise." 
-    a "{i}You forgive me… right?{/i}"
+    a "Oh goodness... I’m so very sorry Barby!! You must’ve been utterly exhausted, working nonstop like that?! It’s GOOD you slept. I... I truly wouldn’t know what to do with myself if you..."
+    b "Apollo..."
+    a "I-I couldn’t have pushed you any harder than I already have, hahaha— {i}{b}I’m such a bad manager.{/i}{/b} I’m so sorry... I’ll be better, I promise." 
+    a "{i}You forgive me... right?{/i}"
     a "Hahaha, you believe me, Barby — right? Right right right right right right RIGHT RIGHT RIGHT—!!" 
     #K  inda want that textbox scary thing where everything is going crazy and the text is flying out of the text box at the end
     # would be cool if you could cut it out auto skip to next line after voiceline	
     b "Y-YES! Yes, Apollo, I do, I swear—!! Hah, uhh— actually, i-it’s the last day, I should go do my usual rounds—"
-    a "Oh, but you know, they haven’t exactly been feeling their best either… so down in the dumps, the poor things." 
+    a "Oh, but you know, they haven’t exactly been feeling their best either... so down in the dumps, the poor things." 
     a "I just feel like we’re not really... connecting. As a team. Right now."
     b "O-oh, I see.. Well, you can leave the bonding to me, I’ll bridge the—"
     a "Ahaha, you know what? Maybe I’LL do it this time! Yes— maybe I can be the one to encourage them to cross the finish line! It IS my job afterall. My responsibility, as their manager!"
     b "...Are you sure? Have you slept at all since—"
-    a "Haha, of course, of course! They probably just need a little morale boost, that’s all!! I can raise their spirits… Hahaha—"
-    b "I-I mean I can still handle that…! I’ve been doing it since the start!" 
+    a "Haha, of course, of course! They probably just need a little morale boost, that’s all!! I can raise their spirits... Hahaha—"
+    b "I-I mean I can still handle that...! I’ve been doing it since the start!" 
     b "Listen— you look kind of stressed. Do you need anything? I could get you coffee! Or, or handle some of your work, even—"
     a "{b}B   a  r R   b    Y.{/b}"
     # CAN THIS TEXT SHAKE AND FLOAT – maybe put it around the screen instead of on the text box
     b "...!!!"
-    a "Haha sorry, that came out wrong… Barby, can you go do your little minigames?"
+    a "Haha sorry, that came out wrong... Barby, can you go do your little minigames?"
     b "... M-my what?"
     a "Silly billy! Your computer things! Your beep-boop-beep things, the ones you do everyday, haha!"
-    b "Oh! I… my emails? Y-yes, of course, I can do that—"
+    b "Oh! I... my emails? Y-yes, of course, I can do that—"
     a "Perfect! Off you go, my favorite assistant manager!"
     
     # barby wants to pipe up but awkwardly leaves the room
 
-    b "...What was THAT?! Gosh. Apollo, she seems so…"
+    b "...What was THAT?! Gosh. Apollo, she seems so..."
     b "..."
     b "...The sooner we finish this project, the sooner things can get better."
     jump minigameday5
@@ -638,31 +642,31 @@ label breaktimeday5:
     b "I’d better go check on everyone." 
     # Lights are off, overworld time
 
-    b "Is everyone okay…?"
-    b "Hello…?"
-    b "Can somebody fix the power…? The deadline’s so close, we need to—"
+    b "Is everyone okay...?"
+    b "Hello...?"
+    b "Can somebody fix the power...? The deadline’s so close, we need to—"
     #sfx_(dark)walk
     # walk in dark sounds are scary 
     
     b "...Hello?"
     # click around and no one's there 
 
-    b "Apollo said she'd be… boosting team morale. Maybe they're all in the breakroom."
+    b "Apollo said she'd be... boosting team morale. Maybe they're all in the breakroom."
     #sfx_doorcreak
     # open breakroom 
     # apollo, only silhouette with faint outline of normal sprite 
 
-    b "Apollo…?"
+    b "Apollo...?"
     #sfx_/or ambiance? maybe there can be like (like in walten files theres that creepy long static sound? It sounds like an AC/some machine running)
     # all her dialogue is floating text, not in text box
     a "Hmm? Oh, Barby! Hahaha, gosh, what a predicament. It's so dark in here I almost missed you! I missed you. I really did... Thank the stars you’re here."
     # talking about something important
 
-    b "Huh? I-I… I missed you too?? A-anyway, we need to fix the power… we can’t get anything done like this! We’re SO close to the deadline, we can’t fall behind now."
+    b "Huh? I-I... I missed you too?? A-anyway, we need to fix the power... we can’t get anything done like this! We’re SO close to the deadline, we can’t fall behind now."
     a "Oh, hahaha! You’re so right, Barby! So smart! We should fix it, we CAN fix it! We won’t let a teeny tiny power outage get us down, Haha!"
-    b "R-right! So…"
-    b "We should tell the others about this…" 
-    a "Aha… ahahaha!"
+    b "R-right! So..."
+    b "We should tell the others about this..." 
+    a "Aha... ahahaha!"
     a "Hahaha! You’re so silly, Barby." 
     # music stop
     
@@ -684,27 +688,27 @@ label lightson:
 # apollo pauses for a while
 
     a "You know..."
-    a "You look like you need some help. Hahaha… why don’t you open up to the team?"
+    a "You look like you need some help. Hahaha... why don’t you open up to the team?"
     # very very slow quicktime
     menu:
-        "[Yes…] N O !!!": #← text shakes like crazy
-        # like, the player would select “yes” but it’s weird and shaky and swaps to “no” 
-        b "NO! NO, NO, NO! I DON’T!"
-        # VA note: like fighting off the thought of opening up despite desperately needing support
-        b "Please. I don’t."
-    "[No.]":
-        #VA note: hushed, under breath, horrified but trying to keep voice steady
-        b "I don’t need anything right now."
-        # continuing ^^ but faltering closer to the end
-        b "Maybe later. We don’t have much time. Sorry—"
-    "[Run out of time]":
-        b "I… I—"
-        a "Shh, shh, it’s okay, Barby. You just need a great big hug…"
-        #DEATH SCREEN (black screen core, save the jumpscare for actual chase) 
-        # you slowly step out of the room
-        #sfx_slowstep
+        "[Yes...] N O !!!": #← text shakes like crazy
+            # like, the player would select "yes" but it’s weird and shaky and swaps to "no" 
+            b "NO! NO, NO, NO! I DON’T!"
+            # VA note: like fighting off the thought of opening up despite desperately needing support
+            b "Please. I don’t."
+        "[No.]":
+            #VA note: hushed, under breath, horrified but trying to keep voice steady
+            b "I don’t need anything right now."
+            # continuing ^^ but faltering closer to the end
+            b "Maybe later. We don’t have much time. Sorry—"
+        "[Run out of time]":
+            b "I... I—"
+            a "Shh, shh, it’s okay, Barby. You just need a great big hug..."
+            #DEATH SCREEN (black screen core, save the jumpscare for actual chase) 
+            # you slowly step out of the room
+            #sfx_slowstep
 
-    a "Where… where are you going?"
+    a "Where... where are you going?"
     b "I just... I need to take a break."
     
     # slam door closed
@@ -716,8 +720,8 @@ label lightson:
     a "Haha! Team meetings ARE breaks— from being aloneeee!!"
     a "C’mon, you don’t want to be alone, do you? That’s not very nice of you, Barby. Didn’t you say teamwork makes the dream work?"
     a "{b}{i}So why aren’t you cooperating with me?{/b}{/i}" 
-    b "{i}Ah…{/i}"
-    a "Why…? Why why why WHY WHY WHY WHY?! COME BACK, BARBY! COME BACK, COME BACK, COME BACK!!!" 
+    b "{i}Ah...{/i}"
+    a "Why...? Why why why WHY WHY WHY WHY?! COME BACK, BARBY! COME BACK, COME BACK, COME BACK!!!" 
     
     #  put banging of door with voiceline
     # loop banging door while waiting for player response
@@ -750,7 +754,7 @@ label prechase:
     # 1st person POV so blubur doesnt have to draw more for this darn day
     #sfx_lightflash
     #VA note: Heavy breathing
-    b "Hah… hah…"
+    b "Hah... hah..."
     b "..."
 
     # barby hum the melody that MJ was playing
@@ -762,7 +766,7 @@ label prechase:
     # Lights go back on
     #sfx_lighton
 
-    b "Hah… Oh, I’m just… tired."
+    b "Hah... Oh, I’m just... tired."
 
     # And THEN lights on, the door sound effect plays
     # So you can peek away from the bathroom to see apollo (AND CO.) standing outside the breakroom door
@@ -770,7 +774,7 @@ label prechase:
     #sfx_apollomonsterwalk
     #VA Apollo: I want to see Apollo do a take of this line below sing songy👀 
 
-    a "Barby? Where are you? Oh dear… I don’t see you in your cubicle."
+    a "Barby? Where are you? Oh dear... I don’t see you in your cubicle."
     a "Have you... have you lost motivation? HAHA—It's okay, we're here for you. Maybe if we work together, you'll feel more efficient."
     a "Hahaha, yes... it's time. It's time for us to join you—"
 
@@ -808,7 +812,7 @@ label prechase:
 label chase:
     b "I don’t want a hug."
     b "I DONT WANT A HUG!"    
-    #Barby “AGHH” sound effect for when player succeed
+    #Barby "AGHH" sound effect for when player succeed
 
     #sfx_apollomonstergrab
     #sfx_struggle
@@ -821,7 +825,7 @@ label chase:
     #( in any scenario, failing is gonna be jumpscare and die)
 # fight back, pull it away from them
 # bad , harder QTE
-# If success→ go to “Pull away from them choices)
+# If success→ go to "Pull away from them choices)
 # take it off
 # Good, same pace QTE
 # If success→ go to Take it off: you fall on the ground
@@ -865,8 +869,8 @@ label chase:
 
 #VA note: Apollo starts crying, like make this sooo wet cat pathetic  
     a "..."
-    a "I’m sorry… I’m so, so so sorry… please forgive me, Barby..."
-    a "I’ll… I’ll leave you alone…"  
+    a "I’m sorry... I’m so, so so sorry... please forgive me, Barby..."
+    a "I’ll... I’ll leave you alone..."  
     jump pcminigame
 # Stops knocking
 # silence
@@ -878,10 +882,10 @@ label pcminigame:
     b "Apollo?"
 
     a "... please, don’t give up on me."
-    a "Not you, too…"
-    a "You’re… you’re the only family I’ve got, now…"
+    a "Not you, too..."
+    a "You’re... you’re the only family I’ve got, now..."
     jump clockingout
 
-label clockingout:
+label clockingout2:
     b "I did it."
     b "...We’re done."

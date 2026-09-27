@@ -423,5 +423,43 @@ label deeztalking:
         "we've already talked!"
         jump rooms
     
+#DAY 2
 
+label officewalk2:
+    #Click MJ
+    b "Good morning, MJ!"
+    m "Good morning! How are you?"
+    b "Good! How are you?"
+    m "Good!"
+
+    #Click Deez
+    b "Good morning, Deez!"
+    d "Good morning."
+    b "Do you need any help with anything?"
+    d "Never." 
+    b "Cool!"
+    
+    #Click Apollo
+    b "Good morning, Apollo!"
+    a "Good morning, Barby!"
+    a "Ready to give it our all today?"
+    b "You betcha!"
+
+    #Click Kendra
+    b "Good morning, Kendra!"
+    k "Oh! Hi! Good morning!" 
+    b "Hiya!"
+    k "Hi!" 
+
+    # click computer and didnt talk to everyone
+    b "I'd better check on everybody first!"
+
+    # click the breakroom
+    b "That's the breakroom... It's not break time yet! I should get back to work..."
+
+    # click computer and talked to everyone
+    b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
+    b "Odd."
+    b "Well, I better get back to work!"
+    jump breaktime2
    

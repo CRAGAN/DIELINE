@@ -31,8 +31,6 @@ label start:
     show ken default
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    call screen email_minigame
-
     # This ends the game.
 
     return

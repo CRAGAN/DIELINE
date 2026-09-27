@@ -423,5 +423,42 @@ label deeztalking:
         "we've already talked!"
         jump rooms
     
+#DAY 2
 
+label officewalk2:
+label mjtalking22 #:
+    b "Good morning, MJ!"
+    m "Good morning! How are you?"
+    b "Good! How are you?"
+    m "Good!"
+label deeztalking22:
+    #Click Deez
+    b "Good morning, Deez!"
+    d "Good morning."
+    b "Do you need any help with anything?"
+    d "Never." 
+    b "Cool!"
+label kendratalking22:
+    #Click Kendra
+    b "Good morning, Kendra!"
+    k "Oh! Hi! Good morning!" 
+    b "Hiya!"
+    k "Hi!" 
+
+    # click computer and didnt talk to everyone
+
+label minigametime:
+    if talkedtoapollo and talkedtomj and talkedtodeez and talkedtokendra:
+        b "I'd better check on everybody first!"
+        return
+
+    # click the breakroom
+    
+    b "That's the breakroom... It's not break time yet! I should get back to work..."
+
+    # click computer and talked to everyone
+    b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
+    b "Odd."
+    b "Well, I better get back to work!"
+    jump breaktime2
    

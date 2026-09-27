@@ -29,6 +29,10 @@ label minigametime:
         b "Well, I better get back to work!"
         
         call screen email_minigame # FROG OVER HERE
+        $ talkedtokendra = False
+        $ talkedtoapollo = False
+        $ talkedtomj = False
+        $ talkedtodeez = False
         jump breaktime2
 
 label teammeetingpt2:
@@ -66,42 +70,79 @@ label teammeetingpt2:
     show m fear
     b "WHAAAT?!"
 
-    centered "Calender pops up"
-    centered "Tuesday October 27"
-    centered "Deadline in 4 days"
-
+    "'Tuesday October 27'"
+    "'Deadline in 4 days'"
+    show m feart
     m "Oh! Oh dear. That's NOT a smidge."
+    show m fear
+    show de feart at shaking, downward
     d "This is chickeneyed!"
+    show de fear
+    show apo nervoust at jumper
     a "A-ahh ahh! Let's- let's calm down guys! {i}Wait uhm okay—{/i} I hear you, I see you, and I understand your concerns—"
+    show de angryt at up
+    show apo fear at jumper
     d "No offense, you don't understand anything."
+    show de angry 
+    show apo feart at downward, shaking
     a "AaaAAahh... sorry—" 
+    show apo fear
+    show de sadt at downward
     d "I just said no offense. This is not offensive, I am helping you..."
+    show de sad
     b "Four days isn't enough time to do ANYTHING!"
+    show de defaultt at jumper
     d "Yeah, what he said."
+    show de default
+    show apo worriedt at up
     a "Ough... sorrsies..." 
+    show apo worried
+    show m hmt at jump
     m "It's no problem; I can pick up all the slack." 
+    show m hm
     b "I don't think that's going to be enough! Four days?" 
+    show apo worriedt
     a "I-I know this is terrible! But we made a lot of progress yesterday, right? And today?" 
+    show apo worried
+    show m thinkingt
     m "Hm... 'a lot' if the deadline was in over 30 days. Which it used to be." 
+    show m thinking
     k "I-I have a question. If we end up having to work overtime to finish the project, are we... getting paid for it?" 
+    show apo worriedt
     a "I tried, I really really tried to negotiate with the higher ups about it, but they still said no." 
     a "It's a full turn key contract- so we only get any bonuses if we finish the product in a way that's satisfying enough for the clients, and they, uh, feel like giving the employees bonuses!" 
     a "So, so maybe if we work hard enough? And do really really well?"
+    show apo worried
+    show m defaultt
     m "You heard her, though. We {i} could{/i} get a bonus by the end."
+    show m hm at downward
     b "But no guaranteed overtime."
+    show ken worriedt at downward
     k "Oh... I see. That's- that's too bad! I-I... am I still doing all this work?" 
+    show ken worried
     a "I... I don't know, Kendra..." 
+    show m hmt at jump
     m "It seems like we're about to get even more work, unfortunately."
+    show m hm
+    show ken awkwardt at shaking, up
     k "Haha... hah! No... no breaks for me, I guess!"
+    show ken feart
     k "I-I should... ooohhh... oh god I'm so... I feel like my head is going to explode!"
-
+    show ken fear at jump
     b "K-Kendra? Are you okay? Maybe you should head to the clinic—"
-    k "{b}NO. IT'S... FINE. I WILL BE FINE.{/b}"
+    show ken feart at jumper, shaking
+    show apo fear
+    show de fear
+    show m fear
+    k "{b}NO. IT'S... FINE. I WILL BE FINE.{/b}" with vpunch
     k "{b}I... I need to get back to work.{/b}"
+    show ken fear:
+        easein 0.5 1000
 
 # kendra leave? 
-
+    show apo worriedt at downward
     a "... Oh death... I-I— I should..."
+    show apo worried
     b "It's fine, I'll... check up on her."
 
 # OVERWORLD TIME (outside manager room)
@@ -111,28 +152,32 @@ label teammeetingpt2:
 # kendra groaning 
 label kendragobrr:
 #VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
-
+scene room_1
 k "{b}My head... it- my head hurts.{/b}"
 b "K-Kendra? Is... everything okay? What's that noise...?!"
 k "{b}It needs to stop.{/b}"
 
 #IF POSSIBLE ONLY IDK there's a sickening THUD each time Kendra talks
 
-k "{b}I Need.{/b}"
+k "{b}I Need.{/b}" with hpunch
 #THUD
-k "{b}To.{/b}"
+k "{b}To.{/b}" with hpunch
 #THUD
-k "{b}Stop.{/b}"
+k "{b}Stop.{/b}" with hpunch
 #THUD
 
 #Thudding continues
+centered " " with hpunch
 
 # overworld control access
 # go to cubicles 
-
+pause 1.0
+scene room_2 with fade
 # sfx, thudding footsteps
+centered " " vpunch
 # loud grunt/screaming like every step she takes is painful
-k "{b}A A A A{/b}"
+k "{b}A A A A{/b}" with vpunch
+scene room_3 with with fade
 
 # long hallway
 

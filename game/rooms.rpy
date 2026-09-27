@@ -215,6 +215,7 @@ label apollo_manager_reply:
     if day == 1:
         a "Now go on, Barby, those IDs aren’t going to distribute themselves."
     if day == 2:
+        $ talkedtoapollo = True
         b "Good morning, Apollo!"
         a "Good morning, Barby!"
         a "Ready to give it our all today?"

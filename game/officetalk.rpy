@@ -191,68 +191,102 @@ label kendratalking:
                 "Compliment" if not compliment:
                     $ compliment = True
                     b "You’ve got a really cool surname. It’s got a nice ring to it."
+                    show ken defaultt
                     k "Oh, uh, thanks! It isn’t my birth name but..."
                     k "Everyone at my work- well, the theater one, called me ‘Bell’. ‘Cause I looked like one, and they said I was really noisy whenever I reacted to anything."
+                    show ken default
                     b "Ah! Well... I thought it suited you for other reasons; I’ve only talked to you for a bit, and you don’t sound super noisy. Not that you’re quiet! Just that you’re, like. Yeah."
                     b "So you basically picked it?"
+                    show ken awkwardt
                     k "Aha, ha? Yeah... I don’t remember if I had a family or anything before I started working— and... basically living— at the soup kitchen."
                     k "I just kept working, and it became my life!" 
                     k "So that’s how I learned to do most of the things I do...!"
+                    show ken awkward
                     b "Ohh! Yeah, we’re like... forgetting twinsies."
+                    show ken awkwardt
                     k "Oh. Aha. Yeah..."
+                    show ken awkward
                     b "...Yeah. Just for now! Until I remember again."
+                    show ken default
                     # return to choices
 
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
+                    show ken awkwardt
                     k "Hah, yeah, I do quite a lot of, ahh—things...!"
                     k "I don’t know if you, erm, remember this but, like... we planned on going roller skating together!" 
+                    show ken worriedt
                     k "It’s—it’s not important anymore though, o-of course! Especially since ahh—"
                     k "Your... leg. I was... yeah, I was wondering if your leg was, uhm, okay?"
+                    show ken worried
                     b "Ah... my leg?"
                     #VA: Kendra is visibly shaken recalling the accident, says "accident" in a low voice/whisper 
+                    show ken worriedt
                     k "Well... it looked pretty bad in the a-accident, and you’ve been a little wobbly while we talk."
                     #VA: Whispers "accident" 
+                    show ken worried
                     b "Oh, you saw the... {i}accident{/i}?"
+                    show ken worriedt
                     k "I was, uh, the one who called the emergency hotline..."
+                    show ken worried
                     b "Oh..."
                     b "Um, I’ve healed a lot! So maybe... maybe we can still roller skate? I mean. If you still want to-! Even if I don’t remember..."
+                    show ken awkwardt
                     k "It’s...it’s whatever— I-I mean— don’t, uhm... don’t worry too hard about it! Maybe next time, when you’re..."
                     k "...Feeling better." 
+                    show ken awkward
                     b "Okay..."
+                    show ken default
                     # return to choices
 
                 "How's work?" if not howsworkkendra:
                     $ howsworkkendra = True
                     b "How’s work been for ya?"
+                    show ken defaultt
                     k "Which one?"
+                    show ken default
                     b "Oh... this one?"
+                    show ken defaultt
                     k "Ahh, it’s like— you know, the usual. So much of this and that, it’s a little crazy compared to my other jobs!"
                     k "Honestly, how can you guys manage this much work {i}all{/i} the time?"
+                    show ken default
                     b "Ough... sorry you have to deal with all that..."
+                    show ken awkwardt
                     k "But it’s okay! I-I’ve almost finished with everything before our team meet, so... it’s fineee."
+                    show ken awkward
                     b "Oh! Wow! That’s really... Wow! Congrats and, uh, good job? Color me surprised!"
+                    show ken awkwardt
                     k "Ahaha, it’s—it’s nothing! I’m just trying my best, like everyone else!"
+                    show ken default
                     # return to choices
 
                 "How's life?" if not howslifekendra:
                     $ howslifekendra = True
                     b "How’s life?"
+                    show ken awkwardt
                     k "Uh... good."
                     k "Yeah— ahh, yes. Just alright! Nothing too bad, I suppose."
                     k "How about... you?"
+                    show ken awkward
+
                     b "Me!?"
                     #
                     #VA: Dont shout too loud for the words in caps but shift the tone!
                     b "I’m not really thinking ‘bout it too much. I’m mostly thinking about you, WAIT. LIKE. HOW YOU’RE DOING??? Yeahh... like an assistant manager thinks about employees and— wellbeing..."
+                    show ken surprisedt
                     k "ME?! AHAHA OH! Oh like— like normal amounts of thinking about me! Your— your uhm, underling?"
+                    show ken fear
                     b "UNDERLING!?"
+                    show ken feart
                     k "S-SORRY! I mean, teammate! Like I said I’m..."
+                    show ken awkwardt
                     k "Good." 
+                    show ken awkward
                     b "Me. Me, too."
+                
                     # return to choices
-
+        
         b "Well, I hope you the best, uh, finishing up what you gotta do before the meet!"
         k "Ah! You’re going? Thank... thank you!"
         jump rooms
@@ -444,25 +478,119 @@ label deeztalking:
 
    
 label mjtalking2:
+    scene room_1
+    $ talkedtomj = True
     b "Good morning, MJ!"
     m "Good morning! How are you?"
     b "Good! How are you?"
     m "Good!"
+    jump rooms2
 label deeztalking2:
     #Click Deez
+    scene room_2
+    $ talkedtodeez = True
     b "Good morning, Deez!"
     d "Good morning."
     b "Do you need any help with anything?"
     d "Never." 
     b "Cool!"
+    jump rooms2
 label kendratalking2:
     #Click Kendra
+    scene room_3
+    $ talkedtokendra = True
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
     b "Hiya!"
     k "Hi!" 
+    jump rooms2
+# DAY 3
+#Office Walk
+label kendratalking3:
+    #Click Breakroom
+    b "I need to go to Kendra’s cubicle."
 
-    jump breaktime2
+    #when u enter cubicles room, auto dialogue
+    #Barby slow turn to Kendra gulp!
+
+    #Kendra
+    b "...Good morning, Kendra...!"
+    b "Here. I... I made you breakfast."
+    b "It's a dish my parents used to make me. It's, uh, a soup kind of, but with rice... chicken, toasted garlic... I put an egg in this one."
+    b "It’s called arroz caldo and I thought you'd like it."
+    b "It’s still a little hot, so be careful."
+    k "{b}... Ugh.{/b}"
+    b "Okay...! I need to... uhm—"
+    b "Drink sand. Bye."
+
+    #Everyone huddled up away from Kendra in the breakroom 
+
+    d "H-hey! Barby’s here."
+    m "Right on time! Did ya see Kendra? How’s she holding up?"
+    b "Aoughhhgghhggggg."
+    a "She was already here when I clocked in! I don't think she went home... she's just been working... and working—"
+    a "She just keeps asking for more work... I’m really worried."
+    b "Oh..."
+    a "I don’t know what we’re going to do... we kind of needed Kendra for a lot of things." 
+    m "Should we tell the higher ups about this? Or anyone at all?" 
+    d "Will they believe us? This... this doesn’t seem like a very logical event."
+    b "I’m sure we can... figure something out..."
+    a "We already tried to tell someone, remember? But no one picked up."
+    m "That’s because it was after hours. Maybe if we try again, we’ll get someone this time." 
+
+    #Contact Someone
+    b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
+    a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
+    a "Oh- oh right, you don’t remember. Oopsies."
+    b "I saw the report! Don’t worry; I know."
+    m "Already on it."
+    # call sfx
+    "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
+    "What can I do to help you?"
+    d "A lot."
+    m "Well said."
+    d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
+    "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
+    b "Huh?"
+    a "T-team meeting exercises?" 
+    "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
+    " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
+    "So go out there and fly high!"
+    a "W-wait, there’s gotta be more—!!"
+    "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
+    b "... Okay."
+    a "That’s. That's it? No way..."
+    d "That guy frankly sucks."
+    m "I guess we just have to try our best moving forward."
+
+    #What is happening to Kendra?
+    b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
+    m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
+    a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
+    d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
+    b "Let’s just not try to touch her! Like, at all for now."
+
+    #Kendra work habits
+    b "You said she’s still working?"
+    a "Yeah, but when I went to check on her output... she’s barely done anything."
+    a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
+    b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
+    a "Oh Barbs, wish I knew, I really wish I knew..."
+
+    b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
+    m "Not to worry, I’m more than willing to help carry the work load."
+    d "I too, can help carry the work load."
+    m "Aw, thanks Deez, but you’re still just an intern. There isn’t really much you can do to help."
+    d "Oh... I knew that. Of course."
+    a "Are you sure MJ? There’s so much that needs to be done and–"
+    m "Anything you throw at me, I can accomplish easy peasy." 
+    m "Just leave it to me! I’ll get us up to speed in no time."
+    b "Well-"
+    b "Thanks, MJ, it’s kinda... reassuring? To see you carry this energy despite everything."
+    b "But you’re not alone! I can also help out plenty."
+    a "Me too! I’ll do my best to make this project a success."
+    a "And Deez, don’t worry, you can still help out by helping me out!"
+    d "...fine. Okay. Since you... need help, I can help you."
 #DAY 5
 label kendratalking5:
     b "Good morning, Kendra."

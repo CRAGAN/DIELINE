@@ -245,15 +245,113 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
             style "quick_menu"
+           
+            hbox:
+                xpos -370
+                ypos  -13
+                spacing 50
+                button:
+                    xysize (64, 57)
+                    action ShowMenu('history')
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/log_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/log_hover.png", xalign=0.5, yalign=0.5) 
+
+                button:
+                    xysize (64, 57)
+                    action Rollback()
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/back_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/back_hover.png", xalign=0.5, yalign=0.5) 
+
+                button:
+                    xysize (64, 57)
+                    action Preference("auto-forward", "toggle")
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/auto_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/auto_hover.png", xalign=0.5, yalign=0.5)         
+
+                button:
+                    xysize (64, 57)
+                    action Skip() alternate Skip(fast=True, confirm=True)
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/skipping_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/skipping_hover.png", xalign=0.5, yalign=0.5)         
+
+
+            hbox:
+                xpos 140
+                ypos  -13
+                spacing 50
+                button:
+                    xysize (64, 57)
+                    action ShowMenu('save')
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/save_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/save_hover.png", xalign=0.5, yalign=0.5) 
+
+                button:
+                    xysize (64, 57)
+                    action ShowMenu('load')
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/load_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/load_hover.png", xalign=0.5, yalign=0.5) 
+
+                button:
+                    xysize (64, 57)
+                    action ShowMenu('preferences')
+
+                    idle_background "gui/button/icons/quick_idle.png"
+                    hover_background "gui/button/icons/quick_hover.png" 
+
+                    idle_foreground Image("gui/button/icons/settings_idle.png", xalign=0.5, yalign=0.5) 
+                    hover_foreground Image("gui/button/icons/settings_hover.png", xalign=0.5, yalign=0.5)                                                
+
+            # hbox:
+            #     xpos -550
+            #     ypos  -25
+            #     spacing 30
+            #     imagebutton auto "gui/button/icons/log_%s.png" action ShowMenu('History')
+            #     imagebutton auto "gui/button/icons/back_%s.png" action Rollback()
+            #     imagebutton auto "gui/button/icons/auto_%s.png" action Preference("auto-forward", "toggle")
+            #     imagebutton auto "gui/button/icons/skipping_%s.png"action Skip() alternate Skip(fast=True, confirm=True)
+
+
+            # hbox:
+            #     xpos 300
+            #     ypos  -25
+            #     spacing 30
+            #     imagebutton auto "gui/button/icons/save_%s.png" action ShowMenu('save')
+            #     imagebutton auto "gui/button/icons/load_%s.png" action ShowMenu('load')
+            #     imagebutton auto "gui/button/icons/settings_%s.png" action ShowMenu('preferences')
+
+
+            # textbutton _("Back") action Rollback()
+            # textbutton _("History") action ShowMenu('history')
+            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("Auto") action Preference("auto-forward", "toggle")
+            # textbutton _("Save") action ShowMenu('save')
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
+            # textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

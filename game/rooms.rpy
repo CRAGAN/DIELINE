@@ -212,6 +212,7 @@ label apollo_manager_reply:
     show managersroom
     show lighter:
         blend 'add' alpha 0.3
+    $ quick_menu = True
     if day == 1:
         a "Now go on, Barby, those IDs aren’t going to distribute themselves."
         jump rooms
@@ -595,6 +596,12 @@ screen breaktime2():
                 action [With(Fade(0.4, 0.0, 0.4)), Call("apollotalking22")]
                 at transform:
                     zoom 0.6
+            imagebutton:
+                focus_mask True
+                idle "images/computer.png"
+                hover "images/computer_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
+                    
             
 
         # ROOM 3

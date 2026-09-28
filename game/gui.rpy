@@ -18,7 +18,12 @@ define config.check_conflicting_properties = True
 ################################################################################
 ## GUI Configuration Variables
 ################################################################################
-
+init:
+    define config.mouse = { }
+    define config.mouse['default'] = [('gui/cursor.png', 0, 0)]
+    define config.mouse['pressed_default'] = [ ( 'gui/cursor.png', 0, 0)]
+    define config.mouse['button'] = [ ( 'gui/cursor.png', 0, 0)] 
+    define config.mouse['pressed_button'] = [ ( 'gui/cursor.png', 0, 0),]
 
 ## Colors ######################################################################
 ##
@@ -33,14 +38,14 @@ define gui.idle_color = '#888888'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#000000'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#e06666'
+define gui.hover_color = '#ffffff'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = '#000000'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
@@ -51,7 +56,7 @@ define gui.muted_color = '#510000'
 define gui.hover_muted_color = '#7a0000'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
+define gui.text_color = '#000000'
 define gui.interface_text_color = '#ffffff'
 
 
@@ -107,21 +112,21 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_xpos = 300
+define gui.name_ypos = -215
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name,
 ## or None to automatically size it.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 357
+define gui.namebox_height = 151
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(0,0,0,0)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -131,8 +136,8 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_xpos = 302
+define gui.dialogue_ypos = 0
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -212,7 +217,7 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
+define gui.choice_button_text_idle_color = '#000000'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
@@ -349,15 +354,15 @@ define gui.history_spacing = 0
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
-define gui.history_name_xpos = 233
+define gui.history_name_xpos = 200
 define gui.history_name_ypos = 0
 define gui.history_name_width = 233
 define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
-define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+define gui.history_text_xpos = 0
+define gui.history_text_ypos = 50
+define gui.history_text_width = 920
 define gui.history_text_xalign = 0.0
 
 

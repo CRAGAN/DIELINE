@@ -155,8 +155,7 @@ screen say(who, what, is_sub=False, is_id=False):
 
         ## If there's a side image, display it above the text. Do not display on
         ## the phone variant - there's no room.
-        if not renpy.variant("small"):
-            add SideImage() xalign 0.0 yalign 1.0
+
 
 
 

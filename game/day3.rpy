@@ -155,7 +155,7 @@ label day3:
     b "You know, give it a second and I’d believe you. I got the nickname before my parents gave me the name Fredrick." 
     d "Huh?"
     d "Wait— no! Your parents are wrong! First names are called first names because they come first!" 
-    b "Yeah, you know babies without names sometimes get labelled "Baby" as a temporary name?"
+    b "Yeah, you know babies without names sometimes get labelled 'Baby' as a temporary name?"
     d "Uhhh— {i}YEAH{/i}! Of course! They uhm... simply added the letter r into it, yes—"
     b "My nickname has nothing to do with that. It was an incident at a barbershop."
     b "... I was a child and I went in and pretended to be a barber."
@@ -172,7 +172,7 @@ label day3:
 
     #Apollo
     # Break room
-    Bring up to apollo (MJ is there) that kendra thought she hated her
+    #Bring up to apollo (MJ is there) that kendra thought she hated her
     m "Hi, Apollo!"
     a "Hello, MJ! Here to take your break?"
     m "Oh, no, I’m actually here to ask if you need any help."

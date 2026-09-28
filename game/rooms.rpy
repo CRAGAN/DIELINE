@@ -220,7 +220,7 @@ label apollo_manager_reply:
         a "Good morning, Barby!"
         a "Ready to give it our all today?"
         b "You betcha!"
-    jump rooms
+    jump rooms2
     
 
 label managerroom:
@@ -489,48 +489,26 @@ screen rooms2():
         elif current_room == 3:
             add "images/bg overworld/borders1.png"
             
-
-            imagebutton:
-    
-                xpos 0.176
-                ypos 0.409
-                
-                idle "images/door_idle.png"
-                hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("storage")]
-                at transform:
-                    blend 'add'
-                    zoom 0.29
-            imagebutton:
-                xpos 0.597
-                ypos 0.4087
-                
-                idle "images/door_idle.png"
-                hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("bathroom")]
-                at transform:
-                    blend 'add'
-                    zoom 0.293
-            imagebutton:
-                xpos 0.79
-                ypos 0.408
-                
-                idle "images/door_idle.png"
-                hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("janitor")]
-                at transform:
-                    blend 'add'
-                    zoom 0.297
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
+       
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.22 xpos 0.25 ypos 0.45
             imagebutton:
                 focus_mask True 
                 xpos 0.5
-                ypos 0.2
+                ypos 0.4
                 idle "images/deez/standing/deez_standing.png"
                 hover "images/deez/standing/deez_standing_hover.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking2")]
                 at transform:
-                    zoom 0.4
+                    zoom 0.25
+            imagebutton:
+                focus_mask True 
+                xpos 0.4
+                ypos 0.45
+                idle "images/kendra/standing/kendra_standing.png"
+                hover "images/kendra/standing/kendra_standing_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("kendratalking2")]
+                at transform:
+                    zoom 0.3
         # ROOM 4             
         # ROOM 4
         elif current_room == 4:
@@ -593,7 +571,7 @@ screen breaktime2():
                 ypos 0.07
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("managerroom")]
+                action [With(Fade(0.4, 0.0, 0.4)), Call("managerroom2")]
                 at transform:
                     blend 'add'
         # ROOM 2
@@ -604,19 +582,16 @@ screen breaktime2():
                 focus_mask True
                 idle "images/computer.png"
                 hover "images/computer_hover.png"
-                if talkedtoapollo and talkedtokendra and talkedtodeez and talkedtomj:
-                    action [With(Fade(0.4, 0.0, 0.4)), Call("minigametime")]
-                else:
-                    action [Notify("I'd better check on everybody first!")]
+                action [Notify("I've done my work already")]
                     
             
             imagebutton:
                 focus_mask True 
                 xpos 0.6
                 ypos 0.33
-                idle "images/mj/standing/mj_standing.png"
-                hover "images/mj/standing/mj_standing_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
+                idle "images/apollo/standing/apollo_standing.png"
+                hover "images/apollo/standing/apollo_standing_hover.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("apollotalking22")]
                 at transform:
                     zoom 0.6
             
@@ -633,7 +608,7 @@ screen breaktime2():
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("storage")]
+                action [With(Fade(0.4, 0.0, 0.4)), Call("storage2")]
                 at transform:
                     blend 'add'
                     zoom 0.29
@@ -643,7 +618,7 @@ screen breaktime2():
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("bathroom")]
+                action [Notify("I don't need to go in there right now")]
                 at transform:
                     blend 'add'
                     zoom 0.293
@@ -653,20 +628,11 @@ screen breaktime2():
                 
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("janitor")]
+                action [Notify("I don't need to go in there right now")]
                 at transform:
                     blend 'add'
                     zoom 0.297
             add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
-            imagebutton:
-                focus_mask True 
-                xpos 0.5
-                ypos 0.2
-                idle "images/deez/standing/deez_standing.png"
-                hover "images/deez/standing/deez_standing_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking22")]
-                at transform:
-                    zoom 0.5
         # ROOM 4             
         # ROOM 4
         elif current_room == 4:
@@ -698,7 +664,9 @@ screen breaktime2():
                 hover "arrow_hover.png"
 
                 if current_room == 3 and not breakroom_unlocked:
-                    action [Notify("It's not your break yet"),]
+                    action [Notify("I should check on the others"),]
+                elif current_room == 3 and breakroom_unlocked:
+                    action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking22")]
                 else:
                     action [
                         SetVariable(
@@ -711,4 +679,9 @@ screen breaktime2():
                 xpos 0.8
                 ypos 0.5
                 focus_mask True
-    
+label storage2:
+    $ storage = True
+    jump mjtalking22
+label managerroom2:
+    $ managerroom = True
+    jump kendratalking22

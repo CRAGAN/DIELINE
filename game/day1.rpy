@@ -108,7 +108,8 @@ label rooms:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
-    if talkedtodeez and talkedtokendra and talkedtomj:
+    if talkedtodeez and talkedtokendra and talkedtomj: 
+        scene black with dissolve
         b "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
         b "Just gotta get on my computer."
@@ -117,10 +118,10 @@ label rooms:
         $ talkedtoapollo = False
         $ talkedtomj = False
         $ talkedtodeez = False
-        call screen email_minigame # FROG OVER HERE
+        #call screen email_minigame # FROG OVER HERE
         jump breaktime1
     call screen rooms with fade
-    # call screen officewalk
+    # call screen officewalkl
     # if current_id == "M.J Grey":
     #     b "Alright, gotta go check on some things!"
     #     m "Okay! Let me know if you need help!"
@@ -490,8 +491,8 @@ label clockingout:
     a "I didn't know what to do! I was like running through different people in my head and then I thought, oh! Barby’s really cool and loves helping people!"
     a "But, all I did was turn my head to look you in your bed, and and—" 
     a "They nodded and said {i}’Oh so Fredrick Ibarra is your new assistant? Perfect, thank you!’{/i} and started walking away!"
-    a "Then I said ‘Wait! What about him?! He can’t consent and sign or anything!’{/i}"
-    a "{i}’Oh its okay, we signed it for him! Come to work within 6-7 weeks or you’re BOTH fired! Goodbye!’{/i}"
+    a "{i}Then I said ‘Wait! What about him?! He can’t consent and sign or anything!’"
+    a "{i}'Oh its okay, we signed it for him! Come to work within 6-7 weeks or you’re BOTH fired! Goodbye!'{/i}"
     a "The worst part is that they didn't even leave the flowers, they just brought them in, showed them, and left..."
     a "And that’s the end of my flashback via post-it-notes." 
     show apo default

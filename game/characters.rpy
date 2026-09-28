@@ -128,14 +128,28 @@ image apo default =At("images/apollo/apollo default.png", Transform(zoom=0.8), s
 image apo hm =At("images/apollo/apollo hm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo awkward =At("images/apollo/apollo awkward.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo serious =At("images/apollo/apollo serious.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
-image apo worried =At("images/apollo/apollo worried.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo worried =At("images/apollo/apollo worriedm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo nervous =At("images/apollo/apollo nervous.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo surprised =At("images/apollo/apollo surprised.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo fear =At("images/apollo/apollo fear.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo happy =At("images/apollo/apollo happy.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo weird =At("images/apollo/apollo weird.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 
 image apo defaultt = At(
     Animation("images/apollo/apollo default.png", 0.15, 
     "images/apollo/apollo defaultm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Apollo")
+)
+image apo weirdt = At(
+    Animation("images/apollo/apollo weird.png", 0.15, 
+    "images/apollo/apollo weirdm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Apollo")
+)
+image apo happyt = At(
+    Animation("images/apollo/apollo happy.png", 0.15, 
+    "images/apollo/apollo happym.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("Apollo")
 )

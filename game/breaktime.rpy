@@ -112,7 +112,7 @@ label deezandapollo:
                     b "But have you heard how we met?"
                     show de thinkingt at downward
                     d "I’ve heard something, but you can share more details."
-                    show de thinkingk
+                    show de thinking
                     b "Oh... Well, it was ‘cause Apollo was really cool."
                     d "Yeah."
                     show apo defaultt at downward
@@ -352,11 +352,12 @@ label breaktime2:
     call screen breaktime2
 label kendratalking22:
     $ talkedtokendra = True
+    scene managerroom
     show ken surprised at center, up
     b "Hiya, Kendra! That's a lot of work you seem to be handling during break time."
     show ken surprisedt
     k "Huh! O-oh! It's break time?"
-    show ken nervoust
+    show ken 
     k "Sorry! I-I got so swept up in all this work, haha!"
     k "I'll just finish these last few things!"
     show ken surprised
@@ -443,12 +444,12 @@ label kendratalking22:
                 show ken awkward
                 b "Aw... Well, I'd love to help you two become friends!" 
                 show ken awkwardt
-                k "Oh? Aw， really? Thank you so much..." 
-                b "Yeah! How about... uh， remember that roller skating idea you mentioned yesterday? What if we all went together?" 
+                k "Oh? Aw, really? Thank you so much..." 
+                b "Yeah! How about... uh, remember that roller skating idea you mentioned yesterday? What if we all went together?" 
                 show ken surprisedt
                 k "{i}Oh.{/i}" 
                 show ken awkwardt
-                k "Um — well， if you're more comfortable with that， then yeah! Haha! Of course!" 
+                k "Um — well, if you're more comfortable with that, then yeah! Haha! Of course!" 
                 k "Cause... like. Person you know- better, more comfortable coming with them- yeah- haha! Of course!"
                 k "All three of us."
                 show ken awkward
@@ -495,8 +496,8 @@ label kendratalking22:
                 show ken surprisedt at jumper
                 k "Aah, you– you really don't have to! Do any of these things." 
                 show ken surprised
-                b "Kendra，please，take the help; it's only fair. You're already helping us so much!"  #(Note the change from comma to semicolon for better flow) 
-                b "And besides it's not too much effort for me to do any of these things. It's okay- I gotta make breakfast for myself and my roommate，anyway."  (Note the change from comma to semicolon for better flow) 
+                b "Kendra,please,take the help; it's only fair. You're already helping us so much!"  #(Note the change from comma to semicolon for better flow) 
+                b "And besides it's not too much effort for me to do any of these things. It's okay- I gotta make breakfast for myself and my roommate,anyway." #(Note the change from comma to semicolon for better flow) 
                 show ken defaultt
                 k "Barby... thank you so much."
                 show ken default
@@ -520,10 +521,10 @@ label kendratalking22:
                 b "W-what?! That's so young! My condolences—wait, I mean—"
                 show ken defaultt
                 k "Hahaha, no, it's alright! I kinda had to since I was just by myself for a long time... b-but you don't need to worry anymore! I think... I think I'm pretty happy now." 
-                k "Uhh yeaah, I am maybe... more than a little stressed out over the tasks given to me，but I really am doing alright!"  #(Note the change from comma to semicolon for better flow) 
-                k "I-I don't think you really remember，but I've adopted a kid，andI co-parent with a friend，not to mention this lovely job and great coworkers! It's all l could ever ask for..."  #(Note the change from comma to semicolon for better flow) 
+                k "Uhh yeaah, I am maybe... more than a little stressed out over the tasks given to me,but I really am doing alright!"  #(Note the change from comma to semicolon for better flow) 
+                k "I-I don't think you really remember,but I've adopted a kid,andI co-parent with a friend,not to mention this lovely job and great coworkers! It's all l could ever ask for..."  #(Note the change from comma to semicolon for better flow) 
                 show ken default
-                b "That's... wonderful Kendra，really! I'm happy for you..."  #(Note the change from comma to semicolon for better flow) 
+                b "That's... wonderful Kendra,really! I'm happy for you..."  #(Note the change from comma to semicolon for better flow) 
                 b "And happy to, uh, be a part of it and see you happy."
                 show ken fear at jumper
                 b "Maybe we can just be more than great coworkers in the future!" 
@@ -548,7 +549,9 @@ label kendratalking22:
     #Apollo 
 label apollotalking22: #apollo at cubicles
     $ talkedtoapollo = True
-    show apo default
+    scene room_2
+    show apo default at center
+    with dissolve
     b "Hiya, Apollo! It's break time."
     show apo defaultt
     a "Oh hi Barbs! Aaahhh it is? Oh cracker jackers, I lost track of time!"
@@ -556,6 +559,7 @@ label apollotalking22: #apollo at cubicles
     b "Ah! Haha! You really need to stop saying things like that!"
     show apo defaultt
     a "I'll just finish up over here, first! Moving my things from the cubicle to the new office is taking a bit, but I need to catch a breath, anyway. How ‘bout a chat?"
+    show apo default
     $ kendraworry = False
     $ amiweird = False
     $ dnd = False
@@ -565,85 +569,133 @@ label apollotalking22: #apollo at cubicles
                 $ kendraworry = True
 
                 b "I'm a little concerned... that was a lot of roles we pushed on Kendra, wasn't it?"
+                show apo worriedt
                 a "Yeah... I'm a big bunch worried, too."
                 a "But I don't know who else we could've given it to. She's, like, the best and only pick for all those tasks, after all."
+                show apo worried
                 b "That's true, but still... isn't that a lot for one person?"
                 b "Maybe we should, like... do something about it?"
+                show apo worriedt
                 a "I agree! I've been trying to think of something, honestly, but..."
                 a "Who else could do those things, honestly? :(" 
                 a "I know MJ is already helping her out a bit! And she's teaching Deez, so when he figures things out, he can help more! Especially since he said he already knows most of the stuff, anyway."
+                show apo hm
                 b "I just, you know, it feels bad..." 
                 b "But we also have a lot to do on our ends..." 
+                show apo worriedt
                 a "Yeah... man... I. I should apologize to her." 
                 a "I'm the manager; I'm the one managing this whole thing... she shouldn't have to get overworked." 
                 a "Ogh... and to think I did it all in a team meeting in front of everyone... ogh... ough..." 
                 a "I'm such a dummy! I'm sorry, Kendra..." 
+                show apo worried
                 b "... Hey." 
                 b "You... maybe you should talk to her... you know?" 
+                show apo worriedt
                 a "... I dunno... would she even want to talk to me? She must—she must hate me after everything I've done!" 
-                b "Hey，it's worth a shot，right?" 
+                show apo worried
+                b "Hey,it's worth a shot,right?" 
                 b "And don't worry, I'm sure she doesn't hate you or is upset with you about it..." 
                 b "If anything, she looks... just nervous about getting it done right. So, honestly, she might need the encouragement."
                 b "And if there's anyone I know who's great at giving that... well..."
+                show apo surprised at jumper
                 a "?"
+                show apo happyt at jumper
                 a "Aw, shucks, Barby!"
                 a "You're right. It's worth a shot. I'll talk with her."
                 a "Thanks a lot... I think I needed that big ol' push, haha."
+                show apo happy
                 b "Of course! Anything for my buddy boss!"
+                show apo defaultt at up
                 a "Heeey... hahaha! That's why you're my favorite assistant manager!"
+                show apo default
    
             "Am I acting weird?" if not amiweird:
                 $ amiweird = True
                 b "Hey, Apollo... have I been acting weird since the accident?"
+                show apo worriedt at jumper
                 a "Oh nooo! No, no, no, Barby!"
+                show apo nervoust
                 a "... Well. Actually... yes..."
+                show apo worriedt
                 a "You just seem to respond to things like you don't really remember them? Or not as much? It kinda catches me off guard sometimes ‘cause you're not usually this forgetful."
+                show apo worried
                 b "Oh... Well, yeah... well."
                 b "It's just some sort of thing... But it'll get better!"
                 b "I remember more and more at a time, so it's probably just some... post- accident stuff."
+                show apo worriedt
                 a "Yeah... MJ said that sometimes people get post- traumatic amnesia or something... but that it doesn't usually last this long."
+                show apo worried
                 b "Really? I-I mean it's not really amnesia, it's just a bit of forgetting! Nothing too serious!"
+                show apo worriedt
                 a "Barby..."
                 a "You can always open up to me about things, you know? Not only as your manager, but as your friend too..."
+                show apo worried
                 b "Mngh— it's really okay Apollo! Don't worry about me, I'm aye-okay! I'm doing better everyday!" 
+                show apo awkwardt
                 a "Okay... well, if you're sure it'll be okay, then I'm sure it'll be okay..."
+                show apo worriedt
                 a "But — listen, Barbs. You're still alrighty and tighty, no matter how frazzled and shaken the accident might've left you."
+                show apo worried
                 b "Yeah... thanks! I just... I don't wanna drag anything down, haha!"
+                show apo worriedt
                 a "You never do! Honestly, I'm worried I might be..."
+                show apo worried
                 b "Really??? Why?"
+                show apo awkwardt
                 a "Well- my... thingy. It's been hard to type and write, which is, like, most of my job!"
                 a "And, to be honest, I'm still kinda stressing. I feel like I'm really not good at... or maybe not even cut out for this kinda thing... I know it's really, really not good to admit!"
+                show apo awkward
                 b "Apollo, you're trying your best. You're literally just learning how to do all of this, and, well, I think you've been getting better!"
+                show apo awkwardt
                 a "Ough, aw, thank you!"
                 a "Hey, if you think I'm doing okay, then, you're doing okayer!! Hehe! So, don't worry about ‘acting weird' or anything after the accident."
                 a "...Except."
                 a "Oh shucks. Insurance."
+                show apo awkward
                 b "Don't worry! I've been handling it!"
+                show apo happyt at jumper
                 a "Oh! Okie! Thank you!" 
                 a "I keep getting calls from emails and lawyers, actually." 
+                show apo awkward
                 b "Me, too. It's like- I think it's a call from work- something important- cause they don't even say they're calling about the crash until later."
+                show apo angryt at jumper
                 a "Right?? So you end up answering and listening to them all and aghh!!!"
+                show apo default
             
             "Dungeons & Dragons" if not dnd:
                 $ dnd = True
                 b "We talked about playing a tabletop sometime, right?"
+                show apo happy at jumper
                 a "Oh death, yes yes!! I would love to play with everyone! Maybe... maybe we can play with our whole team after this project!" 
                 a "Haha, I should use my new boss—err, managerial powers to make everyone attend a required job mandated roleplay thing!" 
                 a "OH! That sounds bad uhh— I'm kidding, haha! If they don't want to play, I don't want to force them!"
+                show apo awkwardt
                 a "Only if they want to; it's not everyone's cup of coco after all..."
+                show apo awkward
                 b "Oh, well I'm sure there's at least one person here who'd love to play with us, and we'll make it easy for new players!"
                 b "Nothing too intense, I could be the dungeon master for our first campaign! Just something short and sweet— I can see it now, a fantasy amusement park adventure full of twist and turns!"
+                show apo defaultt
                 a "Ohh that sounds like a lot of fun! Hehe, surely it'll be a rollercoaster of a ride!" 
+                show apo default
                 b "I was just wondering– what classes would our team be? Just in theory."
+                show apo awkwardt
                 a "In D&D? OMD, like classic fantasy, player handbook style?"
+                show apo awkward
                 b "Yeah, yeah. Like... I think you'd play a pretty good cleric."
+                show apo surprised
                 a "A cleric? What do they do?"
+                
                 b "Ohh you know, if you're our manager, you can totally be our cult leader cleric? Haha, joking, I mean you'd be a great healer—"
+                show apo weirdt
                 a "WHAT? HUH? CULT? ME IN A CULT? WHAAAT? HAAHAAHAAHAAA—"
+                show apo weird
                 b "Hahahaha...?"
+                show apo weirdt
                 a "You're so silly! Let's talk about something else!"
+                show apo default
 
     b "Oh, do you need help moving your things, actually?"
+    show apo happy
     a "Aww thanks Barbs, but I'm good! Go take your well deserved break!"
     b "Well, if you say so! See you in the break room!" 
     jump breaktime2
@@ -653,10 +705,14 @@ label apollotalking22: #apollo at cubicles
 label mjtalking22:
     $ talkedtomj = True
     scene storage
+    show m default at center
+    with dissolve
     m  "Hum hum hum..."
     b "Hiya, MJ! I see you're hard at work."
     b "But it is break time now."
+    show m defaultt
     m  "Oh! I didn't notice. Thanks for telling me."
+    show m default
     b "Of course."
     $ carry = False
     $ whyworkhere = False
@@ -665,59 +721,96 @@ label mjtalking22:
         menu sirtalkalot:
             "Carrying" if not carry:
                 $ carry = True
+
                 b "Did you bring all these boxes in here?"
+                show m defaultt
                 m  "Yep! I was helping Kendra."
                 m  "Guess what? Turns out I can carry more than five pounds if I really try."
+                show m default
                 b "Wow! That's great to hear."
+                show m thinkingt
                 m  "But only for a few seconds though. Which means I keep having to put stuff down and pick them up again."
                 m  "At this rate, though, I'll probably start getting better at it, soon."
+                show m default at up
                 b "Aw. Well, that's okay. You don't need to force yourself if you really can't handle it."
+                show m defaultt
                 m  "Hah! That's funny. Good one, Barby!" 
                 m  "Assistant manager saying there's no need to push yourself if you can't handle a task... that's a good one!" 
+                show m default
                 b "What?" 
+                show m defaultt
                 m  "I'm just kidding with you, Barby. I know you mean it." 
                 b "Oh! Okay!" 
                 b "... I know I'm not the best assistant manager; is there anything I can do to, um. Do better than we are right now?" 
+                show m defaultt
                 m  "Hm... I think you'll learn with time. We still have a while together as a team, so you can take some effort every day and learn how to work with each employee and their strengths!" 
+                show m default
                 b "Woah... you're right! Thanks, MJ!" 
+                show m defaultt
                 m  "And be sure to learn how to work with your own, too." 
+                show m default
                 b "I'll try my best!"
            
             "Why work here?" if not whyworkhere:
                 $ whyworkhere = True
                 b "So... how'd you start working here?"
+                show m hmt
                 m "It's nothing complicated. My... old job wasn't working out, they had positions open, so I applied. Then here I am."
+                show m default
                 b "What was your old job?"
+                show m defaultt
                 m "Haha, it wasn't really much of a job, really. I just sang and played different instruments wherever for whoever hired me."
+                show m default
                 b "Oh! That sounds fun."
+                show m hmt
                 m "It was. Unfortunately, it couldn't pay the bills, so I... needed something more stable."
+                show m hm
                 b "What about now? What do you do now?"
+                show m defaultt
                 m "I work here at SFC, of course!"
+                show m default
                 b "And... what do you usually do here?"
+                show m defaultt
                 m "I usually walk around and talk to people. I'm pretty good at that."
+                show m hmt
                 m "And now, picking up packages that weigh more than five pounds."
+                show m hm
                 b "Oh... I see!"
-                b "Oh... I see!"
+                
                 b "That still doesn't actually explain what their job is..."
+                show m hmt
                 m "Why did you start working here?"
+                show m hm
                 b "Me? Uh. It was just. Job, y'know. Job that hired." 
+                show m hmt
                 m "Are you unsatisfied with your work here?"
+                show m hm
                 b "No, no, no, no! Not at all! Very satisfied here!" 
+                show m thinkingt
                 m "... Wow. That was a reaction."
                 m "You're not in trouble or anything, Barby. It's not like I'm management."
+                show m hm 
                 b "... Right."
                 b "I'm management."
+                show m defaultt
                 m "You sure are!"
+                show m default
 
             "Humming" if not humm:
                 $ humm = True
                 b "You were humming a cute ‘lil tune earlier!"
+                show m defaultt
                 m "Oh? I was?"
+                show m default
                 b "Yeah! May I know what it was?"
+                show m defaultt
                 m "It's probably one of my older compositions."
+                show m default
                 b "Really? That's so cool!"
+                show m happyt
                 m "Aw, thank you, but it's nothing special, really." 
                 m "I could probably come up with something better if I had the time, which... I don't really have much of these days."
+                show m default
                 b "Oh... but it's still really nice though!"
                 m "I 'preciate it!"
     jump breaktime2
@@ -726,6 +819,8 @@ label mjtalking22:
         #Click Breakroom (Haven't talked to Everyone)
 label deeztalking22:
     $ talkedtodeez = True
+    scene room_4
+    show de default
     b "Hiya, Deez! Taking your break already, are you?"
     b "You're the only one who got the memo right away, haha! I had to tell everyone else."
     d "What? No."
@@ -752,68 +847,73 @@ label deeztalking22:
     b "Hiya, Apollo!"
     a "Yeah! Not to interrupt! You were talking to Deez?"
     b "Yep!"
+    $ vocab = False
+    $ family = False
+    $ emailschool = False
+    while not (vocab and family and emailschool):
+        menu jumpy:
+            "Vocabulary" if not vocab:
+                $ vocab = True
+                b "By the way, you have an interesting vocabulary."
+                d "What is that supposed to mean."
+                b "Oh, it's just, um, interesting! I just wonder where you got it from."
+                d "This is how I was taught. Is there something wrong with the way I was taught?"
+                a "A-"
+                k "N-Not exactly, but... don't you think there's still more you can learn?"
+                m "Yes! They say you never stop learning no matter what age."
+                d "I don't know if I need to learn more, though. I know plenty."
+                m "Well Deez, you know what they say. The smarter you are, the more that you learn."
+                d "Wait, really?"
+                d "I knew that, but. I'm surprised you know that."
+                d "But I'm always learning... other things. So. If you want to, you can... show me things, too, so it's, like. Multiplied."
+                k "Hey... haha! You don't have to keep insisting that you know everything..."
+                b "*cough* But even if you do..."
+                k "Yeah- e-even if you do, we'll help you learn more things!"
+                a "Ooh! We're having team learning sessions! Yay! I'm so happy we can do this together!"
+                d "Okay."
+                a "Aw, I'm excited, too, Deez!"
+            "Family" if not family:
+                $ family = True
+                b "What's your family- or friends, or whoever- think about you working at the big SFC?"
+                a "Aw!! Family! A-"
+                d "My sister, she's always been rather {i}passionate{/i} when it comes to me pursuing my career."
+                d "But when I told her I was going to be interning for SFC, she seemed surprised."
+                d "Which I don't really understand. She always expected nothing less from me."
+                m "I can kind of relate. My sister was also really surprised when she found out I was working at SFC, but that's probably because she expected nothing from me, haha!"
+                d "Well, between you and me, my skillset is on a different level than yours."
+                d "So it makes sense that the expectations from your family aren't as high as mine." 
+                m "That makes sense!"
+                b "What about the rest of your family?"
+                d "My brother supports me a LOT."
+                d "He says I'm a master and will become prime minister, but I'm setting my mind towards something better."
+                b "Haha, well, they do say ‘SFC, from the pearly gates above!' You can't get much higher than that, they say."
+                k "Who's 'they'?"
+                m "SFC."
+                a "SFC."
+                k "Ah. Wh-where?"
+                d "They must be right."
+                a "It's their sign-off!" 
+                b "Yeah. It's a weird sign-off, but hey. SFC moment."
 
-    menu jumpy:
-        "Vocabulary":
-            b "By the way, you have an interesting vocabulary."
-            d "What is that supposed to mean."
-            b "Oh, it's just, um, interesting! I just wonder where you got it from."
-            d "This is how I was taught. Is there something wrong with the way I was taught?"
-            a "A-"
-            k "N-Not exactly, but... don't you think there's still more you can learn?"
-            m "Yes! They say you never stop learning no matter what age."
-            d "I don't know if I need to learn more, though. I know plenty."
-            m "Well Deez, you know what they say. The smarter you are, the more that you learn."
-            d "Wait, really?"
-            d "I knew that, but. I'm surprised you know that."
-            d "But I'm always learning... other things. So. If you want to, you can... show me things, too, so it's, like. Multiplied."
-            k "Hey... haha! You don't have to keep insisting that you know everything..."
-            b "*cough* But even if you do..."
-            k "Yeah- e-even if you do, we'll help you learn more things!"
-            a "Ooh! We're having team learning sessions! Yay! I'm so happy we can do this together!"
-            d "Okay."
-            a "Aw, I'm excited, too, Deez!"
-            jump jumpy
-        "Family":
-            b "What's your family- or friends, or whoever- think about you working at the big SFC?"
-            a "Aw!! Family! A-"
-            d "My sister, she's always been rather {i}passionate{/i} when it comes to me pursuing my career."
-            d "But when I told her I was going to be interning for SFC, she seemed surprised."
-            d "Which I don't really understand. She always expected nothing less from me."
-            m "I can kind of relate. My sister was also really surprised when she found out I was working at SFC, but that's probably because she expected nothing from me, haha!"
-            d "Well, between you and me, my skillset is on a different level than yours."
-            d "So it makes sense that the expectations from your family aren't as high as mine." 
-            m "That makes sense!"
-            b "What about the rest of your family?"
-            d "My brother supports me a LOT."
-            d "He says I'm a master and will become prime minister, but I'm setting my mind towards something better."
-            b "Haha, well, they do say ‘SFC, from the pearly gates above!' You can't get much higher than that, they say."
-            k "Who's 'they'?"
-            m "SFC."
-            a "SFC."
-            k "Ah. Wh-where?"
-            d "They must be right."
-            a "It's their sign-off!" 
-            b "Yeah. It's a weird sign-off, but hey. SFC moment."
-            jump jumpy
-        "Email from your school?":
-            b "Deez, I wanted to ask... I think your school email is on my computer?"
-            k "O-Oh, I can explain! He needed to check something on his account, but he didn't have his own computer yet at the time."
-            b "He has one now? Where'd he get one-."
-            k "And mine wasn't working so... we used your computer to log onto his account. Since you weren't there." 
-            k "S-Sorry."
-            b "Oh– it's alright! I was just wondering."
-            d "The email lady is on my school account now. I want to get rid of her but she can't be moved."
-            m "Hail-E? She's just gonna be there."
-            d "Ah. A virus."
-            a "Oh, she's just the company's chatbot! She's very helpful." 
-            d "She's... not..."
-            k "I-is she a bot?"
-            m "... Kendra."
-            k "Huh?"
-            jump jumpy
-
-            
+            "Email from your school?" if not emailschool:
+                $ emailschool = True
+                b "Deez, I wanted to ask... I think your school email is on my computer?"
+                k "O-Oh, I can explain! He needed to check something on his account, but he didn't have his own computer yet at the time."
+                b "He has one now? Where'd he get one-."
+                k "And mine wasn't working so... we used your computer to log onto his account. Since you weren't there." 
+                k "S-Sorry."
+                b "Oh– it's alright! I was just wondering."
+                d "The email lady is on my school account now. I want to get rid of her but she can't be moved."
+                m "Hail-E? She's just gonna be there."
+                d "Ah. A virus."
+                a "Oh, she's just the company's chatbot! She's very helpful." 
+                d "She's... not..."
+                k "I-is she a bot?"
+                m "... Kendra."
+                k "Huh?"
+    jump breakroomtalkday2 
+label breakroomtalkday2:
+    
     k "Hey, Barby, have you told anyone about... the thing?"
     b "Huh? Which thing?"
     k "Haha, forget I asked!"

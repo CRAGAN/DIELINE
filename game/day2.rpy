@@ -28,7 +28,7 @@ label minigametime:
         b "Odd."
         b "Well, I better get back to work!"
         
-        call screen email_minigame # FROG OVER HERE
+        #call screen email_minigame # FROG OVER HERE
         $ talkedtokendra = False
         $ talkedtoapollo = False
         $ talkedtomj = False
@@ -174,10 +174,10 @@ centered " " with hpunch
 pause 1.0
 scene room_2 with fade
 # sfx, thudding footsteps
-centered " " vpunch
+centered " " with vpunch
 # loud grunt/screaming like every step she takes is painful
 k "{b}A A A A{/b}" with vpunch
-scene room_3 with with fade
+scene room_3 with fade
 
 # long hallway
 

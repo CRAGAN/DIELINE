@@ -1,20 +1,20 @@
 # DAY 1
 label mjtalking:
-    
+    window hide
     if talkedtomj == False:
         $ talkedtomj = True
-        
+
         scene mjcubicle with fade
        
-        b "Hiya! MJ Grey, was it?"
-        m "That I am! MJ Grey, here at your service. How can I help you, Barby?"
-        b "Oh, um, I’m actually here to help you!"
-        m "Oh, no, no, no, please, allow me to help you out. It’s no problem."
+        b_sub "Hiya! MJ Grey, was it?"
+        m_sub "That I am! MJ Grey, here at your service. How can I help you, Barby?"
+        b_sub "Oh, um, I’m actually here to help you!"
+        m_sub "Oh, no, no, no, please, allow me to help you out. It’s no problem."
 
-        b "I appreciate it! Thank you! But it {i}is{/i} my job to assist, as the assistant manager."
-        m "Yes, but your wellbeing is my wellbeing! If you let me help you out, then you’re also helping me out in a way. It’s a win-win, isn’t it?"
-        b "...Sure..!"
-        b "Uhh, Here's your ID!"
+        b_sub "I appreciate it! Thank you! But it {i}is{/i} my job to assist, as the assistant manager."
+        m_sub "Yes, but your wellbeing is my wellbeing! If you let me help you out, then you’re also helping me out in a way. It’s a win-win, isn’t it?"
+        b_sub "...Sure..!"
+        b_sub "Uhh, Here's your ID!"
 
         pause 0.2
         show overlay:
@@ -25,11 +25,11 @@ label mjtalking:
         with dissolve
         $ renpy.pause(1.5, hard=True)
         #sfx_id2
-        m "Neat, thanks. Hey, I don’t look bad."
-        b "Yeah... you and I worked together before, right?"
-        m "Yes? What about it?"
-        b "That’s what I thought! Just jogging my memory."
-        m "Huh? It wasn’t that long ago though."
+        m_sub "Neat, thanks. Hey, I don’t look bad."
+        b_sub "Yeah... you and I worked together before, right?"
+        m_sub "Yes? What about it?"
+        b_sub "That’s what I thought! Just jogging my memory."
+        m_sub "Huh? It wasn’t that long ago though."
         
         hide mj_id with dissolve
         scene room_2 
@@ -42,6 +42,7 @@ label mjtalking:
         
         show m default at up, center
         with fade
+        $ quick_menu = True
         b "Yeah... time flies!"
         default whatdoesitstandfor = False
         default whatdepartmentareyoufrom = False
@@ -49,9 +50,11 @@ label mjtalking:
         default howslifemj = False
 
         while not (whatdepartmentareyoufrom and whatdoesitstandfor and howsworkmj and howslifemj):
+            $ quick_menu = False
             menu:
                 
                 "What does it stand for?" if not whatdoesitstandfor:
+                    $ quick_menu = True
                     $ whatdoesitstandfor = True
                     b "Can I ask what MJ stands for?" 
                     show m defaultt at up
@@ -68,6 +71,7 @@ label mjtalking:
                     show m default 
                     b "Yeah."
                 "What department are you from?" if not whatdepartmentareyoufrom:
+                    $ quick_menu = True
                     $ whatdepartmentareyoufrom = True
                     b "Just to make sure— with the whole name being faded and everything— what exactly {i}is{/i} your job title?"
                     m "Hmm? What do you mean?"
@@ -75,6 +79,7 @@ label mjtalking:
                     b "Oh yes, of course."
      
                 "How's work?" if not howsworkmj:
+                    $ quick_menu = True
                     $ howsworkmj = True
                     b "So, how's work been so far?"
                     m "Well, we don't know what our job actually is yet, but we're making good progress!"
@@ -85,6 +90,7 @@ label mjtalking:
                     b "We’ve... always tried to make things as nice as possible for each other. We’re all in the same boat, after all."
                 
                 "How's life?" if not howslifemj:
+                    $ quick_menu = True
                     $ howslifemj = True
                     b "Outside all of that, how are you?"
                     m "It’s all been fine and dandy on my end!"
@@ -107,12 +113,13 @@ label mjtalking:
         m "Okay! Let me know if you need help!"
         b "Let me know if—! Aww man."
         m "I win, heh."
+        $ quick_menu = False
 
     else: 
+        $ quick_menu = True
         m "I'm a little busy right now..."
+        
 
-
-    
     jump rooms
 
 #Kendra
@@ -127,22 +134,22 @@ label kendratalking:
         
         
         
-        b "Oh! Hiya, Kendra! Do you— do you need help with that?"
-        k "AH! BARBY! UHH, ahem! Thanks but—it’s ahh... it’s all good, yeah. I'm almost done here."
-        k "A-Anyways haha, I never got to properly thank you for the hairclip!" 
-        k "So! Thanks! Yes!"
-        b "Right! All of them look so good on you!"
-        k "Huh? But...you—you only gave me this one..."
-        b "Oh! How about the other ones in your hair?"
-        k "I...do you not remember? Is uhm, everything okay?"
-        b "Ah, well, after the accident, my memory’s a little spotty, haha! Oops."
-        b "Concussion, coma... both went away, so the amnesia should, too! Hopefully I don’t, uh, fumble anything before then."
-        k "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
-        k "About the accident..."
-        b "It’ll come back to me!!! I’ll try my hardest!"
-        k "Okay... if you say so."
-        b "..."
-        k "..."
+        b_sub "Oh! Hiya, Kendra! Do you— do you need help with that?"
+        k_sub "AH! BARBY! UHH, ahem! Thanks but—it’s ahh... it’s all good, yeah. I'm almost done here."
+        k_sub "A-Anyways haha, I never got to properly thank you for the hairclip!" 
+        k_sub "So! Thanks! Yes!"
+        b_sub "Right! All of them look so good on you!"
+        k_sub "Huh? But...you—you only gave me this one..."
+        b_sub "Oh! How about the other ones in your hair?"
+        k_sub "I...do you not remember? Is uhm, everything okay?"
+        b_sub "Ah, well, after the accident, my memory’s a little spotty, haha! Oops."
+        b_sub "Concussion, coma... both went away, so the amnesia should, too! Hopefully I don’t, uh, fumble anything before then."
+        k_sub "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
+        k_sub "About the accident..."
+        b_sub "It’ll come back to me!!! I’ll try my hardest!"
+        k_sub "Okay... if you say so."
+        b_sub "..."
+        k_sub "..."
         #sfx_id2
         # ID pops out
         show overlay:
@@ -152,11 +159,11 @@ label kendratalking:
             yoffset -300
         with dissolve
         $ renpy.pause(1.5, hard=True)
-        b "Here’s your ID, by the way!"
+        b_sub "Here’s your ID, by the way!"
 
 
 
-        k "Oh! Uhm, thank you." 
+        k_sub "Oh! Uhm, thank you." 
         hide kendra_id with dissolve
         scene storage 
         show lighter:
@@ -172,9 +179,11 @@ label kendratalking:
         default howsworkkendra = False
         default howslifekendra= False
         while not (compliment and rollerskating and howsworkkendra):
+            $ quick_menu = False
             menu:
                 "Compliment" if not compliment:
                     $ compliment = True
+                    $ quick_menu = True
                     b "You’ve got a really cool surname. It’s got a nice ring to it."
                     k "Oh, uh, thanks! It isn’t my birth name but..."
                     k "Everyone at my work- well, the theater one, called me ‘Bell’. ‘Cause I looked like one, and they said I was really noisy whenever I reacted to anything."
@@ -190,6 +199,7 @@ label kendratalking:
 
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
+                    $ quick_menu = True
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
                     k "Hah, yeah, I do quite a lot of, ahh—things...!"
                     k "I don’t know if you, erm, remember this but, like... we planned on going roller skating together!" 
@@ -210,6 +220,7 @@ label kendratalking:
 
                 "How's work?" if not howsworkkendra:
                     $ howsworkkendra = True
+                    $ quick_menu = True
                     b "How’s work been for ya?"
                     k "Which one?"
                     b "Oh... this one?"
@@ -223,6 +234,7 @@ label kendratalking:
 
                 "How's life?" if not howslifekendra:
                     $ howslifekendra = True
+                    $ quick_menu = True
                     b "How’s life?"
                     k "Uh... good."
                     k "Yeah— ahh, yes. Just alright! Nothing too bad, I suppose."
@@ -249,26 +261,26 @@ label deeztalking:
     if talkedtodeez == False:
         $ talkedtodeez = True
         
-        b "Hiya, there! Do you need help with that coffee machine?"
+        b_sub "Hiya, there! Do you need help with that coffee machine?"
         #VA Deez: say this in a slightly cocky way more than nervous. Like "pssh! Haha Im such a capable person." 
-        d "No, I can fix—IT WAS BROKEN WHEN I FOUND IT—I SWEAR."
-        b "That’s okay! It happens. We call it the {i}breakroom{/i} for a reason, haha!"
-        d "..."
+        d_sub "No, I can fix—IT WAS BROKEN WHEN I FOUND IT—I SWEAR."
+        b_sub "That’s okay! It happens. We call it the {i}breakroom{/i} for a reason, haha!"
+        d_sub "..."
 
         #VA: in a low tone, a little awkward and sad that they didnt get the joke  
-        b "...Cause things always break."
+        b_sub "...Cause things always break."
 
         #(or edited in voiceline) sfx_badjoke
 
-        b "AHEM— I don't think we’ve met before. I’m Fredrick Ibarra! But people just call me Barby." 
-        b "What’s your name?"
-        d "Right...introductions. I am a fresh catch, as they say in um. Finance."
-        d "Daniel Emil Elazar Zémiermalng."
-        d "My name is too long so you can call me {i}Deez{/i} for short."
+        b_sub "AHEM— I don't think we’ve met before. I’m Fredrick Ibarra! But people just call me Barby." 
+        b_sub "What’s your name?"
+        d_sub "Right...introductions. I am a fresh catch, as they say in um. Finance."
+        d_sub "Daniel Emil Elazar Zémiermalng."
+        d_sub "My name is too long so you can call me {i}Deez{/i} for short."
 
         # change name in textbox to real nametag
 
-        b "That I knew! Here’s your ID."
+        b_sub "That I knew! Here’s your ID."
         #sfx_id2
         # ID pops out
         show overlay:
@@ -278,14 +290,14 @@ label deeztalking:
         with dissolve
         $ renpy.pause(1.5, hard=True)
 
-        d "...Oh."
-        d "It looks low budget. I-I don’t like it."
-        b "Oh! Yes! The. Interns don’t actually get IDs... So our manager, Ms. Apollo Knight, made this for you herself!"
+        d_sub "...Oh."
+        d_sub "It looks low budget. I-I don’t like it."
+        b_sub "Oh! Yes! The. Interns don’t actually get IDs... So our manager, Ms. Apollo Knight, made this for you herself!"
         #VA Deez: Flustered tone to feigning interest 
         
-        d "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
-        d "She got my...pupils, my orbs right."
-        d "I love it."
+        d_sub "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
+        d_sub "She got my...pupils, my orbs right."
+        d_sub "I love it."
         # deadpan
         scene room_4
         show chairs
@@ -304,10 +316,11 @@ label deeztalking:
         default howsworkdeez = False
         default howslifedeez = False
         while not (welcome and fixcoffeemachine and howslifedeez and howsworkdeez):
+            $ quick_menu = False
             menu:
                 "Welcome!" if not welcome:
                     $ welcome = True
-                    
+                    $ quick_menu = True
                     b "Welcome to the team! I also started out as an unpaid intern, so I understand the boat you’re in."
                     b "Please let me know if you need anything!"
                     show de defaultt
@@ -337,6 +350,7 @@ label deeztalking:
 
                 "Where did you learn to fix coffee machines?" if not fixcoffeemachine:
                     $ fixcoffeemachine = True
+                    $ quick_menu = True
                 # pan to coffee machine
                 
                     b "Haha. So. Um. Where'd ya learn how to fix coffee machines?"
@@ -360,6 +374,7 @@ label deeztalking:
 
                 "How's work?" if not howsworkdeez:
                     $ howsworkdeez = True
+                    $ quick_menu = True
                     
                     b "How’s work been for you?"
                     show de calmt
@@ -373,6 +388,7 @@ label deeztalking:
                 "How's life?" if not howslifedeez:
                     #VA: said like "how’s the wife?" 
                     $ howslifedeez = True
+                    $ quick_menu = True
 
                     b "So... how’s the life? Outside of work, y’know." 
                     show de defaultt
@@ -411,7 +427,7 @@ label deeztalking:
                 
                     d "Why."
                     # back to questions?
-
+        $ quick_menu = True
         b "It was nice chatting with you, but I gotta get back to work."
         b "Thanks, Deez! I’ll be sure to hold onto that. Your name. Tryna be better at remembering things."
         show de defaultt

@@ -26,7 +26,7 @@ label deezandapollo:
             
             xoffset 250
         with fade
-        
+        $ quick_menu = True
         a "Oh! Hi Deez, what’s up?"
         show apo default
         show de shyt
@@ -62,9 +62,11 @@ label deezandapollo:
         default ears = False
         default smalltalk = False
         while not (aboutids and ears and smalltalk):
+            $ quick_menu = False
             menu:
                 "The real IDs’ quality..." if not aboutids:
                     $ aboutids = True
+                    $ quick_menu = True
                     b "The actual ID’s are... kind of not the best themselves."
                     b "MJ’s is already fading out, and it’s just the first day."
 
@@ -82,6 +84,7 @@ label deezandapollo:
 
                 "Ears?" if not ears:
                     $ ears = True
+                    $ quick_menu = True
                     b "Happy Halloween, by the way!"
                     b "I noticed your costumes! You’ve both got little pointy ears?"
                     show apo defaultt 
@@ -102,6 +105,7 @@ label deezandapollo:
 
                 "Small talk?" if not smalltalk:
                     $ smalltalk = True 
+                    $ quick_menu = True
 
                     b "Right! Deez, have you heard about how Apollo and I met?"
                     show de defaultt
@@ -159,7 +163,7 @@ label deezandapollo:
         show apo default at up
         show de shy
         b "I’ll leave you to it, then!"
-
+        $ quick_menu = False
         jump breaktime1
     else:
         scene room_1
@@ -177,7 +181,7 @@ label deezandapollo:
             xpos 0.35
             ypos 0.1    
             zoom 0.65 xzoom -1
-        b "they seem busy."
+        b_id "They seem busy."
         jump breaktime1
 
 
@@ -196,6 +200,7 @@ label mjandkendra:
         show ken surprised at jumper, left:
             xoffset 250
         with fade
+        $ quick_menu = True
         m "You ever think it’s crazy how we kinda look related?"
         show m hm
         show ken surprisedt at downward
@@ -218,9 +223,12 @@ label mjandkendra:
         default costumes = False
         default mjsfamily = False
         while not (related and costumes and mjsfamily):
+            $ quick_menu = False
             menu:
                 "Related" if not related:
                     $ related = True
+                    $ quick_menu = True
+                    
                     show ken default
                     show m default
                     b "Maybe you could trace each other’s family trees?"
@@ -251,6 +259,7 @@ label mjandkendra:
         #MJ’s Family?
                 "MJ's Family" if not mjsfamily:
                     $ mjsfamily = True
+                    $ quick_menu = True
 
                     b "Everyone in your family has green eyes?" 
                     show m defaultt
@@ -267,6 +276,7 @@ label mjandkendra:
 
                 "Costumes" if not costumes:
                     $ costumes = True
+                    $ quick_menu = True
 
                     b "Happy Halloween, guys! What’re your costumes, if you don’t mind me asking?"
                     show m defaultt
@@ -340,7 +350,7 @@ label mjandkendra:
             xpos 0.4
             ypos 0.45
             zoom 0.3
-        b "they seem busy."
+        b_id "They seem busy."
         jump breaktime1
             # then when you talked to everyone barby goes “ough i gotta go to the conference room for our team meeting soon"  - and i guess maybe you have to walk over there and click it???  Or teleport them
 

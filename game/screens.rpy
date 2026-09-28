@@ -95,25 +95,90 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen say(who, what):
+screen say(who, what, is_sub=False, is_id=False):
 
-    window:
-        id "window"
+    if is_sub:
 
-        if who is not None:
-
+        if is_id:
             window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+                style "id_window"
 
-        text what id "what"
+                if who is not None:
+
+                    fixed:
+                        xalign 0.15
+                        style "id_namebox"
+                        text who:
+                            id "who"
+
+                        text what:
+                            id "what"
+                            color "#FFFFFF"
+                            yalign 0.5
 
 
-    ## If there's a side image, display it above the text. Do not display on
-    ## the phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        else:            
+            window:
+                style "sub_window"
+
+                if who is not None:
+
+                    window:
+                        style "sub_namebox"
+                        text who:
+                            id "who"
+
+                text what:
+                    id "what"
+                    color "#FFFFFF"
+                    xalign 0.5
+                    ypos 10
+
+
+    else:
+        window:
+            id "window"
+
+            if who is not None:
+
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
+
+            text what id "what"
+
+
+        ## If there's a side image, display it above the text. Do not display on
+        ## the phone variant - there's no room.
+        if not renpy.variant("small"):
+            add SideImage() xalign 0.0 yalign 1.0
+
+
+
+style sub_window:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height - 80
+
+    background Image("gui/textbox_sub.png", xalign=0.5, yalign=1.0)
+
+style sub_namebox:
+    background None
+    xalign 0.5
+    ypos -120
+
+
+style id_window:
+    xfill True
+    yalign gui.textbox_yalign 
+    ysize gui.textbox_height - 340
+
+    background Image("gui/textbox_sub_id.png", xalign=0.5, yalign=1.0)
+
+style id_namebox:
+    background None
 
 
 ## Make the namebox available for styling through the Character object.
@@ -385,50 +450,113 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+default idle_tab = "gui/button/idle_menu_button_background.png"
+default active_tab = "gui/button/active_menu_button_background.png"
+default hover_tab = "gui/button/hover_menu_button_background.png"
+
 screen navigation():
 
     vbox:
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
 
         spacing gui.navigation_spacing
 
+        ### TODO: MAIN MENU! ###
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start():
+                text_idle_color "#ff0000"    
+                text_hover_color "#888888"  
+
+            textbutton _("Load") action ShowMenu("load"):
+                text_idle_color "#ff0000"    
+                text_hover_color "#888888"              
+
+            textbutton _("Preferences") action ShowMenu("preferences"):
+                text_idle_color "#ff0000"    
+                text_hover_color "#888888"              
 
         else:
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
 
-            textbutton _("History") action ShowMenu("history")
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action ShowMenu('history')
+                    text _("History"):
+                        align (0.5, 0.5)
+                        
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("save")
+                    text _("Save"):
+                        align (0.5, 0.5)                        
 
-            textbutton _("Save") action ShowMenu("save")
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("load")
+                    text _("Load"):
+                        align (0.5, 0.5)                        
 
-        textbutton _("Load") action ShowMenu("load")
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("preferences")
+                    text _("Settings"):
+                        align (0.5, 0.5)                        
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        # if _in_replay:
 
-        if _in_replay:
+        #     textbutton _("End Replay") action EndReplay(confirm=True)
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+        # if not main_menu:
+        #     xpos 1400
+        #     ypos 500
+        #     textbutton _("Main Menu") action MainMenu()
 
-        elif not main_menu:
+        # textbutton _("About") action ShowMenu("about")
 
-            textbutton _("Main Menu") action MainMenu()
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-        textbutton _("About") action ShowMenu("about")
+        #     ## Help isn't necessary or relevant to mobile devices.
+        #     textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc"):
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        #     ## The quit button is banned on iOS and unnecessary on Android and
+        #     ## Web.
+        #     textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -520,7 +648,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     if main_menu:
         add gui.main_menu_background
     else:
-        add gui.game_menu_background
+        add gui.game_menu_background xalign 0.5 yalign 0.5
 
     frame:
         style "game_menu_outer_frame"
@@ -573,10 +701,23 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
+    # textbutton _("Return"):
+    #     style "return_button"
+    #     yalign 0.9
+    #     xpos 100
+    #     text_idle_color "#ff0000"    
+    #     text_hover_color "#888888"    
 
-        action Return()
+    #     action Return()
+
+    # textbutton _("Main Menu"):
+    #     style "return_button"
+    #     yalign 0.95
+    #     xpos 100
+    #     text_idle_color "#ff0000"    
+    #     text_hover_color "#888888"    
+
+    #     action MainMenu("main_menu")
 
     label title
 
@@ -588,7 +729,7 @@ style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
 style game_menu_viewport is gui_viewport
-style game_menu_side is gui_side
+# style game_menu_side is gui_side
 style game_menu_scrollbar is gui_vscrollbar
 
 style game_menu_label is gui_label
@@ -608,18 +749,15 @@ style game_menu_navigation_frame:
     yfill True
 
 style game_menu_content_frame:
-    left_margin 60
+    left_margin 0
     right_margin 30
     top_margin 15
 
 style game_menu_viewport:
-    xsize 1380
+    xsize 1920
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
-
-style game_menu_side:
-    spacing 15
 
 style game_menu_label:
     xpos 75
@@ -687,21 +825,20 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
-
+    use file_slots()
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots()
 
 
-screen file_slots(title):
+screen file_slots():
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
-    use game_menu(title):
+    use game_menu(""):
 
         fixed:
 
@@ -715,6 +852,7 @@ screen file_slots(title):
 
                 key_events True
                 xalign 0.5
+                ypos 35
                 action page_name_value.Toggle()
 
                 input:
@@ -741,7 +879,7 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Empty Data")):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -754,7 +892,7 @@ screen file_slots(title):
                 style_prefix "page"
 
                 xalign 0.5
-                yalign 1.0
+                yalign 0.95
 
                 hbox:
                     xalign 0.5
@@ -764,12 +902,6 @@ screen file_slots(title):
                     textbutton _("<") action FilePagePrevious()
                     key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
-
                     ## range(1, 10) gives the numbers from 1 to 9.
                     for page in range(1, 10):
                         textbutton "[page]" action FilePage(page)
@@ -777,15 +909,15 @@ screen file_slots(title):
                     textbutton _(">") action FilePageNext()
                     key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Upload Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Download Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+                # if config.has_sync:
+                #     if CurrentScreenName() == "save":
+                #         textbutton _("Upload Sync"):
+                #             action UploadSync()
+                #             xalign 0.5
+                #     else:
+                #         textbutton _("Download Sync"):
+                #             action DownloadSync()
+                #             xalign 0.5
 
 
 style page_label is gui_label
@@ -832,7 +964,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         vbox:
 
@@ -995,13 +1127,14 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
 
         style_prefix "history"
 
         for h in _history_list:
 
             window:
+
 
                 ## This lays things out properly if history_height is None.
                 has fixed:
@@ -1020,6 +1153,7 @@ screen history():
 
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:
+                    color '#000000'
                     substitute False
 
         if not _history_list:

@@ -4,6 +4,20 @@ define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="K
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038")
 define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870")
 
+# Subtitled text style
+define b_sub = Character("Barby", show_is_sub=True)
+define a_sub = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#383d70", show_is_sub=True)
+define k_sub = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e", show_is_sub=True)
+define m_sub = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038", show_is_sub=True)
+define d_sub = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870", show_is_sub=True)
+
+# During ID card talk
+define b_id = Character("Barby", show_is_sub=True, show_is_id=True)
+define a_id = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#383d70", show_is_sub=True, show_is_id=True)
+# define m_id = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038", show_is_sub=True, show_is_id=True)
+# define k_id = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e", show_is_sub=True,show_is_id=True)
+# define d_id = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870", show_is_sub=True,show_is_id=True)
+
 default see_ids = False
 define talked = 0
 
@@ -15,27 +29,30 @@ transform zoomin:
 label start:
     #scene bg barbyclocksin
     #sfx clockin
-    
-    b "Shucks... I haven’t seen her since we got discharged."
-    b "It should be fine. It should be normal."
-    b "I can’t waste time overthinking."
+    window hide 
+    $ quick_menu = False
+    b_sub "Shucks... I haven’t seen her since we got discharged."
+    b_sub "It should be fine. It should be normal."
+    b_sub "I can’t waste time overthinking."
 
     # Barby walks into manager room cg
     #sfx walking
     scene apollomanagersroom with fade
-    b "...Hiya, Apollo—I mean—boss! Good to see you again!"
-    a "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
-    b "Oh! Snap! Sorry, boss. SHOOT! AH!"
-    a "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
-    b "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
-    a "I triple dipple check all the time!"
     
-    b "Wow! Please don’t say that word again." 
-    a "Uhh... okay? But really, Apollo’s just fine and dandy."
+    b_sub "...Hiya, Apollo—I mean—boss! Good to see you again!"
+    a_sub "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
+    b_sub "Oh! Snap! Sorry, boss. SHOOT! AH!"
+    a_sub "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
+    b_sub "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
+    a_sub "I triple dipple check all the time!"
+    
+    b_sub "Wow! Please don’t say that word again." 
+    a_sub "Uhh... okay? But really, Apollo’s just fine and dandy."
     scene managerroom with dissolve
     show overlay:
         blend 'multiply'
     show apo defaultt at downward, center
+    $ quick_menu = True
     a "And hey, congratulations on {i}your{/i} promotion...! I mean look at you, ohoho, assistant manager now? You’re totally killing it!"
     show apo default at center, jumper
     b "Ahh...! Thank you. Killing it, haha, just like. The."
@@ -44,25 +61,27 @@ label start:
     show apo worried at up
     a "Oh!"
     # add image of sensin and truck
+    $ quick_menu = False    
     scene picture:
         subpixel True
         zoom 1.5 xoffset -500
         easein 20 zoom 1.2 xoffset -200
     with dissolve
-    a "The truck that killed our old manager?"
+    a_sub "The truck that killed our old manager?"
 
-    a "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
+    a_sub "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
 
-    b "...Wow."
+    b_sub "...Wow."
 
-    a "He’s in good hands now—I’d know! Teehee!"
-    b "At least that was taken care of..." 
+    a_sub "He’s in good hands now—I’d know! Teehee!"
+    b_sub "At least that was taken care of..." 
     # back to the scene
     scene managerroom
     show overlay:
         blend 'multiply'
     show apo default at jumper, center
     with dissolve
+    $ quick_menu = True    
     b "Speaking of, have you heard back from your insurance? About the accident?" 
     show apo worriedt at downward
     a "Oh goodness, no, I haven’t! Have you? I’m worried..." 
@@ -82,28 +101,33 @@ label start:
     a "I’d do it myself, but I have to attend this online conference with corporate. I have yet to figure out how to log into Skycloud Meet, haha..."
     show apo default
     $ picked = []
+    $ quick_menu = False
     menu idchoice:
         set picked
         "Skycloudmeet?":
+            $ quick_menu = True
             b "We switched to Skycloud Meet already?"
             show apo awkwardt at downward
             a "Err, yeah. It’s supposed to work better with the other Sera, Fim & Co. software we’re using, yet..."
             show apo defaultt
             a "It’s kinda complicated. I’m not good at technology— but I’m positive I’ll figure it out!"
             show apo default
+            $ quick_menu = False
             jump idchoice
             # return to choices
 
         "But I don't know the team.":
+            $ quick_menu = True            
             b "Ah, but I don’t even know who’s part of the team yet."
             show apo defaultt
             a "It’s okay, you already know most of them by now! All their names and faces are on their IDs too, so you can figure it out easy peasy!"
             show apo default
+            $ quick_menu = False
             jump idchoice
             # return to choices
 
         "Sure! Easy!":
-            
+            $ quick_menu = True
             jump id_see 
             
 
@@ -112,17 +136,19 @@ label id_see:
     show apo defaultt
     a "Sweet! Here you go!"
     show apo default
+    $ quick_menu = False    
     hide apo with dissolve
-
     call screen id_screen with dissolve
 
    
 label rooms:
+    $ quick_menu = False
     $ storage = False
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
     if talkedtodeez and talkedtokendra and talkedtomj:
+        $ quick_menu = True
         b "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
         b "Just gotta get on my computer."
@@ -131,6 +157,7 @@ label rooms:
         $ talkedtoapollo = False
         $ talkedtomj = False
         $ talkedtodeez = False
+        $ quick_menu = False
         jump breaktime1
 
     call screen rooms with fade

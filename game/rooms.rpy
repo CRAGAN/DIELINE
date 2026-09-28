@@ -214,6 +214,7 @@ label apollo_manager_reply:
     show managersroom
     show lighter:
         blend 'add' alpha 0.3
+    $ quick_menu = True
     a "Now go on, Barby, those IDs aren’t going to distribute themselves."
     jump rooms
     

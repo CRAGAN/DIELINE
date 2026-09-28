@@ -150,7 +150,7 @@ screen say(who, what, is_sub=False, is_id=False):
     ## the phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 1.0 yalign 1.0
-            text what id "what"
+        text what id "what"
 
 
         ## If there's a side image, display it above the text. Do not display on

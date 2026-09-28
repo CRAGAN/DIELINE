@@ -2,7 +2,7 @@ label start:
     #scene bg barbyclocksin
     #sfx clockin
     voice "audio/Barby/Day 1 Intro/barby_line001.mp3"
-    b default"Shucks... I haven’t seen her since we got discharged."
+    b "Shucks... I haven’t seen her since we got discharged."
     voice "audio/Barby/Day 1 Intro/barby_line002.mp3"
     b "It should be fine. It should be normal."
     voice "audio/Barby/Day 1 Intro/barby_line003.mp3"
@@ -12,21 +12,21 @@ label start:
     #sfx walking
     scene apollomanagersroom with fade
     voice "audio/Barby/Day 1 Intro/barby_line004.mp3"
-    b default "...Hiya, Apollo—I mean—boss! Good to see you again!"
+    b_sub "...Hiya, Apollo—I mean—boss! Good to see you again!"
     voice "audio/Apollo/Day 1 Intro/apollo_line001.mp3"
-    a "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
+    a_sub "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
     voice "audio/Barby/Day 1 Intro/barby_line005.mp3"
-    b worried "Oh! Snap! Sorry, boss. SHOOT! AH!"    
+    b_sub "Oh! Snap! Sorry, boss. SHOOT! AH!"    
     voice "audio/Apollo/Day 1 Intro/apollo_line002.mp3"
-    a "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
+    a_sub "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
     voice "audio/Barby/Day 1 Intro/barby_line006.mp3"
-    b default "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
+    b_sub "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
     voice "audio/Apollo/Day 1 Intro/apollo_line003.mp3"
-    a "I triple dipple check all the time!"
+    a_sub "I triple dipple check all the time!"
     voice "audio/Barby/Day 1 Intro/barby_line007.mp3"
-    b hm "Wow! Please don’t say that word again." 
+    b_sub "Wow! Please don’t say that word again." 
     voice "audio/Apollo/Day 1 Intro/apollo_line004.mp3"
-    a "Uhh... okay? But really, Apollo’s just fine and dandy."
+    a_sub "Uhh... okay? But really, Apollo’s just fine and dandy."
     scene managerroom with dissolve
     show overlay:
         blend 'multiply'
@@ -35,10 +35,10 @@ label start:
     a "And hey, congratulations on {i}your{/i} promotion...! I mean look at you, ohoho, assistant manager now? You’re totally killing it!"
     show apo default at center, jumper
     voice "audio/Barby/Day 1 Intro/barby_line008.mp3"
-    b default "Ahh...! Thank you. Killing it, haha, just like. The."
+    b  "Ahh...! Thank you. Killing it, haha, just like. The."
     show apo awkward at jumper
     voice "audio/Barby/Day 1 Intro/barby_line009.mp3"
-    b worried "Truck."
+    b  "Truck."
     show apo worried at up
     voice "audio/Apollo/Day 1 Intro/apollo_line006.mp3"
     a "Oh!"
@@ -53,11 +53,11 @@ label start:
     voice "audio/Apollo/Day 1 Intro/apollo_line008.mp3"
     a "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
     voice "audio/Barby/Day 1 Intro/barby_line010.mp3"
-    b worried "...Wow."
+    b "...Wow."
     voice "audio/Apollo/Day 1 Intro/apollo_line009.mp3"
     a "He’s in good hands now—I’d know! Teehee!"
     voice "audio/Barby/Day 1 Intro/barby_line011.mp3"
-    b worried "At least that was taken care of..." 
+    b "At least that was taken care of..." 
     # back to the scene
     scene managerroom
     show overlay:
@@ -79,9 +79,9 @@ label start:
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
     show apo worried
     voice "audio/Barby/Day 1 Intro/barby_line015.mp3"
-    b default "You’ve got a whole team to handle. I'd be happy to help out!"
+    b "You’ve got a whole team to handle. I'd be happy to help out!"
     voice "audio/Barby/Day 1 Intro/barby_line016.mp3"
-    b default "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
+    b "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
     show apo defaultt at downward, center
     voice "audio/Apollo/Day 1 Intro/apollo_line012.mp3"
     a "I—you’re right. We got this, we have to stay positive for our first day! Well, if you’re up for it... here!"

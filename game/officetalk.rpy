@@ -6,31 +6,23 @@ label mjtalking:
 
         scene mjcubicle with fade
         voice "audio/Barby/Day 1 ID/barby_line048.mp3"
-        b "Hiya! MJ Grey, was it?"
-        voice "audio/MJ/Day 1 OW/MJ_line001.mp3"
-        m "That I am! MJ Grey, here at your service. How can I help you, Barby?"
-        voice "audio/Barby/Day 1 ID/barby_line049.mp3"
-        b "Oh, um, I’m actually here to help you!"
-        voice "audio/MJ/Day 1 OW/MJ_line002.mp3"
-        m "Oh, no, no, no, please, allow me to help you out. It’s no problem."
-        voice "audio/Barby/Day 1 ID/barby_line050.mp3"
-        b "I appreciate it! Thank you! But it {i}is{/i} my job to assist, as the assistant manager."
-        voice "audio/MJ/Day 1 OW/MJ_line003.mp3"
-        m "Yes, but your wellbeing is my wellbeing! If you let me help you out, then you’re also helping me out in a way. It’s a win-win, isn’t it?"
-        voice "audio/Barby/Day 1 ID/barby_line051.mp3"
-        b "...Sure..!"
-        voice "audio/Barby/Day 1 ID/barby_line052.mp3"
-        b "Uhh, Here's your ID!"
-       
         b_sub "Hiya! MJ Grey, was it?"
+        voice "audio/MJ/Day 1 OW/MJ_line001.mp3"
         m_sub "That I am! MJ Grey, here at your service. How can I help you, Barby?"
+        voice "audio/Barby/Day 1 ID/barby_line049.mp3"
         b_sub "Oh, um, I’m actually here to help you!"
+        voice "audio/MJ/Day 1 OW/MJ_line002.mp3"
         m_sub "Oh, no, no, no, please, allow me to help you out. It’s no problem."
-
+        voice "audio/Barby/Day 1 ID/barby_line050.mp3"
         b_sub "I appreciate it! Thank you! But it {i}is{/i} my job to assist, as the assistant manager."
+        voice "audio/MJ/Day 1 OW/MJ_line003.mp3"
         m_sub "Yes, but your wellbeing is my wellbeing! If you let me help you out, then you’re also helping me out in a way. It’s a win-win, isn’t it?"
+        voice "audio/Barby/Day 1 ID/barby_line051.mp3"
         b_sub "...Sure..!"
+        voice "audio/Barby/Day 1 ID/barby_line052.mp3"
         b_sub "Uhh, Here's your ID!"
+       
+       
 
         pause 0.2
         show overlay:
@@ -42,20 +34,16 @@ label mjtalking:
         $ renpy.pause(1.5, hard=True)
         #sfx_id2
         voice "audio/MJ/Day 1 OW/MJ_line004mp3"
-        m "Neat, thanks. Hey, I don’t look bad."
-        voice "audio/Barby/Day 1 ID/barby_line053.mp3"
-        b "Yeah... you and I worked together before, right?"
-        voice "audio/MJ/Day 1 OW/MJ_line005.mp3"
-        m "Yes? What about it?"
-        voice "audio/Barby/Day 1 ID/barby_line054.mp3"
-        b "That’s what I thought! Just jogging my memory."
-        voice "audio/MJ/Day 1 OW/MJ_line006.mp3"
-        m "Huh? It wasn’t that long ago though."
         m_sub "Neat, thanks. Hey, I don’t look bad."
+        voice "audio/Barby/Day 1 ID/barby_line053.mp3"
         b_sub "Yeah... you and I worked together before, right?"
+        voice "audio/MJ/Day 1 OW/MJ_line005.mp3"
         m_sub "Yes? What about it?"
+        voice "audio/Barby/Day 1 ID/barby_line054.mp3"
         b_sub "That’s what I thought! Just jogging my memory."
+        voice "audio/MJ/Day 1 OW/MJ_line006.mp3"
         m_sub "Huh? It wasn’t that long ago though."
+   
         
         hide mj_id with dissolve
         scene room_2 
@@ -211,53 +199,38 @@ label kendratalking:
         
         voice "audio/Barby/Day 1 ID/barby_line077.mp3"
         
-        b "Oh! Hiya, Kendra! Do you— do you need help with that?"
-        voice "audio/Kendra/Day 1 OW/kendra_line001.mp3"
-        k "AH! BARBY! UHH, ahem! Thanks but—it’s ahh... it’s all good, yeah. I'm almost done here."
-        voice "audio/Kendra/Day 1 OW/kendra_line002.mp3"
-        k "A-Anyways haha, I never got to properly thank you for the hairclip!" 
-        voice "audio/Kendra/Day 1 OW/kendra_line003.mp3"
-        k "So! Thanks! Yes!"
-        voice "audio/Barby/Day 1 ID/barby_line078.mp3"
-        b "Right! All of them look so good on you!"
-        voice "audio/Kendra/Day 1 OW/kendra_line004.mp3"
-        k "Huh? But...you—you only gave me this one..."
-        voice "audio/Barby/Day 1 ID/barby_line079.mp3"
-        b "Oh! How about the other ones in your hair?"
-        voice "audio/Kendra/Day 1 OW/kendra_line005.mp3"
-        k "I...do you not remember? Is uhm, everything okay?"
-        voice "audio/Barby/Day 1 ID/barby_line080.mp3"
-        b "Ah, well, after the accident, my memory’s a little spotty, haha! Oops."
-        voice "audio/Barby/Day 1 ID/barby_line081.mp3"
-        b "Concussion, coma... both went away, so the amnesia should, too! Hopefully I don’t, uh, fumble anything before then."
-        voice "audio/Kendra/Day 1 OW/kendra_line005.mp3"
-        k "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
-        voice "audio/Kendra/Day 1 OW/kendra_line006.mp3"
-        k "About the accident..."
-        voice "audio/Barby/Day 1 ID/barby_line082.mp3"
-        b "It’ll come back to me!!! I’ll try my hardest!"
-        voice "audio/Kendra/Day 1 OW/kendra_line007.mp3"
-        k "Okay... if you say so."
-        voice "audio/Barby/Day 1 ID/barby_line083.mp3"
-        b "..."
-        voice "audio/Kendra/Day 1 OW/kendra_line008.mp3"
-        k "..."
         b_sub "Oh! Hiya, Kendra! Do you— do you need help with that?"
+        voice "audio/Kendra/Day 1 OW/kendra_line001.mp3"
         k_sub "AH! BARBY! UHH, ahem! Thanks but—it’s ahh... it’s all good, yeah. I'm almost done here."
+        voice "audio/Kendra/Day 1 OW/kendra_line002.mp3"
         k_sub "A-Anyways haha, I never got to properly thank you for the hairclip!" 
+        voice "audio/Kendra/Day 1 OW/kendra_line003.mp3"
         k_sub "So! Thanks! Yes!"
+        voice "audio/Barby/Day 1 ID/barby_line078.mp3"
         b_sub "Right! All of them look so good on you!"
+        voice "audio/Kendra/Day 1 OW/kendra_line004.mp3"
         k_sub "Huh? But...you—you only gave me this one..."
+        voice "audio/Barby/Day 1 ID/barby_line079.mp3"
         b_sub "Oh! How about the other ones in your hair?"
+        voice "audio/Kendra/Day 1 OW/kendra_line005.mp3"
         k_sub "I...do you not remember? Is uhm, everything okay?"
+        voice "audio/Barby/Day 1 ID/barby_line080.mp3"
         b_sub "Ah, well, after the accident, my memory’s a little spotty, haha! Oops."
+        voice "audio/Barby/Day 1 ID/barby_line081.mp3"
         b_sub "Concussion, coma... both went away, so the amnesia should, too! Hopefully I don’t, uh, fumble anything before then."
+        voice "audio/Kendra/Day 1 OW/kendra_line005.mp3"
         k_sub "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
+        voice "audio/Kendra/Day 1 OW/kendra_line006.mp3"
         k_sub "About the accident..."
+        voice "audio/Barby/Day 1 ID/barby_line082.mp3"
         b_sub "It’ll come back to me!!! I’ll try my hardest!"
+        voice "audio/Kendra/Day 1 OW/kendra_line007.mp3"
         k_sub "Okay... if you say so."
+        voice "audio/Barby/Day 1 ID/barby_line083.mp3"
         b_sub "..."
+        voice "audio/Kendra/Day 1 OW/kendra_line008.mp3"
         k_sub "..."
+    
         #sfx_id2
         # ID pops out
         show overlay:
@@ -268,16 +241,15 @@ label kendratalking:
         with dissolve
         $ renpy.pause(1.5, hard=True)
         voice "audio/Barby/Day 1 ID/barby_line084.mp3"
-        b "Here’s your ID, by the way!"
-
-
-        voice "audio/Kendra/Day 1 OW/kendra_line009.mp3"
-        k "Oh! Uhm, thank you." 
         b_sub "Here’s your ID, by the way!"
 
 
-
+        voice "audio/Kendra/Day 1 OW/kendra_line009.mp3"
         k_sub "Oh! Uhm, thank you." 
+
+
+
+
         hide kendra_id with dissolve
         scene storage 
         show lighter:
@@ -455,51 +427,36 @@ label deeztalking:
     if talkedtodeez == False:
         $ talkedtodeez = True
         voice "audio/Barby/Day 1 ID/barby_line0106.mp3"
-        b "Hiya, there! Do you need help with that coffee machine?"
-        #VA Deez: say this in a slightly cocky way more than nervous. Like "pssh! Haha Im such a capable person." 
-        voice "audio/Deez/Day 1 OW/deez_line001.mp3"
-        d "No, I can fix—IT WAS BROKEN WHEN I FOUND IT—I SWEAR."
-        voice "audio/Barby/Day 1 ID/barby_line0107.mp3"
-        b "That’s okay! It happens. We call it the {i}breakroom{/i} for a reason, haha!"
-        voice "audio/Deez/Day 1 OW/deez_line002.mp3"
-        d "..."
-
-        #VA: in a low tone, a little awkward and sad that they didnt get the joke  
-        voice "audio/Barby/Day 1 ID/barby_line0108.mp3"
-        b "...Cause things always break."
-
-        #(or edited in voiceline) sfx_badjoke
-        voice "audio/Barby/Day 1 ID/barby_line0109.mp3"
-        b "AHEM— I don't think we’ve met before. I’m Fredrick Ibarra! But people just call me Barby." 
-        voice "audio/Barby/Day 1 ID/barby_line0110.mp3"
-        b "What’s your name?"
-        voice "audio/Deez/Day 1 OW/deez_line003.mp3"
-        d "Right...introductions. I am a fresh catch, as they say in um. Finance."
-        voice "audio/Deez/Day 1 OW/deez_line004.mp3"
-        d "Daniel Emil Elazar Zémiermalng."
-        voice "audio/Deez/Day 1 OW/deez_line005.mp3"
-        d "My name is too long so you can call me {i}Deez{/i} for short."
-
-        # change name in textbox to real nametag
-        voice "audio/Barby/Day 1 ID/barby_line011.mp3"
-        b "That I knew! Here’s your ID."
-        
         b_sub "Hiya, there! Do you need help with that coffee machine?"
         #VA Deez: say this in a slightly cocky way more than nervous. Like "pssh! Haha Im such a capable person." 
+        voice "audio/Deez/Day 1 OW/deez_line001.mp3"
         d_sub "No, I can fix—IT WAS BROKEN WHEN I FOUND IT—I SWEAR."
+        voice "audio/Barby/Day 1 ID/barby_line0107.mp3"
         b_sub "That’s okay! It happens. We call it the {i}breakroom{/i} for a reason, haha!"
+        voice "audio/Deez/Day 1 OW/deez_line002.mp3"
         d_sub "..."
 
         #VA: in a low tone, a little awkward and sad that they didnt get the joke  
+        voice "audio/Barby/Day 1 ID/barby_line0108.mp3"
         b_sub "...Cause things always break."
 
         #(or edited in voiceline) sfx_badjoke
-
+        voice "audio/Barby/Day 1 ID/barby_line0109.mp3"
         b_sub "AHEM— I don't think we’ve met before. I’m Fredrick Ibarra! But people just call me Barby." 
+        voice "audio/Barby/Day 1 ID/barby_line0110.mp3"
         b_sub "What’s your name?"
+        voice "audio/Deez/Day 1 OW/deez_line003.mp3"
         d_sub "Right...introductions. I am a fresh catch, as they say in um. Finance."
+        voice "audio/Deez/Day 1 OW/deez_line004.mp3"
         d_sub "Daniel Emil Elazar Zémiermalng."
+        voice "audio/Deez/Day 1 OW/deez_line005.mp3"
         d_sub "My name is too long so you can call me {i}Deez{/i} for short."
+
+        # change name in textbox to real nametag
+        voice "audio/Barby/Day 1 ID/barby_line011.mp3"
+        b_sub "That I knew! Here’s your ID."
+        
+
 
         # change name in textbox to real nametag
 
@@ -513,27 +470,20 @@ label deeztalking:
         with dissolve
         $ renpy.pause(1.5, hard=True)
         voice "audio/Deez/Day 1 OW/deez_line006.mp3"
-        d "...Oh."
-        voice "audio/Deez/Day 1 OW/deez_line007.mp3"
-        d "It looks low budget. I-I don’t like it."
-        voice "audio/Barby/Day 1 ID/barby_line0112.mp3"
-        b "Oh! Yes! The. Interns don’t actually get IDs... So our manager, Ms. Apollo Knight, made this for you herself!"
-        #VA Deez: Flustered tone to feigning interest 
-        voice "audio/Deez/Day 1 OW/deez_line008.mp3"
-        d "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
-        voice "audio/Deez/Day 1 OW/deez_line009.mp3"
-        d "She got my...pupils, my orbs right."
-        voice "audio/Deez/Day 1 OW/deez_line010.mp3"
-        d "I love it."
-
         d_sub "...Oh."
+        voice "audio/Deez/Day 1 OW/deez_line007.mp3"
         d_sub "It looks low budget. I-I don’t like it."
+        voice "audio/Barby/Day 1 ID/barby_line0112.mp3"
         b_sub "Oh! Yes! The. Interns don’t actually get IDs... So our manager, Ms. Apollo Knight, made this for you herself!"
         #VA Deez: Flustered tone to feigning interest 
-        
+        voice "audio/Deez/Day 1 OW/deez_line008.mp3"
         d_sub "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
+        voice "audio/Deez/Day 1 OW/deez_line009.mp3"
         d_sub "She got my...pupils, my orbs right."
+        voice "audio/Deez/Day 1 OW/deez_line010.mp3"
         d_sub "I love it."
+
+
         # deadpan
         scene room_4
         show chairs
@@ -725,7 +675,8 @@ label deeztalking:
 #DAY 2
 
 
-   
+label officewalk2:
+    
 label mjtalking2:
     scene room_2
     show lighter:
@@ -735,8 +686,7 @@ label mjtalking2:
         zoom 0.6 ypos 0.33 xpos 0.6
     
     $ talkedtomj = True
-label officewalk2:
-label mjtalking22:
+
     b "Good morning, MJ!"
     m "Good morning! How are you?"
     b "Good! How are you?"

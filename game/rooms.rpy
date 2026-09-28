@@ -494,8 +494,8 @@ screen breaktime1():
                     zoom 0.6
             imagebutton:
                 focus_mask True
-                idle "images/images/computer.png"
-                hover "images/images/computer.png_hover"
+                idle "images/computer.png"
+                hover "images/computer_hover.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
                     
             

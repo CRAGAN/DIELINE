@@ -26,6 +26,7 @@ label rooms2:
     with screen
 
 label minigametime:
+        scene black
         b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
         b "Odd."
         b "Well, I better get back to work!"
@@ -39,6 +40,8 @@ label minigametime:
 
 label teammeetingpt2:
     scene meetingroom
+    show overlay:
+        blend 'multiply'
     show ken worried at downward, center
     
     k "..."

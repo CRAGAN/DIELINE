@@ -1,8 +1,8 @@
 ﻿define b = Character("Barby", image="barby")
-define a = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#383d70")
-define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e")
-define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038")
-define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870")
+define a = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#f04a82")
+define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#1465ab")
+define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#43882e")
+define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#71447e")
 define t = Character("Team")
 
 default see_ids = False

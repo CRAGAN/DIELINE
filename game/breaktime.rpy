@@ -354,6 +354,8 @@ label breaktime2:
 label kendratalking22:
     $ talkedtokendra = True
     scene managerroom
+    show overlay:
+        blend 'multiply'
     show ken surprised at center, up
     b "Hiya, Kendra! That's a lot of work you seem to be handling during break time."
     show ken surprisedt
@@ -551,6 +553,8 @@ label kendratalking22:
 label apollotalking22: #apollo at cubicles
     $ talkedtoapollo = True
     scene room_2
+    show overlay:
+        blend 'multiply'
     show apo default at center
     with dissolve
     b "Hiya, Apollo! It's break time."
@@ -706,6 +710,8 @@ label apollotalking22: #apollo at cubicles
 label mjtalking22:
     $ talkedtomj = True
     scene storage
+    show overlay:
+        blend 'multiply'
     show m default at center
     with dissolve
     m  "Hum hum hum..."
@@ -821,6 +827,8 @@ label mjtalking22:
 label deeztalking22:
     $ talkedtodeez = True
     scene room_4
+    show overlay:
+        blend 'multiply'
     show de default at center
     b "Hiya, Deez! Taking your break already, are you?"
     b "You're the only one who got the memo right away, haha! I had to tell everyone else."

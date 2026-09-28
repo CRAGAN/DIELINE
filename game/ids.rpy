@@ -72,91 +72,145 @@ label read_id(item_name=None):
     if current_id == "Fredrick Ibarra":
         show barby_id at zoomin
         $ renpy.pause(1.5, hard=True)
+        voice "audio/Barby/Day 1 ID/barby_line020.mp3"
         b "Barby It’s me!"
         hide barby_id
     elif current_id == "Apollo Knight":
         show apollo_id at zoomin
         $ renpy.pause(1.5, hard=True)
-
+        voice "audio/Barby/Day 1 ID/barby_line021.mp3"
         b "Oh, this is your ID! You have such an {i}original character do not steal{/i} name."  
+        voice "audio/Apollo/Day 1 ID/apollo_line019.mp3"
         a "What does that mean?" 
+        voice "audio/Barby/Day 1 ID/barby_line022.mp3"
         b "Uh. Nothing, boss, here!"
+        voice "audio/Apollo/Day 1 ID/apollo_line020.mp3"
         a "I told you not to call me that Barbs!"
+        voice "audio/Barby/Day 1 ID/barby_line023.mp3"
         b "Sorry!!!"
         hide apollo_id
     elif current_id == "Kendra Bell":
         show kendra_id at zoomin
         $ renpy.pause(1.5, hard=True)
-
+        voice "audio/Apollo/Day 1 ID/apollo_line021.mp3"
         a "If you think her name rings a bell, this is the person who went around the office in roller skates!"
+        voice "audio/Barby/Day 1 ID/barby_line024.mp3"
         b "Oh! Her! Yeah, you told me about that."
+        voice "audio/Apollo/Day 1 ID/apollo_line022.mp3"
         a "You were there, though...?"
+        voice "audio/Barby/Day 1 ID/barby_line025.mp3"
         b "Well, yeah, but..."
+        voice "audio/Barby/Day 1 ID/barby_line026.mp3"
         b "She looks so different with her new hair..." 
+        voice "audio/Apollo/Day 1 ID/apollo_line023.mp3"
         a "Right? I’m really excited she’s on our team! She was such a big help last project, I can’t wait to work with her again!"
-
+        voice "audio/Apollo/Day 1 ID/apollo_line024.mp3"
         a "I just... hope she feels the same way about me."
+        voice "audio/Barby/Day 1 ID/barby_line027.mp3"
         b "Really? When?"
+        voice "audio/Apollo/Day 1 ID/apollo_line025.mp3"
+        
         a "...When you worked with her?"
+        voice "audio/Barby/Day 1 ID/barby_line028.mp3"
         b "Yeah! Right..."
         hide kendra_id
     elif current_id == "M.J Grey":
         show mj_id at zoomin
         $ renpy.pause(1.5, hard=True)
-
+        voice "audio/Apollo/Day 1 ID/apollo_line026.mp3"
         a "You remember MJ, right?"
+        voice "audio/Barby/Day 1 ID/barby_line029.mp3"
         b "Right... What’s their job, again?"
+        voice "audio/Apollo/Day 1 ID/apollo_line027.mp3"
         a "... I don’t. Know."
+        voice "audio/Apollo/Day 1 ID/apollo_line029.mp3"
         a "Well, as long as they’re doing their part in the team, it should be fine!"
+        voice "audio/Barby/Day 1 ID/barby_line030.mp3"
         b "I wonder what MJ stands for."
+        voice "audio/Apollo/Day 1 ID/apollo_line029.mp3"
         a "Maybe we can ask them... I wanna know, too."
+        voice "audio/Apollo/Day 1 ID/apollo_line030.mp3"
         a "Huh. Their surname’s familiar. Maybe I heard it from my family once...?"
+        voice "audio/Barby/Day 1 ID/barby_line031.mp3"
         b "That’s a pretty common last name, though."
+        voice "audio/Apollo/Day 1 ID/apollo_line031.mp3"
         a "Ah. That’s true."
+        voice "audio/Barby/Day 1 ID/barby_line032.mp3"
         b "There’s at least 50 shades of it."
         hide mj_id
     elif current_id == "Dave":
         show dave_id at zoomin
         $ renpy.pause(1.5, hard=True)
-
+        voice "audio/Apollo/Day 1 ID/apollo_line032.mp3"
         a "Ah, Dave."
+        voice "audio/Barby/Day 1 ID/barby_line033.mp3"
         b "I miss Dave."
+        voice "audio/Apollo/Day 1 ID/apollo_line033.mp3"
+
         a "Me too... it’s been so long since his employee of the month streak."
+        voice "audio/Barby/Day 1 ID/barby_line034.mp3"
         b "He didn’t come in to take a photo?"
+        voice "audio/Apollo/Day 1 ID/apollo_line034.mp3"
         a "Mm... he hasn’t come back to the office since the divorce."
+        voice "audio/Barby/Day 1 ID/barby_line035.mp3"
         b "Well, you and I haven’t been here for at least 6 weeks, so maybe things have changed?"
+        voice "audio/Apollo/Day 1 ID/apollo_line035.mp3"
         a "I’m not sure. He hasn’t logged in or anything."
+        voice "audio/Apollo/Day 1 ID/apollo_line036.mp3"
         a "Maybe check around and ship his ID if he isn’t here?"
+        voice "audio/Barby/Day 1 ID/barby_line036.mp3"
         b "Sure! I’ll look around and get on my computer to get it shipped later."
         hide dave_id
     elif current_id == "Deez":
         show deez_id at zoomin
         $ renpy.pause(1.5, hard=True)
+        voice "audio/Barby/Day 1 ID/barby_line037.mp3"
         b "Who!?"
+        voice "audio/Apollo/Day 1 ID/apollo_line037.mp3"
         a "Our new intern!"
+        voice "audio/Barby/Day 1 ID/barby_line038.mp3"
         b "Ah. I see it now."
+        voice "audio/Barby/Day 1 ID/barby_line039.mp3"
         b "Why... is his ID uhm, different and laminated?"
+        voice "audio/Apollo/Day 1 ID/apollo_line038.mp3"
         a "Ah, weeelll... interns don’t really get IDs so I made one for him! So he won’t feel left out!"
+        voice "audio/Barby/Day 1 ID/barby_line040.mp3"
         b "Aww, that’s pretty thoughtful."
+        voice "audio/Barby/Day 1 ID/barby_line041.mp3"
         b "Maybe I can help him, tour him around better."
         hide deez_id
     elif current_id == "done":
         show apo defaultt with dissolve
+        voice "audio/Apollo/Day 1 ID/apollo_line039.mp3"
         a "Okay, I need to go to the meeting now. You’ve got this, don’t you, Barby?"
         show apo default
+        voice "audio/Barby/Day 1 ID/barby_line042.mp3"
         b "Like you said, it’ll be easy peasy."
+        voice "audio/Barby/Day 1 ID/barby_line043.mp3"
         b "Well, I wanted to ask... I know we’ve got the deadline already, but what about our project? Do you know what it is?"
         show apo defaultt
+        voice "audio/Apollo/Day 1 ID/apollo_line040.mp3"
         a "I... don’t know, but I’ll probably find out in the meeting. If I can get into the meeting, haha!"
         show apo default
+        voice "audio/Barby/Day 1 ID/barby_line044.mp3"
         b "Are you sure you don’t want me to help you figure it out?"
         show apo defaultt
+        voice "audio/Apollo/Day 1 ID/apollo_line041.mp3"
         a "I’m sure! Now go on, Barby, those IDs aren’t going to distribute themselves."
         show apo default
+        voice "audio/Barby/Day 1 ID/barby_line045.mp3"
         b "If you say so. Well, good luck with the meeting!"
         show apo defaultt
-        a "Thank you!"
+        voice "audio/Apollo/Day 1 ID/apollo_line042.mp3"
+        a "Thanks Barb, I'll see you later!"
         scene black with fade
+        voice "audio/Apollo/Day 1 Team Meeting/apollo_line043.mp3"
+        a "Now go on, Barby, those IDs aren’t going to distribute themselves."
+        voice "audio/Barby/Day 1 OW/barby_line046.mp3"
+        b default "Just gotta meet people, old and new, with the new little position of assistant manager."
+        voice "audio/Barby/Day 1 OW/barby_line047.mp3"
+        b default "Easy peasy…!"
+
         jump rooms
     
     call screen id_screen

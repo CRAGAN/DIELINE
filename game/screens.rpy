@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -440,6 +440,104 @@ style quick_button:
 style quick_button_text:
     properties gui.text_properties("quick_button")
 
+
+## Email Minigame screens #######################################################
+
+## This one is just the inbox list
+screen email_minigame():
+    frame:
+        background("gui/minigame/eminigame_base.png")
+        
+        use email_inbox
+
+screen email_inbox():
+    zorder 1
+
+    frame:
+        pos(190, 207)
+        xysize(344, 360)
+        background("gui/minigame/loadbearing transparent.png")
+
+        viewport id "inbox":
+            draggable True mousewheel True
+
+            vbox:
+                spacing(0)
+                style_prefix "email"
+                style "email_inbox"
+
+                button:
+                    style "email_inbox"
+                    text "email 1" style "email_subject"
+                    # idle "gui/minigame/email_pholder.png"
+                    # hover "gui/minigame/email_pholder_hover.png"
+                    action ToggleScreen("email_sort1")
+                button:
+                    style "email_inbox"
+                    text "email 2" style "email_subject"
+                button:
+                    style "email_inbox"
+                    text "email 3" style "email_subject"
+
+style email_inbox:
+    xysize(330,90)
+    background("gui/minigame/eminigame_inboxbox.png")
+
+style email_subject:
+    offset(80, 10)
+    color("#000000")
+
+## Now were sortin
+screen email_sort1():
+    zorder 1
+    frame:
+        background("#d2d69e")
+        pos(611,213)
+        padding(25,10)
+        xysize(750,737)
+        
+        viewport id "email":
+            draggable True mousewheel True arrowkeys True
+            ymaximum(635)
+
+            vbox:
+                spacing(10)
+
+                style "email_body"
+
+                text "{b}DON'T TRASH THIS EMAIL!!{/b}" style "email_body"
+                text "{i}From: CoolchipzYT@abcfunmail.edu\n{/i}" style "email_body"
+                text "DON'T TRASH THIS EMAIL!!\n\nThere was once a little girl named Marian Ward who lived in Cedarville West Virginia. Her dad was the local cobbler and he was teaching her the trade. Marian didn't have any friends because she was ugly and smelled like shit, so she drew a face on the first steel-toed shoe (left shoe) she ever cobbled and named it Shoe.\n\nOne day, in the middle of the night, it was thunderstorm! Marian was scared, so she did what she always did when she was scared. She grabbed Shoe and went to stare at her reflection in the mirror until she wasn't scared. Unfortunately, an hour into staring at her own reflection, she remembered she was very ugly and got so scared, she ran out of her house.\n\nIt was dark and there was rain and scared, so Marian couldn't see where she was and fell down the town's local big chasm in the middle of the town where she was in. She falled for a long time, and when she was at the bottom, all the townspeople who were evil were there waiting for her. It was she was scared.\n\n\"No one can see you in the Chasm.\" The townspeople said.\n\nThen, her three bullied skateboarded over Marian and landed in front of her. One of the bullies was mean and made fun of her for scared. He pick up Shoe, taking it from Marian, who couldn't stop him because it was too scary.\n\n\"Perfect fit.\" Said Elliott as he put Shoe on and kicked Marian until she accidentally died. The whole town filled in Chasm and covered up her death. And nobody ever found out because the town did that.\n\nIn revenge, Marian killed literally all of them and hid their boddies in the Chasm and no one knows to this day. If you don't cover up all your mirrors in your home and forward this email to three other people Marian will come to you tonight and take you're left leg and give you some amnesia and turn you ginger." style "email_body"
+
+        
+        vbar value YScrollValue("email"):
+            align(1.0,0.5)
+        
+        hbox:
+            align(0.5,1.0)
+            spacing(10)
+            yoffset(20)
+
+            style "email_opts"
+
+            imagebutton:
+                idle "gui/minigame/eminigame_accept.png"
+                #make THING DO THE THING THE THE THE THE typing game
+            imagebutton:
+                idle "gui/minigame/eminigame_delete.png"
+            imagebutton:
+                idle "gui/minigame/eminigame_forward.png"
+                
+            
+style email_body:
+    color("#000000")
+
+style email_opts:
+    xysize(270,90)
+    background("gui/minigame/opt_pholder.png")
+
+style email_opts_text:
+    color("#000000")
 
 ################################################################################
 ## Main and Game Menu Screens

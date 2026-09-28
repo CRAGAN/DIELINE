@@ -3,6 +3,7 @@ define a = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="A
 define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e")
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038")
 define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870")
+define t = Character("Team")
 
 # Subtitled text style
 define b_sub = Character("Barby", show_is_sub=True)
@@ -321,8 +322,8 @@ label meeting:
     k "I was thinking, maybe, i-if we did it through emails we can have a more cohesive backlog of all the information they give us...! All our questions included."
     d "Uhm, actually— some of us still have A LOT of other responsibilities besides the project - like uhh, general work... things."
 
-    k "Kendra “Yeah, that's true! I have some uhh, prior commitments I gotta do for SFC, too! I promised to help account for all the losses when the truck..."
-    k "Kendra “Yeah... a lot of things inside it got damaged, too. Not to mention..."
+    k "Yeah, that's true! I have some uhh, prior commitments I gotta do for SFC, too! I promised to help account for all the losses when the truck..."
+    k "Yeah... a lot of things inside it got damaged, too. Not to mention..."
     b "Is she looking at me—"
     b "Oh, nevermind, she looked away."
     k "Ahem— not to mention things outside work..."
@@ -569,6 +570,48 @@ label clockingout:
     a "So let’s focus on that, and not the 99 bad ones!"
     
     jump day2
-
+# DAY 2
 label day2:
-    "hi."
+    #Calendar appears: October 27th, Tuesday
+    # Deadline: >30 days
+    # idea to just make it generally greater than because its like, people don't feel the pressure that much knowing there's a lot of time left
+    $ day = 2
+    scene black
+    centered "October 27th, Tuesday"
+    centered "Deadline: >30 days"
+    
+    b "Another day at work. Alright, we got this!"
+    b "Huh... no reply from Dave, yet. Wonder where he is."
+    b "Well I better get to work, soon. Let’s not dilly dally."
+    #jump officewalkday2
+    jump teammeeting2
+
+label teammeeting2:
+    a "I called this meeting to announce some... changes that corporate called me about today and it’s not the uhm—"
+    b "Oh gosh, don’t tell me it’s more bad news..."
+    a "I-it’s not!! I swear haha, It’s nothing {i}too horrible{/i}, Just a deadline change—"
+    d "Deadline change?! That’s cucumbersome..."
+    m "Do you mean cumbersome?"
+    d "MJ you can’t say that in the office..."
+    b "W-wait, maybe it’s an extension! They saw how unreasonable the project's due date was so... they gave us more time?"
+    a "Aahh, I love your optimism, but... they pushed it back just a smidge— Just, like... in two days."
+    b "WHAAAT?!"
+    d "this is chickeneyed!"
+    m "Oh! Oh dear. That’s NOT a smidge."
+    a "A-ahh ahh! Let’s- let’s calm down guys! {i}Wait uhm okay—{/i} I hear you, I see you, and I understand your concerns—"
+    "SHUT UP APOLLOOO"
+    b "Four days isn’t enough time to do ANYTHING! Especially since Kendra aaaa"
+    d "Yeah what he said"
+    a "onhgh sorrsies..."
+    m "It’s no problem, I can pick up all the slack."
+ 
+label teammeeting3:
+    a "Ahaha... thank you all again for uhm, coming to the team meeting everyone...!"
+    b "Ahh, but... Kendra’s not here, yet..."
+    m "I don’t think Kendra’s currently available to participate. No worries, I’m happy to relay anything to her."
+    a "Knowing our deadline is in two days, I can’t help but be just a little bit worried over our pace so far!"
+
+
+label clockingout2:
+    b "I did it."
+    b "...We’re done."

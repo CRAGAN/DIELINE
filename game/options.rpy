@@ -11,6 +11,7 @@
 ## title, and shows up in the interface and error reports.
 ##
 ## The _() surrounding the string marks it as eligible for translation.
+define config.layers = [ 'master', 'top', 'transient', 'screens', 'overlay' ]
 
 define config.name = _("DIELINE")
 

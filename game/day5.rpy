@@ -2,8 +2,8 @@ label wakeupday5:
     #Kendra:
     #b "Good morning, Kendra."
     
-   # MJ:
-   # b "Good morning, MJ."
+    # MJ:
+    # b "Good morning, MJ."
 
     #Deez:
     #b "..."
@@ -13,7 +13,7 @@ label wakeupday5:
     #Managers room
     # cutscene plays, doesnt need to be voice acted, but could be
     #b "Uhh, hiya Apollo...! Sorry for sleeping—"
-   # a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
+    # a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
 
 # Not yet transformed fully but hints she's in the process
 
@@ -300,3 +300,6 @@ label pcminigame:
     a "Not you, too..."
     a "You’re... you’re the only family I’ve got, now..."
     jump clockingout
+label clockingoutend:
+    b "I did it."
+    b "...We’re done."  

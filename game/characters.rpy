@@ -257,29 +257,58 @@ image de happyt = At(
     sprite_highlight("Deez")
 )
 
-## BARBY SPRITES
-image barby default =At("images/barby/barby default.png", Transform(zoom=0.8))
-image barby hm =At("images/barby/barby hm.png", Transform(zoom=0.8))
-image worried =At("images/barby/barby worried.png", Transform(zoom=0.8))
+## side barby SPRITES
+image side barby default =At("images/barby/barby default.png", Transform(zoom=0.8))
+image side barby hm =At("images/barby/barby hm.png", Transform(zoom=0.8))
+image side barby worried =At("images/barby/barby worried.png", Transform(zoom=0.8))
 # t for talk BARBY
-image barby defaultt = At(
-    Animation("images/barby/barby default.png", 0.15, 
-    "images/barby/barby default.png", 0.15,),
-    Transform(zoom=0.8),
+image side barby defaultt:
+    zoom 0.8
+    "images/barby/barby default.png"
+    pause 0.15
+    "images/barby/barby defaultm.png" 
+    pause 0.15
+    "images/barby/barby default.png" 
+    pause 0.15
+    "images/barby/barby defaultm.png"
+    pause 0.15
+    "images/barby/barby default.png"
+    pause 0.15
+    "images/barby/barby defaultm.png"
+    pause 0.15
+    "images/barby/barby default.png"
+    
+image side barby hmt:
+    zoom 0.8
+    "images/barby/barby hm.png"
+    pause 0.15
+    "images/barby/barby hmm.png"
+    pause 0.15
+    "images/barby/barby hm.png"
+    pause 0.15
+    "images/barby/barby hmm.png"
+    pause 0.15
+    "images/barby/barby hm.png"
+    pause 0.15
+    "images/barby/barby hmm.png"
+    pause 0.15
+    "images/barby/barby hm.png"
 
-)
-image barby hmt = At(
-    Animation("images/barby/barby hm.png", 0.15, 
-    "images/barby/barby hm.png", 0.15,),
-    Transform(zoom=0.8),
-
-)
-image barby worriedt = At(
-    Animation("images/barby/barby worried.png", 0.15, 
-    "images/barby/barby worried.png", 0.15,),
-    Transform(zoom=0.8),
-
-)  
+image side barby worriedt:
+    zoom 0.8
+    "images/barby/barby worried.png"
+    pause 0.15
+    "images/barby/barby worriedm.png"
+    pause 0.15
+    "images/barby/barby worried.png"
+    pause 0.15
+    "images/barby/barby worriedm.png"
+    pause 0.15
+    "images/barby/barby worried.png"
+    pause 0.15
+    "images/barby/barby worriedm.png"
+    pause 0.15
+    "images/barby/barby worried.png"
 
 # INTRO 
 
@@ -303,3 +332,6 @@ image mjcubicle:
         Movie(play="images/cg/mjintrobg.webm", loop=True)
     contains:
         "images/cg/mjintro.png"
+define config.side_image_tag = "barby"
+
+

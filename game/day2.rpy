@@ -1,3 +1,4 @@
+image meetingroom = Movie(play="images/bg overworld/meetingroom.webm", loop = True)
 label day2:
     #Calendar appears: October 27th, Tuesday
     # Deadline: >30 days
@@ -8,7 +9,7 @@ label day2:
     $ talkedtodeez = False
     $ day = 2
     
-    scene black
+    scene black with fade
     centered "October 27th, Tuesday"
     centered "Deadline: >30 days"
     
@@ -21,7 +22,8 @@ label rooms2:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
-    call screen rooms2
+    call screen rooms2 
+    with screen
 
 label minigametime:
         b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
@@ -36,6 +38,7 @@ label minigametime:
         jump breaktime2
 
 label teammeetingpt2:
+    scene meetingroom
     show ken worried at downward, center
     
     k "..."
@@ -84,7 +87,7 @@ label teammeetingpt2:
     show apo fear at jumper
     d "No offense, you don't understand anything."
     show de angry 
-    show apo feart at downward, shaking
+    show apo fear at downward, shaking, center
     a "AaaAAahh... sorry—" 
     show apo fear
     show de sadt at downward
@@ -137,7 +140,7 @@ label teammeetingpt2:
     k "{b}NO. IT'S... FINE. I WILL BE FINE.{/b}" with vpunch
     k "{b}I... I need to get back to work.{/b}"
     show ken fear:
-        easein 0.5 1000
+        easein 0.5 xoffset -1000
 
 # kendra leave? 
     show apo worriedt at downward
@@ -152,7 +155,10 @@ label teammeetingpt2:
 # kendra groaning 
 label kendragobrr:
 #VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
-scene room_1
+scene room_1 
+show blue:
+    blend 'multiply' alpha 0.2
+with fade
 k "{b}My head... it- my head hurts.{/b}"
 b "K-Kendra? Is... everything okay? What's that noise...?!"
 k "{b}It needs to stop.{/b}"
@@ -171,15 +177,30 @@ centered " " with hpunch
 
 # overworld control access
 # go to cubicles 
-pause 1.0
-scene room_2 with fade
+pause 3.0
+scene room_2 
+show noises:
+    alpha 0.1
+    blend 'add'
+show borders
+
+show blue:
+    blend 'multiply' alpha 0.5
+with fade
 # sfx, thudding footsteps
 centered " " with vpunch
 # loud grunt/screaming like every step she takes is painful
 k "{b}A A A A{/b}" with vpunch
-scene room_3 with fade
-
+scene room_3 
+show noises:
+    alpha 0.2
+    blend 'add'
+show borders1
+show blue:
+    blend 'multiply' alpha 0.8
+with fade
 # long hallway
+centered " "
 
 # door closing (breakroom door closing sound)
 jump encounterday2
@@ -192,9 +213,13 @@ pause 2.0
 scene black 
 pause 2.0
 scene kendramonster2 
+show noises:
+    alpha 0.1
+    blend 'add'
 pause 2.0
 b "..."
 # scary... reverb on voice
+
 b "...Oh god..."
 scene black
 pause 2.0
@@ -209,6 +234,9 @@ camera:
 
 scene kendrabgmonster at small_wobble1
 show ken monsterr at small_wobble
+show noises:
+    alpha 0.1
+    blend 'add'
 with vpunch
 # pause, let the atmosphere sink in
 # barby's in like trance like state kind of so muffle, under water style, apollo voice
@@ -261,6 +289,11 @@ camera:
     reset
 scene room_3
 show borders1
+show blue:
+    blend 'multiply' alpha 0.3
+show noises:
+    alpha 0.1
+    blend 'add'
 show overlay:
     blend 'multiply' 
 show de fear at shaking, downward, center
@@ -278,9 +311,18 @@ b "... I don't know."
 menu:
     "walk to cubicle":
         scene room_2 
+        show blue:
+            blend 'multiply' alpha 0.3
+        show noises:
+            alpha 0.1
+            blend 'add'
         show borders
         with fade
+        " "
+        show blue:
+            blend 'multiply' alpha 1.0
         "..."
+        show black
         b "Ah... It's broken."
         jump day3
 #walk to cubicles, when you get there barby just goes to cubicle automatically and 
@@ -288,3 +330,11 @@ menu:
 # VA NOte: "ah" is like... low and subtle and shaky
 
 
+image noises:
+    "images/noise.png"
+    pause 0.3
+    "images/noise2.png"
+    pause 0.3
+    "images/noise3.png"
+    pause 0.3
+    repeat

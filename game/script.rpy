@@ -1,4 +1,4 @@
-﻿define b = Character("Barby")
+﻿define b = Character("Barby", image="barby")
 define a = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#383d70")
 define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e")
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038")
@@ -12,12 +12,6 @@ transform zoomin:
     anchor (0.5, 0.5)
     pos (0.5, 0.5)
     easein 0.5 zoom 1.3
-
-
-# DAY 2
-
-
-
  
 label teammeeting3:
     a "Ahaha... thank you all again for uhm, coming to the team meeting everyone...!"

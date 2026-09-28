@@ -1,22 +1,22 @@
 label start:
     #scene bg barbyclocksin
     #sfx clockin
-    
-    b "Shucks... I haven’t seen her since we got discharged."
+    b default"Shucks... I haven’t seen her since we got discharged."
     b "It should be fine. It should be normal."
     b "I can’t waste time overthinking."
 
     # Barby walks into manager room cg
     #sfx walking
     scene apollomanagersroom with fade
-    b "...Hiya, Apollo—I mean—boss! Good to see you again!"
+    b default "...Hiya, Apollo—I mean—boss! Good to see you again!"
+
     a "Oh, good morning Barby! Y—you don’t have to call me boss, I’m just your regular ol’ Apollo!" 
-    b "Oh! Snap! Sorry, boss. SHOOT! AH!"
+    b worried "Oh! Snap! Sorry, boss. SHOOT! AH!"    
     a "Haha, every time you call me boss, I’m calling you boss, too! It’s only fair with all those emails you’ve sent with my name."
-    b "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
+    b default "Aw—hey, you know it was an accident... You have my account, too. How’d {i}you{/i} not get confused?"
     a "I triple dipple check all the time!"
     
-    b "Wow! Please don’t say that word again." 
+    b hmt "Wow! Please don’t say that word again." 
     a "Uhh... okay? But really, Apollo’s just fine and dandy."
     scene managerroom with dissolve
     show overlay:
@@ -24,7 +24,7 @@ label start:
     show apo defaultt at downward, center
     a "And hey, congratulations on {i}your{/i} promotion...! I mean look at you, ohoho, assistant manager now? You’re totally killing it!"
     show apo default at center, jumper
-    b "Ahh...! Thank you. Killing it, haha, just like. The."
+    b defaultt "Ahh...! Thank you. Killing it, haha, just like. The."
     show apo awkward at jumper
     b "Truck."
     show apo worried at up
@@ -39,27 +39,27 @@ label start:
 
     a "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
 
-    b "...Wow."
+    b worried "...Wow."
 
     a "He’s in good hands now—I’d know! Teehee!"
-    b "At least that was taken care of..." 
+    b worried "At least that was taken care of..." 
     # back to the scene
     scene managerroom
     show overlay:
         blend 'multiply'
     show apo default at jumper, center
     with dissolve
-    b "Speaking of, have you heard back from your insurance? About the accident?" 
+    b hm "Speaking of, have you heard back from your insurance? About the accident?" 
     show apo worriedt at downward
     a "Oh goodness, no, I haven’t! Have you? I’m worried..." 
     show apo worried
-    b "Agh, don’t be worried!"
-    b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others." 
+    b hm "Agh, don’t be worried!"
+    b default "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others." 
     show apo worriedt at downward
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
     show apo worried
-    b "You’ve got a whole team to handle. I'd be happy to help out!"
-    b "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
+    b default "You’ve got a whole team to handle. I'd be happy to help out!"
+    b default "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
     show apo defaultt at downward, center
     a "I—you’re right. We got this, we have to stay positive for our first day! Well, if you’re up for it... here!"
     # IDs come out
@@ -71,7 +71,7 @@ label start:
     menu idchoice:
         set picked
         "Skycloudmeet?":
-            b "We switched to Skycloud Meet already?"
+            b hmt "We switched to Skycloud Meet already?"
             show apo awkwardt at downward
             a "Err, yeah. It’s supposed to work better with the other Sera, Fim & Co. software we’re using, yet..."
             show apo defaultt
@@ -81,7 +81,7 @@ label start:
             # return to choices
 
         "But I don't know the team.":
-            b "Ah, but I don’t even know who’s part of the team yet."
+            b hmt "Ah, but I don’t even know who’s part of the team yet."
             show apo defaultt
             a "It’s okay, you already know most of them by now! All their names and faces are on their IDs too, so you can figure it out easy peasy!"
             show apo default
@@ -110,9 +110,10 @@ label rooms:
     $ managerroom = False
     if talkedtodeez and talkedtokendra and talkedtomj: 
         scene black with dissolve
-        b "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
+        
+        b defaultt "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
-        b "Just gotta get on my computer."
+        b hmt "Just gotta get on my computer."
         $ current_room = 2
         $ talkedtokendra = False
         $ talkedtoapollo = False
@@ -133,12 +134,14 @@ label rooms:
 label meeting:
     $ talked = 0
     scene room_2
-    show apo defaultt at center
+    show apo defaultt at center:
+        xoffset -150
+        
     a "Hello everyone! I’m so glad you all made it! It’s nice to see you all again, it’s been such a long time!"
-    show ken defaultt
+    show ken defaultt at left
     show apo default
     k "Uhh yeah, I guess it’s been a while, huh. I think– I think uh around 6 weeks, right?"
-    show de defaultt
+    show de defaultt at right
     show ken default
     d "Yes."
     show ken awkwardt
@@ -154,8 +157,9 @@ label meeting:
     a "But, before we begin, I have one thing to address..."
     a "I’m sure you’re all wondering about my suddenly horrible handwriting and Barby’s little wobble bobble."
     show apo default
-    b "My {b}{i}what{/i}{/b}!?"
-    show m defaultt
+    b worriedt "My {b}{i}what{/i}{/b}!?"
+    show m defaultt at center:
+        xoffset 250
     m "Well I wasn’t gonna ask out of courtesy, buuut if you’re open to talking about it, I’m all ears."
     show m default
     show de defaultt
@@ -171,7 +175,7 @@ label meeting:
     show apo defaultt
     a "So intellectual of you Deez, so observant! And you just got here!"
     show apo default
-    b "Wait- I don’t hate pants- what-!?" 
+    b worriedt "Wait- I don’t hate pants- what-!?" 
     show apo awkwardt
     
     a "So uhm unfortunately, this is what happened to my left hand..."
@@ -201,33 +205,54 @@ label meeting:
     show m hm
     show de surprised
     m "Oh?!?!?"
-
+ 
     b "{i}I’M BEING OUTED!?{/i}"
-    #
+    show apo worriedt
     a "OH! Did— did you not tell them Barby?! I’m so sorry, I thought you told everyone!!" 
+    show apo worried
     b "..."
 
     a "..."
+    show m hmt
+    show de default
     m "Do you need help with that?" 
+    show m hm
+    show ken worriedt
     k "MJ!? I—I don’t know if you can really help with that!"
+    show ken worried
+    show m hm
     m "What? Just trying to offer accomodation like Apollo said."
+    show m hmt
     m "By the way, Deez... Prozempic isn’t really a thing. Osempic doesn’t produce Prozac as far as I’m aware." 
+    show de angryt
     d "Errrgh... noted..." 
-
+    
     d "I didn’t ask... no one asked... Who’s MJ talking to, huh..."
+    show de shy
     b "Okay... thank you... but I don’t really need all that extra help! I’m really okay- most of my job is on the computer, anyways..." 
     b "We have more important things to talk about right now, haha...!" 
+    show ken awkwardt
     k "Are we just gonna—"
-
+    show ken awkward
     b "A–Apollo??"
+    show apo worriedt
     a "Ah yes, of course! Haha, thank you all for your cooperation! Moving on—"
     a "The meeting with the higher ups was... definitely something! I think I could explain this better with a little help!"
     a "Barby, if you could please help me demonstrate what happened?" 
+    show apo worried
     b "Sure!"
+    show ken awkwardt
     k "Oh uhh, was the meeting really that bad? W-why do we need a little—play thing?" 
+    show ken awkward
+    show m happyt
     m "Apollo does this when things are hard to explain. Please, go on, boss!" 
+    show m happy
+    show apo worriedt
     a "A... You can just call me Apollo, MJ! Haha."
-
+    show apo worried
+    
+    "..."
+    
     a "Ahem! Hello, I am the big boss here to give you your project! Ask me anything!"
     b "Hiya big boss! I have a few questions to ask, such as what {i}is{/i} our client’s new product we’re supposed to market?"
     a "Oh, silly manager, it’s not a product, it’s a lifestyle!" 
@@ -274,7 +299,7 @@ label meeting:
     m "They ACTUALLY said that?"
     a "Yeah, no. They did." 
     k "Okay—I think we need to make a game plan now, we can’t just sit by and—and not do anything!"
-
+    
     m "That's about right! Honestly, if we can do this as efficiently as possible, it'll be smooth sailing from here."
     m "Which is why I think we should contact the clients directly ourselves, first."
     a "Aha... but, I just spoke with them—"

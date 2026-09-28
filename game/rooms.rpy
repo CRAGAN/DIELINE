@@ -214,13 +214,14 @@ label apollo_manager_reply:
         blend 'add' alpha 0.3
     if day == 1:
         a "Now go on, Barby, those IDs aren’t going to distribute themselves."
+        jump rooms
     if day == 2:
         $ talkedtoapollo = True
         b "Good morning, Apollo!"
         a "Good morning, Barby!"
         a "Ready to give it our all today?"
         b "You betcha!"
-    jump rooms2
+        jump rooms2
     
 
 label managerroom:
@@ -451,7 +452,7 @@ screen rooms2():
         # ROOM 1
         if current_room == 1:
             
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.6 xpos 0.2 ypos 0.16
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.6 xpos 0.2 ypos 0.16
             imagebutton:
                 xpos 0.388
                 ypos 0.07
@@ -462,7 +463,7 @@ screen rooms2():
                     blend 'add'
         # ROOM 2
         elif current_room == 2:
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.45 xpos 0.2 ypos 0.3
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.45 xpos 0.2 ypos 0.3
             add "images/bg overworld/borders.png" blend 'multiply'
             imagebutton:
                 focus_mask True
@@ -490,7 +491,7 @@ screen rooms2():
             add "images/bg overworld/borders1.png"
             
        
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.22 xpos 0.25 ypos 0.45
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.22 xpos 0.25 ypos 0.45
             imagebutton:
                 focus_mask True 
                 xpos 0.5
@@ -565,7 +566,7 @@ screen breaktime2():
         # ROOM 1
         if current_room == 1:
             
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.6 xpos 0.2 ypos 0.16
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.6 xpos 0.2 ypos 0.16
             imagebutton:
                 xpos 0.388
                 ypos 0.07
@@ -576,7 +577,7 @@ screen breaktime2():
                     blend 'add'
         # ROOM 2
         elif current_room == 2:
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.45 xpos 0.2 ypos 0.3
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.45 xpos 0.2 ypos 0.3
             add "images/bg overworld/borders.png" blend 'multiply'
             imagebutton:
                 focus_mask True
@@ -632,11 +633,11 @@ screen breaktime2():
                 at transform:
                     blend 'add'
                     zoom 0.297
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.53
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.2 xpos 0.2 ypos 0.53
         # ROOM 4             
         # ROOM 4
         elif current_room == 4:
-            add "images/barby/standing/barby_standing_pants.png" zoom 0.43 xpos 0.2 ypos 0.3
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.43 xpos 0.2 ypos 0.3
             add "images/bg overworld/chairs.png"
         # LEFT ARROW
         if current_room not in [1]:

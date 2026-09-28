@@ -7,6 +7,7 @@ label breaktime1:
     $ managerroom = False
 
     if talkedtodeez and talkedtokendra and talkedtomj and talkedtoapollo:
+        scene black with dissolve
         b "Ough... I gotta go to the conference room... team meeting..."
         b "So much talking to people..."
         jump meeting
@@ -820,30 +821,55 @@ label mjtalking22:
 label deeztalking22:
     $ talkedtodeez = True
     scene room_4
-    show de default
+    show de default at center
     b "Hiya, Deez! Taking your break already, are you?"
     b "You're the only one who got the memo right away, haha! I had to tell everyone else."
+    show de defaultt
+
     d "What? No."
+    show de default
     b "No?"
+    show de defaultt
     d "I'm not taking a break. I'm working."
+    show de default
     b "Oh!"
     b "Well! It's break time. So, y'know, you can, like, take a break!"
+    show de shyt
     d "Yeah. Well... I don't need a break; I'm stronger than that."
+    show de shy
+    show m thinkingt at right, up
     m "Deez, you know that taking a break and taking care of your health- mental and physical- is the strongest thing to do!"
+
     d "..."
     # small text, whisper
+    show de sadt
     d "...Yeah some people, but not me... I'm built... better."
+    show de default at jumper
     b "What?"
+    show de surprisedt
     d "You heard what I said."
+    show de default
     m "Of course he did!" 
+    show apo happyt at center:
+        xoffset 250
     a "Hi everyone! What're we talking about? :D" 
+    show apo happy
+    show ken defaultt at left
     k "Barby was just greeting Deez!"
+    show ken default
+    show apo happyt
     a "Hi, Deez!"
     a "I mean- hi to you, too, Kendra! And MJ! And Barby!"
+    show apo default
     k "H-Hi, Apollo!"
+    show de default
+    show m defaultt
     m "Hey, she greeted you first, Deez!"
+    show m default
+    show de shyt
     d "Yeah. Thank you..."
     d "I mean. That's so- expected... That's what I did. Expect..."
+    show de default
     b "Hiya, Apollo!"
     a "Yeah! Not to interrupt! You were talking to Deez?"
     b "Yep!"
@@ -992,7 +1018,7 @@ label breakroomtalkday2:
     d "Hmm. Guess there's nothing wrong with that."
     b "Well, c'mon everyone, let's squeeze together! Say, uhh—"
     d "Greaseeee."
-    e "Greaseeee!" 
+    "Greaseeee!" 
 
 #CG?
     a "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 

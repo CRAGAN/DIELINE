@@ -1,10 +1,12 @@
 label day3:
     #Intro
 # Calendar pop up
+    scene black
+    pause 2.0
     centered "Wednesday Oct 28"
     centered "3 days left"
 
-
+    
 
     b "...Apollo texted to go to the break room as soon as I got here?"
     b "...I need to go to Kendra's cubicle."

@@ -478,7 +478,13 @@ label deeztalking:
 
    
 label mjtalking2:
-    scene room_1
+    scene room_2
+    show lighter:
+        blend 'add' alpha 0.3
+    show borders
+    show mj_standing:
+        zoom 0.6 ypos 0.33 xpos 0.6
+    
     $ talkedtomj = True
     b "Good morning, MJ!"
     m "Good morning! How are you?"
@@ -487,7 +493,20 @@ label mjtalking2:
     jump rooms2
 label deeztalking2:
     #Click Deez
-    scene room_2
+    scene room_3
+    show lighter:
+        blend 'add' alpha 0.3
+    show borders1
+    show deez_standing:
+        xpos 0.5
+        ypos 0.4
+        zoom 0.25
+            
+                
+    show kendra_standing:
+        xpos 0.4
+        ypos 0.45
+        zoom 0.3
     $ talkedtodeez = True
     b "Good morning, Deez!"
     d "Good morning."
@@ -498,6 +517,20 @@ label deeztalking2:
 label kendratalking2:
     #Click Kendra
     scene room_3
+    show lighter:
+        blend 'add' alpha 0.3
+    show borders1
+    show deez_standing:
+        xpos 0.5
+        ypos 0.4
+        zoom 0.25
+            
+                
+    show kendra_standing:
+        xpos 0.4
+        ypos 0.45
+        zoom 0.3
+     
     $ talkedtokendra = True
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
@@ -512,7 +545,7 @@ label kendratalking3:
 
     #when u enter cubicles room, auto dialogue
     #Barby slow turn to Kendra gulp!
-
+    
     #Kendra
     b "...Good morning, Kendra...!"
     b "Here. I... I made you breakfast."

@@ -4,6 +4,7 @@ define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="K
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038")
 define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#523870")
 define t = Character("Team")
+define r = Character("Ryann", image= "i_ry", callback=name_callback,cb_name="Ryann", color = "#703838")
 
 default see_ids = False
 define talked = 0

@@ -266,13 +266,8 @@ label kendratalking:
             menu:
                 "Compliment" if not compliment:
                     $ compliment = True
-<<<<<<< HEAD
-                    voice "audio/Barby/Day 1 OW/barby_line085.mp3"
-                    $ quick_menu = True
-=======
                     voice "audio/Barby/Day 1 ID/barby_line085.mp3"
                     
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     b "You’ve got a really cool surname. It’s got a nice ring to it."
                     show ken defaultt
                     voice "audio/Kendra/Day 1 OW/kendra_line10.mp3"
@@ -305,13 +300,7 @@ label kendratalking:
 
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
-<<<<<<< HEAD
-                    voice "audio/Barby/Day 1 OW/barby_line090.mp3"
-                    $ quick_menu = True
-=======
                     voice "audio/Barby/Day 1 ID/barby_line090.mp3"
-                    
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line016.mp3"
@@ -355,13 +344,8 @@ label kendratalking:
 
                 "How's work?" if not howsworkkendra:
                     $ howsworkkendra = True
-<<<<<<< HEAD
-                    voice "audio/Barby/Day 1 OW/barby_line096.mp3"
-                    $ quick_menu = True
-=======
                     voice "audio/Barby/Day 1 ID/barby_line096.mp3"
                     
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     b "How’s work been for ya?"
                     show ken defaultt
                     voice "audio/Kendra/Day 1 OW/kendra_line024.mp3"
@@ -391,13 +375,8 @@ label kendratalking:
 
                 "How's life?" if not howslifekendra:
                     $ howslifekendra = True
-<<<<<<< HEAD
-                    voice "audio/Barby/Day 1 OW/barby_line100.mp3"
-                    $ quick_menu = True
-=======
                     voice "audio/Barby/Day 1 ID/barby_line100.mp3"
                     
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     b "How’s life?"
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line029.mp3"
@@ -511,12 +490,7 @@ label deeztalking:
         show de default at center, up
         
         with fade
-<<<<<<< HEAD
         voice "audio/Barby/Day 1 OW/barby_line113.mp3"
-=======
-        voice "audio/Barby/Day 1 ID/barby_line0113.mp3"
-        $ quick_menu = True
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
         b "I’ll be sure to tell her!"
 
         #ID goes away, UI comes out
@@ -529,13 +503,8 @@ label deeztalking:
             menu:
                 "Welcome!" if not welcome:
                     $ welcome = True
-<<<<<<< HEAD
                     voice "audio/Barby/Day 1 OW/barby_line114.mp3"
                     $ quick_menu = True
-=======
-                    voice "audio/Barby/Day 1 ID/barby_line0114.mp3"
-                    
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     b "Welcome to the team! I also started out as an unpaid intern, so I understand the boat you’re in."
                     voice "audio/Barby/Day 1 OW/barby_line115.mp3"
                     b "Please let me know if you need anything!"
@@ -611,13 +580,8 @@ label deeztalking:
 
                 "How's work?" if not howsworkdeez:
                     $ howsworkdeez = True
-<<<<<<< HEAD
                     voice "audio/Barby/Day 1 OW/barby_line129.mp3"
                     $ quick_menu = True
-=======
-                    voice "audio/Barby/Day 1 ID/barby_line0129.mp3"
-                    
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
                     
                     b "How’s work been for you?"
                     show de calmt
@@ -634,13 +598,8 @@ label deeztalking:
                 "How's life?" if not howslifedeez:
                     #VA: said like "how’s the wife?" 
                     $ howslifedeez = True
-<<<<<<< HEAD
                     voice "audio/Barby/Day 1 OW/barby_line131.mp3"
                     $ quick_menu = True
-=======
-                    voice "audio/Barby/Day 1 ID/barby_line0131.mp3"
-                    
->>>>>>> 99acc5951e7efca4e1ac88b362d5b64a0661ee71
 
                     b "So... how’s the life? Outside of work, y’know." 
                     show de defaultt

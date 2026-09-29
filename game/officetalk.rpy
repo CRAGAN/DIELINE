@@ -426,7 +426,7 @@ label deeztalking:
 #DAY 2
 
 label officewalk2:
-label mjtalking22 #:
+label mjtalking22:
     b "Good morning, MJ!"
     m "Good morning! How are you?"
     b "Good! How are you?"

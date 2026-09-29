@@ -58,13 +58,16 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "gui/open_dyslexic/OpenDyslexic-Regular.otf"
+define gui.text_font = "gui/fonts/open_dyslexic/OpenDyslexic-Regular.otf"
 
 ## The font used for character names.
-define gui.name_text_font = "gui/open_dyslexic/OpenDyslexic-Regular.otf"
+define gui.name_text_font = "gui/fonts/open_dyslexic/OpenDyslexic-Regular.otf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "gui/open_dyslexic/OpenDyslexic-Regular.otf"
+define gui.interface_text_font = "gui/fonts/open_dyslexic/OpenDyslexic-Regular.otf"
+
+## The font used for the email minigame.
+define gui.mg_text_font = "gui/fonts/DM_Mono/DMMono-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33

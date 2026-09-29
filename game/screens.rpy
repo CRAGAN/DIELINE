@@ -363,7 +363,7 @@ screen email_sort1():
 
             imagebutton:
                 idle "gui/minigame/eminigame_accept.png"
-                # action Function(type_time, "fuckfucckfcuk", 7)
+                action Function(renpy.invoke_in_new_context, type_time, "fuckfucckfcuk", 7)
             imagebutton:
                 idle "gui/minigame/eminigame_delete.png"
             imagebutton:
@@ -384,7 +384,10 @@ style email_opts_text:
 ## i;m So sorry this goes against all my principles
 ## Im doing the type function in screens cuz im evil sorry
 # label??????
-# type_ans = renpy.input(response, screen="email_typing", length=charlimit)
+init python:
+    def type_time(response, charlimit):
+        renpy.input(response, screen="email_typing", length=charlimit)
+
 
 screen email_typeoverlay():
     zorder 2

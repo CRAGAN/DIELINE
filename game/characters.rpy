@@ -123,6 +123,18 @@ image m hmt = At(
     Transform(zoom=0.8),
     sprite_highlight("MJ")
 )
+image m toohappym = At(
+    Animation("images/mj/mj toohappy1.png", 0.15, 
+    "images/mj/mj toohappy2.png", 0.15, "images/mj/mj toohappy.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
+image m toohappym = At(
+    Animation("images/mj/mj toohappy.png", 0.15, 
+    "images/mj/mj toohappym.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
 ##APOLLO SPRITES
 image apo default =At("images/apollo/apollo default.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo hm =At("images/apollo/apollo hm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))

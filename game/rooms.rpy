@@ -738,7 +738,7 @@ screen rooms3():
                 xpos 0.5
                 ypos 0.33
                 idle "images/kendra/standing/kendra_monster_overworld.png"
-                hover "images/mj/standing/kendra_monster_overworld.png"
+                hover "images/kendra/standing/kendra_monster_overworldh.png"
                 action [With(Fade(0.4, 0.0, 0.4)), Call("kendracubic")]
                 at transform:
                     zoom 0.6
@@ -755,6 +755,138 @@ screen rooms3():
         # ROOM 4
         
        
+        
+        # LEFT ARROW
+        if current_room not in [1]:
+            imagebutton:
+                idle "arrowl_idle.png"
+                hover "arrowl_hover.png"
+
+                action [
+                    SetVariable(
+                        "current_room",
+                        (current_room - 1) if current_room > 1 else total_rooms
+                    ),
+                    With(Fade(0.3, 0.2, 0.3))
+                ]
+
+                xpos 0.09
+                ypos 0.5
+                focus_mask True
+
+
+        # RIGHT ARROW
+        if current_room not in [4]: #brain fog
+            imagebutton:
+                idle "arrow_idle.png"
+                hover "arrow_hover.png"
+
+                action [
+                    SetVariable(
+                        "current_room",
+                        (current_room + 1) if current_room < total_rooms else 1
+                    ),
+                    With(Fade(0.3, 0.2, 0.3))
+                ]
+
+                xpos 0.8
+                ypos 0.5
+                
+                    
+                focus_mask True
+
+#DAY 5
+
+screen rooms5(): 
+    
+    if overlay_visible:
+
+        add "room_[current_room]":
+            align (0.5, 0.5)
+        add "images/lighter.png" blend 'add' alpha 0.3
+
+        # ROOM 1
+        if current_room == 1:
+            
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.6 xpos 0.2 ypos 0.16
+            add "black" blend 'multiply' alpha 0.3
+            add "images/blue.png" blend 'multiply' alpha 0.5
+            imagebutton:
+                xpos 0.388
+                ypos 0.07
+                idle "images/door_idle.png"
+                hover "images/door_hover.png"
+                action [Notify("Not right now."),]
+                at transform:
+                    blend 'add'
+            imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.28
+                idle "images/kendra/standing/kendra_monster_overworld.png"
+                hover "images/kendra/standing/kendra_monster_overworldh.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("kendratalking5")]
+                at transform:
+                    zoom 1.0
+            
+                    
+
+            ##imagebutton:
+                # focus_mask True 
+                # xpos 0.6
+                #  ypos 0.2
+                # idle "images/apollo/standing/apollo_standing.png"
+                # hover "images/apollo/standing/apollo_standing_hover.png"
+                # action Call("apollotalking")
+                # at transform:
+                    #    zoom 0.8
+            
+
+
+        # ROOM 2
+        elif current_room == 2:
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.45 xpos 0.2 ypos 0.3
+            
+            add "black" blend 'multiply' alpha 0.3
+            add "images/green.png" blend 'multiply' alpha 0.5
+            imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.05
+                idle "images/mj/standing/mj_monster_overworld.png"
+                hover "images/mj/standing/mj_monster_overworldh.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking5")]
+                at transform:
+                    zoom 1.5
+            add "images/bg overworld/borders.png" blend 'multiply'
+                    
+            
+
+        # ROOM 3
+        elif current_room == 3:
+            add "images/bg overworld/borders1.png"
+            add "black" blend 'multiply' alpha 0.3
+            
+            imagebutton:
+                focus_mask True 
+                xpos 0.5
+                ypos 0.3
+                idle "images/deez/standing/deez_monster_overworld.png"
+                hover "images/deez/standing/deez_monster_overworldh.png"
+                action [With(Fade(0.4, 0.0, 0.4)), Call("deeztalking5")]
+                at transform:
+                    zoom 0.4
+
+            
+            add "images/barby/standing/barby_standing_pants.png" zoom 0.2 xpos 0.2 ypos 0.43
+            add "images/pink.png" blend 'multiply' alpha 0.5
+            add "images/blue.png" blend 'multiply' alpha 0.5
+        # ROOM 4
+        
+        elif current_room == 4:
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.43 xpos 0.2 ypos 0.3
+            add "images/bg overworld/chairs.png"
+        # LEFT ARROW
         
         # LEFT ARROW
         if current_room not in [1]:

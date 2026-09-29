@@ -35,6 +35,9 @@ label officewalk5:
 
 # Clicking around anywhere else in the area
 label encounter4:
+    scene room_3:
+        zoom 1.4
+    show 
     #Click bathroom door
     # not VA'd except screams and groans from Deez
     b "Hey, Deez? Are you in there?"

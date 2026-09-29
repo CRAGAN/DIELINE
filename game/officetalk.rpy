@@ -784,59 +784,66 @@ label breakroomnokendra:
     m "That’s because it was after hours. Maybe if we try again, we’ll get someone this time." 
 
     #Contact Someone
-    b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
-    a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
-    a "Oh- oh right, you don’t remember. Oopsies."
-    b "I saw the report! Don’t worry; I know."
-    m "Already on it."
-    # call sfx
-    "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
-    "What can I do to help you?"
-    d "A lot."
-    m "Well said."
-    d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
-    "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
-    b "Huh?"
-    a "T-team meeting exercises?" 
-    "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
-    " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
-    "So go out there and fly high!"
-    a "W-wait, there’s gotta be more—!!"
-    "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
-    b "... Okay."
-    a "That’s. That's it? No way..."
-    d "That guy frankly sucks."
-    m "I guess we just have to try our best moving forward."
+    $ whatishappening = False
+    $ workhabits = False
+    $ contactsomeone = False
+    while not (whatishappening and workhabits and contactsomeone):
+        menu:
+            "Contact Someone" if not contactsomeone:
+                b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
+                a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
+                a "Oh- oh right, you don’t remember. Oopsies."
+                b "I saw the report! Don’t worry; I know."
+                m "Already on it."
+                # call sfx
+                "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
+                "What can I do to help you?"
+                d "A lot."
+                m "Well said."
+                d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
+                "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
+                b "Huh?"
+                a "T-team meeting exercises?" 
+                "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
+                " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
+                "So go out there and fly high!"
+                a "W-wait, there’s gotta be more—!!"
+                "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
+                b "... Okay."
+                a "That’s. That's it? No way..."
+                d "That guy frankly sucks."
+                m "I guess we just have to try our best moving forward."
 
-    #What is happening to Kendra?
-    b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
-    m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
-    a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
-    d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
-    b "Let’s just not try to touch her! Like, at all for now."
+            "What is happening to Kendra?" if not whatishappening:
+        
+                b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
+                m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
+                a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
+                d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
+                b "Let’s just not try to touch her! Like, at all for now."
 
-    #Kendra work habits
-    b "You said she’s still working?"
-    a "Yeah, but when I went to check on her output... she’s barely done anything."
-    a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
-    b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
-    a "Oh Barbs, wish I knew, I really wish I knew..."
+            "Kendra work habits" if not contactsomeone:
+                b "You said she’s still working?"
+                a "Yeah, but when I went to check on her output... she’s barely done anything."
+                a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
+                b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
+                a "Oh Barbs, wish I knew, I really wish I knew..."
 
-    b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
-    m "Not to worry, I’m more than willing to help carry the work load."
-    d "I too, can help carry the work load."
-    m "Aw, thanks Deez, but you’re still just an intern. There isn’t really much you can do to help."
-    d "Oh... I knew that. Of course."
-    a "Are you sure MJ? There’s so much that needs to be done and–"
-    m "Anything you throw at me, I can accomplish easy peasy." 
-    m "Just leave it to me! I’ll get us up to speed in no time."
-    b "Well-"
-    b "Thanks, MJ, it’s kinda... reassuring? To see you carry this energy despite everything."
-    b "But you’re not alone! I can also help out plenty."
-    a "Me too! I’ll do my best to make this project a success."
-    a "And Deez, don’t worry, you can still help out by helping me out!"
-    d "...fine. Okay. Since you... need help, I can help you."
-    
+                b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
+                m "Not to worry, I’m more than willing to help carry the work load."
+                d "I too, can help carry the work load."
+                m "Aw, thanks Deez, but you’re still just an intern. There isn’t really much you can do to help."
+                d "Oh... I knew that. Of course."
+                a "Are you sure MJ? There’s so much that needs to be done and–"
+                m "Anything you throw at me, I can accomplish easy peasy." 
+                m "Just leave it to me! I’ll get us up to speed in no time."
+                b "Well-"
+                b "Thanks, MJ, it’s kinda... reassuring? To see you carry this energy despite everything."
+                b "But you’re not alone! I can also help out plenty."
+                a "Me too! I’ll do my best to make this project a success."
+                a "And Deez, don’t worry, you can still help out by helping me out!"
+                d "...fine. Okay. Since you... need help, I can help you."
+                
 
 #. DAY. 4
 label officewalkday4:
@@ -941,12 +948,15 @@ label officewalkday4:
 #DAY 5
 label kendratalking5:
     b "Good morning, Kendra."
+    jump room5
     
 label mjtalking5:
     b "Good morning, MJ."
+    jump room5
 
 label deeztalking5:
     b "..."
+    jump room5
     
     #if you click anyone a second time barby goes "..."
     #sfx_dooropen

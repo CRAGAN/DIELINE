@@ -209,125 +209,125 @@ centered " "
 jump encounterday2
 
 label encounterday2:
-scene kendramonster1 with fade
-b "Kendra? Did—did something happen to you—?"
-pause 2.0
-# kendra cg
-scene black 
-pause 2.0
-scene kendramonster2 
-show noises:
-    alpha 0.1
-    blend 'add'
-pause 2.0
-b "..."
-# scary... reverb on voice
-
-b "...Oh god..."
-scene black
-pause 2.0
-camera:
-    subpixel True
-    zoom 4 xoffset -2500 yoffset -700 
+    scene kendramonster1 with fade
+    b_sub "Kendra? Did—did something happen to you—?"
     pause 2.0
-    zoom 3 xoffset -1600 yoffset -400
+    # kendra cg
+    scene black 
     pause 2.0
-    zoom 2 xoffset -800 yoffset -100
-    easein 100 zoom 1.0 xoffset 0 yoffset 0
+    scene kendramonster2 
+    show noises:
+        alpha 0.1
+        blend 'add'
+    pause 2.0
+    b_sub "..."
+    # scary... reverb on voice
 
-scene kendrabgmonster at small_wobble1
-show ken monsterr at small_wobble
-show noises:
-    alpha 0.1
-    blend 'add'
-with vpunch
-# pause, let the atmosphere sink in
-# barby's in like trance like state kind of so muffle, under water style, apollo voice
+    b_sub "...Oh god..."
+    scene black
+    pause 2.0
+    camera:
+        subpixel True
+        zoom 4 xoffset -2500 yoffset -700 
+        pause 2.0
+        zoom 3 xoffset -1600 yoffset -400
+        pause 2.0
+        zoom 2 xoffset -800 yoffset -100
+        easein 100 zoom 1.0 xoffset 0 yoffset 0
 
-a "Barby?"
+    scene kendrabgmonster at small_wobble1
+    show ken monsterr at small_wobble
+    show noises:
+        alpha 0.1
+        blend 'add'
+    with vpunch
+    # pause, let the atmosphere sink in
+    # barby's in like trance like state kind of so muffle, under water style, apollo voice
 
-# apollo's voice becomes a bit clearer but reverby
+    a_sub "Barby?"
 
-a "What's going– AAAAAAH!"
-# mj and deez are off screen here, so make them quiet, muffled, also under water style
-m "Did someone scream?"
-d "Yes."
-m " Stay out here, Deez, let me check..."
-# muffled footsteps, footsteps stop  (MJ sees face reacts but doesn't say anything? Or make them say something)
-m "OH. OH DEAR."
-# barby voice is still reverb
-b "Kendra...?"
-a "Oh, oh, oh no... this is... oh..."
-a "Mmm... manager decision...!" 
-a "... We're refusing this deadline. I-I can't— We can't—!!" 
-a "Call— we need to call the clinic, the hospital, anyone!" 
-m "Let's, aahh— let's calm down, okay? Let's think this through—" 
-a "I-I'm sorry, right I uhm, where's my phone—" 
-a "We need to tell the higher ups what happened... and ask... um..." 
-m "Kendra? Hey, let's get you... somewhere." 
+    # apollo's voice becomes a bit clearer but reverby
 
-# The CG shifts and its mouth opens as if it's a talking sprite. SQUELCH SQUELCH her JAW is breaking and is MUSHY   make her talk slowly cause her jaw is breaking every time it moves up and down
-# her audio is so weird and pops up on screen as blue text weird glitchy instead of normal subtitles
+    a_sub "What's going– AAAAAAH!"
+    # mj and deez are off screen here, so make them quiet, muffled, also under water style
+    m_sub "Did someone scream?"
+    d_sub "Yes."
+    m_sub " Stay out here, Deez, let me check..."
+    # muffled footsteps, footsteps stop  (MJ sees face reacts but doesn't say anything? Or make them say something)
+    m_sub "OH. OH DEAR."
+    # barby voice is still reverb
+    b_sub "Kendra...?"
+    a_sub "Oh, oh, oh no... this is... oh..."
+    a_sub "Mmm... manager decision...!" 
+    a_sub "... We're refusing this deadline. I-I can't— We can't—!!" 
+    a_sub "Call— we need to call the clinic, the hospital, anyone!" 
+    m_sub "Let's, aahh— let's calm down, okay? Let's think this through—" 
+    a_sub "I-I'm sorry, right I uhm, where's my phone—" 
+    a_sub "We need to tell the higher ups what happened... and ask... um..." 
+    m_sub "Kendra? Hey, let's get you... somewhere." 
 
-show ken monstertt
-k "{b}Don't worry. I'll get all of it done.{/b}"
-show ken monsterr
-m "Wh...what?" 
-show ken monstertt
-k "{b}Turn my computer on. I will handle it.{/b}"
-show ken monsterr
-#VA note: She'd be sobbing quietly at this point, sniffle sniffle
-a "..."
-b "Kendra? D-Do you want to–"
-show ken monstertt
-k "{b}I said I'll get it done. Turn. It. On.{/b}"
-b "... okay." 
-scene black
-# lightfilter is GONE its normal bogo render lighting now
-# all the music stopped
-# go to overworld, everyone(except kendra) is standing next to the door
-#Click Anyone
-pause 2.0
-camera:
-    reset
-scene room_3
-show borders1
-show blue:
-    blend 'multiply' alpha 0.3
-show noises:
-    alpha 0.1
-    blend 'add'
-show overlay:
-    blend 'multiply' 
-show de fear at shaking, downward, center
-with fade
-"..."
-#Deez
-# blubur note: only time deez ask question, deez very vulnerable and genuine
-show de feart
-d "...What happened...? Do we call someone?"
-d "I don't know... what do I do?"
+    # The CG shifts and its mouth opens as if it's a talking sprite. SQUELCH SQUELCH her JAW is breaking and is MUSHY   make her talk slowly cause her jaw is breaking every time it moves up and down
+    # her audio is so weird and pops up on screen as blue text weird glitchy instead of normal subtitles
 
-#Barby himself is too overwhelmed to have an answer
-show de fear
-b "... I don't know."
-menu:
-    "walk to cubicle":
-        scene room_2 
-        show blue:
-            blend 'multiply' alpha 0.3
-        show noises:
-            alpha 0.1
-            blend 'add'
-        show borders
-        with fade
-        " "
-        show blue:
-            blend 'multiply' alpha 1.0
-        "..."
-        show black
-        b "Ah... It's broken."
-        jump day3
+    show ken monstertt
+    k_sub "{b}Don't worry. I'll get all of it done.{/b}"
+    show ken monsterr
+    m_sub "Wh...what?" 
+    show ken monstertt
+    k_sub "{b}Turn my computer on. I will handle it.{/b}"
+    show ken monsterr
+    #VA note: She'd be sobbing quietly at this point, sniffle sniffle
+    av "..."
+    b_sub "Kendra? D-Do you want to–"
+    show ken monstertt
+    k_sub "{b}I said I'll get it done. Turn. It. On.{/b}"
+    b_sub "... okay." 
+    scene black
+    # lightfilter is GONE its normal bogo render lighting now
+    # all the music stopped
+    # go to overworld, everyone(except kendra) is standing next to the door
+    #Click Anyone
+    pause 2.0
+    camera:
+        reset
+    scene room_3
+    show borders1
+    show blue:
+        blend 'multiply' alpha 0.3
+    show noises:
+        alpha 0.1
+        blend 'add'
+    show overlay:
+        blend 'multiply' 
+    show de fear at shaking, downward, center
+    with fade
+    "..."
+    #Deez
+    # blubur note: only time deez ask question, deez very vulnerable and genuine
+    show de feart
+    d_sub "...What happened...? Do we call someone?"
+    d_sub "I don't know... what do I do?"
+
+    #Barby himself is too overwhelmed to have an answer
+    show de fear
+    b_sub "... I don't know."
+    menu:
+        "walk to cubicle":
+            scene room_2 
+            show blue:
+                blend 'multiply' alpha 0.3
+            show noises:
+                alpha 0.1
+                blend 'add'
+            show borders
+            with fade
+            " "
+            show blue:
+                blend 'multiply' alpha 1.0
+            "..."
+            show black
+            b "Ah... It's broken."
+            jump day3
 #walk to cubicles, when you get there barby just goes to cubicle automatically and 
 #screen black
 # VA NOte: "ah" is like... low and subtle and shaky

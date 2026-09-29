@@ -1,22 +1,25 @@
-label wakeupday5:
-    #Kendra:
-    #b "Good morning, Kendra."
-    
-    # MJ:
-    # b "Good morning, MJ."
+label day5:
+    scene black
+    pause 2.0
 
-    #Deez:
-    #b "..."
-    
+    scene room_2
+    show borders
+ 
+    centered "October 30, Friday"
+    centered "1 day left."
     #if you click anyone a second time barby goes "..."
     #sfx_dooropen
     #Managers room
     # cutscene plays, doesnt need to be voice acted, but could be
     #b "Uhh, hiya Apollo...! Sorry for sleeping—"
     # a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
-
+    jump room5
+label room5:
+    scene black
+    pause 2
+    call screen rooms5 with fade
 # Not yet transformed fully but hints she's in the process
-
+label apolloweirdtime:
     a "Oh goodness... I’m so very sorry Barby!! You must’ve been utterly exhausted, working nonstop like that?! It’s GOOD you slept. I... I truly wouldn’t know what to do with myself if you..."
     b "Apollo..."
     a "I-I couldn’t have pushed you any harder than I already have, hahaha— {i}{b}I’m such a bad manager.{/i}{/b} I’m so sorry... I’ll be better, I promise." 

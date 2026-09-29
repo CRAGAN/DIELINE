@@ -2,7 +2,7 @@
     config.has_autosave = False
     config.has_quicksave = False 
 
-define b = Character("Barby", image="barby", color = "#f3a347")
+define b = Character("Barby", image="barby", color = "#c84204")
 define a = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#f04a82")
 define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#1465ab")
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#43882e")
@@ -11,14 +11,14 @@ define t = Character("Team")
 define r = Character("Ryann", image= "i_ry", callback=name_callback,cb_name="Ryann", color = "#703838")
 
 # Subtitled text style
-define b_sub = Character("Barby", who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ],show_is_sub=True, color = "#f3a347")
+define b_sub = Character("Barby", who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ],show_is_sub=True, color = "#c84204")
 define a_sub = Character("Apollo", who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ], image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#ee90b0", show_is_sub=True)
 define k_sub = Character("Kendra", image= "i_ken",  who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ], callback=name_callback,cb_name="Kendra", color = "#1465ab", show_is_sub=True)
 define m_sub = Character("MJ", image= "i_m",  who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ], callback=name_callback,cb_name="MJ", color = "#43882e", show_is_sub=True)
 define d_sub = Character("Deez", image= "i_de",  who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ], callback=name_callback,cb_name="Deez", color = "#994aaf", show_is_sub=True)
 
 # During ID card talk
-define b_id = Character("Barby", show_is_sub=True, show_is_id=True, color = "#f3a347")
+define b_id = Character("Barby", show_is_sub=True, show_is_id=True, color = "#c84204")
 define a_id = Character("Apollo", image= "i_apo", callback=name_callback,cb_name="Apollo", color = "#ee90b0", show_is_sub=True, show_is_id=True)
 # define m_id = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#3f7038", show_is_sub=True, show_is_id=True)
 # define k_id = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="Kendra", color = "#70384e", show_is_sub=True,show_is_id=True)

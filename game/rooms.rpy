@@ -288,37 +288,68 @@ screen managerroom():
 
 screen hallwaysdeez():
     default time_passed = False
-    timer 7.0 action SetScreenVariable("time_passed", True)
+    timer 10.0 action SetScreenVariable("time_passed", True)
 
-    add "images/bg overworld/room_3.png"
+    add "deezscene1" zoom 1.2 xoffset -50
     if not time_passed:
         imagebutton: 
-            idle "images/deez/standing/deez_standing.png"
-            hover "images/deez/standing/deez_standing_hover.png"
+            ypos 0.12
+            xpos 0.3
+            idle "images/deez/deezle2.png" 
+            hover "images/deez/deezle2hover.png"
             action Jump("youdied")
             at deezwalk
     else:
         imagebutton:
+                xpos 0.5
                 idle "arrow_idle.png"
                 hover "arrow_hover.png"
-                action ("kendratalking")
-        
+                action Call("breakroom4")
+    add "images/barby/standing/shock.png" zoom 0.55 xoffset 300 ypos 0.296
+    add "images/blue.png" blend 'multiply' alpha 0.3
 label youdied:
-    "f you died."
-    return
+    scene room_3 
+    show overlay:
+        blend 'multiply' alpha 0.3
+    show blue:
+        blend 'multiply' alpha 0.3
+        easein 1 alpha 0.7
+    show borders1 at center:
+        zoom 1.2
+        easein 0.8 zoom 1.0
+    show deez back at up, center:
+        zoom 0.6
+    
+    b_sub "Deez, wait. Stop. You have something on your—"
+    hide deez back
+    show de monstert at shaking, center:
+        easein 0.5 zoom 3 yoffset 600 xoffset -100
+    show noises:
+        alpha 0.1
+        blend 'add'
+    with vpunch
+    pause 0.9
+    scene black
+    centered " "
+
+    jump encounter4
 
 transform deezwalk:
     zoom 0.4
-    xoffset 300 
+    xoffset 280 
+    easein 0.2 xoffset 300
     linear 0.3 xoffset 290
     pause 2
-    xoffset 600
+    xoffset 580
+    easein 0.2 xoffset 600
     linear 0.3 xoffset 590
     pause 2.0
-    xoffset 900
+    xoffset 880
+    easein 0.2 xoffset 900
     linear 0.3 xoffset 890
     pause 2.0
-    xoffset 1200
+    xoffset 1180
+    easein 0.2 xoffset 1200
     linear 0.3 xoffset 1190
     pause 2.0
     alpha 0.0
@@ -816,7 +847,7 @@ screen rooms5():
                 ypos 0.07
                 idle "images/door_idle.png"
                 hover "images/door_hover.png"
-                action [Notify("Not right now."),]
+                action [With(Fade(0.4, 0.0, 0.4)), Call("apolloweirdtime")]
                 at transform:
                     blend 'add'
             imagebutton:

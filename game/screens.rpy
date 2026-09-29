@@ -146,11 +146,13 @@ screen say(who, what, is_sub=False, is_id=False):
                     style "namebox"
                     text who id "who"
 
+            text what id "what"    
+
     ## If there's a side image, display it above the text. Do not display on
     ## the phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 1.0 yalign 1.0
-        text what id "what"
+
 
 
         ## If there's a side image, display it above the text. Do not display on
@@ -161,7 +163,7 @@ screen say(who, what, is_sub=False, is_id=False):
 
 style sub_window:
     xalign 0.5
-    xfill True
+    #xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height - 80
 

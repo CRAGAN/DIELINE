@@ -74,7 +74,7 @@ label read_id(item_name=None):
         $ renpy.pause(1.5, hard=True)
         voice "audio/Barby/Day 1 ID/barby_line020.mp3"
       
-        b_sub "Barby It’s me!"
+        b_id "Barby It’s me!"
         hide barby_id
     elif current_id == "Apollo Knight":
         show apollo_id at zoomin

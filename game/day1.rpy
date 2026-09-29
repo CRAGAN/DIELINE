@@ -1,12 +1,13 @@
 label start:
     #scene bg barbyclocksin
     #sfx clockin
+    $ quick_menu = False
     voice "audio/Barby/Day 1 Intro/barby_line001.mp3"
-    b "Shucks... I haven’t seen her since we got discharged."
+    b_sub "Shucks... I haven’t seen her since we got discharged."
     voice "audio/Barby/Day 1 Intro/barby_line002.mp3"
-    b "It should be fine. It should be normal."
+    b_sub "It should be fine. It should be normal."
     voice "audio/Barby/Day 1 Intro/barby_line003.mp3"
-    b "I can’t waste time overthinking."
+    b_sub "I can’t waste time overthinking."
 
     # Barby walks into manager room cg
     #sfx walking

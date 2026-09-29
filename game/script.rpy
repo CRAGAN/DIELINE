@@ -8,6 +8,7 @@ define k = Character("Kendra", image= "i_ken", callback=name_callback,cb_name="K
 define m = Character("MJ", image= "i_m", callback=name_callback,cb_name="MJ", color = "#43882e")
 define d = Character("Deez", image= "i_de", callback=name_callback,cb_name="Deez", color = "#994aaf")
 define t = Character("Team")
+define r = Character("Ryann", image= "i_ry", callback=name_callback,cb_name="Ryann", color = "#703838")
 
 # Subtitled text style
 define b_sub = Character("Barby", who_outlines=[ (3, "#000000") ], what_outlines=[ (5, "#000005") ],show_is_sub=True, color = "#f3a347")

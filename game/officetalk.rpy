@@ -65,11 +65,9 @@ label mjtalking:
         default howslifemj = False
 
         while not (whatdepartmentareyoufrom and whatdoesitstandfor and howsworkmj and howslifemj):
-            $ quick_menu = False
             menu:
                 
                 "What does it stand for?" if not whatdoesitstandfor:
-                    $ quick_menu = True
                     $ whatdoesitstandfor = True
                     voice "audio/Barby/Day 1 ID/barby_line056.mp3"
                     b "Can I ask what MJ stands for?" 
@@ -94,7 +92,6 @@ label mjtalking:
                     voice "audio/Barby/Day 1 ID/barby_line060.mp3"
                     b "Yeah."
                 "What department are you from?" if not whatdepartmentareyoufrom:
-                    $ quick_menu = True
                     $ whatdepartmentareyoufrom = True
                     voice "audio/Barby/Day 1 ID/barby_line061.mp3"
                     b "Just to make sure— with the whole name being faded and everything— what exactly {i}is{/i} your job title?"
@@ -130,7 +127,7 @@ label mjtalking:
                     b "We’ve... always tried to make things as nice as possible for each other. We’re all in the same boat, after all."
                 
                 "How's life?" if not howslifemj:
-                    $ quick_menu = True
+                    
                     $ howslifemj = True
                     voice "audio/Barby/Day 1 ID/barby_line067.mp3"
                     b "Outside all of that, how are you?"
@@ -265,12 +262,12 @@ label kendratalking:
         default howsworkkendra = False
         default howslifekendra= False
         while not (compliment and rollerskating and howsworkkendra):
-            $ quick_menu = False
+            
             menu:
                 "Compliment" if not compliment:
                     $ compliment = True
                     voice "audio/Barby/Day 1 ID/barby_line085.mp3"
-                    $ quick_menu = True
+                    
                     b "You’ve got a really cool surname. It’s got a nice ring to it."
                     show ken defaultt
                     voice "audio/Kendra/Day 1 OW/kendra_line010.mp3"
@@ -304,7 +301,7 @@ label kendratalking:
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
                     voice "audio/Barby/Day 1 ID/barby_line090.mp3"
-                    $ quick_menu = True
+                    
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line016.mp3"
@@ -349,7 +346,7 @@ label kendratalking:
                 "How's work?" if not howsworkkendra:
                     $ howsworkkendra = True
                     voice "audio/Barby/Day 1 ID/barby_line096.mp3"
-                    $ quick_menu = True
+                    
                     b "How’s work been for ya?"
                     show ken defaultt
                     voice "audio/Kendra/Day 1 OW/kendra_line024.mp3"
@@ -380,7 +377,7 @@ label kendratalking:
                 "How's life?" if not howslifekendra:
                     $ howslifekendra = True
                     voice "audio/Barby/Day 1 ID/barby_line100.mp3"
-                    $ quick_menu = True
+                    
                     b "How’s life?"
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line029.mp3"
@@ -495,6 +492,7 @@ label deeztalking:
         
         with fade
         voice "audio/Barby/Day 1 ID/barby_line0113.mp3"
+        $ quick_menu = True
         b "I’ll be sure to tell her!"
 
         #ID goes away, UI comes out
@@ -503,12 +501,12 @@ label deeztalking:
         default howsworkdeez = False
         default howslifedeez = False
         while not (welcome and fixcoffeemachine and howslifedeez and howsworkdeez):
-            $ quick_menu = False
+            
             menu:
                 "Welcome!" if not welcome:
                     $ welcome = True
                     voice "audio/Barby/Day 1 ID/barby_line0114.mp3"
-                    $ quick_menu = True
+                    
                     b "Welcome to the team! I also started out as an unpaid intern, so I understand the boat you’re in."
                     voice "audio/Barby/Day 1 ID/barby_line0115.mp3"
                     b "Please let me know if you need anything!"
@@ -551,7 +549,7 @@ label deeztalking:
 
                 "Where did you learn to fix coffee machines?" if not fixcoffeemachine:
                     $ fixcoffeemachine = True
-                    $ quick_menu = True
+                    
                 # pan to coffee machine
                     voice "audio/Barby/Day 1 ID/barby_line0122.mp3"
                     b "Haha. So. Um. Where'd ya learn how to fix coffee machines?"
@@ -585,7 +583,7 @@ label deeztalking:
                 "How's work?" if not howsworkdeez:
                     $ howsworkdeez = True
                     voice "audio/Barby/Day 1 ID/barby_line0129.mp3"
-                    $ quick_menu = True
+                    
                     
                     b "How’s work been for you?"
                     show de calmt
@@ -603,7 +601,7 @@ label deeztalking:
                     #VA: said like "how’s the wife?" 
                     $ howslifedeez = True
                     voice "audio/Barby/Day 1 ID/barby_line0131.mp3"
-                    $ quick_menu = True
+                    
 
                     b "So... how’s the life? Outside of work, y’know." 
                     show de defaultt

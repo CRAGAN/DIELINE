@@ -5,9 +5,11 @@ label breaktime1:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
+    $ quick_menu = False
 
     if talkedtodeez and talkedtokendra and talkedtomj and talkedtoapollo:
         scene black with dissolve
+        $ quick_menu = True
         b "Ough... I gotta go to the conference room... team meeting..."
         b "So much talking to people..."
         jump meeting
@@ -63,7 +65,7 @@ label deezandapollo:
         default ears = False
         default smalltalk = False
         while not (aboutids and ears and smalltalk):
-            $ quick_menu = False
+        
             menu:
                 "The real IDs’ quality..." if not aboutids:
                     $ aboutids = True
@@ -164,7 +166,7 @@ label deezandapollo:
         show apo default at up
         show de shy
         b "I’ll leave you to it, then!"
-        $ quick_menu = False
+    
         jump breaktime1
     else:
         scene room_1
@@ -224,7 +226,7 @@ label mjandkendra:
         default costumes = False
         default mjsfamily = False
         while not (related and costumes and mjsfamily):
-            $ quick_menu = False
+        
             menu:
                 "Related" if not related:
                     $ related = True

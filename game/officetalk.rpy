@@ -836,6 +836,7 @@ label breakroomnokendra:
     a "Me too! I’ll do my best to make this project a success."
     a "And Deez, don’t worry, you can still help out by helping me out!"
     d "...fine. Okay. Since you... need help, I can help you."
+    
 
 #. DAY. 4
 label officewalkday4:

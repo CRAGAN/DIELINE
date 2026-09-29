@@ -1040,18 +1040,18 @@ label breakroomtalkday2:
     d "Greaseeee."
     "Greaseeee!" 
 
-#CG?
-    a "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
-    k "{i}I... okay. Just talk to her.{/i}"
-    k "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
-    b "{i} You got this! Thumbs up, thumbs up!{/i}!"
-    k "Ahh— like in private? Y-yeah! It's nothing too important s-so... aahhh..." 
-    a "Oh! Oh I — I think—" 
-    b "{i} Cheering you oooon!{/i}"
-    a "O-of course! I'd be happy to, Kendra, even if it's a small thing... you can tell me anything and everything, haha!"
-    a "We'll be back in a bit!"
+    #CG?
+    a_sub "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
+    k_sub "{i}I... okay. Just talk to her.{/i}"
+    k_sub "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
+    b_sub "{i} You got this! Thumbs up, thumbs up!{/i}!"
+    k_sub "Ahh— like in private? Y-yeah! It's nothing too important s-so... aahhh..." 
+    a_sub "Oh! Oh I — I think—" 
+    b_sub "{i} Cheering you oooon!{/i}"
+    a_sub "O-of course! I'd be happy to, Kendra, even if it's a small thing... you can tell me anything and everything, haha!"
+    a_sub "We'll be back in a bit!"
 # they leave the scene 
-    b "Well... I guess we could just go to the meeting room while we wait,  since she was about to call a meet, anyway."
+    b_sub "Well... I guess we could just go to the meeting room while we wait,  since she was about to call a meet, anyway."
     jump teammeetingpt2
 
 #. dAY 3

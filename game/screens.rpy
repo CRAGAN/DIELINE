@@ -146,11 +146,13 @@ screen say(who, what, is_sub=False, is_id=False):
                     style "namebox"
                     text who id "who"
 
+            text what id "what"    
+
     ## If there's a side image, display it above the text. Do not display on
     ## the phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 1.0 yalign 1.0
-        text what id "what"
+
 
 
         ## If there's a side image, display it above the text. Do not display on
@@ -165,7 +167,7 @@ style sub_window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height - 80
 
-    background Image("gui/textbox_sub.png", xalign=0.5, yalign=1.0)
+    background None
 
 style sub_namebox:
     background None
@@ -273,11 +275,15 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
+    on "show" action SetVariable("quick_menu", False)
+    
+    # Automatically turn the quick menu back on when this screen closes
+    on "hide" action SetVariable("quick_menu", True)
     style_prefix "choice"
-
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption action [Function(narrator.add_history, kind="adv", who = "", what = i.caption), i.action]
+
 
 
 style choice_vbox is vbox
@@ -360,7 +366,7 @@ screen quick_menu():
 
 
             hbox:
-                xpos 140
+                xpos 80
                 ypos  -13
                 spacing 50
                 button:
@@ -393,33 +399,6 @@ screen quick_menu():
                     idle_foreground Image("gui/button/icons/settings_idle.png", xalign=0.5, yalign=0.5) 
                     hover_foreground Image("gui/button/icons/settings_hover.png", xalign=0.5, yalign=0.5)                                                
 
-            # hbox:
-            #     xpos -550
-            #     ypos  -25
-            #     spacing 30
-            #     imagebutton auto "gui/button/icons/log_%s.png" action ShowMenu('History')
-            #     imagebutton auto "gui/button/icons/back_%s.png" action Rollback()
-            #     imagebutton auto "gui/button/icons/auto_%s.png" action Preference("auto-forward", "toggle")
-            #     imagebutton auto "gui/button/icons/skipping_%s.png"action Skip() alternate Skip(fast=True, confirm=True)
-
-
-            # hbox:
-            #     xpos 300
-            #     ypos  -25
-            #     spacing 30
-            #     imagebutton auto "gui/button/icons/save_%s.png" action ShowMenu('save')
-            #     imagebutton auto "gui/button/icons/load_%s.png" action ShowMenu('load')
-            #     imagebutton auto "gui/button/icons/settings_%s.png" action ShowMenu('preferences')
-
-
-            # textbutton _("Back") action Rollback()
-            # textbutton _("History") action ShowMenu('history')
-            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            # textbutton _("Auto") action Preference("auto-forward", "toggle")
-            # textbutton _("Save") action ShowMenu('save')
-            # textbutton _("Q.Save") action QuickSave()
-            # textbutton _("Q.Load") action QuickLoad()
-            # textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -635,16 +614,20 @@ screen navigation():
                         align (0.5, 0.5)
                         action Show("preferences")
                     text _("Settings"):
-                        align (0.5, 0.5)                        
+                        align (0.5, 0.5)      
+
+
 
         # if _in_replay:
 
         #     textbutton _("End Replay") action EndReplay(confirm=True)
 
-        # if not main_menu:
-        #     xpos 1400
-        #     ypos 500
-        #     textbutton _("Main Menu") action MainMenu()
+            if not main_menu:
+                textbutton _("Main Menu"):
+                    action MainMenu()
+                    xpos 50
+                    ypos 800
+                
 
         # textbutton _("About") action ShowMenu("about")
 
@@ -756,9 +739,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
         hbox:
 
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
+            ## Reserve space for the navigation section. NO WE DONT
+            # frame:
+            #     style "game_menu_navigation_frame"
 
             frame:
                 style "game_menu_content_frame"
@@ -795,6 +778,26 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                         spacing spacing
 
                         transclude
+
+                elif scroll == "vpgrid_history":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"                 
+                        mousewheel True
+                        draggable True
+                        side_yfill True
+                        
+                        xsize 1850
+                        ysize 700
+                                                
+                        ypos 75
+                    
+                        spacing spacing
+
+                        transclude                        
 
                 else:
 
@@ -851,7 +854,7 @@ style game_menu_navigation_frame:
 
 style game_menu_content_frame:
     left_margin 0
-    right_margin 30
+    right_margin 0
     top_margin 15
 
 style game_menu_viewport:
@@ -1220,7 +1223,6 @@ style slider_vbox:
 ## dialogue history stored in _history_list.
 ##
 ## https://www.renpy.org/doc/html/history.html
-
 screen history():
 
     tag menu
@@ -1228,34 +1230,56 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    use game_menu(_(""), scroll=("vpgrid_history"), yinitial=1.0, spacing=gui.history_spacing):
 
         style_prefix "history"
 
         for h in _history_list:
 
             window:
+               
+                if h.who is not "":
+                    frame:
+                        background Frame("gui/log_namebox.png")
+                        padding (0,0)
+                        xalign 0.25
 
+                        label h.who:
+                            style "history_name"
+                            substitute False
 
-                ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
+                            ## Take the color of the who text from the Character,
+                            ## if set.
+                            if "color" in h.who_args:
+                                text_color "#FFFFFF"
+                                xalign 0.5
 
-                if h.who:
-
-                    label h.who:
-                        style "history_name"
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    
+                    text what:
+                        xalign 0.5
+                        color '#000000'
                         substitute False
 
-                        ## Take the color of the who text from the Character,
-                        ## if set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+                else:
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    frame:   
+                        background Frame("gui/log_choicebox.png")        
+                        padding (0,0)
+                        xalign 0.5
+                        xsize 1222
+                        ysize 93
 
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    color '#000000'
-                    substitute False
+
+                        text what:
+                            xalign 1.0
+                            yalign 0.5
+                            color '#000000'
+                            substitute False
+                            
+
+
+                    
 
         if not _history_list:
             label _("The dialogue history is empty.")
@@ -1297,6 +1321,7 @@ style history_text:
     min_width gui.history_text_width
     textalign gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
+    size 30
 
 style history_label:
     xfill True

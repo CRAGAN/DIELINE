@@ -1,12 +1,14 @@
 label start:
     #scene bg barbyclocksin
     #sfx clockin
+    window hide
+    $ quick_menu = False
     voice "audio/Barby/Day 1 Intro/barby_line001.mp3"
-    b "Shucks... I haven’t seen her since we got discharged."
+    b_sub "Shucks... I haven’t seen her since we got discharged."
     voice "audio/Barby/Day 1 Intro/barby_line002.mp3"
-    b "It should be fine. It should be normal."
+    b_sub "It should be fine. It should be normal."
     voice "audio/Barby/Day 1 Intro/barby_line003.mp3"
-    b "I can’t waste time overthinking."
+    b_sub "I can’t waste time overthinking."
 
     # Barby walks into manager room cg
     #sfx walking
@@ -32,6 +34,7 @@ label start:
         blend 'multiply'
     show apo defaultt at downward, center
     voice "audio/Apollo/Day 1 Intro/apollo_line005.mp3"
+    $ quick_menu = True
     a "And hey, congratulations on {i}your{/i} promotion...! I mean look at you, ohoho, assistant manager now? You’re totally killing it!"
     show apo default at center, jumper
     voice "audio/Barby/Day 1 Intro/barby_line008.mp3"
@@ -49,15 +52,15 @@ label start:
         easein 20 zoom 1.2 xoffset -200
     with fade
     voice "audio/Apollo/Day 1 Intro/apollo_line007.mp3"
-    a "The truck that killed our old manager?"
+    a_sub "The truck that killed our old manager?"
     voice "audio/Apollo/Day 1 Intro/apollo_line008.mp3"
-    a "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
+    a_sub "Yes, it was a sudden end, but that's just the cycle of life and death: a truly beautifully inevitable part of us all. I hope Mr. Sensin is resting easy now."
     voice "audio/Barby/Day 1 Intro/barby_line010.mp3"
-    b "...Wow."
+    b_sub "...Wow."
     voice "audio/Apollo/Day 1 Intro/apollo_line009.mp3"
-    a "He’s in good hands now—I’d know! Teehee!"
+    a_sub "He’s in good hands now—I’d know! Teehee!"
     voice "audio/Barby/Day 1 Intro/barby_line011.mp3"
-    b "At least that was taken care of..." 
+    b_sub "At least that was taken care of..." 
     # back to the scene
     scene managerroom
     show overlay:
@@ -73,7 +76,7 @@ label start:
     voice "audio/Barby/Day 1 Intro/barby_line013.mp3"
     b hm "Agh, don’t be worried!"
     voice "audio/Barby/Day 1 Intro/barby_line014.mp3"
-    b default "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my rensibilities are waiting on others." 
+    b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my rensibilities are waiting on others." 
     show apo worriedt at downward
     voice "audio/Apollo/Day 1 Intro/apollo_line011.mp3"
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
@@ -129,6 +132,7 @@ label id_see:
     show apo defaultt
     voice "audio/Apollo/Day 1 Intro/apollo_line018.mp3"
     a "Sweet! Here you go!"
+    $ quick_menu = False    
     show apo default
     hide apo with dissolve
 
@@ -140,9 +144,12 @@ label rooms:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
+    $ quick_menu = False
+
     if talkedtodeez and talkedtokendra and talkedtomj: 
         scene black with dissolve
         voice "audio/Barby/Day 1 ID/barby_line0142.mp3"
+        $ quick_menu = True
         b default "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
         voice "audio/Barby/Day 1 ID/barby_line0143.mp3"
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"

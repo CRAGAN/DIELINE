@@ -363,7 +363,8 @@ label breaktime2:
     $ quick_menu = False
     if talkedtoapollo and talkedtokendra and talkedtomj:
         $ breakroom_unlocked = True
-    call screen breaktime2
+    call screen breaktime2 with fade
+
 label kendratalking22:
     $ talkedtokendra = True
     scene managerroom
@@ -562,11 +563,13 @@ label kendratalking22:
     k "Still though, thank you for this talk. I-I feel a lot better. Bye Barby, I-I'll see you in the break room?"
     show ken default
     b "You betcha! See you Kendra!" 
+    scene black with fade
     jump breaktime2
     #Apollo 
 label apollotalking22: #apollo at cubicles
     $ talkedtoapollo = True
     scene room_2
+    show borders
     show overlay:
         blend 'multiply'
     show apo default at center
@@ -678,7 +681,7 @@ label apollotalking22: #apollo at cubicles
                 a "I keep getting calls from emails and lawyers, actually." 
                 show apo awkward
                 b "Me, too. It's like- I think it's a call from work- something important- cause they don't even say they're calling about the crash until later."
-                show apo angryt at jumper
+                
                 a "Right?? So you end up answering and listening to them all and aghh!!!"
                 show apo default
             
@@ -718,6 +721,7 @@ label apollotalking22: #apollo at cubicles
     show apo happy
     a "Aww thanks Barbs, but I'm good! Go take your well deserved break!"
     b "Well, if you say so! See you in the break room!" 
+    scene black with fade
     jump breaktime2
 #     MJ
 # Storage 
@@ -836,6 +840,7 @@ label mjtalking22:
                 show m default
                 b "Oh... but it's still really nice though!"
                 m "I 'preciate it!"
+    scene black with fade
     jump breaktime2
           
 
@@ -905,13 +910,18 @@ label deeztalking22:
         menu jumpy:
             "Vocabulary" if not vocab:
                 $ vocab = True
+                show de default
                 b "By the way, you have an interesting vocabulary."
                 d "What is that supposed to mean."
                 b "Oh, it's just, um, interesting! I just wonder where you got it from."
+                show de angry
                 d "This is how I was taught. Is there something wrong with the way I was taught?"
+                show apo awkward
                 a "A-"
+                show de default
                 k "N-Not exactly, but... don't you think there's still more you can learn?"
                 m "Yes! They say you never stop learning no matter what age."
+                show de shy
                 d "I don't know if I need to learn more, though. I know plenty."
                 m "Well Deez, you know what they say. The smarter you are, the more that you learn."
                 d "Wait, really?"
@@ -925,6 +935,10 @@ label deeztalking22:
                 a "Aw, I'm excited, too, Deez!"
             "Family" if not family:
                 $ family = True
+                show de default
+                show apo default
+                show m default
+                show ken default
                 b "What's your family- or friends, or whoever- think about you working at the big SFC?"
                 a "Aw!! Family! A-"
                 d "My sister, she's always been rather {i}passionate{/i} when it comes to me pursuing my career."
@@ -1045,16 +1059,378 @@ label breakroomtalkday2:
     d "Greaseeee."
     "Greaseeee!" 
 
-#CG?
-    a "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
-    k "{i}I... okay. Just talk to her.{/i}"
-    k "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
-    b "{i} You got this! Thumbs up, thumbs up!{/i}!"
-    k "Ahh— like in private? Y-yeah! It's nothing too important s-so... aahhh..." 
-    a "Oh! Oh I — I think—" 
-    b "{i} Cheering you oooon!{/i}"
-    a "O-of course! I'd be happy to, Kendra, even if it's a small thing... you can tell me anything and everything, haha!"
-    a "We'll be back in a bit!"
+    #CG?
+    scene teamphoto
+    a_sub "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
+    k_sub "{i}I... okay. Just talk to her.{/i}"
+    k_sub "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
+    b_sub "{i} You got this! Thumbs up, thumbs up!{/i}!"
+    k_sub "Ahh— like in private? Y-yeah! It's nothing too important s-so... aahhh..." 
+    a_sub "Oh! Oh I — I think—" 
+    b_sub "{i} Cheering you oooon!{/i}"
+    a_sub "O-of course! I'd be happy to, Kendra, even if it's a small thing... you can tell me anything and everything, haha!"
+    a_sub "We'll be back in a bit!"
 # they leave the scene 
-    b "Well... I guess we could just go to the meeting room while we wait,  since she was about to call a meet, anyway."
+    b_sub "Well... I guess we could just go to the meeting room while we wait,  since she was about to call a meet, anyway."
     jump teammeetingpt2
+
+#. dAY 3
+label mjtalking3:
+        
+        $ talkedtomj = True
+        scene room_3 
+        show borders1
+        show m toohappyt at center
+        with fade
+        m "Hi Barby!"
+        show m toohappy
+        b "Wha- oh, hiya MJ, what are you doing here?"
+        m "Do you need any help?"
+        b "Oh, it’s okay, I just finished my work." 
+        m "Are you sure?"
+        b "I think so?? What about you? Do you need help?"
+        m "Silly Barby, I’m the one helping everyone out! Not you."
+        b "But I’m the assistant manager D:"
+        m "Just don’t think about it too hard, okay?"
+        $ progressmj = False
+        $ offeringtohelp = False
+        $ interestingstories = False
+        while not (progressmj and offeringtohelp and interestingstories):
+            menu:
+                "How’s progress doing?" if not progressmj:
+                    $ progressmj = True
+        
+                    b "How’s your progress?"
+                    m "Doing good! Like I said earlier, I can handle it."
+                    b "That’s great to hear!"
+                    m "You’re sure hearing it!"
+                    # return
+                
+                "You’re always offering to help?" if not offeringtohelp:
+                 
+                    $ offeringtohelp = True
+  
+                    b "{i}MJ works so hard, I wonder if they ever do anything other than work...{/i}" 
+                    b "Ah! I mean, not that it’s bad that you’re working hard, but I just worry. Earlier, when we were kinda freaking out, you just kept offering to help with everything."
+                    m "That’s a perfectly valid question! Even I wonder whether I do anything else or not sometimes, haha!" 
+                    b "W-Well, do you?"
+                    m "Not anymore!"
+                    b "... Is there something about that? Why you keep offering to help? I mean, surely you’d have more free time to do other things if not."
+                    b "Like your music."
+                    m "Well, even if I had more free time, it’s not like it would make a difference."
+                    m "I need money to live. And I get money from working."
+                    m "I’ll always love music, don’t get me wrong, but as they say, there’s no money in the arts. I learned that the hard way."
+                    m "I’m probably better off contributing to society anyway, haha!"
+                    b "Oh... well, please let me know if you ever need- or want- extra time for your hobbies!"
+                    m "That’s nice of you to offer, but may I remind you that we have a deadline to catch? Perhaps we should deal with that first before we talk about extra time." 
+                    b "Oh, r-right!"
+                    # return
+                "Got any interesting stories from work?" if not interestingstories:
+               
+                    $ interestingstories = True
+                    b "You’ve been here for a while already, right? Do you have any interesting stories from work?"
+                    m "Boy do I have stories!"
+                    m "Mr. Sensin, may God NOT bless his soul, was my mortal enemy." 
+                    b "Oh, what... what did Mr. Sensin do to you?"
+                    m "Showing up to work with that stupid hat... wearing those obnoxiously loud coats and shirts and skirts and..."
+                    m "And I couldn’t do anything because they were technically within company policy!"
+                    m "I swore that one day, I was going to finally catch him wearing something that doesn’t comply with the dress code in any way, shape or form."
+                    m "Though... I guess I’ll never get to do that. What a shame."
+                    b "Oh, I’m... sorry?" 
+                    b "I don’t really get why this was MJ’s problem though..."
+                    m ":)"
+                    # return
+            
+        b "Okay, I’m gonna go check on the others."
+        b "Don’t forget to take your break, MJ!"
+        m "Haha, you’re so funny, Barby!"
+        m "Let me know if you need any help, alright?"
+        b "Um, let me know if you need any help."
+        m "Sure, sure. Now go on, don’t let me keep you."
+        jump deeztalking3
+
+            # cubicle, if you click MJ again after forced dialogue
+        if talkedtomj == True:
+            m "Hi, Barby!"
+            jump breaktime3
+
+    #Deez
+    # storage roo
+label deeztalking3:
+    scene storage
+    with fade
+    m "Need a hand there?"
+    d "I don’t need hands. I have two. I am perfectly capable of doing this on my own."
+    m "You sure? You looked like you were struggling there for a bit."
+    d "I am not ‘struggling.’ I was... merely taking a moment to get my bear rings. I know how to do this."
+    m "If you say so! But I’m right here if you need me, alright?"
+    d "Yes, of course. Not that I’m going to need you, because I can do this all on my own."
+    m "That you can!"
+    b "Hiya folks! How are we doing?"
+    m "Well, {i}someone{/i} tried to get supplies from the other building while I wasn’t looking."
+    d "And I was rather successful at doing it."
+    m "Sure you were!"
+    d "Just as I will be successful with accomplishing this task."
+    m "Uh-huh!" 
+    m "You know what? I think you’ve done plenty already. Why don’t I take that off your hands?"
+    d "I was carrying that."
+    $ walkingaround = False
+    $ whatcarry = False
+    $ hearanything = False
+    while not (walkingaround and whatcarry and hearanything):
+        menu:
+            "Walking around the office?" if not walkingaround:
+                $ walkingaround = True
+                b "Were you able to find your way around the offices?"
+                d "Of course."
+                d "I was in the parking lot and ran into this. Smelvin."
+                d "His name was Smelvin and he was asking about Kendra."
+                d "I pointed him in a random direction."
+                b "Cause... You didn't know where the office was relative to you?"
+                d "No. It’s not related to me."
+                d "It was because. Safety."
+                b "Oh! True. Fair enough... someone asking out of the blue where she is."
+                b "...It could’ve been someone who knew her, though."
+                d "He did say she hasn’t come home and... that he was worried."
+                d "I just thought it was in the best interest of the. Company."
+                b "Oh. Man."
+                b "I guess we really have to finish this soon... maybe things will get better... after."
+                b "When we have. More time to fix things."
+
+            "What’re you even carrying?" if not whatcarry:
+                $ whatcarry = True
+                b "We don’t even know what the product we’re selling is; what are you even carrying?"
+                d "It’s from the clients."
+                m "Yeah, they’ve been sending us stuff."
+                b "Any of it hint to what we’re actually supposed to be marketing?"
+                d "This is a metal pipe."
+                b "Wow. Is it for. Anything in particular?"
+                m "Yesterday, most of the boxes I was helping Kendra carry had a bunch of rattling things in them, too. So... maybe more pipes."
+                b "Is it pipes? Are we advertising pipes?"
+                d "The answer is probably yes."
+                b "That wouldn’t explain the whole ‘lifestyle’ thing, though..."
+                d "Pipes can be a lifestyle."
+                m "Y’know. Maybe they can."
+                b "Agh... we have 3 days left and we still have no clue what it is..."
+
+            "Hear anything?" if not hearanything:
+                $ hearanything = True
+                b "Did you hear anything on your trip?"
+                d "So. People were talking about Kendra a bit."
+                d "They talked about her being a hard-boiled worker and how they didn’t see her today. But..."
+                d "I figured it out from the way she’s wired, but people are just now realizing  that Kendra is a lab experiment."
+                b "..."
+                m "I don’t think that’s right."
+                d "It’s okay for you to think wrong sometimes."
+                b "Um. Kendra never told me about anything like that... well, if she did, I probably wouldn’t even remember, haha."
+                d "People were saying something was off-putting about her. It’s true, they put her in a machine that turned off. But it’s truly weird that people are finding out now."
+                b "Has he been talking about this?"
+                m "Yeah, he’s been telling me these conspiracy theories about Kendra ever since today started."
+                m "It started with thinking about what’s going on with her, then..."
+                m "Yeah."
+                b "Oh..."
+                b "Hey, buddy... yeah, I... miss her, too."
+                d "She’s right here."
+                b "...Yeah."
+                b "Uhm... anything else?" 
+                d "I know what you are."
+                b "What!? What!? Why!?"
+                b "What is it THIS time!?!?!?"
+                d "I know your real name. It’s not Fredrick." 
+                b "... I—...?"
+                d "A nickname is the shortened version of your real name. Like mine, Deez. Yours does not make any sense."
+                d "So, I’ve come to the consumption that your REAL name is Barblene. Hence and therefore, you are nicknamed Barby." 
+                b "... Damn. {i}I didn’t even know that... {/i}"
+                d "You are welcome, Barblene."
+                b "You know, give it a second and I’d believe you. I got the nickname before my parents gave me the name Fredrick." 
+                d "Huh?"
+                d "Wait— no! Your parents are wrong! First names are called first names because they come first!" 
+                b "Yeah, you know babies without names sometimes get labelled 'Baby' as a temporary name?"
+                d "Uhhh— {i}YEAH{/i}! Of course! They uhm... simply added the letter r into it, yes—"
+                b "My nickname has nothing to do with that. It was an incident at a barbershop."
+                b "... I was a child and I went in and pretended to be a barber."
+                b "... Crap this is embarrassing I should stop talking"
+                d "No! You can’t, you need to tell me immediately right now." 
+                b "... Okay." 
+                b "So I would go up to people who were waiting to get their hair cut. And I’d say. I’m. I’m Barby the Barber."
+                b "..."
+                b "Like. Hiya, folks. I’m Barby the Barber."
+                b ". . ."
+                b "Please don’t tell anyone about this."
+                d "Okay, Barblene."
+    jump apollotalking3
+
+label apollotalking3:
+    #Apollo
+    # Break room
+    #Bring up to apollo (MJ is there) that kendra thought she hated her
+    scene room_4
+    with fade
+    m "Hi, Apollo!"
+    a "Hello, MJ! Here to take your break?"
+    m "Oh, no, I’m actually here to ask if you need any help."
+    a "Aww, thank you, but it’s fine." 
+    m "That’s an awful lot of paper you’re holding. Where are you taking this to?" 
+    a "My office but– oh, there they go with my papers..."
+    a "Oh, hello Barby."
+    b "Hi Apollo! Seems like MJ got to you, haha." 
+    a "Haha, yeah... they sure are enthusiastic!"
+    
+    # after talking to everyone
+    b "Wow, MJ sure is... everywhere!" 
+    b "They’re really trying to help keep the work up, that’s admirable." 
+    b "I just hope they'll be alright..."
+    m "Back! Just finished taking the papers where they’re needed."
+    a "Wow! Um..."
+    m "Is there anything else?"
+
+    #The product
+    $ product = False
+    $ aboutkendra = False
+    $ apollofam = False
+    while not (product and aboutkendra and apollofam):
+        menu:
+            "The product" if not product:
+                $ product = True
+                b "Are we any closer to figuring out what the product actually is?"
+                a "No..."
+                a "I’ve been trying to make a presentation for the proposal, but I don’t know what else to put in it."
+                a "All I’ve done so far is write out the introduction and decorate the slides."
+                m "Would you like me to handle it for you instead?"
+                a "It’s okay, MJ, you don’t know what the product is either. Unless...?"
+                m "Sorry, but I have nothing either."
+                a "Aww." 
+                m "But maybe I could help you figure out what it is." 
+                a "Oh! Yes, that would be appreciated."
+                m "What we know so far is that this is more than a product– it’s a lifestyle, a life changing one."
+                m "So it must be something big, something revolutionary."
+                a "Yeah! What do you think it is?"
+                m "..."
+                m "I don’t know. We have too little information to even try guessing what it could possibly be."
+                b "Oh... at least you tried?" 
+
+            "About Kendra" if not aboutkendra:
+                $ aboutkendra = True
+                b "Right... did you and Kendra ever get to have your whole talk?"
+                a "Ah... yesterday?"
+                a "We were taking a while, y’know just chatting to get a little comfortable- when I got interrupted by the call..."
+                a "I couldn't tell what we were gonna talk about, but after the higher ups talked to me, she just told me not to worry about it and that it wasn't urgent. And... the team meeting was pretty urgent."
+                b "Oh. Well..."
+                b "No use being secretive now."
+                b "You know Kendra thought you hated her? Or just... didn’t like her in general?"
+                a "WHAAAT?!"
+                a "But- but I thought she hated me! Or I made her uncomfortable- or- oh my death..."
+                a "Ooohhh, I guess- I guess I did... make her uncomfortable..."
+                a "Oh... I feel so bad now... I didn’t mean for her to feel like that..." 
+                m "Huh. That explains why you two were always so weird around each other."
+                b "And. Um."
+                b "Maybe we can... leave out the roller skating part. This is already a lot."
+                a "Uhm, what roller skating part?"
+                m "... Barby, what would that have to do with Apollo?"
+                b "Oh, shoot. Well, the three of us were gonna go to break the ice. Y’know, the, uh, help with the uncertainty between the two of them..."
+                m "...The. The one that was just supposed to be the two of you?"
+                b "...Huh?"
+                m "Uhm, well, Kendra kind of told me about it." 
+                a "O-Oh, it was just supposed to be the two of you? It’s okay, I don’t want to get in the way..."
+                b "What? No, it’s fine, Apollo. You’re also my friend. You can be there. It’ll be a bonding experience, all three of us!" 
+                m "..."
+                a "Well— well if you’re sure...! Haha." 
+                b "A-Anyway!"
+
+
+            #Would apollo get it or not (she would noooootttt)
+            #Barby turning date night into group therapy session </3
+            #barby inadvertently turning apollo into a third wheel </3 
+            #While simultaneously thinking he's the third wheel </3
+            # Context maybe Kendra asked MJ before before like maybe advice on how to handle the barby roller skate date (before the accident) 
+            #And then now mj is like ?? The one thats supposed to be like ?? Just the two of you?
+
+            "Apollo family" if not apollofam:
+                $ apollofam = True
+                b "Right, I saw an email from Annelise Knight with a familiar amount of death references."
+                a "Ooohhh, from my Aunt Elise?" 
+                b "Ah, she’s your aunt! Why would your aunt send spam mail?"
+                a "Spam mail? Ohh, you mean those very informative letters? Ahaha, don’t worry, it’s not spam!" 
+                a "Different members of my family send them to me everyday! Not just me, but to anyone who subscribes to our memorial home’s newsblast!"
+                a "Speaking of, it’s almost my turn to do that, would any of you like to be part of it?"
+                m "I think I’m good, Apollo."
+                m "And Memorial home? Is that your family business?"
+                b "Yeah! Apollo’s family runs a funeral home, uhm, it’s called Death’s Devonists Revolutional Memorial Homes, correct?"
+                m "That’s name is quite on the nose, is it not?"
+                a "That’s right! It’s fun since all of my aunts, uncles, brothers, sisters, mothers, fathers and cousins work there, including me!"
+                a "I mainly just do advertising when I can though, I prioritize this job so don’t worry!"
+                m "Wow! And I thought I had a crazy family tree." 
+                b "W-what?! That’s a lot of uhh... people! How does that work, exactly?"
+                a "Oh like any other family, silly! We may not all be blood related but we’re still one big happy community of people! It’s always so much fun when new people join."
+                b "New people join?? Like... they get adopted or married or?"
+                a "They just need to believe in The Looming, Grim Mist of the Endless Cycle of Life and Death!"
+                a "Would you like to check it out? We do lots of free group therapy sessions and—"
+                m "No, it’s fine! Apollo, really." 
+                m "Sounds kinda... not to be rude or anything but—"
+                b "{i}MJ, I think I know what you’re gonna say but... just don’t. She was weird about it last time I joked about cults—{/i}"
+                a "What was that Barbs?"
+                b "N-nothing! Nothing burger, I swear— I was just telling MJ that uhh... I think your family is very cool. I can't wait to meet them one day!"
+                a "Ohh shucks, they can’t wait to meet you too! Ahaha!" 
+    
+    jump meeting3
+# DAY 4
+label breaktime4:
+    # Fade in the hallway again but empty
+    scene room_3
+    show borders1
+    with fade
+    b "Is Deez still in the bathroom?"
+
+    # cubicle
+    scene room_2 with fade
+    #Kendra
+    show borders
+    show ken monster
+    with fade
+    b "..."
+    k "sobbing"
+
+    # manager office front
+    #MJ
+    scene room_1
+    show m monster
+    with fade
+    b "..."
+    m "humming"
+    scene managerroom
+    #Manager Office (inside)
+    # apollo sitting there
+    show apo default at center
+    with fade
+    b "..."
+    a "Hm? Hi, Barby. I'm working right now. What's up?"
+    $ deezwhere = False
+    $ you = False
+    $ nothing = False
+
+    while not (deezwhere and you and nothing):
+        menu:
+            "Deez" if not deezwhere:
+                $ deezwhere = True
+                show apo happy
+                b "Looking for Deez."
+                a "I'm pretty sure he was touring that guy?"
+        # leave dialogue (can click again)
+            "You?" if not you:
+                $ you = True
+                show apo awkward
+                b "What's up with you?"
+                a "Oh, haha. I've just been fixing the PowerPoint presentation to pitch, uh, how to present the product's value to our client. For them to use when advertising it."
+                a "... haha, funny you ask, but most of the progress didn't save last night so, haha, I'm just fixing that up right now!"
+                b "Oh shoot…"
+                a "Don't worry too much about it, I still remember how I did it, anyways, I just have to put it in again. Hah…"
+        # leave dialogue (can click again)
+            "Nothing" if not nothing:
+                $ nothing = True
+                show apo default
+                b "Nothing, just checking in."
+                a "Neat!"
+    scene black with fade
+    pause 2
+    jump encounter4
+# leave dialogue (can click again

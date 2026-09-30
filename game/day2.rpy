@@ -8,12 +8,11 @@ label day2:
     $ talkedtomj = False
     $ talkedtodeez = False
     $ day = 2
-    $ quick_menu = False
     
     scene black with fade
-    centered "{color=#FFFFFF}October 27th, Tuesday{/color}"
-    centered "{color=#FFFFFF}Deadline: >30 days{/color}"
-    $ quick_menu = True
+    centered "October 27th, Tuesday"
+    centered "Deadline: >30 days"
+    
     b "Another day at work. Alright, we got this!"
     b "Huh... no reply from Dave, yet. Wonder where he is."
     b "Well I better get to work, soon. Let’s not dilly dally."
@@ -23,24 +22,20 @@ label rooms2:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
-    $ quick_menu = False
-    call screen rooms2 
-    with screen
+    call screen rooms2 with fade
 
 label minigametime:
         scene black
-        $ quick_menu = True
         b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
         b "Odd."
         b "Well, I better get back to work!"
-        $ quick_menu = False
+        
         #call screen email_minigame # FROG OVER HERE
         $ talkedtokendra = False
         $ talkedtoapollo = False
         $ talkedtomj = False
         $ talkedtodeez = False
-        jump breaktime2
-
+        jump breaktime2 
 label teammeetingpt2:
     scene meetingroom
     show overlay:
@@ -153,7 +148,6 @@ label teammeetingpt2:
     a "... Oh death... I-I— I should..."
     show apo worried
     b "It's fine, I'll... check up on her."
-    $ quick_menu = False
 
 # OVERWORLD TIME (outside manager room)
 # THUD THUD THUD
@@ -161,79 +155,76 @@ label teammeetingpt2:
 # (kendra banging her head on the computer then breaking the screen)
 # kendra groaning 
 label kendragobrr:
-    #VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
-    scene room_1 
-    show blue:
-        blend 'multiply' alpha 0.2
-    with fade
-    $ quick_menu = True    
-    k "{b}My head... it- my head hurts.{/b}"
-    b "K-Kendra? Is... everything okay? What's that noise...?!"
-    k "{b}It needs to stop.{/b}"   
+#VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
+scene room_1 
+show blue:
+    blend 'multiply' alpha 0.2
+with fade
+k "{b}My head... it- my head hurts.{/b}"
+b "K-Kendra? Is... everything okay? What's that noise...?!"
+k "{b}It needs to stop.{/b}"
 
-    #IF POSSIBLE ONLY IDK there's a sickening THUD each time Kendra talks
+#IF POSSIBLE ONLY IDK there's a sickening THUD each time Kendra talks
 
-    k "{b}I Need.{/b}" with hpunch
-    #THUD
-    k "{b}To.{/b}" with hpunch
-    #THUD
-    k "{b}Stop.{/b}" with hpunch
-    $ quick_menu = False 
-    #THUD
+k "{b}I Need.{/b}" with hpunch
+#THUD
+k "{b}To.{/b}" with hpunch
+#THUD
+k "{b}Stop.{/b}" with hpunch
+#THUD
 
-    #Thudding continues
-    centered " " with hpunch
+#Thudding continues
+centered " " with hpunch
 
-    # overworld control access
-    # go to cubicles 
-    pause 3.0
-    scene room_2 
-    show noises:
-        alpha 0.1
-        blend 'add'
-    show borders
+# overworld control access
+# go to cubicles 
+pause 3.0
+scene room_2 
+show borders
+show noises:
+    alpha 0.1
+    blend 'add'
+show borders
 
-    show blue:
-        blend 'multiply' alpha 0.5
-    with fade
-    # sfx, thudding footsteps
-    centered " " with vpunch
-    # loud grunt/screaming like every step she takes is painful
-    $ quick_menu = True
-    k "{b}A A A A{/b}" with vpunch
-    $ quick_menu = False 
-    scene room_3 
-    show noises:
-        alpha 0.2
-        blend 'add'
-    show borders1
-    show blue:
-        blend 'multiply' alpha 0.8
-    with fade
-    # long hallway
-    centered " "
+show blue:
+    blend 'multiply' alpha 0.5
+with fade
+# sfx, thudding footsteps
+centered " " with vpunch
+# loud grunt/screaming like every step she takes is painful
+k "{b}A A A A{/b}" with vpunch
+scene room_3 
+show noises:
+    alpha 0.2
+    blend 'add'
+show borders1
+show blue:
+    blend 'multiply' alpha 0.8
+with fade
+# long hallway
+centered " "
 
-    # door closing (breakroom door closing sound)
-    jump encounterday2
+# door closing (breakroom door closing sound)
+jump encounterday2
 
-    label encounterday2:
+label encounterday2:
     scene kendramonster1 with fade
     b_sub "Kendra? Did—did something happen to you—?"
-    $ renpy.pause(2.0, hard=True)
+    pause 2.0
     # kendra cg
     scene black 
-    $ renpy.pause(2.0, hard=True)
+    pause 2.0
     scene kendramonster2 
     show noises:
         alpha 0.1
         blend 'add'
-    $ renpy.pause(2.0, hard=True)
+    pause 2.0
     b_sub "..."
     # scary... reverb on voice
 
     b_sub "...Oh god..."
     scene black
-    $ renpy.pause(2.0, hard=True)
+    pause 2.0
     camera:
         subpixel True
         zoom 4 xoffset -2500 yoffset -700 
@@ -249,9 +240,9 @@ label kendragobrr:
         alpha 0.1
         blend 'add'
     with vpunch
-    $ renpy.pause(6.0, hard=True)
     # pause, let the atmosphere sink in
     # barby's in like trance like state kind of so muffle, under water style, apollo voice
+
     a_sub "Barby?"
 
     # apollo's voice becomes a bit clearer but reverby
@@ -285,7 +276,7 @@ label kendragobrr:
     k_sub "{b}Turn my computer on. I will handle it.{/b}"
     show ken monsterr
     #VA note: She'd be sobbing quietly at this point, sniffle sniffle
-    a_sub "..."
+    b_sub "..."
     b_sub "Kendra? D-Do you want to–"
     show ken monstertt
     k_sub "{b}I said I'll get it done. Turn. It. On.{/b}"
@@ -309,20 +300,20 @@ label kendragobrr:
         blend 'multiply' 
     show de fear at shaking, downward, center
     with fade
-    $ quick_menu = True
     "..."
     #Deez
     # blubur note: only time deez ask question, deez very vulnerable and genuine
     show de feart
-    d "...What happened...? Do we call someone?"
-    d "I don't know... what do I do?"
+    d_sub "...What happened...? Do we call someone?"
+    d_sub "I don't know... what do I do?"
 
     #Barby himself is too overwhelmed to have an answer
     show de fear
-    b "... I don't know."
+    b_sub "... I don't know."
     menu:
         "walk to cubicle":
             scene room_2 
+            show borders
             show blue:
                 blend 'multiply' alpha 0.3
             show noises:
@@ -336,11 +327,10 @@ label kendragobrr:
             "..."
             show black
             b "Ah... It's broken."
-            $ quick_menu = False 
             jump day3
-    #walk to cubicles, when you get there barby just goes to cubicle automatically and 
-    #screen black
-    # VA NOte: "ah" is like... low and subtle and shaky
+#walk to cubicles, when you get there barby just goes to cubicle automatically and 
+#screen black
+# VA NOte: "ah" is like... low and subtle and shaky
 
 
 image noises:

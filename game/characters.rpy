@@ -123,6 +123,18 @@ image m hmt = At(
     Transform(zoom=0.8),
     sprite_highlight("MJ")
 )
+image m toohappym = At(
+    Animation("images/mj/mj toohappy1.png", 0.15, 
+    "images/mj/mj toohappy2.png", 0.15, "images/mj/mj toohappy.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
+image m toohappyt = At(
+    Animation("images/mj/mj toohappy.png", 0.15, 
+    "images/mj/mj toohappym.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("MJ")
+)
 ##APOLLO SPRITES
 image apo default =At("images/apollo/apollo default.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo hm =At("images/apollo/apollo hm.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
@@ -134,10 +146,18 @@ image apo surprised =At("images/apollo/apollo surprised.png", Transform(zoom=0.8
 image apo fear =At("images/apollo/apollo fear.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo happy =At("images/apollo/apollo happy.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
 image apo weird =At("images/apollo/apollo weird.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+image apo boo =At("images/apollo/apollo boo1.png", Transform(zoom=0.8), sprite_highlight("Apollo"))
+
 
 image apo defaultt = At(
     Animation("images/apollo/apollo default.png", 0.15, 
     "images/apollo/apollo defaultm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Apollo")
+)
+image apo boot = At(
+    Animation("images/apollo/apollo boo1.png", 0.15, 
+    "images/apollo/apollo boo2.png", 0.15, "images/apollo/apollo boo3.png", 0.15,),
     Transform(zoom=0.8),
     sprite_highlight("Apollo")
 )
@@ -183,6 +203,17 @@ image apo worriedt = At(
     Transform(zoom=0.8),
     sprite_highlight("Apollo")
 )
+image apo feart = At(
+    Animation("images/apollo/apollo fear.png", 0.15, 
+    "images/apollo/apollo fearm.png", 0.15,),
+    Transform(zoom=0.8),
+    sprite_highlight("Apollo")
+)
+#RYANN
+image ry angry =At("images/ryan/ryan angry.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Ryann"))
+image ry default =At("images/ryan/ryan default.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Ryann"))
+image ry shy =At("images/ryan/ryan shy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Ryann"))
+image ry sexy =At("images/ryan/ryan sexy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Ryann"))
 ##DEEZ SPRITES
 image de default =At("images/deez/deez default.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de angry =At("images/deez/deez angry.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
@@ -194,6 +225,7 @@ image de surprised =At("images/deez/deez surprised.png", Transform(zoom=0.8, yof
 image de happy =At("images/deez/deez happy.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de calm =At("images/deez/deez calm.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
 image de fear =At("images/deez/deez fear.png", Transform(zoom=0.8, yoffset= 130), sprite_highlight("Deez"))
+image de monster =At("images/deez/deez monster.png", Transform(yoffset= 130), sprite_highlight("Deez"))
 
 image de defaultt = At(
     Animation("images/deez/deez default.png", 0.15, 
@@ -254,6 +286,13 @@ image de happyt = At(
     Animation("images/deez/deez happy.png", 0.15, 
     "images/deez/deez happym.png", 0.15,),
     Transform(zoom=0.8, yoffset= 130),
+    sprite_highlight("Deez")
+)
+
+image de monstert = At(
+    Animation("images/deez/deez monster.png", 0.15, 
+    "images/deez/deez monster2.png", 0.15,),
+    Transform(yoffset= 130),
     sprite_highlight("Deez")
 )
 

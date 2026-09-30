@@ -95,10 +95,10 @@ label mjtalking:
                     $ whatdepartmentareyoufrom = True
                     voice "audio/Barby/Day 1 OW/barby_line061.mp3"
                     b "Just to make sure— with the whole name being faded and everything— what exactly {i}is{/i} your job title?"
-                    voice "audio/MJ/Day 1 OW/MJ_line10.mp3"
+                    voice "audio/MJ/Day 1 OW/MJ_line010.mp3"
                     m "Hmm? What do you mean?"
                     show m happyt at downward
-                    voice "audio/MJ/Day 1 OW/MJ_line11.mp3"
+                    voice "audio/MJ/Day 1 OW/MJ_line011.mp3"
                     m "I am a part of the team, if that’s what you were wondering."
                     show m happy
                     voice "audio/Barby/Day 1 OW/barby_line062.mp3"
@@ -301,7 +301,6 @@ label kendratalking:
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
                     voice "audio/Barby/Day 1 ID/barby_line090.mp3"
-                    
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line016.mp3"
@@ -450,14 +449,10 @@ label deeztalking:
         d_sub "My name is too long so you can call me {i}Deez{/i} for short."
 
         # change name in textbox to real nametag
-        voice "audio/Barby/Day 1 OW/barby_line11.mp3"
+        voice "audio/Barby/Day 1 OW/barby_line111.mp3"
         b_sub "That I knew! Here’s your ID."
-        
-
 
         # change name in textbox to real nametag
-
-        b_sub "That I knew! Here’s your ID."
         #sfx_id2
         # ID pops out
         show overlay:
@@ -491,8 +486,7 @@ label deeztalking:
         show de default at center, up
         
         with fade
-        voice "audio/Barby/Day 1 ID/barby_line0113.mp3"
-        $ quick_menu = True
+        voice "audio/Barby/Day 1 OW/barby_line113.mp3"
         b "I’ll be sure to tell her!"
 
         #ID goes away, UI comes out
@@ -505,13 +499,13 @@ label deeztalking:
             menu:
                 "Welcome!" if not welcome:
                     $ welcome = True
-                    voice "audio/Barby/Day 1 ID/barby_line0114.mp3"
-                    
+                    voice "audio/Barby/Day 1 OW/barby_line114.mp3"
+                    $ quick_menu = True
                     b "Welcome to the team! I also started out as an unpaid intern, so I understand the boat you’re in."
                     voice "audio/Barby/Day 1 OW/barby_line115.mp3"
                     b "Please let me know if you need anything!"
                     show de defaultt
-                    voice "audio/Deez/Day 1 OW/deez_line11.mp3"
+                    voice "audio/Deez/Day 1 OW/deez_line011.mp3"
                     d "Thank you for the warm regards."
                     voice "audio/Deez/Day 1 OW/deez_line012.mp3"
                     d "But I disagree. I’m not on the boat, I’m paid."
@@ -582,8 +576,8 @@ label deeztalking:
 
                 "How's work?" if not howsworkdeez:
                     $ howsworkdeez = True
-                    voice "audio/Barby/Day 1 ID/barby_line0129.mp3"
-                    
+                    voice "audio/Barby/Day 1 OW/barby_line129.mp3"
+                    $ quick_menu = True
                     
                     b "How’s work been for you?"
                     show de calmt
@@ -600,8 +594,8 @@ label deeztalking:
                 "How's life?" if not howslifedeez:
                     #VA: said like "how’s the wife?" 
                     $ howslifedeez = True
-                    voice "audio/Barby/Day 1 ID/barby_line0131.mp3"
-                    
+                    voice "audio/Barby/Day 1 OW/barby_line131.mp3"
+                    $ quick_menu = True
 
                     b "So... how’s the life? Outside of work, y’know." 
                     show de defaultt
@@ -684,7 +678,7 @@ label mjtalking2:
         zoom 0.6 ypos 0.33 xpos 0.6
     
     $ talkedtomj = True
-    $ quick_menu = True
+
     b "Good morning, MJ!"
     m "Good morning! How are you?"
     b "Good! How are you?"
@@ -707,11 +701,12 @@ label deeztalking2:
         ypos 0.45
         zoom 0.3
     $ talkedtodeez = True
-    $ quick_menu = True
     b "Good morning, Deez!"
+    voice "audio/Deez/Voice Barks/deez_happy1.mp3"
     d "Good morning."
     b "Do you need any help with anything?"
     d "Never." 
+    voice "audio/Barby/Voice Barks/barby_happy3.mp3"
     b "Cool!"
     jump rooms2
 label kendratalking2:
@@ -732,10 +727,12 @@ label kendratalking2:
         zoom 0.3
      
     $ talkedtokendra = True
-    $ quick_menu = True
+    $ talkedtokendra = True
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
+    voice "audio/Barby/Voice Barks/barby_happy1.mp3"
     b "Hiya!"
+    voice "audio/Kendra/Voice Barks/kendra_happy1.mp3"
     k "Hi!" 
     jump rooms2
 # DAY 3
@@ -748,68 +745,119 @@ label kendratalking3:
     #Barby slow turn to Kendra gulp!
     
     #Kendra
+    scene room_2
+    show blue:
+        blend 'multiply' alpha 0.4
+    show borders
+    show overlay:
+        blend 'multiply' alpha 0.3
+    show ken monster
+    with fade
     b "...Good morning, Kendra...!"
+    voice "audio/Barby/Voice Barks/barby_confused2.mp3"
     b "Here. I... I made you breakfast."
     b "It's a dish my parents used to make me. It's, uh, a soup kind of, but with rice... chicken, toasted garlic... I put an egg in this one."
     b "It’s called arroz caldo and I thought you'd like it."
     b "It’s still a little hot, so be careful."
+    show ken monstert
     k "{b}... Ugh.{/b}"
+    show ken monster
+    voice "audio/Barby/Voice Barks/barby_sad3.mp3"
     b "Okay...! I need to... uhm—"
     b "Drink sand. Bye."
+    scene black with dissolve
+    jump breakroomnokendra
 
     #Everyone huddled up away from Kendra in the breakroom 
-
+label breakroomnokendra:
+    scene room_4
+    show de default at right
+    voice "audio/Deez/Voice Barks/deez_surprised1.mp3"
     d "H-hey! Barby’s here."
+    show m default at left
+    voice "audio/MJ/Voice Barks/mj_happy1.mp3"
     m "Right on time! Did ya see Kendra? How’s she holding up?"
+    voice "audio/Barby/Voice Barks/barby_confused1.mp3"
     b "Aoughhhgghhggggg."
+    show apo worriedt at center
+    voice "audio/Apollo/Voice Barks/apollo_sad2.mp3"
     a "She was already here when I clocked in! I don't think she went home... she's just been working... and working—"
     a "She just keeps asking for more work... I’m really worried."
+    show apo worried
+    voice "audio/Barby/Voice Barks/barby_sad1.mp3"
     b "Oh..."
     a "I don’t know what we’re going to do... we kind of needed Kendra for a lot of things." 
+    show m hmt
+    voice "audio/MJ/Voice Barks/mj_sad3.p3"
     m "Should we tell the higher ups about this? Or anyone at all?" 
+    show m hm
+    show de sadt
+    voice  "audio/Deez/Voice Barks/deez_sad2.mp3"
     d "Will they believe us? This... this doesn’t seem like a very logical event."
+    show de sad
     b "I’m sure we can... figure something out..."
     a "We already tried to tell someone, remember? But no one picked up."
     m "That’s because it was after hours. Maybe if we try again, we’ll get someone this time." 
 
     #Contact Someone
-    b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
-    a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
-    a "Oh- oh right, you don’t remember. Oopsies."
-    b "I saw the report! Don’t worry; I know."
-    m "Already on it."
-    # call sfx
-    "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
-    "What can I do to help you?"
-    d "A lot."
-    m "Well said."
-    d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
-    "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
-    b "Huh?"
-    a "T-team meeting exercises?" 
-    "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
-    " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
-    "So go out there and fly high!"
-    a "W-wait, there’s gotta be more—!!"
-    "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
-    b "... Okay."
-    a "That’s. That's it? No way..."
-    d "That guy frankly sucks."
-    m "I guess we just have to try our best moving forward."
+    $ whatishappening = False
+    $ workhabits = False
+    $ contactsomeone = False
+    while not (whatishappening and workhabits and contactsomeone):
+        menu:
+            "Contact Someone" if not contactsomeone:
+                $ contactsomeone = True
+                b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
+                show apo awkwardt
+                a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
+                a "Oh- oh right, you don’t remember. Oopsies."
+                show apo awkward
+                b "I saw the report! Don’t worry; I know."
+                show m hmt
+                m "Already on it."
+                # call sfx
+                show m hm
+                "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
+                "What can I do to help you?"
+                d "A lot."
+                m "Well said."
+                voice "audio/Deez/Voice Barks/deez_confused1.mp3"
+                d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
+                "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
+                b "Huh?"
+                voice "audio/Apollo/Voice Barks/apollo_confused3.mp3"
+                show apo worriedt
+                a "T-team meeting exercises?" 
+                show apo worried
+                "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
+                " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
+                "So go out there and fly high!"
+                show apo nervoust
+                voice "audio/Apollo/Voice Barks/apollo_surprised3.mp3"
+                a "W-wait, there’s gotta be more—!!"
+                show apo worried at jumper
+                "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
+                b "... Okay."
+                a "That’s. That's it? No way..."
+                d "That guy frankly sucks."
+                
+                m "I guess we just have to try our best moving forward."
 
-    #What is happening to Kendra?
-    b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
-    m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
-    a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
-    d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
-    b "Let’s just not try to touch her! Like, at all for now."
+            "What is happening to Kendra?" if not whatishappening:
+                $ whatishappening = True
+                b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
+                m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
+                a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
+                d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
+                b "Let’s just not try to touch her! Like, at all for now."
 
-    #Kendra work habits
-    b "You said she’s still working?"
-    a "Yeah, but when I went to check on her output... she’s barely done anything."
-    a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
-    b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
-    a "Oh Barbs, wish I knew, I really wish I knew..."
+            "Kendra work habits" if not workhabits:
+                $ workhabits = True
+                b "You said she’s still working?"
+                a "Yeah, but when I went to check on her output... she’s barely done anything."
+                a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
+                b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
+                a "Oh Barbs, wish I knew, I really wish I knew..."
 
     b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
     m "Not to worry, I’m more than willing to help carry the work load."
@@ -825,15 +873,158 @@ label kendratalking3:
     a "Me too! I’ll do my best to make this project a success."
     a "And Deez, don’t worry, you can still help out by helping me out!"
     d "...fine. Okay. Since you... need help, I can help you."
+    jump minigames3
+                
+
+#. DAY. 4
+label officewalkday4:
+    # overworld in front of Manager office
+    scene black with fade
+    b "We should probably check on our ‘non-compliant’? Friends…"
+    jump apolloandmj
+
+
+    #Apollo & MJ
+label apolloandmj:
+    scene room_1
+    show m monster at center:
+        xoffset -250
+    show apo defaultt at center:
+        xoffset 250
+    with fade
+    # in front of Manager room 
+    a "...so that’s basically what happened…"
+    show apo default 
+    a "Ahh, sorry for telling you this. I know it’s personal stuff and whatever but you have your whole… family situation too, and I figured…"
+    a "I don’t know. Maybe you’d know something?"
+    a "I don’t wanna put this on anyone else, haha… they’re kind of counting on me to keep everything together."
+    m "Your team member has failed to use their connections with the Grey family to establish business relations! You may resolve this by contacting your Human Resources department to handle the issue."
+    a "I know it's important, MJ, I do! I love my family! But… ahh. I… oh death, can't say I shouldn't have done it— but I also shouldn't say I should have but…"
+    a "Did—did you really cut all your ties with them…?"
+    m "Contact between SFC and the Grey family is currently being established."
+    a "S-so it {b}is{/b} possible to—um— make amends after pulling something like, well, what you did?!"
+    m "Compromise is the best display of competence when working in a team!"
+    a "O-okay, haha… thank you… MJ…"
+    m "Always here to help!"
+    a "It's nice to hear you and your family… are talking again?"
+    m "..."
+    m "Thanks to our exceptional PR team, the failures of past circumstances only impact those who deserve to take the fall!"
+    m "Employees who do not reach the minimum standards of performance should not be considered for their originally proposed value, of course."
+    a "But MJ… y-you’ve been doing so much! Can’t your family see that?" 
+    m "Employee Grey has had their performance depreciating for a while! Be sure to spend more time on work rather than unrelated and unproductive activities."
+    a "..."
+    jump kendraanddeez
+
+    #Kendra & Deez
+label kendraanddeez:
+    # cubicles
+    scene room_2
+    show borders
+    show ken monster at center:
+        xoffset -250
+    show de sad at center:
+        xoffset 250
+    with fade
+    d "I know what happened to you."
+    k "..."
+    d "I learned a lot over the past few days, and a lot of it is because… I spent a lot of time with you and helping you." 
+    d "So. That's how you know I know."
+    d "I know what happened to you." 
+    d "... because everyone talks to me about these things as if I don't know it. And… maybe I'm listening just to see that they know it correctly… but it's weird that people say it like-..."
+    d "Um...Anyway, it's because, since you and MJ are cousin lab experiments, this happened to you. And I can diagnose that it is not good."
+    d "It's bad for your health, being eaten by bugs. They don't make Prozempic anymore. I don’t want to be the bringer of bad views, but that’s the sad truth. Because the blue bugs don’t know that, so they wouldn't have told you."
+    k "..."
+    d "You know, Kendra, there are good bugs, too. These blue bugs aren't being good for you, so you should…maybe. Let them fly somewhere out a window. Let them on a bug vacation or let them near a lamp. I in cyst."
+    d "..."
+    k "Why are you telling me this?"
+    d "... uhm. There are other bugs. Sometimes they can sit on you, but they shouldn’t be eating you."
+    d "I'm saying… stop with these bugs. You keep saying to leave you alone and let you work but these bugs don’t seem to let you do that. They’re in your way and it’s affecting you. "
+    d "...I don’t like seeing you being swarmed by them. You don’t deserve bugs that bug you."
+    k "... Can you make it stop?"
+    d "..."
+    d "I. Maybe—"
+    k "You can do it?"
+    d "..."
+    d ". . ."
+    d "Yes. I will do it. Now."
+    # kendra start sobbing
+    d "..."
+    d "Ah. Oh no—"
+    d "Kendra? You seem upset—"
+    k "It won't stop. It hurts. I can't take it. I can't."
+    d "... I'm—."
+    d "..." 
+    # deez leaves 
+    # a bit ANGRY
+    k "I have to get a grip. I have to."
+    jump ryantime
+
+    #Ryann Glenn
+    # itd be kind of funny if after office walk you walk around and then ryann is just there or the camera slowly pans to him 
+
+    # SFX audience cheer as if hes a celebrity 
+    # scene stops and stuff to wait for audience to stop cheering 
+    # Apollo Deez appear here too
+label ryantime:
+    scene black
+    with fade
+    pause 2.0
+    scene room_3
+    show borders1
+    show apo worried at left
+    show de sad at center
+    with fade
+    a "Barby, when they get here, we gotta make sure we tell them we don't need any extra he—..."
+    show ry sexy at right 
+    with dissolve
+    show apo surprised
+    a "..."
+    show de surprised
+    d "..."
+    r "Hey, how are you, all? I'm Ryann Glenn."
+    # music change as he talks
+    r "I work at the warehouse and, ahh, we just wanted to check up on your team."
+    a "A-ah! Hi, there! I'm Apollo, the manager! I take it your name is Ryann. Glenn…!"
+    r "Yep, that's my name."
+    show de shy
+    show apo default
+    a "This is Deez, he's our… he's the one who's gonna tour you! Ahaha, yes!"
+    r "Hey, man, I'm not looking for a formal tour or anything. We at the warehouse were just concerned you hadn't given us the go ahead to ship out yet?"
+    d "Why is he talking like that? It's not a cutscene."
+    b "O-oh! Hahaha… right, um, we've just had so much to do over here and, y’know you get so caught up in it!"
+    show ry shy
+    r "Cool, yeah, I get ya."
+    r "But what are you getting caught up inn if we haven’t shipped out yet?"
+    d "You're not supposed to say ‘in' like that."
+    show apo worried
+    a "It’s so nice the warehouse is sending someone to help! But, uh…"
+    a "Ahahaha, we'll give the go ahead soon, I prommy!"
+    a "Deez is gonna tell you about… all the stuff, haha!" 
+    d "(going to shit myself) Hi."
+    d "Let us go to a more… dignified place to talk. About business. Because I am very good at that."
+    show ry sexy at jumper
+    r "Sure, mann."
+    show de surprised
+    d "Wh-why do you say it like that."
+    b "You can't just say that to someone, Deez."
+    r "It's okay, I don't take offense or anything. I don't know what he means, though. "
+    b "Stay safe! Have a safe tour!"
+    r "I don't see why it wouldn't be…!"
+    b "I should go check on my emails…"
+    scene black with fade
+    jump minigame4
 #DAY 5
 label kendratalking5:
     b "Good morning, Kendra."
+    jump room5
     
 label mjtalking5:
     b "Good morning, MJ."
+    jump room5
 
 label deeztalking5:
     b "..."
+    jump room5
     
     #if you click anyone a second time barby goes "..."
     #sfx_dooropen

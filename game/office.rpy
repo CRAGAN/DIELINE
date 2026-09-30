@@ -15,7 +15,6 @@
 #         action [SetVariable("employee_id", "M.J Grey"), Jump("officemeet")]
 
 label donetalking:
-    $ quick_menu = True
     b "I think that's everyone! I haven't seen Dave around... he's probably working from home again."
     b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
     b "Just gotta get on my computer."

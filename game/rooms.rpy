@@ -600,7 +600,7 @@ screen breaktime2():
                 focus_mask True
                 idle "images/computer.png"
                 hover "images/computer_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
+                action [With(Fade(0.4, 0.0, 0.4)), Jump("computerinfo")]
                     
             
 
@@ -693,3 +693,7 @@ label storage2:
 label managerroom2:
     $ managerroom = True
     jump kendratalking22
+
+label computerinfo:
+    b_id "I'll do that later."
+    jump breaktime2

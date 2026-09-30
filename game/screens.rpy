@@ -282,7 +282,7 @@ screen choice(items):
     style_prefix "choice"
     vbox:
         for i in items:
-            textbutton i.caption action [Function(narrator.add_history, kind="adv", who = "", what = i.caption), i.action]
+            textbutton i.caption action [Function(narrator.add_history, kind="adv", who = "dialogue_choice", what = i.caption), i.action]
 
 
 
@@ -1238,30 +1238,7 @@ screen history():
 
             window:
                
-                if h.who is not "":
-                    frame:
-                        background Frame("gui/log_namebox.png")
-                        padding (0,0)
-                        xalign 0.25
-
-                        label h.who:
-                            style "history_name"
-                            substitute False
-
-                            ## Take the color of the who text from the Character,
-                            ## if set.
-                            if "color" in h.who_args:
-                                text_color "#FFFFFF"
-                                xalign 0.5
-
-                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                    
-                    text what:
-                        xalign 0.5
-                        color '#000000'
-                        substitute False
-
-                else:
+                if h.who == "dialogue_choice":
                     $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                     frame:   
                         background Frame("gui/log_choicebox.png")        
@@ -1276,6 +1253,31 @@ screen history():
                             yalign 0.5
                             color '#000000'
                             substitute False
+                else:
+                    if h.who:
+                        frame:
+                            background Frame("gui/log_namebox.png")
+                            padding (0,0)
+                            xalign 0.25
+
+                            
+                            label h.who:
+                                style "history_name"
+                                substitute False
+
+                                ## Take the color of the who text from the Character,
+                                ## if set.
+                                if "color" in h.who_args:
+                                    text_color "#FFFFFF"
+                                    xalign 0.5
+
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    
+                    text what:
+                        xalign 0.5
+                        color '#000000'
+                        substitute False
+
                             
 
 

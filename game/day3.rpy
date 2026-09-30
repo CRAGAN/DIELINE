@@ -3,11 +3,11 @@ label day3:
 # Calendar pop up
     scene black
     pause 2.0
-    centered "Wednesday Oct 28"
-    centered "3 days left"
+    centered "{color=#FFFFFF}Wednesday Oct 28{/color}"
+    centered "{color=#FFFFFF}3 days left{/color}"
 
     
-
+    $ quick_menu = True
     b "...Apollo texted to go to the break room as soon as I got here?"
     b "...I need to go to Kendra's cubicle."
 
@@ -254,7 +254,7 @@ label day3:
     a "Different members of my family send them to me everyday! Not just me, but to anyone who subscribes to our memorial home’s newsblast!"
     a "Speaking of, it’s almost my turn to do that, would any of you like to be part of it?"
     m "I think I’m good, Apollo."
-    MJ"And Memorial home? Is that your family business?"
+    m "And Memorial home? Is that your family business?"
     b "Yeah! Apollo’s family runs a funeral home, uhm, it’s called Death’s Devonists Revolutional Memorial Homes, correct?"
     m "That’s name is quite on the nose, is it not?"
     a "That’s right! It’s fun since all of my aunts, uncles, brothers, sisters, mothers, fathers and cousins work there, including me!"

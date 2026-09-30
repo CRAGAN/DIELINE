@@ -31,3 +31,23 @@ transform zoomin:
     pos (0.5, 0.5)
     easein 0.5 zoom 1.3
 
+
+
+image main_menu_art =
+    "gui/lineart.png"
+    pause 1.0
+    "gui/lineart1.png"
+    pause 1.0
+    "gui/lineart2.png"
+    pause 1.0
+    repeat
+image circle =
+    "gui/circle1.png"
+    pause 0.5
+    "gui/circle2.png"
+    pause 0.5
+    "gui/lcircle3.png"
+    pause 0.5
+    repeat
+
+

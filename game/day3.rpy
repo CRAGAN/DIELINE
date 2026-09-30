@@ -257,13 +257,13 @@ label encounter3:
 
     # leave breakroom
     # deez is standing right outside
-
+    scene black 
     # about to ask are they okay but stops cause he doesnt wanna ask questions, so he instead states that everything will be fine
-    d "Are they...?"
-    d "... I'm sure everything's going to come out the way they're supposed to."
+    d_sub "Are they...?"
+    d_sub "... I'm sure everything's going to come out the way they're supposed to."
 
     # black screen
-    scene black 
+    
     pause 2.0
     # sad, but stern 
     b_sub "No." 

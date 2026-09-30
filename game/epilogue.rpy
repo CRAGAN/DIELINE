@@ -53,6 +53,7 @@ label cutscene_end:
     centered "{color=#F5F5F5}Congratulations! You knew what to do when things got compile-cated."
     # friends zoom into Apollo
     # switches to silent film text (black screen with white text)
+    voice "audio/Apollo/Day 5/Pre-Chase/apollo_line180.mp3"
     centered "{color=#F5F5F5}Congratulations! Thank you for being there for all of us."
 
     # barby face, barby smile

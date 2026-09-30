@@ -223,6 +223,7 @@ label read_id(item_name=None):
         voice "audio/Barby/Day 1 OW/barby_line047.mp3"
         b default "Easy peasy…!"
         $ quick_menu = False
+        play sound "audio/SFX/Day 1 /sfx_door.mp3"
         jump rooms
     
     call screen id_screen

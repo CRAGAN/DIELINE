@@ -245,7 +245,7 @@ screen storage():
             at transform:
                 zoom 0.7
     imagebutton:
-        idle "images/apollo/standing/apollotemp.png"
+        idle "images/arrowl_idle.png"
         action Call("rooms")
 screen bathroom():
     add "bathroom":
@@ -253,7 +253,7 @@ screen bathroom():
     add "images/lighter.png" blend 'add' alpha 0.3
     add "images/barby/standing/barby_standing_pants.png" zoom 0.4 xpos 0.2 ypos 0.38
     imagebutton:
-        idle "images/apollo/standing/apollotemp.png"
+        idle "images/arrowl_idle.png"
         action Call("rooms")
 screen janitor():
     add "janitor":
@@ -627,12 +627,7 @@ screen breaktime2():
                 action [With(Fade(0.4, 0.0, 0.4)), Call("apollotalking22")]
                 at transform:
                     zoom 0.6
-            imagebutton:
-                focus_mask True
-                idle "images/computer.png"
-                hover "images/computer_hover.png"
-                action [With(Fade(0.4, 0.0, 0.4)), Call("mjtalking22")]
-                    
+        
             
 
         # ROOM 3

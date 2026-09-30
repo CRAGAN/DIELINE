@@ -1158,6 +1158,12 @@ label mjtalking3:
     # storage roo
 label deeztalking3:
     scene storage
+    show overlay:
+        blend 'multiply'
+    show de default at center:
+        xoffset 250
+    show m default at center:
+        xoffset -250
     with fade
     m "Need a hand there?"
     d "I don’t need hands. I have two. I am perfectly capable of doing this on my own."
@@ -1265,6 +1271,13 @@ label apollotalking3:
     # Break room
     #Bring up to apollo (MJ is there) that kendra thought she hated her
     scene room_4
+    show overlay:
+        blend 'multiply'
+    show apo default at center:
+        xoffset 250
+    show m default at center:
+        xoffset -250
+    
     with fade
     m "Hi, Apollo!"
     a "Hello, MJ! Here to take your break?"

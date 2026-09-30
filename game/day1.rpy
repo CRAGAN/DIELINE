@@ -13,6 +13,7 @@ label start:
     # Barby walks into manager room cg
     #sfx walking
     scene apollomanagersroom with fade
+    play music "audio/Music/Working Overtime 2m.mp3" loop
     voice "audio/Barby/Day 1 Intro/barby_line004.mp3"
     b_sub "...Hiya, Apollo—I mean—boss! Good to see you again!"
     voice "audio/Apollo/Day 1 Intro/apollo_line001.mp3"
@@ -41,10 +42,13 @@ label start:
     b_sub  "Ahh...! Thank you. Killing it, haha, just like. The."
     show apo awkward at jumper
     voice "audio/Barby/Day 1 Intro/barby_line009.mp3"
+    stop music
     b_sub "Truck."
     show apo worried at up
     voice "audio/Apollo/Day 1 Intro/apollo_line006.mp3"
     a_sub "Oh!"
+    play music "audio/Music/Working Overtime 2m.mp3" loop
+    $ quick_menu = False
     # add image of sensin and truck
     scene picture:
         subpixel True
@@ -67,6 +71,7 @@ label start:
         blend 'multiply'
     show apo default at jumper, center
     with dissolve
+    $ quick_menu = True
     voice "audio/Barby/Day 1 Intro/barby_line012.mp3"
     b "Speaking of, have you heard back from your insurance? About the accident?" 
     show apo worriedt at downward
@@ -108,6 +113,7 @@ label start:
             voice "audio/Apollo/Day 1 Intro/apollo_line016.mp3"
             a "It’s kinda complicated. I’m not good at technology— but I’m positive I’ll figure it out!"
             show apo default
+            play sound "audio/SFX/Day 1 /sfx_id1.mp3"
             jump idchoice
             # return to choices
 
@@ -161,6 +167,7 @@ label rooms:
         $ talkedtomj = False
         $ talkedtodeez = False
         #call screen email_minigame # FROG OVER HERE
+        play music "audio/Music/Minigames/E-Mployment_.mp3" loop
         jump breaktime1
     call screen rooms with fade
     # call screen officewalkl

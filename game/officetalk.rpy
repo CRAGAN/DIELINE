@@ -759,7 +759,7 @@ label kendratalking3:
     b "It's a dish my parents used to make me. It's, uh, a soup kind of, but with rice... chicken, toasted garlic... I put an egg in this one."
     b "It’s called arroz caldo and I thought you'd like it."
     b "It’s still a little hot, so be careful."
-    show ken monstert
+    show ken monstertt
     k "{b}... Ugh.{/b}"
     show ken monster
     voice "audio/Barby/Voice Barks/barby_sad3.mp3"

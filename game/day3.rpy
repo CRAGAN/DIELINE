@@ -73,7 +73,11 @@ label kendracubic:
     scene black with fade
     #Note: let apollo talk less barby talk more  as she starts stressing real hard, barby kind of steps in
     jump meeting3
+label minigames3:
+        # FROG OVER HERE
+    jump mjtalking3
 label meeting3:
+    $ quick_menu = False
     scene meetingbg
     show overlay:
         blend 'multiply' alpha 0.5
@@ -156,6 +160,7 @@ label meeting3:
 
     #Encounter
     #overwrld outside of manager office. Silence
+    $ quick_menu = True
     scene room_2
     show blue:
         blend 'multiply' alpha 0.3

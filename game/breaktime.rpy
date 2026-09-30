@@ -362,7 +362,8 @@ label breaktime2:
     #     Kendra in manager offis
     if talkedtoapollo and talkedtokendra and talkedtomj:
         $ breakroom_unlocked = True
-    call screen breaktime2
+    call screen breaktime2 with fade
+
 label kendratalking22:
     $ talkedtokendra = True
     scene managerroom
@@ -560,6 +561,7 @@ label kendratalking22:
     k "Still though, thank you for this talk. I-I feel a lot better. Bye Barby, I-I'll see you in the break room?"
     show ken default
     b "You betcha! See you Kendra!" 
+    scene black with fade
     jump breaktime2
     #Apollo 
 label apollotalking22: #apollo at cubicles
@@ -675,7 +677,7 @@ label apollotalking22: #apollo at cubicles
                 a "I keep getting calls from emails and lawyers, actually." 
                 show apo awkward
                 b "Me, too. It's like- I think it's a call from work- something important- cause they don't even say they're calling about the crash until later."
-                show apo angryt at jumper
+                
                 a "Right?? So you end up answering and listening to them all and aghh!!!"
                 show apo default
             
@@ -715,6 +717,7 @@ label apollotalking22: #apollo at cubicles
     show apo happy
     a "Aww thanks Barbs, but I'm good! Go take your well deserved break!"
     b "Well, if you say so! See you in the break room!" 
+    scene black with fade
     jump breaktime2
 #     MJ
 # Storage 
@@ -832,6 +835,7 @@ label mjtalking22:
                 show m default
                 b "Oh... but it's still really nice though!"
                 m "I 'preciate it!"
+    scene black with fade
     jump breaktime2
           
 
@@ -900,13 +904,18 @@ label deeztalking22:
         menu jumpy:
             "Vocabulary" if not vocab:
                 $ vocab = True
+                show de default
                 b "By the way, you have an interesting vocabulary."
                 d "What is that supposed to mean."
                 b "Oh, it's just, um, interesting! I just wonder where you got it from."
+                show de angry
                 d "This is how I was taught. Is there something wrong with the way I was taught?"
+                show apo awkward
                 a "A-"
+                show de default
                 k "N-Not exactly, but... don't you think there's still more you can learn?"
                 m "Yes! They say you never stop learning no matter what age."
+                show de shy
                 d "I don't know if I need to learn more, though. I know plenty."
                 m "Well Deez, you know what they say. The smarter you are, the more that you learn."
                 d "Wait, really?"
@@ -920,6 +929,10 @@ label deeztalking22:
                 a "Aw, I'm excited, too, Deez!"
             "Family" if not family:
                 $ family = True
+                show de default
+                show apo default
+                show m default
+                show ken default
                 b "What's your family- or friends, or whoever- think about you working at the big SFC?"
                 a "Aw!! Family! A-"
                 d "My sister, she's always been rather {i}passionate{/i} when it comes to me pursuing my career."
@@ -1041,6 +1054,7 @@ label breakroomtalkday2:
     "Greaseeee!" 
 
     #CG?
+    scene teamphoto
     a_sub "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
     k_sub "{i}I... okay. Just talk to her.{/i}"
     k_sub "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
@@ -1056,8 +1070,11 @@ label breakroomtalkday2:
 
 #. dAY 3
 label mjtalking3:
+        
         $ talkedtomj = True
-        show m toohappyt
+        scene room_3 
+        show m toohappyt at center
+        with fade
         m "Hi Barby!"
         show m toohappy
         b "Wha- oh, hiya MJ, what are you doing here?"
@@ -1123,7 +1140,7 @@ label mjtalking3:
         m "Let me know if you need any help, alright?"
         b "Um, let me know if you need any help."
         m "Sure, sure. Now go on, don’t let me keep you."
-        jump breaktime3
+        jump deeztalking3
 
             # cubicle, if you click MJ again after forced dialogue
         if talkedtomj == True:
@@ -1133,7 +1150,8 @@ label mjtalking3:
     #Deez
     # storage roo
 label deeztalking3:
-    
+    scene storage
+    with fade
     m "Need a hand there?"
     d "I don’t need hands. I have two. I am perfectly capable of doing this on my own."
     m "You sure? You looked like you were struggling there for a bit."
@@ -1233,12 +1251,14 @@ label deeztalking3:
                 b ". . ."
                 b "Please don’t tell anyone about this."
                 d "Okay, Barblene."
+    jump apollotalking3
 
 label apollotalking3:
     #Apollo
     # Break room
     #Bring up to apollo (MJ is there) that kendra thought she hated her
-
+    scene room_4
+    with fade
     m "Hi, Apollo!"
     a "Hello, MJ! Here to take your break?"
     m "Oh, no, I’m actually here to ask if you need any help."
@@ -1264,6 +1284,7 @@ label apollotalking3:
     while not (product and aboutkendra and apollofam):
         menu:
             "The product" if not product:
+                $ product = True
                 b "Are we any closer to figuring out what the product actually is?"
                 a "No..."
                 a "I’ve been trying to make a presentation for the proposal, but I don’t know what else to put in it."
@@ -1282,6 +1303,7 @@ label apollotalking3:
                 b "Oh... at least you tried?" 
 
             "About Kendra" if not aboutkendra:
+                $ aboutkendra = True
                 b "Right... did you and Kendra ever get to have your whole talk?"
                 a "Ah... yesterday?"
                 a "We were taking a while, y’know just chatting to get a little comfortable- when I got interrupted by the call..."
@@ -1317,6 +1339,7 @@ label apollotalking3:
             #And then now mj is like ?? The one thats supposed to be like ?? Just the two of you?
 
             "Apollo family" if not apollofam:
+                $ apollofam = True
                 b "Right, I saw an email from Annelise Knight with a familiar amount of death references."
                 a "Ooohhh, from my Aunt Elise?" 
                 b "Ah, she’s your aunt! Why would your aunt send spam mail?"
@@ -1341,40 +1364,64 @@ label apollotalking3:
                 a "What was that Barbs?"
                 b "N-nothing! Nothing burger, I swear— I was just telling MJ that uhh... I think your family is very cool. I can't wait to meet them one day!"
                 a "Ohh shucks, they can’t wait to meet you too! Ahaha!" 
-
+    
+    jump meeting3
 # DAY 4
 label breaktime4:
     # Fade in the hallway again but empty
-
+    scene room_3
+    with fade
     b "Is Deez still in the bathroom?"
 
     # cubicle
+    scene room_2 with fade
     #Kendra
+    show ken monster
+    with fade
     b "..."
     k "sobbing"
 
     # manager office front
     #MJ
+    scene room_1
+    show m monster
+    with fade
     b "..."
     m "humming"
-
+    scene managerroom
     #Manager Office (inside)
     # apollo sitting there
+    show apo default at center
+    with fade
     b "..."
     a "Hm? Hi, Barby. I'm working right now. What's up?"
-    menu:
-        "Deez":
-            b "Looking for Deez."
-            a "I'm pretty sure he was touring that guy?"
-    # leave dialogue (can click again)
-        "You?":
-            b "What's up with you?"
-            a "Oh, haha. I've just been fixing the PowerPoint presentation to pitch, uh, how to present the product's value to our client. For them to use when advertising it."
-            a "... haha, funny you ask, but most of the progress didn't save last night so, haha, I'm just fixing that up right now!"
-            b "Oh shoot…"
-            a "Don't worry too much about it, I still remember how I did it, anyways, I just have to put it in again. Hah…"
-    # leave dialogue (can click again)
-        "Nothing":
-            b "Nothing, just checking in."
-            a "Neat!"
+    $ deezwhere = False
+    $ you = False
+    $ nothing = False
+
+    while not (deezwhere and you and nothing):
+        menu:
+            "Deez" if not deezwhere:
+                $ deezwhere = True
+                show apo happy
+                b "Looking for Deez."
+                a "I'm pretty sure he was touring that guy?"
+        # leave dialogue (can click again)
+            "You?" if not you:
+                $ you = True
+                show apo awkward
+                b "What's up with you?"
+                a "Oh, haha. I've just been fixing the PowerPoint presentation to pitch, uh, how to present the product's value to our client. For them to use when advertising it."
+                a "... haha, funny you ask, but most of the progress didn't save last night so, haha, I'm just fixing that up right now!"
+                b "Oh shoot…"
+                a "Don't worry too much about it, I still remember how I did it, anyways, I just have to put it in again. Hah…"
+        # leave dialogue (can click again)
+            "Nothing" if not nothing:
+                $ nothing = True
+                show apo default
+                b "Nothing, just checking in."
+                a "Neat!"
+    scene black with fade
+    pause 2
+    jump encounter4
 # leave dialogue (can click again

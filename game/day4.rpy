@@ -1,7 +1,14 @@
 label day4:
     # CG Deez’ POV doorway manager office Barby shinji pose, Apollo on the ground (lying down on papers)
-
+    scene room_1
+    show overlay:
+        blend 'multiply'
+    show apo worried at center:
+        xoffset 250
+    show de sad at center:
+        xoffset -250
     b "Oh, what are we going to do... what are we going to do..." 
+    
     a "Ugh..."
     a "Ahaha, i-it’s fine! We can- we can work something out." 
     a "W-we kind of don’t have much to show, though..."
@@ -13,26 +20,34 @@ label day4:
     d "I would say good morning, but it appears this morning is not very good."
     a "Oh my goodness Deez, I didn’t see you there! Hi!"
     b "Deez! Good morning!"
+    show apo weirdt
     a "Ahaha, what do you mean? Me and Barby, we’re so normal this morning."
+    show apo weird
     b "We are?"
+    show apo defaultt
     a "Yes! So normal about the person they’re sending to check in on the project today."
+    show apo default
+
     d "I am inclined to believe otherwise. It seems you both are worried?"
     b "It’s just. Y’know. How are we gonna talk to someone from the company about... whatever’s going on right now...!"
     a "I wanna just ask for help, yeah, but... if SFC finds out how far behind we are..."
     a "We might all... lose our jobs."
     b "Getting fired from SFC... sucks. Apparently, it destroys your resume... I hear it becomes a nightmare to get rehired for anything substantial." 
     a "Agh..."
+    show de default
     d "If talking is the issue, then I can do it."
     b "Oh no, Deez, we couldn’t possibly pass this onto you. They’re probably going to ask lots of questions about the project, and we need someone who’s knowledgeable..." 
+    show de shy
     d "Well yes, that’s me. I know a lot."
     d "And I’m, like, really good at talking to people."
     a "Really?"
+    show de default
     d "Yeah. I was, like, doing network activities for my family’s business...going around talking... and yeah." 
     a "That’s wonderful! Oh Deez, you smart, smartie-pataatie, I’m so glad you’re with us."
     b "I guess Deez must’ve learned a lot from Kendra before she... yeah."
     a "... Well, let's just check around before they arrive. Especially on... ahaha, you know."
     jump officewalkday4
-    label minigame4:
+label minigame4:
     b "I'll leave my PC on. I’m just gonna check on the. Thing. Then I'll get back to see if there’s any other work before I go."
     jump guymeeting
 
@@ -61,7 +76,7 @@ label guymeeting:
 
     b "Wha-"
     show ry default at center:
-        easein xoffset 0
+        easein 0.5 xoffset 0
     r "Oh damn he needed to go? He could've just said so. Anyway what’s up, man?"
     b "Well, I was, uh, just checking in, but."
     $ whichdep = False
@@ -134,10 +149,12 @@ label continued:
     # audience cheer as he leaves 
     jump breaktime4
 label encounter4:
+    $ quick_menu = False
     scene deezscene1:
         zoom 1.2 xoffset -50
     show barby_standing_back at center:
         zoom 0.55
+    with fade
     #Click bathroom door
     # not VA'd except screams and groans from Deez
     b_sub "Hey, Deez? Are you in there?"
@@ -182,7 +199,11 @@ label breakroom4:
     show blue:
         blend 'multiply' alpha 0.3
         easein 1 alpha 0.7
+    show pink:
+        blend 'multiply' alpha 0.3
+        easein 1 alpha 0.7
     show de sad at up, center
+    with fade
     # CG has u looking down at deez knelt next to [anythjbg] trying to fix it maybe his face is obscured 
     #And the hand is holding his head together
     menu:
@@ -225,6 +246,7 @@ label breakroom4:
             # he Kils u make some freaky noise go have fun
 
         "Encourage & console":
+
             # (MEAN IT!! MEAN IT!! GO ECCHAN)  SOUND SO GENUINE THAT HE CRIES
             b "You're doing a really good job and I'm proud of you." 
             # pause then sob semi long
@@ -257,6 +279,7 @@ label breakroom4:
             b "It’s important you’re trying."
             scene black
             pause 2
+            $ quick_menu = False
             d_sub "All I ever do is try and but I can’t even do that right."
             d_sub "If I'm not broken, then I’m just a defect. Nothing will ever fix me, because there is nothing that can be fixed."
             d_sub  "..."
@@ -285,6 +308,7 @@ label breakroom4:
             show noises:
                 alpha 0.1
                 blend 'add'
+            $ quick_menu = False
             d_sub " "
             menu:
                 "Get out of the room":
@@ -340,6 +364,7 @@ label breakroom4:
                     b_sub "I don't know what else to do."
                     b_sub "It's all I know." 
                     # fade out into to clocking out
+                    $ quick_menu = True
                     jump clockingout4
 
 label clockingout4:

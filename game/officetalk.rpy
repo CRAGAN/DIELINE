@@ -747,12 +747,13 @@ label kendratalking3:
     show overlay:
         blend 'multiply' alpha 0.3
     show ken monster
+    with fade
     b "...Good morning, Kendra...!"
     b "Here. I... I made you breakfast."
     b "It's a dish my parents used to make me. It's, uh, a soup kind of, but with rice... chicken, toasted garlic... I put an egg in this one."
     b "It’s called arroz caldo and I thought you'd like it."
     b "It’s still a little hot, so be careful."
-    show ken monstert
+    show ken monstertt
     k "{b}... Ugh.{/b}"
     show ken monster
     b "Okay...! I need to... uhm—"
@@ -762,7 +763,7 @@ label kendratalking3:
 
     #Everyone huddled up away from Kendra in the breakroom 
 label breakroomnokendra:
-    scene rooms_4
+    scene room_4
     show de default at right
     d "H-hey! Barby’s here."
     show m default at left
@@ -791,6 +792,7 @@ label breakroomnokendra:
     while not (whatishappening and workhabits and contactsomeone):
         menu:
             "Contact Someone" if not contactsomeone:
+                $ contactsomeone = True
                 b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
                 show apo awkwardt
                 a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
@@ -825,44 +827,54 @@ label breakroomnokendra:
                 m "I guess we just have to try our best moving forward."
 
             "What is happening to Kendra?" if not whatishappening:
-        
+                $ whatishappening = True
                 b "What’s happening with her...? It kind of looks like she’s being eaten by moths?"
                 m "Weird. Moths aren’t the ones that eat clothes, it’s usually just their larvae."
                 a "Um, actually... when I went to check on her earlier, the moths were just kind of on her face? Not doing anything? At least, I don’t think they were."
                 d "It might be contagious, and it's possible she'd also be consumed whole if we got into contact with—"
                 b "Let’s just not try to touch her! Like, at all for now."
 
-            "Kendra work habits" if not contactsomeone:
+            "Kendra work habits" if not workhabits:
+                $ workhabits = True
                 b "You said she’s still working?"
                 a "Yeah, but when I went to check on her output... she’s barely done anything."
                 a "But she still keeps asking for more and more work. I tried to give her a break, but she got mad and yelled at me so I left her alone :("
                 b "Man... what are we gonna do... if Kendra’s not at her full strength..." 
                 a "Oh Barbs, wish I knew, I really wish I knew..."
 
-                b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
-                m "Not to worry, I’m more than willing to help carry the work load."
-                d "I too, can help carry the work load."
-                m "Aw, thanks Deez, but you’re still just an intern. There isn’t really much you can do to help."
-                d "Oh... I knew that. Of course."
-                a "Are you sure MJ? There’s so much that needs to be done and–"
-                m "Anything you throw at me, I can accomplish easy peasy." 
-                m "Just leave it to me! I’ll get us up to speed in no time."
-                b "Well-"
-                b "Thanks, MJ, it’s kinda... reassuring? To see you carry this energy despite everything."
-                b "But you’re not alone! I can also help out plenty."
-                a "Me too! I’ll do my best to make this project a success."
-                a "And Deez, don’t worry, you can still help out by helping me out!"
-                d "...fine. Okay. Since you... need help, I can help you."
+    b "Well we have to do something! If Kendra’s not available then– then let’s pick up the slack." 
+    m "Not to worry, I’m more than willing to help carry the work load."
+    d "I too, can help carry the work load."
+    m "Aw, thanks Deez, but you’re still just an intern. There isn’t really much you can do to help."
+    d "Oh... I knew that. Of course."
+    a "Are you sure MJ? There’s so much that needs to be done and–"
+    m "Anything you throw at me, I can accomplish easy peasy." 
+    m "Just leave it to me! I’ll get us up to speed in no time."
+    b "Well-"
+    b "Thanks, MJ, it’s kinda... reassuring? To see you carry this energy despite everything."
+    b "But you’re not alone! I can also help out plenty."
+    a "Me too! I’ll do my best to make this project a success."
+    a "And Deez, don’t worry, you can still help out by helping me out!"
+    d "...fine. Okay. Since you... need help, I can help you."
+    jump minigames3
                 
 
 #. DAY. 4
 label officewalkday4:
     # overworld in front of Manager office
+    scene black with fade
     b "We should probably check on our ‘non-compliant’? Friends…"
+    jump apolloandmj
 
 
     #Apollo & MJ
 label apolloandmj:
+    scene room_1
+    show m monster at center:
+        xoffset -250
+    show apo default at center:
+        xoffset 250
+    with fade
     # in front of Manager room 
     a "...so that’s basically what happened…"
     a "Ahh, sorry for telling you this. I know it’s personal stuff and whatever but you have your whole… family situation too, and I figured…"
@@ -883,10 +895,17 @@ label apolloandmj:
     a "But MJ… y-you’ve been doing so much! Can’t your family see that?" 
     m "Employee Grey has had their performance depreciating for a while! Be sure to spend more time on work rather than unrelated and unproductive activities."
     a "..."
+    jump kendraanddeez
 
     #Kendra & Deez
 label kendraanddeez:
     # cubicles
+    scene room_2
+    show ken monster at center:
+        xoffset -250
+    show de sad at center:
+        xoffset 250
+    with fade
     d "I know what happened to you."
     k "..."
     d "I learned a lot over the past few days, and a lot of it is because… I spent a lot of time with you and helping you." 
@@ -919,6 +938,7 @@ label kendraanddeez:
     # deez leaves 
     # a bit ANGRY
     k "I have to get a grip. I have to."
+    jump ryantime
 
     #Ryann Glenn
     # itd be kind of funny if after office walk you walk around and then ryann is just there or the camera slowly pans to him 
@@ -926,34 +946,52 @@ label kendraanddeez:
     # SFX audience cheer as if hes a celebrity 
     # scene stops and stuff to wait for audience to stop cheering 
     # Apollo Deez appear here too
-
+label ryantime:
+    scene black
+    with fade
+    pause 2.0
+    scene room_3
+    show apo worried at left
+    show de sad at center
+    with fade
     a "Barby, when they get here, we gotta make sure we tell them we don't need any extra he—..."
+    show ry sexy at right 
+    with dissolve
+    show apo surprised
     a "..."
+    show de surprised
     d "..."
     r "Hey, how are you, all? I'm Ryann Glenn."
     # music change as he talks
     r "I work at the warehouse and, ahh, we just wanted to check up on your team."
     a "A-ah! Hi, there! I'm Apollo, the manager! I take it your name is Ryann. Glenn…!"
     r "Yep, that's my name."
+    show de shy
+    show apo default
     a "This is Deez, he's our… he's the one who's gonna tour you! Ahaha, yes!"
     r "Hey, man, I'm not looking for a formal tour or anything. We at the warehouse were just concerned you hadn't given us the go ahead to ship out yet?"
     d "Why is he talking like that? It's not a cutscene."
     b "O-oh! Hahaha… right, um, we've just had so much to do over here and, y’know you get so caught up in it!"
+    show ry shy
     r "Cool, yeah, I get ya."
     r "But what are you getting caught up inn if we haven’t shipped out yet?"
     d "You're not supposed to say ‘in' like that."
+    show apo worried
     a "It’s so nice the warehouse is sending someone to help! But, uh…"
     a "Ahahaha, we'll give the go ahead soon, I prommy!"
     a "Deez is gonna tell you about… all the stuff, haha!" 
     d "(going to shit myself) Hi."
     d "Let us go to a more… dignified place to talk. About business. Because I am very good at that."
+    show ry sexy at jumper
     r "Sure, mann."
+    show de surprised
     d "Wh-why do you say it like that."
     b "You can't just say that to someone, Deez."
     r "It's okay, I don't take offense or anything. I don't know what he means, though. "
     b "Stay safe! Have a safe tour!"
     r "I don't see why it wouldn't be…!"
     b "I should go check on my emails…"
+    scene black with fade
     jump minigame4
 #DAY 5
 label kendratalking5:

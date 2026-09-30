@@ -671,7 +671,8 @@ screen breaktime2():
                 at transform:
                     blend 'add'
                     zoom 0.297
-            add "images/barby/standing/barby_standing_shorts.png" zoom 0.2 xpos 0.2 ypos 0.53
+                    
+            add "images/barby/standing/barby_standing_shorts.png" zoom 0.2 xpos 0.2 ypos 0.48
         # ROOM 4             
         # ROOM 4
         elif current_room == 4:

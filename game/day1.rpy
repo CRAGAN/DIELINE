@@ -68,13 +68,13 @@ label start:
     show apo default at jumper, center
     with dissolve
     voice "audio/Barby/Day 1 Intro/barby_line012.mp3"
-    b hm "Speaking of, have you heard back from your insurance? About the accident?" 
+    b "Speaking of, have you heard back from your insurance? About the accident?" 
     show apo worriedt at downward
     voice "audio/Apollo/Day 1 Intro/apollo_line010.mp3"
     a "Oh goodness, no, I haven’t! Have you? I’m worried..." 
     show apo worried
     voice "audio/Barby/Day 1 Intro/barby_line013.mp3"
-    b hm "Agh, don’t be worried!"
+    b "Agh, don’t be worried!"
     voice "audio/Barby/Day 1 Intro/barby_line014.mp3"
     b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my rensibilities are waiting on others." 
     show apo worriedt at downward

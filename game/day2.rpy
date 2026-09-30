@@ -22,8 +22,7 @@ label rooms2:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
-    call screen rooms2 
-    with screen
+    call screen rooms2 with fade
 
 label minigametime:
         scene black
@@ -36,8 +35,7 @@ label minigametime:
         $ talkedtoapollo = False
         $ talkedtomj = False
         $ talkedtodeez = False
-        jump breaktime2
-
+        jump breaktime2 
 label teammeetingpt2:
     scene meetingroom
     show overlay:
@@ -277,7 +275,7 @@ label encounterday2:
     k_sub "{b}Turn my computer on. I will handle it.{/b}"
     show ken monsterr
     #VA note: She'd be sobbing quietly at this point, sniffle sniffle
-    av "..."
+    b_sub "..."
     b_sub "Kendra? D-Do you want to–"
     show ken monstertt
     k_sub "{b}I said I'll get it done. Turn. It. On.{/b}"

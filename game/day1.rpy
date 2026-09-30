@@ -100,7 +100,7 @@ label start:
         set picked
         "Skycloudmeet?":
             voice "audio/Barby/Day 1 Intro/barby_line017.mp3"
-            b hmt "We switched to Skycloud Meet already?"
+            b "We switched to Skycloud Meet already?"
             show apo awkwardt at downward
             voice "audio/Apollo/Day 1 Intro/apollo_line015.mp3"
             a "Err, yeah. It’s supposed to work better with the other Sera, Fim & Co. software we’re using, yet..."
@@ -113,7 +113,7 @@ label start:
 
         "But I don't know the team.":
             voice "audio/Barby/Day 1 Intro/barby_line018.mp3"
-            b hmt "Ah, but I don’t even know who’s part of the team yet."
+            b "Ah, but I don’t even know who’s part of the team yet."
             show apo defaultt
             voice "audio/Apollo/Day 1 Intro/apollo_line017.mp3"
             a "It’s okay, you already know most of them by now! All their names and faces are on their IDs too, so you can figure it out easy peasy!"
@@ -150,11 +150,11 @@ label rooms:
         scene black with dissolve
         voice "audio/Barby/Day 1 ID/barby_line0142.mp3"
         $ quick_menu = True
-        b default "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
+        b "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
         voice "audio/Barby/Day 1 ID/barby_line0143.mp3"
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
         voice "audio/Barby/Day 1 ID/barby_line0144.mp3"
-        b hm "Just gotta get on my computer."
+        b "Just gotta get on my computer."
         $ current_room = 2
         $ talkedtokendra = False
         $ talkedtoapollo = False
@@ -228,7 +228,7 @@ label meeting:
     a "So intellectual of you Deez, so observant! And you just got here!"
     show apo default
     voice "audio/Barby/Day 1 TM/barby_line147.mp3"
-    b worriedt "Wait- I don’t hate pants- what-!?" 
+    b "Wait- I don’t hate pants- what-!?" 
     show apo awkwardt
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line048.mp3"
     a "So uhm unfortunately, this is what happened to my left hand..."
@@ -397,7 +397,7 @@ label meeting:
     m_sub "Maybe I can ask the client directly to help ease the situation."
     d_sub "Well, {i}yeah{/i} MJ, that’s what a marketing employee’s {i}supposed{/i} to do, haha. Hah."
     d_sub "A-anyway uhh, I totally agree with everyone here. We just have to figure out big boss’ super easy puzzle words."
-    voice "audio/MJ/Day 1 TM/MJ_line034.mp3"
+    voice "audio/MJ/Day 1 TM/MJ_line034.mp3" 
     m_sub "Thanks for your cooperation and understanding. The intern’s right! We just have to figure it out, then it’ll be fine."
     d_sub "{i}Yeah. I’m always right.{/i}"
     voice "audio/Kendra/Day 1 TM/kendra_line048.mp3"

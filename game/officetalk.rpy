@@ -95,10 +95,10 @@ label mjtalking:
                     $ whatdepartmentareyoufrom = True
                     voice "audio/Barby/Day 1 OW/barby_line061.mp3"
                     b "Just to make sure— with the whole name being faded and everything— what exactly {i}is{/i} your job title?"
-                    voice "audio/MJ/Day 1 OW/MJ_line10.mp3"
+                    voice "audio/MJ/Day 1 OW/MJ_line010.mp3"
                     m "Hmm? What do you mean?"
                     show m happyt at downward
-                    voice "audio/MJ/Day 1 OW/MJ_line11.mp3"
+                    voice "audio/MJ/Day 1 OW/MJ_line011.mp3"
                     m "I am a part of the team, if that’s what you were wondering."
                     show m happy
                     voice "audio/Barby/Day 1 OW/barby_line062.mp3"
@@ -449,14 +449,10 @@ label deeztalking:
         d_sub "My name is too long so you can call me {i}Deez{/i} for short."
 
         # change name in textbox to real nametag
-        voice "audio/Barby/Day 1 OW/barby_line11.mp3"
+        voice "audio/Barby/Day 1 OW/barby_line111.mp3"
         b_sub "That I knew! Here’s your ID."
-        
-
 
         # change name in textbox to real nametag
-
-        b_sub "That I knew! Here’s your ID."
         #sfx_id2
         # ID pops out
         show overlay:
@@ -509,7 +505,7 @@ label deeztalking:
                     voice "audio/Barby/Day 1 OW/barby_line115.mp3"
                     b "Please let me know if you need anything!"
                     show de defaultt
-                    voice "audio/Deez/Day 1 OW/deez_line11.mp3"
+                    voice "audio/Deez/Day 1 OW/deez_line011.mp3"
                     d "Thank you for the warm regards."
                     voice "audio/Deez/Day 1 OW/deez_line012.mp3"
                     d "But I disagree. I’m not on the boat, I’m paid."
@@ -775,10 +771,15 @@ label breakroomnokendra:
     show apo worriedt at center
     a "She was already here when I clocked in! I don't think she went home... she's just been working... and working—"
     a "She just keeps asking for more work... I’m really worried."
+    show apo worried
     b "Oh..."
     a "I don’t know what we’re going to do... we kind of needed Kendra for a lot of things." 
+    show m hmt
     m "Should we tell the higher ups about this? Or anyone at all?" 
+    show m hm
+    show de sadt
     d "Will they believe us? This... this doesn’t seem like a very logical event."
+    show de sad
     b "I’m sure we can... figure something out..."
     a "We already tried to tell someone, remember? But no one picked up."
     m "That’s because it was after hours. Maybe if we try again, we’ll get someone this time." 
@@ -791,11 +792,15 @@ label breakroomnokendra:
         menu:
             "Contact Someone" if not contactsomeone:
                 b "How about we contact the building specific emergency hotline? They’ll probably be able to respond sooner."
+                show apo awkwardt
                 a "Yeah... emergency services in this city sometimes... take a while... Right, Barby?"
                 a "Oh- oh right, you don’t remember. Oopsies."
+                show apo awkward
                 b "I saw the report! Don’t worry; I know."
+                show m hmt
                 m "Already on it."
                 # call sfx
+                show m hm
                 "Hello, SFC Marketing & Public Relations Building Specific Emergency Hotline."
                 "What can I do to help you?"
                 d "A lot."
@@ -803,15 +808,20 @@ label breakroomnokendra:
                 d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
                 "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
                 b "Huh?"
+                show apo worriedt
                 a "T-team meeting exercises?" 
+                show apo worried
                 "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
                 " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
                 "So go out there and fly high!"
+                show apo nervoust
                 a "W-wait, there’s gotta be more—!!"
+                show apo worried at jumper
                 "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
                 b "... Okay."
                 a "That’s. That's it? No way..."
                 d "That guy frankly sucks."
+                
                 m "I guess we just have to try our best moving forward."
 
             "What is happening to Kendra?" if not whatishappening:
@@ -852,7 +862,7 @@ label officewalkday4:
 
 
     #Apollo & MJ
-
+label apolloandmj:
     # in front of Manager room 
     a "...so that’s basically what happened…"
     a "Ahh, sorry for telling you this. I know it’s personal stuff and whatever but you have your whole… family situation too, and I figured…"
@@ -875,7 +885,7 @@ label officewalkday4:
     a "..."
 
     #Kendra & Deez
-
+label kendraanddeez:
     # cubicles
     d "I know what happened to you."
     k "..."

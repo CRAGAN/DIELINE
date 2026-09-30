@@ -702,9 +702,11 @@ label deeztalking2:
         zoom 0.3
     $ talkedtodeez = True
     b "Good morning, Deez!"
+    voice "audio/Deez/Voice Barks/deez_happy1.mp3"
     d "Good morning."
     b "Do you need any help with anything?"
     d "Never." 
+    voice "audio/Barby/Voice Barks/barby_happy3.mp3"
     b "Cool!"
     jump rooms2
 label kendratalking2:
@@ -725,9 +727,12 @@ label kendratalking2:
         zoom 0.3
      
     $ talkedtokendra = True
+    $ talkedtokendra = True
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
+    voice "audio/Barby/Voice Barks/barby_happy1.mp3"
     b "Hiya!"
+    voice "audio/Kendra/Voice Barks/kendra_happy1.mp3"
     k "Hi!" 
     jump rooms2
 # DAY 3
@@ -749,13 +754,15 @@ label kendratalking3:
     show ken monster
     with fade
     b "...Good morning, Kendra...!"
+    voice "audio/Barby/Voice Barks/barby_confused2.mp3"
     b "Here. I... I made you breakfast."
     b "It's a dish my parents used to make me. It's, uh, a soup kind of, but with rice... chicken, toasted garlic... I put an egg in this one."
     b "It’s called arroz caldo and I thought you'd like it."
     b "It’s still a little hot, so be careful."
-    show ken monstertt
+    show ken monstert
     k "{b}... Ugh.{/b}"
     show ken monster
+    voice "audio/Barby/Voice Barks/barby_sad3.mp3"
     b "Okay...! I need to... uhm—"
     b "Drink sand. Bye."
     scene black with dissolve
@@ -765,20 +772,27 @@ label kendratalking3:
 label breakroomnokendra:
     scene room_4
     show de default at right
+    voice "audio/Deez/Voice Barks/deez_surprised1.mp3"
     d "H-hey! Barby’s here."
     show m default at left
+    voice "audio/MJ/Voice Barks/mj_happy1.mp3"
     m "Right on time! Did ya see Kendra? How’s she holding up?"
+    voice "audio/Barby/Voice Barks/barby_confused1.mp3"
     b "Aoughhhgghhggggg."
     show apo worriedt at center
+    voice "audio/Apollo/Voice Barks/apollo_sad2.mp3"
     a "She was already here when I clocked in! I don't think she went home... she's just been working... and working—"
     a "She just keeps asking for more work... I’m really worried."
     show apo worried
+    voice "audio/Barby/Voice Barks/barby_sad1.mp3"
     b "Oh..."
     a "I don’t know what we’re going to do... we kind of needed Kendra for a lot of things." 
     show m hmt
+    voice "audio/MJ/Voice Barks/mj_sad3.p3"
     m "Should we tell the higher ups about this? Or anyone at all?" 
     show m hm
     show de sadt
+    voice  "audio/Deez/Voice Barks/deez_sad2.mp3"
     d "Will they believe us? This... this doesn’t seem like a very logical event."
     show de sad
     b "I’m sure we can... figure something out..."
@@ -807,9 +821,11 @@ label breakroomnokendra:
                 "What can I do to help you?"
                 d "A lot."
                 m "Well said."
+                voice "audio/Deez/Voice Barks/deez_confused1.mp3"
                 d "Our coworker is income-pacidated. She is, um, very blue. And very mothy."
                 "I see! If your employee is being non-compliant, then you can simply handle them better. Why not try out team building exercises to improve their cooperation?"
                 b "Huh?"
+                voice "audio/Apollo/Voice Barks/apollo_confused3.mp3"
                 show apo worriedt
                 a "T-team meeting exercises?" 
                 show apo worried
@@ -817,6 +833,7 @@ label breakroomnokendra:
                 " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
                 "So go out there and fly high!"
                 show apo nervoust
+                voice "audio/Apollo/Voice Barks/apollo_surprised3.mp3"
                 a "W-wait, there’s gotta be more—!!"
                 show apo worried at jumper
                 "Thank you for calling the SFC Marketing & Public Relations Building Specific Emergency Hotline."
@@ -872,11 +889,12 @@ label apolloandmj:
     scene room_1
     show m monster at center:
         xoffset -250
-    show apo default at center:
+    show apo defaultt at center:
         xoffset 250
     with fade
     # in front of Manager room 
     a "...so that’s basically what happened…"
+    show apo default 
     a "Ahh, sorry for telling you this. I know it’s personal stuff and whatever but you have your whole… family situation too, and I figured…"
     a "I don’t know. Maybe you’d know something?"
     a "I don’t wanna put this on anyone else, haha… they’re kind of counting on me to keep everything together."
@@ -901,6 +919,7 @@ label apolloandmj:
 label kendraanddeez:
     # cubicles
     scene room_2
+    show borders
     show ken monster at center:
         xoffset -250
     show de sad at center:
@@ -951,6 +970,7 @@ label ryantime:
     with fade
     pause 2.0
     scene room_3
+    show borders1
     show apo worried at left
     show de sad at center
     with fade

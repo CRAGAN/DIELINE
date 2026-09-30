@@ -24,6 +24,7 @@ label day3:
     # cubicle
 label kendracubic:
     scene room_2
+    
     show blue:
         blend 'multiply' alpha 0.3
     show overlay:

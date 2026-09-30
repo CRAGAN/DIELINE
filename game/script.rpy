@@ -31,4 +31,7 @@ transform zoomin:
     anchor (0.5, 0.5)
     pos (0.5, 0.5)
     easein 0.5 zoom 1.3
-
+label splashscreen:
+    scene black
+    show spooktoberlogo
+    return

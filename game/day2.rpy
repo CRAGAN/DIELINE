@@ -180,6 +180,7 @@ centered " " with hpunch
 # go to cubicles 
 pause 3.0
 scene room_2 
+show borders
 show noises:
     alpha 0.1
     blend 'add'
@@ -312,6 +313,7 @@ label encounterday2:
     menu:
         "walk to cubicle":
             scene room_2 
+            show borders
             show blue:
                 blend 'multiply' alpha 0.3
             show noises:

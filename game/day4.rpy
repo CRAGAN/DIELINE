@@ -375,7 +375,7 @@ label clockingout4:
 
     b "Wait a second... why is..."
     scene room_2
-
+    show borders
     show blue:
         blend 'multiply' alpha 0.3
         easein 1 alpha 0.7

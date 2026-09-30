@@ -567,6 +567,7 @@ label kendratalking22:
 label apollotalking22: #apollo at cubicles
     $ talkedtoapollo = True
     scene room_2
+    show borders
     show overlay:
         blend 'multiply'
     show apo default at center
@@ -1073,6 +1074,7 @@ label mjtalking3:
         
         $ talkedtomj = True
         scene room_3 
+        show borders1
         show m toohappyt at center
         with fade
         m "Hi Barby!"
@@ -1370,12 +1372,14 @@ label apollotalking3:
 label breaktime4:
     # Fade in the hallway again but empty
     scene room_3
+    show borders1
     with fade
     b "Is Deez still in the bathroom?"
 
     # cubicle
     scene room_2 with fade
     #Kendra
+    show borders
     show ken monster
     with fade
     b "..."

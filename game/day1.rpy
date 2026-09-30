@@ -175,6 +175,7 @@ label rooms:
 label meeting:
     $ talked = 0
     scene room_2
+    show borders
     show overlay:
         blend 'multiply'
     show apo defaultt at center:
@@ -646,6 +647,7 @@ label meeting:
 
 label clockingout:
     scene room_2
+    show borders
     show overlay
     show apo worriedt
     a "Hey, uhm, Barby? Do you have a minute? I just wanted to talk to you about something I’ve noticed about you today..."

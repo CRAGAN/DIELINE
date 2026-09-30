@@ -206,6 +206,7 @@ scene room_1
 show blue:
     blend 'multiply' alpha 0.2
 with fade
+
 k "{b}My head... it- my head hurts.{/b}"
 voice "audio/Barby/Day 2 TM/barby_line188.mp3"
 b "K-Kendra? Is... everything okay? What's that noise...?!"
@@ -300,48 +301,50 @@ label encounterday2:
     a_sub "Barby?"
 
     # apollo's voice becomes a bit clearer but reverby
-    voice "audio/Apollo/Day 2 TM/apollo_line117.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line117.mp3"
     a_sub "What's going– AAAAAAH!"
     # mj and deez are off screen here, so make them quiet, muffled, also under water style
     voice "audio/MJ/Day 2 Encounter/MJ_line057.mp3"
     m_sub "Did someone scream?"
     d_sub "Yes."
-    voice "audio/MJ/Day 2 TM/MJ_line058.mp3"
+    voice "audio/MJ/Day 2 Encounter/MJ_line058.mp3"
     m_sub " Stay out here, Deez, let me check..."
     # muffled footsteps, footsteps stop  (MJ sees face reacts but doesn't say anything? Or make them say something)
-    voice "audio/MJ/Day 2 TM/MJ_line059.mp3"
+    voice "audio/MJ/Day 2 Encounter/MJ_line059.mp3"
     m_sub "OH. OH DEAR."
     # barby voice is still reverb
     voice "audio/Barby/Day 2 Encounter/barby_line191.mp3"
     b_sub "Kendra...?"
-    voice "audio/Apollo/Day 2 TM/apollo_line118.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line119.mp3"
     a_sub "Oh, oh, oh no... this is... oh..."
-    voice "audio/Apollo/Day 2 TM/apollo_line119.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line120.mp3"
     a_sub "Mmm... manager decision...!" 
-    voice "audio/Apollo/Day 2 TM/apollo_line120.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line121.mp3"
     a_sub "... We're refusing this deadline. I-I can't— We can't—!!" 
-    voice "audio/Apollo/Day 2 TM/apollo_line121.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line122.mp3"
     a_sub "Call— we need to call the clinic, the hospital, anyone!" 
-    voice "audio/MJ/Day 2 TM/MJ_line060.mp3"
+    voice "audio/MJ/Day 2 Encounter/MJ_line060.mp3"
     m_sub "Let's, aahh— let's calm down, okay? Let's think this through—" 
-    voice "audio/Apollo/Day 2 TM/apollo_line122.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line123.mp3"
     a_sub "I-I'm sorry, right I uhm, where's my phone—" 
-    voice "audio/Apollo/Day 2 TM/apollo_line123.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line124.mp3"
     a_sub "We need to tell the higher ups what happened... and ask... um..." 
-    voice "audio/MJ/Day 2 TM/MJ_line061.mp3"
-    m_sub "Kendra? Hey, let's get you... somewhere." 
+    voice "audio/MJ/Day 2 Encounter/MJ_line061.mp3"
+    m_sub "Kendra? Hey, let's get you... somewhere."
+    voice "audio/Apollo/Day 2 Encounter/apollo_line124.mp3"
+    a_sub "..." 
 
     # The CG shifts and its mouth opens as if it's a talking sprite. SQUELCH SQUELCH her JAW is breaking and is MUSHY   make her talk slowly cause her jaw is breaking every time it moves up and down
     # her audio is so weird and pops up on screen as blue text weird glitchy instead of normal subtitles
 
     show ken monstertt
-    voice "audio/Kendra/Day 2 Encounter/kendra_line083.mp3"
+    voice "audio/Kendra/Day 2 TM/kendra_line082.mp3"
     k_sub "{b}Don't worry. I'll get all of it done.{/b}"
     show ken monsterr
     voice "audio/MJ/Day 2 TM/MJ_line062.mp3"
     m_sub "Wh...what?" 
     show ken monstertt
-    voice "audio/Kendra/Day 2 Encounter/kendra_line084.mp3"
+    voice "audio/Kendra/Day 2 Encounter/kendra_line083.mp3"
     k_sub "{b}Turn my computer on. I will handle it.{/b}"
     show ken monsterr
     #VA note: She'd be sobbing quietly at this point, sniffle sniffle
@@ -349,7 +352,7 @@ label encounterday2:
     voice "audio/Barby/Day 2 Encounter/barby_line192.mp3"
     b_sub "Kendra? D-Do you want to–"
     show ken monstertt
-    voice "audio/Kendra/Day 2 Encounter/kendra_line085.mp3"
+    voice "audio/Kendra/Day 2 Encounter/kendra_line084.mp3"
     k_sub "{b}I said I'll get it done. Turn. It. On.{/b}"
     voice "audio/Barby/Day 2 Encounter/barby_line193.mp3"
     b_sub "... okay." 

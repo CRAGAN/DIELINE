@@ -21,7 +21,7 @@ label room5:
     call screen rooms5 with fade
 # Not yet transformed fully but hints she's in the process
 label apolloweirdtime:
-    play sound "audio/SFX/Day 1 /sfx_badjoke.mp3"
+    play sound "audio/SFX/Day 1 /sfx_door.mp3"
     $ quick_menu = True
     voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line253 (no echo).mp3"
     b "Uhh, hiya Apollo...! Sorry for sleeping—"

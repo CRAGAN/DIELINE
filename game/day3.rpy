@@ -310,14 +310,15 @@ label encounter3:
     scene black
     pause 2.0
 
-    scene mjintro
+    scene kendrabgmonster
     show m monster
+    play music "audio/Music/Ominous Background Music.mp3" loop
     menu:
         "Take a break":
             voice "audio/Barby/Day 3 Encounter/barby_line220.mp3"
-            b "Please take a break—"
+            b_sub "Please take a break—"
             voice "audio/MJ/Day 3 Encounter/MJ_line091.mp3"
-            m "Get out of my way."
+            m_sub "Get out of my way."
             pause 2
             show m monstershadow at center
             pause 2
@@ -331,22 +332,23 @@ label encounter3:
             show noises:
                 alpha 0.1
                 blend 'add'
+            jump encounter3
             # JUMPSCARE DIE
             # GAME OVER
 
         "Get back to work":
             voice "audio/Barby/Day 3 Encounter/barby_line221a.mp3"
-            b "...Can you still work? Like this?"
+            b_sub "...Can you still work? Like this?"
             # MJ silent 
             voice "audio/MJ/Day 3 Encounter/MJ_line092.mp3"
-            m "Of course. :)"
+            m _sub"Of course. :)"
             voice "audio/MJ/Day 3 Encounter/MJ_line093.mp3"
-            m "Whatever I can do to help."
+            m_sub "Whatever I can do to help."
             voice "audio/MJ/Day 3 Encounter/MJ_line094.mp3"
-            m "Your wellbeing is my wellbeing."
+            m_sub "Your wellbeing is my wellbeing."
             
-            b "Okay."
-            b "I’ll... I’ll let you do your work."
+            b_sub "Okay."
+            b_sub "I’ll... I’ll let you do your work."
     scene black
     # leave breakroom
     # deez is standing right outside
@@ -360,25 +362,29 @@ label encounter3:
         blend 'add'
     show overlay:
         blend 'multiply' 
-    show de sad at shaking, downward, center
+    show de sad at downward, center
     with fade
-    "..."
+    d_sub "..."
     #Deez
     # blubur note: only time deez ask question, deez very vulnerable and genuine
     show de sadt
     # about to ask are they okay but stops cause he doesnt wanna ask questions, so he instead states that everything will be fine
-    d "Are they...?"
-    d "... I'm sure everything's going to come out the way they're supposed to."
+    d_sub "Are they...?"
+    d_sub "... I'm sure everything's going to come out the way they're supposed to."
 
     # black screen
     scene black 
     stop music
     pause 2.0
     # sad, but stern 
+    stop music
     b_sub "No." 
 
     # black screen 
+    scene black 
+    pause 2
 
     # end
 
     jump day4
+

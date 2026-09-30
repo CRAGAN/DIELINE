@@ -950,6 +950,7 @@ label kendraanddeez:
     d ". . ."
     d "Yes. I will do it. Now."
     # kendra start sobbing
+    stop music
     d "..."
     d "Ah. Oh no—"
     d "Kendra? You seem upset—"
@@ -983,6 +984,7 @@ label ryantime:
     a "..."
     show de surprised
     d "..."
+    play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 4.mp3" loop fadein 1
     r "Hey, how are you, all? I'm Ryann Glenn."
     # music change as he talks
     r "I work at the warehouse and, ahh, we just wanted to check up on your team."
@@ -1014,6 +1016,7 @@ label ryantime:
     r "I don't see why it wouldn't be…!"
     b "I should go check on my emails…"
     scene black with fade
+    play music "audio/Music/Minigames/E-Mployment_.mp3"
     jump minigame4
 #DAY 5
 label kendratalking5:

@@ -1392,6 +1392,7 @@ label breaktime4:
     scene room_3
     show borders1
     with fade
+    stop music
     b "Is Deez still in the bathroom?"
 
     # cubicle
@@ -1414,6 +1415,7 @@ label breaktime4:
     #Manager Office (inside)
     # apollo sitting there
     show apo default at center
+    play music "audio/Music/Working Overtime 1m (small speaker edition).mp3" loop fadein 1
     with fade
     b "..."
     a "Hm? Hi, Barby. I'm working right now. What's up?"
@@ -1445,5 +1447,6 @@ label breaktime4:
                 a "Neat!"
     scene black with fade
     pause 2
+    play music "audio/Music/Fluorescent Light Humming - Sound Effect (HD).mp3" loop fadein 1
     jump encounter4
 # leave dialogue (can click again

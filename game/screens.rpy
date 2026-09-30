@@ -534,6 +534,24 @@ default idle_tab = "gui/button/idle_menu_button_background.png"
 default active_tab = "gui/button/active_menu_button_background.png"
 default hover_tab = "gui/button/hover_menu_button_background.png"
 
+image start_button = im.Scale("gui/start.png", 318, 162)
+image start_hover_button =im.Scale("gui/starthover.png",318,162)
+
+#image load_button = im.Scale("gui/load.png",318,162)
+default load_button = "gui/load.png"
+default load_hover_button = "gui/load.png"
+default settings_button = "gui/setting.png"
+default settings_hover_button = "gui/setting.png"
+
+
+screen load_from_menu():
+    #tag menu
+    add "gui/game_menu.png"
+
+    use file_slots()
+
+
+
 screen navigation():
 
     vbox:
@@ -543,20 +561,112 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        ### TODO: MAIN MENU! ###
-        if main_menu:
+        if renpy.get_screen("main_menu"):
 
-            textbutton _("Start") action Start():
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"  
+            fixed:
+                xsize 1920 
+                ysize 1080 
+                add "main_menu_art":
+                    xpos -60
+                    yalign 0.5
 
-            textbutton _("Load") action ShowMenu("load"):
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"              
+                hbox:
+                    add "circle":
+                        xpos 120
+                        ypos 175
 
-            textbutton _("Preferences") action ShowMenu("preferences"):
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"              
+                    add "gui/logodeadline.png":
+                        xpos 50
+                        ypos 160
+
+
+                vbox:                    
+                    xpos 650
+                    ypos 700
+                    spacing 10
+                    imagebutton:
+                        idle "gui/start.png"
+                        hover "gui/starthover.png"
+                        xanchor 0.5
+                        yanchor 0.5
+                        action Start()
+
+
+                    imagebutton:
+                        idle load_button
+                        hover load_hover_button
+                        xanchor 0.5
+                        yanchor 0.5
+                        ypos -80
+                        xpos 15
+                        action ShowMenu("load_from_menu")
+
+                        
+                    imagebutton:
+                        idle settings_button
+                        hover settings_hover_button
+                        ypos -184
+                        xpos -78
+                        action ShowMenu("preferences")     
+
+        elif renpy.get_screen("load_from_menu"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action ShowMenu('history')
+                    text _("History"):
+                        align (0.5, 0.5)
+                        
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("save")
+                    text _("Save"):
+                        align (0.5, 0.5)                        
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("load")
+                    text _("Load"):
+                        align (0.5, 0.5)                        
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle idle_tab 
+                        hover hover_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action Show("preferences")
+                    text _("Settings"):
+                        align (0.5, 0.5)      
+
 
         else:
             hbox:
@@ -674,18 +784,27 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
+    #use main_menu_screen
 
-    if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+# screen main_menu_screen():
+#     add gui.main_menu_background
+#     fixed:
+#         xsize 1920 
+#         ysize 1080 
+#         add "main_menu_art":
+#             xpos -60
+#             yalign 0.5
 
-            text "[config.name!t]":
-                style "main_menu_title"
+#         hbox:
+#             add "circle":
+#                 xpos 120
+#                 ypos 175
 
-            text "[config.version]":
-                style "main_menu_version"
-
+#             add "gui/logodeadline.png":
+#                 xpos 50
+#                 ypos 160
+                    
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -696,8 +815,6 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
-    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -939,7 +1056,7 @@ screen load():
 
 
 screen file_slots():
-
+    zorder 6
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(""):

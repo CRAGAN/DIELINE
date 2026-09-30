@@ -543,14 +543,15 @@ default load_hover_button = "gui/load.png"
 default settings_button = "gui/setting.png"
 default settings_hover_button = "gui/setting.png"
 
-
 screen load_from_menu():
-    #tag menu
-    add "gui/game_menu.png"
+    tag menu
 
     use file_slots()
 
+screen setting_from_menu():
+    tag menu
 
+    use preferences()
 
 screen navigation():
 
@@ -607,7 +608,23 @@ screen navigation():
                         hover settings_hover_button
                         ypos -184
                         xpos -78
-                        action ShowMenu("preferences")     
+                        action ShowMenu("setting_from_menu")     
+
+                imagebutton:
+                    idle "gui/info.png"
+                    hover "gui/info.png"
+                    xalign 0.64
+                    yalign 0.63
+                    action ShowMenu("about")       
+
+                imagebutton:
+                    idle "gui/quit.png"
+                    hover "gui/quit.png"
+                    # ypos -184
+                    # xpos -78
+                    xalign 0.96
+                    yalign 0.98
+                    action Quit()                        
 
         elif renpy.get_screen("load_from_menu"):
             hbox:
@@ -619,54 +636,66 @@ screen navigation():
                     xsize 356 
                     ysize 49
                     imagebutton:
-                        idle idle_tab 
-                        hover hover_tab 
+                        idle active_tab 
+                        hover active_tab 
                         selected_idle active_tab
                         selected_hover active_tab
                         align (0.5, 0.5)
-                        action ShowMenu('history')
-                    text _("History"):
-                        align (0.5, 0.5)
-                        
-                fixed:
-                    xsize 356 
-                    ysize 49
-                    imagebutton:
-                        idle idle_tab 
-                        hover hover_tab 
-                        selected_idle active_tab
-                        selected_hover active_tab
-                        align (0.5, 0.5)
-                        action Show("save")
-                    text _("Save"):
-                        align (0.5, 0.5)                        
-
-                fixed:
-                    xsize 356 
-                    ysize 49
-                    imagebutton:
-                        idle idle_tab 
-                        hover hover_tab 
-                        selected_idle active_tab
-                        selected_hover active_tab
-                        align (0.5, 0.5)
-                        action Show("load")
+                        action None
                     text _("Load"):
-                        align (0.5, 0.5)                        
+                        align (0.5, 0.5)      
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800                                                
+
+        elif renpy.get_screen("setting_from_menu"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
 
                 fixed:
                     xsize 356 
                     ysize 49
                     imagebutton:
-                        idle idle_tab 
-                        hover hover_tab 
+                        idle active_tab 
+                        hover active_tab 
                         selected_idle active_tab
                         selected_hover active_tab
                         align (0.5, 0.5)
-                        action Show("preferences")
-                    text _("Settings"):
-                        align (0.5, 0.5)      
+                        action None
+                    text _("Load"):
+                        align (0.5, 0.5)        
 
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800
+
+        elif renpy.get_screen("about"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle active_tab 
+                        hover active_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action None
+                    text _("About"):
+                        align (0.5, 0.5)        
+
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800                                                   
 
         else:
             hbox:
@@ -733,10 +762,11 @@ screen navigation():
         #     textbutton _("End Replay") action EndReplay(confirm=True)
 
             if not main_menu:
-                textbutton _("Main Menu"):
+                imagebutton auto "gui/house%s.png":
                     action MainMenu()
                     xpos 50
-                    ypos 800
+                    ypos 800              
+      
                 
 
         # textbutton _("About") action ShowMenu("about")
@@ -914,7 +944,27 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                     
                         spacing spacing
 
-                        transclude                        
+                        transclude     
+                        
+                elif scroll == "viewport_center":
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        xsize 1850
+                        ysize 700
+                        xpos 337
+                        ypos 60
+
+                        # vbox:
+                        #     spacing spacing
+
+                        transclude
 
                 else:
 
@@ -1009,20 +1059,20 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport_center"):
 
         style_prefix "about"
 
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n":
+                    color "#000000"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            # text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -1031,6 +1081,7 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+    color "#000000"
 
 
 ## Load and Save screens #######################################################
@@ -1185,7 +1236,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport_center"):
 
         vbox:
 

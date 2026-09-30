@@ -1,7 +1,83 @@
+image chase_movie = Movie(channel="movie_dp", play = "videos/chase/chase_start.webm", loop=False)
+image chase_qte_failed_kick = Movie(channel="movie_dp", play = "videos/chase/chase_failed_qte.webm", loop=False)
+
+
+# TODO: REPLACE WITH CORRECT FILENAMES #
+image chase_qte_move = Movie(channel="movie_dp", play = "videos/chase/chase_failed_qte.webm", loop=False)
+image chase_qte_crawl = Movie(channel="movie_dp", play = "videos/chase/chase_failed_qte.webm", loop=False)
+image chase_qte_hop = Movie(channel="movie_dp", play = "videos/chase/chase_failed_qte.webm", loop=False)
+
 label start:
     jump qte_start
 
-### TODO: ACTUAL START HERE, FIX AFTER DONE TESTING CHASE ###
+label qte_start:
+    $ quick_menu = False
+    scene managerroom with dissolve
+
+    scene chase_movie
+    $ time = 2
+    $ time_max = 2
+    $ interval = 0.1
+    $ timer_started = False
+
+    $ renpy.pause(17, hard = True)
+
+    call screen qte_kick
+
+    return
+
+screen qte_kick:
+
+    if not timer_started:
+        timer 1 action SetVariable("timer_started", True)
+
+    if timer_started:
+        timer interval repeat True action If(time > 0.0, true=SetVariable('time', time - interval), false=[])
+
+        if (time <= 0.0):
+            timer 1.0 action [Hide("qte"), Jump("qte_failed_kick")]
+
+        vbox:
+            xalign 0.5
+            yalign 0.5
+
+            bar:
+                value AnimatedValue(value=time, range=time_max, delay=0.1)
+                range time_max
+                xalign 0.5
+                xmaximum 300
+                if time < (time_max*0.33):
+                    left_bar "#f00"
+
+
+            textbutton "Kick":
+                action [Hide("qte"), Jump("qte_crawl_hop")]
+
+
+label qte_failed_kick:
+    scene chase_qte_failed_kick
+    "failed to kick"
+    return
+
+
+
+label qte_move:
+    "now chooose!"
+    scene chase_qte_move
+    return
+
+
+label qte_crawl:
+    scene chase_qte_crawl
+    "crawl = die"
+    return
+
+label qte_hop:
+    scene chase_qte_mhop
+    "hop = branched"
+    return
+
+
 label s:    
     window hide
     $ quick_menu = False

@@ -31,7 +31,7 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-FILL ME OUT PLS
+Made by our awesome team from Delve and Murder Studios <3
 """)
 
 
@@ -64,7 +64,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/Music/Minigames/E-Minigame Rush.mp3"
 
 
 ## Transitions #################################################################
@@ -81,7 +81,7 @@ define config.exit_transition = dissolve
 
 ## Between screens of the game menu.
 
-define config.intra_transition = None
+define config.intra_transition = dissolve
 
 
 ## A transition that is used after a game has been loaded.

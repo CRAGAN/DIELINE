@@ -576,7 +576,7 @@ screen navigation():
                         xpos 120
                         ypos 175
 
-                    add "gui/logodeadline.png":
+                    add "gui/logodeadline.png" at floating:
                         xpos 50
                         ypos 160
 

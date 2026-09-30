@@ -75,6 +75,8 @@ image m fear=At("images/mj/mj fear.png", Transform(zoom=0.8), sprite_highlight("
 image m worried =At("images/mj/mj worried.png", Transform(zoom=0.8), sprite_highlight("MJ"))
 image m toohappy =At("images/mj/mj toohappy.png", Transform(zoom=0.8), sprite_highlight("MJ"))
 image m monster =At("images/mj/mj monster.png", sprite_highlight("MJ"))
+image m monstershadow =At("images/mj/mj monstershadow.png", sprite_highlight("MJ"))
+
 image m thinking =At("images/mj/mj thinking.png", Transform(zoom=0.8), sprite_highlight("MJ"))
 
 #t for talk MJ

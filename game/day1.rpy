@@ -1,19 +1,27 @@
+
+image elevator = Movie(play="images/bg overworld/Barby shorts inside elevator.webm", loop = False, keep_last_frame=True)
 label start:
     #scene bg barbyclocksin
     #sfx clockin
+
     window hide
     $ quick_menu = False
+    stop music
+    scene black
     voice "audio/Barby/Day 1 Intro/barby_line001.mp3"
     b_sub "Shucks... I haven’t seen her since we got discharged."
     voice "audio/Barby/Day 1 Intro/barby_line002.mp3"
     b_sub "It should be fine. It should be normal."
+
+    scene elevator
+    play sound "audio/SFX/Day 1 /sfx_firsttask.mp3"
     voice "audio/Barby/Day 1 Intro/barby_line003.mp3"
     b_sub "I can’t waste time overthinking."
 
     # Barby walks into manager room cg
     #sfx walking
     scene apollomanagersroom with fade
-    play music "audio/Music/Working Overtime 2m.mp3" loop
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1.0 fadein 1.0
     voice "audio/Barby/Day 1 Intro/barby_line004.mp3"
     b_sub "...Hiya, Apollo—I mean—boss! Good to see you again!"
     voice "audio/Apollo/Day 1 Intro/apollo_line001.mp3"
@@ -47,7 +55,7 @@ label start:
     show apo worried at up
     voice "audio/Apollo/Day 1 Intro/apollo_line006.mp3"
     a_sub "Oh!"
-    play music "audio/Music/Working Overtime 2m.mp3" loop
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1.0
     $ quick_menu = False
     # add image of sensin and truck
     scene picture:
@@ -167,7 +175,7 @@ label rooms:
         $ talkedtomj = False
         $ talkedtodeez = False
         #call screen email_minigame # FROG OVER HERE
-        play music "audio/Music/Minigames/E-Mployment_.mp3" loop
+        play music "audio/Music/Minigames/E-Mployment_.mp3" loop fadein 1.0
         jump breaktime1
     call screen rooms with fade
     # call screen officewalkl
@@ -181,6 +189,7 @@ label rooms:
 
 label meeting:
     $ talked = 0
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1.0
     scene room_2
     show borders
     show overlay:
@@ -195,12 +204,14 @@ label meeting:
     k "Uhh yeah, I guess it’s been a while, huh. I think– I think uh around 6 weeks, right?"
     show de defaultt at right
     show ken default
+    voice "audio/Deez/Day 1 TM/deez_line032.mp3"
     d "Yes."
     show ken awkwardt
     show de default
     voice "audio/Kendra/Day 1 TM/kendra_line037.mp3"
     k "Deez, you weren’t even here 6 weeks ago???"
     show ken awkward
+    voice "audio/Deez/Day 1 TM/deez_line033.mp3"
     show de shyt
     d "I knew that."
     show de default 
@@ -221,14 +232,18 @@ label meeting:
     m "Uh-Well I wasn’t gonna ask out of courtesy, buuut if you’re open to talking about it, I’m all ears."
     show m default
     show de defaultt
+    voice "audio/Deez/Day 1 TM/deez_line034.mp3"
     d "According to my informittants, he usually wears shorts since he hates pants."
+    voice "audio/Deez/Day 1 TM/deez_line035.mp3"
     d "He is hiding something most suspicious. That is a flaw in fashion. Everybody would know that wearing shorts for a workday is not very formal attire."
     show de thinkingt
+    voice "audio/Deez/Day 1 TM/deez_line036.mp3"
     d "That’s the real wobble bobble."
     show de default
     voice "audio/Kendra/Day 1 TM/kendra_line038.mp3"
     k "Did– did you mean informants or-? {i}And I didn’t say anything about him hating it—{/i}"
     show de defaultt
+    voice "audio/Deez/Day 1 TM/deez_line037.mp3"
     d "I meant what I said, and I said what I meant."
     show de shy
     show apo defaultt
@@ -246,6 +261,7 @@ label meeting:
     m "Oh goodness."
     show m hm
     show de surprised
+    voice "audio/Deez/Day 1 TM/deez_line038.mp3"
     #VA: genuinely shocked but trying to be nonchalant, like a short sigh/exhale
     d "..."
     show ken worried
@@ -270,6 +286,7 @@ label meeting:
     voice "audio/Kendra/Day 1 TM/kendra_line040.mp3"
     k "!?!?!??!"
     show de surprisedt
+    voice "audio/Deez/Day 1 TM/deez_line039.mp3"
     d "PROZEMPIC!?!??!"
     show m hm
     show de surprised
@@ -301,8 +318,9 @@ label meeting:
     voice "audio/MJ/Day 1 TM/MJ_line029.mp3"
     m "By the way, Deez... Prozempic isn’t really a thing. Osempic doesn’t produce Prozac as far as I’m aware." 
     show de angryt
+    voice "audio/Deez/Day 1 TM/deez_line040.mp3"
     d "Errrgh... noted..." 
-    
+    voice "audio/Deez/Day 1 TM/deez_line041.mp3"
     d "I didn’t ask... no one asked... Who’s MJ talking to, huh..."
     show de shy
     voice "audio/Barby/Day 1 TM/barby_line152.mp3"
@@ -373,6 +391,7 @@ label meeting:
     m_sub "Ah. So it’s not an actual... item?"
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line062.mp3"
     a_sub "Oh, it is! But it’s more than that." 
+    voice "audio/Deez/Day 1 TM/deez_line042.mp3"
     d_sub "Raising my hand."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line063.mp3"
     a_sub "Yes, little sweet intern—"
@@ -382,11 +401,13 @@ label meeting:
     a_sub "Ough—I’m sorry—"
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line065.mp3"
     a_sub "I mean manager!" 
+    voice "audio/Deez/Day 1 TM/deez_line043.mp3"
     d_sub "Oh. Um. Uh..."
-    
+    voice "audio/Deez/Day 1 TM/deez_line044.mp3"
     d_sub "Aaa... Ohh! Ohhhh! S-So we weren’t given any information but have to do it, anyway? That’s like... a paradox."
-
+    voice "audio/Deez/Day 1 TM/deez_line045.mp3"
     d_sub "Deez would know what that means..."
+    voice "audio/Deez/Day 1 TM/deez_line046.mp3"
     d_sub "But Apollo, me, doesn’t know what we’re supposed to do?" 
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line066.mp3"
     a_sub "Haha, no, no! Not if you think {i}outside{/i} the box."
@@ -396,18 +417,24 @@ label meeting:
     k_sub "This—This doesn’t make any sense at all! Why are they so vague? I—I don’t like this! Ugh... this is g—gonna make everything harder..."
     voice "audio/MJ/Day 1 TM/MJ_line032.mp3"
     m_sub "I’m sorry you’re going through this confusion. Let me think of what I can do to help."
+    voice "audio/Deez/Day 1 TM/deez_line047.mp3"
     d_sub "Since everyone is no longer doing voices I will stop doing voices, too."
     voice "audio/Barby/Day 1 TM/barby_line160.mp3"
     b_sub "Aw man."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line067.mp3"
     a_sub "It’s okay, Barbyyy! You’ll get ‘em next time."
     voice "audio/MJ/Day 1 TM/MJ_line0393.mp3"
+
     m_sub "Maybe I can ask the client directly to help ease the situation."
+    voice "audio/Deez/Day 1 TM/deez_line048.mp3"
     d_sub "Well, {i}yeah{/i} MJ, that’s what a marketing employee’s {i}supposed{/i} to do, haha. Hah."
+    voice "audio/Deez/Day 1 TM/deez_line049.mp3"
     d_sub "A-anyway uhh, I totally agree with everyone here. We just have to figure out big boss’ super easy puzzle words."
     voice "audio/MJ/Day 1 TM/MJ_line034.mp3" 
     m_sub "Thanks for your cooperation and understanding. The intern’s right! We just have to figure it out, then it’ll be fine."
+    voice "audio/Deez/Day 1 TM/deez_line050.mp3"
     d_sub "{i}Yeah. I’m always right.{/i}"
+
     voice "audio/Kendra/Day 1 TM/kendra_line048.mp3"
     k_sub "O–okay, I think? None of you are, err, really helping here! Is there anything else they said that was important?"
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line068.mp3"
@@ -430,6 +457,7 @@ label meeting:
     a_sub "Aha... but, I just spoke with them—"
     voice "audio/Kendra/Day 1 TM/kendra_line050.mp3"
     k_sub "I was thinking, maybe, i-if we did it through emails we can have a more cohesive backlog of all the information they give us...! All our questions included."
+    voice "audio/Deez/Day 1 TM/deez_line051.mp3"
     d_sub "Uhm, actually— some of us still have A LOT of other responsibilities besides the project - like uhh, general work... things."
     voice "audio/Kendra/Day 1 TM/kendra_line051.mp3"
     k_sub "Yeah, that's true! I have some uhh, prior commitments I gotta do for SFC, too! I promised to help account for all the losses when the truck..."
@@ -461,10 +489,11 @@ label meeting:
     k_sub "A-alright! Understood."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line075.mp3"
     a_sub "Ah, Deez— I... maybe you can just observe?"
+    voice "audio/Deez/Day 1 TM/deez_line052.mp3"
     d_sub "Huh? But—I can be sooo useful! I can- I can do a lot of things!" 
     voice "audio/Kendra/Day 1 TM/kendra_line056.mp3"
     k_sub "Uh, I can help him out! Here, Deez, you could come with me. I can show you how I, uh, manage the storage!" 
-
+    voice "audio/Deez/Day 1 TM/deez_line053.mp3"
     d_sub "If you read my resume, you’d know I already know how to do all of that. But... If you want."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line076.mp3"
     a_sub "Great!"
@@ -488,10 +517,11 @@ label meeting:
     m_sub "What is with these two?"
     voice "audio/Kendra/Day 1 TM/kendra_line058.mp3"
     k_sub "No, no, no, it’s okay! Yeah! Go ahead. I mean, I just offered to show him around so he could help out, haha! Instead of just, uh, watching. S-so if there’s other things for him to do already..."
+    voice "audio/Deez/Day 1 TM/deez_line054.mp3"
     d_sub "I can do {b}ALL{/b} of it."
     voice "audio/MJ/Day 1 TM/MJ_line044.mp3"
     m_sub "I’m sure you can."
-
+    voice "audio/Deez/Day 1 TM/deez_line055.mp3"
     d_sub "Wait... really? I mean- yeah. Of course I can."
     voice "audio/Barby/Day 1 TM/barby_line165.mp3"
     b_sub "That’s great!"
@@ -525,6 +555,7 @@ label meeting:
                 voice "audio/Apollo/Day 1 Team Meeting/apollo_line101.mp3"
                 a_sub "Wonderful! I think that’s all for our meeting?"
                 m_sub "Yeah."
+               
                 d_sub "Yes."
                 voice "audio/Kendra/Day 1 TM/kendra_line069.mp3"
                 k_sub "Uhuh..."
@@ -532,6 +563,7 @@ label meeting:
                 a_sub "Awesome! Alright, team! We got this, I believe in us!"
                 voice "audio/Apollo/Day 1 Team Meeting/apollo_line103.mp3"
                 a_sub "Well, that’s all for today! Thank you so so much for your cooperation! Have a good {i}Knight’s{/i} rest- haha- and I’ll see you tomorrow!"
+               
                 d_sub "I get it. That’s her last name. Hahaha."
                 jump clockingout
         "Social Media":
@@ -539,8 +571,10 @@ label meeting:
             voice "audio/Barby/Day 1 TM/barby_line170.mp3"
             b_sub "How about... social media? It’s pretty big when it comes to advertising nowadays... Do we have anyone who’s good with that?"
             a_sub "Haha... Well, not me... Deez, you’re probably the youngest one here, right?"
+            voice "audio/Deez/Day 1 TM/deez_line056.mp3"
             d_sub "No—"
             a_sub "Would you be able to do anything about that?"
+            voice "audio/Deez/Day 1 TM/deez_line057.mp3"
             d_sub "I’m... yes. I’m very social."
             a_sub "Great!" 
             voice "audio/Kendra/Day 1 TM/kendra_line061.mp3"
@@ -555,6 +589,7 @@ label meeting:
             voice "audio/Kendra/Day 1 TM/kendra_line063.mp3"
             k_sub "Sure...!"
             a_sub "If that’s okay with you, Deez?"
+            voice "audio/Deez/Day 1 TM/deez_line058.mp3"
             d_sub "I can help her..."
             a_sub "Perfect."
             a_sub "Okie dokie, is that everything?"
@@ -569,6 +604,8 @@ label meeting:
                 a_sub "Wonderful! I think that’s all for our meeting?"
             
                 m_sub "Yeah."
+                voice "audio/Deez/Day 1 TM/deez_line059.mp3"
+                voice "audio/Deez/Day 1 TM/deez_line061.mp3"
                 d_sub "Yes."
                 voice "audio/Kendra/Day 1 TM/kendra_line069.mp3"
                 k_sub "Uhuh..."
@@ -577,6 +614,7 @@ label meeting:
                 voice "audio/Apollo/Day 1 Team Meeting/apollo_line103.mp3"
 
                 a_sub "Well, that’s all for today! Thank you so so much for your cooperation! Have a good {i}Knight’s{/i} rest- haha- and I’ll see you tomorrow!"
+                voice "audio/Deez/Day 1 TM/deez_line062.mp3"
                 d_sub "I get it. That’s her last name. Hahaha."
                 jump clockingout
         "Picking up deliveries":
@@ -605,7 +643,7 @@ label meeting:
             a_sub "Deez?"
             voice "audio/Barby/Day 1 TM/barby_line175.mp3"
             b_sub "Would he know where the other departments are?" 
-
+            voice "audio/Deez/Day 1 TM/deez_line059.mp3"
             d_sub "Of course I do."
             voice "audio/Apollo/Day 1 Team Meeting/apollo_line97.mp3"
             a_sub "Wow! That settles it, then!"
@@ -625,6 +663,7 @@ label meeting:
             k_sub "I mean, yeah, I could bring things around pretty quick...! I-if you need me to."
             voice "audio/Apollo/Day 1 Team Meeting/apollo_line99.mp3"
             a_sub "Oh yeah! She’s always zooming around with those roller skates! Not to mention, she’s never broken anything she’s transported, I think."
+            voice "audio/Deez/Day 1 TM/deez_line060.mp3"
             d_sub "U- Ah- E... O. Yeah... Yeah."
             voice "audio/MJ/Day 1 TM/MJ_line050.mp3"
             m_sub "Kendra can carry a lot more than I can, I have to admit."
@@ -642,6 +681,7 @@ label meeting:
                 voice "audio/Apollo/Day 1 Team Meeting/apollo_line101.mp3"
                 a_sub "Wonderful! I think that’s all for our meeting?"
                 m_sub "Yeah."
+                voice "audio/Deez/Day 1 TM/deez_line061.mp3"
                 d_sub "Yes."
                 voice "audio/Kendra/Day 1 TM/kendra_line069.mp3"
                 k_sub "Uhuh..."
@@ -649,10 +689,12 @@ label meeting:
                 a_sub "Awesome! Alright, team! We got this, I believe in us!"
                 voice "audio/Apollo/Day 1 Team Meeting/apollo_line103.mp3"
                 a_sub "Well, that’s all for today! Thank you so so much for your cooperation! Have a good {i}Knight’s{/i} rest- haha- and I’ll see you tomorrow!"
+                voice "audio/Deez/Day 1 TM/deez_line062.mp3"
                 d_sub "I get it. That’s her last name. Hahaha."
                 jump clockingout
 
 label clockingout:
+    play music "audio/Music/Working Overtime 1m (small speaker edition).mp3" loop fadein 1.0
     scene room_2
     show borders
     show overlay

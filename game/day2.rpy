@@ -12,7 +12,7 @@ label day2:
     scene black with fade
     centered "October 27th, Tuesday"
     centered "Deadline: >30 days"
-    
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
     b "Another day at work. Alright, we got this!"
     b "Huh... no reply from Dave, yet. Wonder where he is."
     b "Well I better get to work, soon. Let’s not dilly dally."
@@ -29,14 +29,18 @@ label minigametime:
         b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
         b "Odd."
         b "Well, I better get back to work!"
+        play music "audio/Music/Minigames/E-Mployment_.mp3" loop fadein 1
         
         #call screen email_minigame # FROG OVER HERE
+        play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 2.mp3" loop fadein 1
         $ talkedtokendra = False
         $ talkedtoapollo = False
         $ talkedtomj = False
         $ talkedtodeez = False
+
         jump breaktime2 
 label teammeetingpt2:
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
     scene meetingroom
     show overlay:
         blend 'multiply'
@@ -134,9 +138,11 @@ label teammeetingpt2:
     voice "audio/MJ/Day 2 TM/MJ_line054.mp3"
     m "Hm... 'a lot' if the deadline was in over 30 days. Which it used to be." 
     show m thinking
+    show ken feart
     voice "audio/Kendra/Day 2 TM/kendra_line071.mp3"
     k "I-I have a question. If we end up having to work overtime to finish the project, are we... getting paid for it?" 
     show apo worriedt
+    show ken fear
     voice "audio/Apollo/Day 2 TM/apollo_line112.mp3"
     a "I tried, I really really tried to negotiate with the higher ups about it, but they still said no." 
     voice "audio/Apollo/Day 2 TM/apollo_line113.mp3"
@@ -173,6 +179,7 @@ label teammeetingpt2:
     show apo fear
     show de fear
     show m fear
+    stop music
     voice "audio/Kendra/Day 2 TM/kendra_line075.mp3"
     k "{b}NO. IT'S... FINE. I WILL BE FINE.{/b}" with vpunch
     voice "audio/Kendra/Day 2 TM/kendra_line076.mp3"
@@ -269,6 +276,7 @@ label encounterday2:
     # scary... reverb on voice
     voice "audio/Barby/Day 2 Encounter/barby_line190.mp3"
     b_sub "...Oh god..."
+    play music "audio/Music/Free Horror Ambience (Dark Project).mp3" loop fadein 1
     scene black
     pause 2.0
     camera:
@@ -392,6 +400,7 @@ label encounterday2:
             "..."
             show black
             b "Ah... It's broken."
+            stop music
             jump day3
 #walk to cubicles, when you get there barby just goes to cubicle automatically and 
 #screen black

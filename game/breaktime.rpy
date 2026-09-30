@@ -6,14 +6,14 @@ label breaktime1:
     $ bathroom = False
     $ managerroom = False
     $ quick_menu = False
-
+    play music "audio/Music/Breaktime/Breaktime Draft 3.mp3" loop
     if talkedtodeez and talkedtokendra and talkedtomj and talkedtoapollo:
         scene black with dissolve
         $ quick_menu = True
         b "Ough... I gotta go to the conference room... team meeting..."
         b "So much talking to people..."
         jump meeting
-
+    
     call screen breaktime1
 label deezandapollo:
     # Apollo & Deez 
@@ -1076,7 +1076,7 @@ label breakroomtalkday2:
 
 #. dAY 3
 label mjtalking3:
-        
+        play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 3.mp3" fadein 1 loop
         $ talkedtomj = True
         scene room_3 
         show borders1

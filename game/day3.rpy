@@ -5,11 +5,12 @@ label day3:
     pause 2.0
     centered "Wednesday Oct 28"
     centered "3 days left"
-
+    stop music
     
 
     b "...Apollo texted to go to the break room as soon as I got here?"
     b "...I need to go to Kendra's cubicle."
+    play music "audio/Music/Free Horror Ambience (Dark Project).mp3" loop fadein 1
     jump kendratalking3
 
    
@@ -78,6 +79,7 @@ label minigames3:
         # FROG OVER HERE
     jump mjtalking3
 label meeting3:
+    play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
     $ quick_menu = False
     scene meetingbg
     show overlay:
@@ -87,81 +89,123 @@ label meeting3:
     show dee neutral
     show mjj neutral
     show meetingfg
+    voice "audio/Apollo/Day 3 TM/apollo_line126.mp3"
     a_sub "Ahaha... thank you all again for uhm, coming to the team meeting everyone...!"
     show barb pensive
+    voice "audio/Barby/Day 3 TM/barby_line196.mp3"
     b_sub "Ahh, but... Kendra’s not here, yet..."
     show mjj happy
+    voice "audio/MJ/Day 3 TM/MJ_line063.mp3"
     m_sub "I don’t think Kendra’s currently available to participate. No worries, I’m happy to relay anything to her."
     show apol pensive
+    voice "audio/Apollo/Day 3 TM/apollo_line127.mp3"
     a_sub "Knowing our deadline is in two days, I can’t help but be just a little bit worried about our pace so far!"
+    voice "audio/Apollo/Day 3 TM/apollo_line128.mp3"
     a_sub "With Kendra and Dave both... {i}unavailable{/i}, I’m not sure we can even get close to finishing this project."
     show barb neutral
+    voice "audio/Barby/Day 3 TM/barby_line197.mp3"
     b_sub "So... let’s start this with. How’s everyone feeling?" 
+    voice "audio/MJ/Day 3 TM/MJ_line064.mp3"
     m_sub "A-Okay."
     # deez arms and legs  are not feeling alright
+    voice "audio/Deez/Day 3 TM/deez_line071.mp3"
     d_sub "My arms and legs are feeling. Alright."
+    voice "audio/Apollo/Day 3 TM/apollo_line129.mp3"
     a_sub "..."
     show barb pensive
+    voice "audio/Barby/Day 3 TM/barby_line198.mp3"
     b_sub "Okay... this is. A situation. It looks like most of us are getting a little overwhelmed."
-    
+    voice "audio/MJ/Day 3 TM/MJ_line065.mp3"
     m_sub "Well that’s no big deal. I can just pick up the pace."
+    voice "audio/Apollo/Day 3 TM/apollo_line130.mp3"
     a_sub "I don’t know, MJ... we’re still so behind, and there’s just so much that needs to be done, I don’t think you should..."
     show mjj shocked
+    voice "audio/MJ/Day 3 TM/MJ_line066.mp3"
     m_sub "Are you doubting me?" 
     show apol shocked
+    voice "audio/Apollo/Day 3 TM/apollo_line131.mp3"
     a_sub "No! No, I’m just–"
     show apol neutral
+    voice "audio/MJ/Day 3 TM/MJ_line067.mp3"
     m_sub "Then I can handle it."
     show barb shocked
+    voice "audio/Barby/Day 3 TM/barby_line199.mp3"
     b_sub "Okay, wait, MJ. I think. We need to take a second. Not just for us, but you, too. You’re doing a lot, so maybe we- including you- need to take a break. Take it easier."
-    
+    voice "audio/MJ/Day 3 TM/MJ_line068.mp3"
     m_sub "...A break?"
     show barb pensive
+    voice "audio/Barby/Day 3 TM/barby_line200.mp3"
     b_sub "Especially after what happened to Kendra."
+    voice "audio/MJ/Day 3 TM/MJ_line069.mp3"
     m_sub "If that’s the case, you should all take a break."
+    voice "audio/MJ/Day 3 TM/MJ_line070.mp3"
     m_sub "I just need a list of the things that have to be done by today and I’ll get it done. Then we can be finished!"
+    voice "audio/Barby/Day 3 TM/barby_line201.mp3"
     b_sub "No- We’re not putting all the work on you..."
+    voice "audio/Barby/Day 3 TM/barby_line202.mp3"
     b_sub "Um, no offense, MJ! Not that anyone here doubts that you can do it."
     show dee pensive
+    voice "audio/Deez/Day 3 TM/deez_line072.mp3"
     d_sub "I’m also sure MJ could do it..."
+    voice "audio/Barby/Day 3 TM/barby_line203.mp3"
     b_sub "But, as they say, {i}there’s no ‘I’ in team{/i}."
     show mjj happy
+    voice "audio/MJ/Day 3 TM/MJ_line071.mp3"
     m_sub "Oh Barby, you’d make a great comedian, you know that?" 
     show dee neutral
     show barb neutral
+    voice "audio/Deez/Day 3 TM/deez_line073.mp3"
     d_sub "No he would not. His career would all be based on stating the obvious."
     show dee happy 
+    voice "audio/Deez/Day 3 TM/deez_line074.mp3"
     d_sub "Hmm. There is also an ‘e’ in team."
     show apol happy
+    voice "audio/Apollo/Day 3 TM/apollo_line132.mp3"
     a_sub "Yeah, and an ‘a’, for amazing!"
-    
+    voice "audio/Deez/Day 3 TM/deez_line075.mp3"
     d_sub "Wait... there is also a ‘m’. That is MJ."
+    voice "audio/Apollo/Day 3 TM/apollo_line133.mp3"
     a_sub "Oh, but there’s no ‘j’... only the ‘m’."
     #VA note: the ‘please’ is really desperate 
     show barb pensive
+    voice "audio/Barby/Day 3 TM/barby_line204.mp3"
     b_sub "Regardless of what letters are in the word team, I really think you should really slow down and take a break. {i}Please{/i}?" 
+    voice "audio/MJ/Day 3 TM/MJ_line072.mp3"
     m_sub "Haha."
     show dee neutral
     show apol pensive
     show barb neutral
+    voice "audio/MJ/Day 3 TM/MJ_line073.mp3"
     m_sub "If none of you are going to help reach the deadline, then I will."
+    voice "audio/MJ/Day 3 TM/MJ_line074.mp3"
     m_sub "I think. This meeting is adjourned. :)"
+    voice "audio/MJ/Day 3 TM/MJ_line075.mp3"
     m_sub "I’m going back to work." 
     # mj leave
     hide mjj ha[py] with dissolve
+    voice "audio/Apollo/Day 3 TM/apollo_line134.mp3"
     a_sub "Oh... they even took my job..."
+    voice "audio/Apollo/Day 3 TM/apollo_line135.mp3"
     a_sub "..."
+    voice "audio/Barby/Day 3 TM/barby_line205.mp3"
     b_sub "..."
+    voice "audio/Barby/Day 3 TM/barby_line206.mp3"
     b_sub "I should check on them." 
+    voice "audio/Apollo/Day 3 TM/apollo_line136.mp3"
     a_sub "...please do."
+    voice "audio/Deez/Day 3 TM/deez_line076.mp3"
     d_sub "...they’ll be fine. They’re strong. They’re... they’re not going to fold easily. Right?"
+    voice "audio/Apollo/Day 3 TM/apollo_line137.mp3"
     a_sub "...so was Dave."
+    voice "audio/Barby/Day 3 TM/barby_line207.mp3"
     b_sub "So was Kendra."
+    voice "audio/Barby/Day 3 TM/barby_line208.mp3"
     b_sub "I’m going." 
 
     #Encounter
     #overwrld outside of manager office. Silence
     $ quick_menu = True
+    stop music
     scene room_2
     show blue:
         blend 'multiply' alpha 0.3
@@ -170,27 +214,39 @@ label meeting3:
     show borders
     show ken monster at downward, center
     with fade
+    voice "audio/Barby/Day 3 Encounter/barby_line209.mp3"
     b "...Hiya, Kendra."
+    voice "audio/Kendra/Day 3 Encounter/kendra_line086.mp3"
     k "..."
+    voice "audio/Barby/Day 3 Encounter/barby_line210.mp3"
     b "Have you seen MJ?"
     show ken monstertt
+    voice "audio/Kendra/Day 3 Encounter/kendra_line087.mp3"
     k "...They listened to you."
     # sHE RRSPONDED???
     show ken monster
+    voice "audio/Barby/Day 3 Encounter/barby_line211.mp3"
     b "Huh?"
     show ken monstertt
+    voice "audio/Kendra/Day 3 Encounter/kendra_line088.mp3"
     k "They’re taking a break."
+    voice "audio/Barby/Day 3 Encounter/barby_line212.mp3"
     b "they are? Where are they going?"
+    voice "audio/Kendra/Day 3 Encounter/kendra_line089.mp3"
     k "..."
+    voice "audio/Barby/Day 3 Encounter/barby_line213.mp3"
     b "..."
+    voice "audio/Barby/Day 3 Encounter/barby_line214.mp3"
     b "Okay. Thank you, Kendra."
 
     #Kendra Again
+    voice "audio/Barby/Day 3 Encounter/barby_line215.mp3"
     b "I should check on MJ."
 
 
     #go to breakroom
 label encounter3:
+
     scene black
     pause 2.0
     scene mj sohot:
@@ -199,34 +255,47 @@ label encounter3:
     with fade
     #mj play flute
     pause 3.0
-
+    voice "audio/MJ/Day 3 Encounter/MJ_line076.mp3"
     m "!"
     scene black
+    voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
     b "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
+    voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
     m "No... no..."
     # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
-
+    voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
     m "Wait, I’m working! I’m working, I swear."
-
+    voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
     b "I-It’s okay, MJ, you can take a break, it’s okay–"
-  
+    voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
     m "No! I’m not– I’m not supposed to–"
+    voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
     m "I’m a hard worker! I work so hard!"
+    voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
     m "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
-
+    voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
     m "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
-
+    voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
     b "No, no, please, you can- you can be whatever you want to be-"
+    voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
     m "STOP! STOP LOOKING AT ME!"
+    voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
     m "I GAVE IT ALL UP FOR WHAT. NOTHING?"
+    voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
     m "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
+    voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
     m "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
     # concern trying to call out to them but trying to be consoling/comforting
+    voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
     b "MJ-" 
     # MJ snaps back to "normal" before devolving again
+    voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
     m "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
+    voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
     m "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
+    voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
     m "STOP WATCHING ME."
+    voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
     m "I’LL GET BACK TO WORK!"
     # everything stops
     # silence
@@ -238,32 +307,72 @@ label encounter3:
     # black
 
     # shot changes to behind barbys head
+    scene black
+    pause 2.0
+
+    scene mjintro
+    show m monster
     menu:
         "Take a break":
+            voice "audio/Barby/Day 3 Encounter/barby_line220.mp3"
             b "Please take a break—"
+            voice "audio/MJ/Day 3 Encounter/MJ_line091.mp3"
             m "Get out of my way."
+            pause 2
+            show m monstershadow at center
+            pause 2
+            
+            # pain
+            hide m monstershadow
+            show black 
+            pause 1
+            show m monster at center, shaking:
+                zoom 1.2
+            show noises:
+                alpha 0.1
+                blend 'add'
             # JUMPSCARE DIE
             # GAME OVER
 
         "Get back to work":
+            voice "audio/Barby/Day 3 Encounter/barby_line221a.mp3"
             b "...Can you still work? Like this?"
             # MJ silent 
+            voice "audio/MJ/Day 3 Encounter/MJ_line092.mp3"
             m "Of course. :)"
+            voice "audio/MJ/Day 3 Encounter/MJ_line093.mp3"
             m "Whatever I can do to help."
+            voice "audio/MJ/Day 3 Encounter/MJ_line094.mp3"
             m "Your wellbeing is my wellbeing."
-
+            
             b "Okay."
             b "I’ll... I’ll let you do your work."
-
+    scene black
     # leave breakroom
     # deez is standing right outside
-    scene black 
+    pause 1
+    scene room_3
+    show borders1
+    show blue:
+        blend 'multiply' alpha 0.3
+    show noises:
+        alpha 0.1
+        blend 'add'
+    show overlay:
+        blend 'multiply' 
+    show de sad at shaking, downward, center
+    with fade
+    "..."
+    #Deez
+    # blubur note: only time deez ask question, deez very vulnerable and genuine
+    show de sadt
     # about to ask are they okay but stops cause he doesnt wanna ask questions, so he instead states that everything will be fine
-    d_sub "Are they...?"
-    d_sub "... I'm sure everything's going to come out the way they're supposed to."
+    d "Are they...?"
+    d "... I'm sure everything's going to come out the way they're supposed to."
 
     # black screen
-    
+    scene black 
+    stop music
     pause 2.0
     # sad, but stern 
     b_sub "No." 

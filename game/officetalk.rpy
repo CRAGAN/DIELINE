@@ -771,6 +771,7 @@ label kendratalking3:
     #Everyone huddled up away from Kendra in the breakroom 
 label breakroomnokendra:
     scene room_4
+    play music "audio/Music/Clock In.mp3" loop fadein 1
     show de default at right
     voice "audio/Deez/Voice Barks/deez_surprised1.mp3"
     d "H-hey! Barby’s here."
@@ -873,6 +874,7 @@ label breakroomnokendra:
     a "Me too! I’ll do my best to make this project a success."
     a "And Deez, don’t worry, you can still help out by helping me out!"
     d "...fine. Okay. Since you... need help, I can help you."
+    play music "audio/Music/Minigames/E-Mployment_.mp3" loop fadein 1
     jump minigames3
                 
 

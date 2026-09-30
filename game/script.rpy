@@ -32,9 +32,33 @@ transform zoomin:
     pos (0.5, 0.5)
     easein 0.5 zoom 1.3
 label splashscreen:
-    scene black
-    show spooktoberlogo
-    return
+    play music "audio/Music/Minigames/E-Minigame Rush.mp3" loop
+
+    scene splashscreenbg:
+        yoffset 0
+    with fade
+    pause 1.0
+    show spooktoberlogo at center:
+        yoffset -400 zoom 0.8
+    pause 1.0
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}Made for Spooktober 2026 Game Jam!"
+    with dissolve
+    hide spooktoberlogo with dissolve
+    show logo2 at center:
+        yoffset -400
+    with dissolve
+    pause 2.0
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}Delve And Murder:\n Nevermore Studios"
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}WARNING: this game contains\nflashing lights, violence, profanity, and loud noises"
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}reach that quota but most importantly-"
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}have fun~!"
+    hide logo2 with dissolve
+    pause 2.0
+    scene splashscreenbg:
+        easein 2 yoffset -1080
+    stop music fadeout 2
+    pause 5
+    return dissolve
 image main_menu_art:
     "gui/lineart.png"
     pause 1.0

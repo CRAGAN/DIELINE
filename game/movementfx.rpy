@@ -31,7 +31,11 @@ transform squish:
     linear 0.08 yzoom 0.98 xzoom 1.03
     linear 0.11 yzoom 1.0 xzoom 1.0 yoffset -1.10
     yoffset 0
-
+transform floating:
+    subpixel True
+    easein 2 yoffset 10
+    easein 2 yoffset -5
+    repeat
     yzoom 1.0
     repeat
 transform dance:

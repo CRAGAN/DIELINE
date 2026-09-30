@@ -69,8 +69,7 @@ label start:
     a "Oh goodness, no, I haven’t! Have you? I’m worried..." 
     show apo worried
     b "Agh, don’t be worried!"
-    b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others." 
-
+    b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others."
     show apo worriedt at downward
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
     show apo worried

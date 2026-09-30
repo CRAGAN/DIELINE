@@ -292,35 +292,48 @@ screen email_inbox():
     zorder 1
 
     frame:
-        pos(190, 207)
-        xysize(344, 360)
+        pos(192, 210)
+        xysize(360, 360)
         background None
-        
-        viewport id "inbox":
-            draggable True mousewheel True
+        padding(0,0)
 
-            vbox:
-                style_prefix "email"
-                style "email_inbox"
-                spacing(3)
+        side "c r":
+            viewport id "inbox":
+                draggable True mousewheel True
+                ymaximum(358)
 
-                button:
+                vbox:
+                    style_prefix "email"
                     style "email_inbox"
-                    text "DON'T TRASH..." style "email_subject"
-                    action ToggleScreen("email_sort1")
-                button:
-                    style "email_inbox"
-                    text "email 2" style "email_subject"
-                button:
-                    style "email_inbox"
-                    text "email 3" style "email_subject"
+                    spacing(3)
+
+                    button:
+                        style "email_inbox"
+                        background("gui/minigame/eminigame_inbox2.png")
+
+                        text "DON'T TRASH..." style "email_subject"
+                        action ToggleScreen("email_sort1")
+                    button:
+                        style "email_inbox"
+                        text "email 2" style "email_subject"
+                    button:
+                        style "email_inbox"
+                        text "email 3" style "email_subject"
+
+            vbar value YScrollValue("inbox"):
+                align(1.0, 0.5)
+                # bar_invert True
+                base_bar None
+                thumb "gui/minigame/eminigame_scrollbar2.png"
+                top_gutter 35
+                bottom_gutter 20
 
 style email_inbox:
     xysize(340, 60)
     background("gui/minigame/eminigame_inboxbox.png")
 
 style email_subject:
-    offset(80,10)
+    offset(70,10)
     size 30
     color("#000000")
     font gui.mg_text_font
@@ -354,20 +367,25 @@ screen email_sort1():
                 base_bar None
                 thumb "gui/minigame/eminigame_scrollbar2.png"
         
-        hbox:
+        hbox id "sorters":
             align(0.5,1.0)
             spacing(15)
             yoffset(20)
+            xoffset(-20)
 
             style "email_opts"
 
             imagebutton:
-                idle "gui/minigame/eminigame_accept.png"
-                action Function(renpy.invoke_in_new_context, type_time, "fuckfucckfcuk", 7)
+                auto "gui/minigame/eminigame_accept-%s.png"
+                # action Function(renpy.invoke_in_new_context, type_time, "HOLY SHIT!!", 11, _clear_layers = False)
+                # action 
+
             imagebutton:
-                idle "gui/minigame/eminigame_delete.png"
+                auto "gui/minigame/eminigame_delete-%s.png"
+                action Hide("email_sort1")
+
             imagebutton:
-                idle "gui/minigame/eminigame_forward.png"
+                auto "gui/minigame/eminigame_forward-%s.png"
                 
             
 style email_body:
@@ -410,11 +428,11 @@ screen email_typing(prompt):
 
         vbox:
             xycenter(210,412)
+            
 
             text prompt
             input id "input"
-
-
+    
 
 ################################################################################
 ## Main and Game Menu Screens

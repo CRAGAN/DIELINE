@@ -360,6 +360,7 @@ label mjandkendra:
 # DAY2 BREAKTIME
 label breaktime2:
     #     Kendra in manager offis
+    $ quick_menu = False
     if talkedtoapollo and talkedtokendra and talkedtomj:
         $ breakroom_unlocked = True
     call screen breaktime2 with fade
@@ -370,6 +371,7 @@ label kendratalking22:
     show overlay:
         blend 'multiply'
     show ken surprised at center, up
+    $ quick_menu = True    
     b "Hiya, Kendra! That's a lot of work you seem to be handling during break time."
     show ken surprisedt
     k "Huh! O-oh! It's break time?"
@@ -572,6 +574,7 @@ label apollotalking22: #apollo at cubicles
         blend 'multiply'
     show apo default at center
     with dissolve
+    $ quick_menu = True
     b "Hiya, Apollo! It's break time."
     show apo defaultt
     a "Oh hi Barbs! Aaahhh it is? Oh cracker jackers, I lost track of time!"
@@ -730,6 +733,7 @@ label mjtalking22:
         blend 'multiply'
     show m default at center
     with dissolve
+    $ quick_menu = True
     m  "Hum hum hum..."
     b "Hiya, MJ! I see you're hard at work."
     b "But it is break time now."
@@ -847,6 +851,7 @@ label deeztalking22:
     show overlay:
         blend 'multiply'
     show de default at center
+    $ quick_menu = True
     b "Hiya, Deez! Taking your break already, are you?"
     b "You're the only one who got the memo right away, haha! I had to tell everyone else."
     show de defaultt

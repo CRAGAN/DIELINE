@@ -282,7 +282,7 @@ screen choice(items):
     style_prefix "choice"
     vbox:
         for i in items:
-            textbutton i.caption action [Function(narrator.add_history, kind="adv", who = "", what = i.caption), i.action]
+            textbutton i.caption action [Function(narrator.add_history, kind="adv", who = "dialogue_choice", what = i.caption), i.action]
 
 
 
@@ -534,6 +534,25 @@ default idle_tab = "gui/button/idle_menu_button_background.png"
 default active_tab = "gui/button/active_menu_button_background.png"
 default hover_tab = "gui/button/hover_menu_button_background.png"
 
+image start_button = im.Scale("gui/start.png", 318, 162)
+image start_hover_button =im.Scale("gui/starthover.png",318,162)
+
+#image load_button = im.Scale("gui/load.png",318,162)
+default load_button = "gui/load.png"
+default load_hover_button = "gui/load.png"
+default settings_button = "gui/setting.png"
+default settings_hover_button = "gui/setting.png"
+
+screen load_from_menu():
+    tag menu
+
+    use file_slots()
+
+screen setting_from_menu():
+    tag menu
+
+    use preferences()
+
 screen navigation():
 
     vbox:
@@ -543,20 +562,140 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        ### TODO: MAIN MENU! ###
-        if main_menu:
+        if renpy.get_screen("main_menu"):
 
-            textbutton _("Start") action Start():
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"  
+            fixed:
+                xsize 1920 
+                ysize 1080 
+                add "main_menu_art":
+                    xpos -60
+                    yalign 0.5
 
-            textbutton _("Load") action ShowMenu("load"):
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"              
+                hbox:
+                    add "circle":
+                        xpos 120
+                        ypos 175
 
-            textbutton _("Preferences") action ShowMenu("preferences"):
-                text_idle_color "#ff0000"    
-                text_hover_color "#888888"              
+                    add "gui/logodeadline.png":
+                        xpos 50
+                        ypos 160
+
+
+                vbox:                    
+                    xpos 650
+                    ypos 700
+                    spacing 10
+                    imagebutton:
+                        idle "gui/start.png"
+                        hover "gui/starthover.png"
+                        xanchor 0.5
+                        yanchor 0.5
+                        action Start()
+
+
+                    imagebutton:
+                        idle load_button
+                        hover load_hover_button
+                        xanchor 0.5
+                        yanchor 0.5
+                        ypos -80
+                        xpos 15
+                        action ShowMenu("load_from_menu")
+
+                        
+                    imagebutton:
+                        idle settings_button
+                        hover settings_hover_button
+                        ypos -184
+                        xpos -78
+                        action ShowMenu("setting_from_menu")     
+
+                imagebutton:
+                    idle "gui/info.png"
+                    hover "gui/info.png"
+                    xalign 0.64
+                    yalign 0.63
+                    action ShowMenu("about")       
+
+                imagebutton:
+                    idle "gui/quit.png"
+                    hover "gui/quit.png"
+                    # ypos -184
+                    # xpos -78
+                    xalign 0.96
+                    yalign 0.98
+                    action Quit()                        
+
+        elif renpy.get_screen("load_from_menu"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle active_tab 
+                        hover active_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action None
+                    text _("Load"):
+                        align (0.5, 0.5)      
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800                                                
+
+        elif renpy.get_screen("setting_from_menu"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle active_tab 
+                        hover active_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action None
+                    text _("Load"):
+                        align (0.5, 0.5)        
+
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800
+
+        elif renpy.get_screen("about"):
+            hbox:
+                xpos 40
+                ypos 165
+                spacing 30
+
+                fixed:
+                    xsize 356 
+                    ysize 49
+                    imagebutton:
+                        idle active_tab 
+                        hover active_tab 
+                        selected_idle active_tab
+                        selected_hover active_tab
+                        align (0.5, 0.5)
+                        action None
+                    text _("About"):
+                        align (0.5, 0.5)        
+
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 800                                                   
 
         else:
             hbox:
@@ -623,10 +762,11 @@ screen navigation():
         #     textbutton _("End Replay") action EndReplay(confirm=True)
 
             if not main_menu:
-                textbutton _("Main Menu"):
+                imagebutton auto "gui/house%s.png":
                     action MainMenu()
                     xpos 50
-                    ypos 800
+                    ypos 800              
+      
                 
 
         # textbutton _("About") action ShowMenu("about")
@@ -674,18 +814,27 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
+    #use main_menu_screen
 
-    if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+# screen main_menu_screen():
+#     add gui.main_menu_background
+#     fixed:
+#         xsize 1920 
+#         ysize 1080 
+#         add "main_menu_art":
+#             xpos -60
+#             yalign 0.5
 
-            text "[config.name!t]":
-                style "main_menu_title"
+#         hbox:
+#             add "circle":
+#                 xpos 120
+#                 ypos 175
 
-            text "[config.version]":
-                style "main_menu_version"
-
+#             add "gui/logodeadline.png":
+#                 xpos 50
+#                 ypos 160
+                    
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -696,8 +845,6 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
-    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -797,7 +944,27 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                     
                         spacing spacing
 
-                        transclude                        
+                        transclude     
+                        
+                elif scroll == "viewport_center":
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        xsize 1850
+                        ysize 700
+                        xpos 337
+                        ypos 60
+
+                        # vbox:
+                        #     spacing spacing
+
+                        transclude
 
                 else:
 
@@ -892,20 +1059,20 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport_center"):
 
         style_prefix "about"
 
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n":
+                    color "#000000"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            # text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -914,6 +1081,7 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+    color "#000000"
 
 
 ## Load and Save screens #######################################################
@@ -939,7 +1107,7 @@ screen load():
 
 
 screen file_slots():
-
+    zorder 6
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(""):
@@ -1068,7 +1236,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport_center"):
 
         vbox:
 
@@ -1238,30 +1406,7 @@ screen history():
 
             window:
                
-                if h.who is not "":
-                    frame:
-                        background Frame("gui/log_namebox.png")
-                        padding (0,0)
-                        xalign 0.25
-
-                        label h.who:
-                            style "history_name"
-                            substitute False
-
-                            ## Take the color of the who text from the Character,
-                            ## if set.
-                            if "color" in h.who_args:
-                                text_color "#FFFFFF"
-                                xalign 0.5
-
-                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                    
-                    text what:
-                        xalign 0.5
-                        color '#000000'
-                        substitute False
-
-                else:
+                if h.who == "dialogue_choice":
                     $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                     frame:   
                         background Frame("gui/log_choicebox.png")        
@@ -1276,6 +1421,31 @@ screen history():
                             yalign 0.5
                             color '#000000'
                             substitute False
+                else:
+                    if h.who:
+                        frame:
+                            background Frame("gui/log_namebox.png")
+                            padding (0,0)
+                            xalign 0.25
+
+                            
+                            label h.who:
+                                style "history_name"
+                                substitute False
+
+                                ## Take the color of the who text from the Character,
+                                ## if set.
+                                if "color" in h.who_args:
+                                    text_color "#FFFFFF"
+                                    xalign 0.5
+
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    
+                    text what:
+                        xalign 0.5
+                        color '#000000'
+                        substitute False
+
                             
 
 

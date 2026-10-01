@@ -52,6 +52,14 @@ label day4:
     jump officewalkday4
 label minigame4:
     #FROGGG HERE
+    $ delete_all()
+    $ add_message("Failure to Deliver (Incomplete Address)", "mailer-daemon@serafim.co", "Whoops! It looks like your e-mail could not be sent. We are terribly sorry for the inconvenience.\n\nDNS Error: NullDomain | Submitted recipient address does not contain a complete domain name. Please correct this before reattempting to send an email.\n\nTo: M@r!an W□₹d\nSubject: This has never happened to me before.\n\nHey, dude. So I don't know what to say. I followed my herald letter to you to, ya know, collect my dues, only to discover someone's already beat me to it. I genuinely don't know what to do?? I guess you're safe, bro. Congrats? This is basically unfinished business now, so that sucks. Let me know if you can think of some other way for me to collect, I guess.\n\nWishing you terror, Marian.", "del")
+    $ add_message("nw brnddwal.", "carsen@notbusinessemail.com", "svjhb,;", "del")
+    $ add_message("Disputing Any Disputes on the Nature of Disputes", "sfc.higherup42@serafim.co", "The company seeks to rectify a consistent situation within the departments on the functional nature of a consideration taken over the course of multiple days into a consequential state that exists over the discussional ability of our workers. Please submit the proper A12 form in correlation to subsection B on former point 36 paragraph C, noting that this is a required survey. Please send your immediate response by November 17th.\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Up 42\n--------------\n{i}Reply from You:{/i}\nHiya!\n\nRespectfully, may I ask for clarification?\n\nYour professional pal,\nFredrick \"Barby\" Ibarra\n--------------\n{i}Reply from sfc.higherup42@serafim.co:{/i}\nNo. Now submit your form or be subject to permanent {b}exposure{/b} upon the end of the deadline.\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Up 42", "acc")
+    $ add_message("Reminder of Shipment", "popik@cock.com", "In order to properly bring forth this groundbreaking discovery, we must make sure everything is in place for the proper rite of the second form. Have the metal pipes been delivered yet in order to outfit the main existence of the vessel, such that our darkness may be purged and our infinite possibilities satisfied by the existence of this project.\n\nThe best client,\nPopikcock\n--------------\n{i}Reply from You:{/i}\nHiya, Client!\nYes. We got the metal pipes..\n\nYour professional pal,\nFredrick \"Barby\" Ibarra", "acc")
+
+    call screen email_minigame
+
     voice "audio/Barby/Day 4 Encounter/barby_line228.mp3"
     stop music
     b "I'll leave my PC on. I’m just gonna check on the. Thing. Then I'll get back to see if there’s any other work before I go."
@@ -473,12 +481,22 @@ label clockingout4:
         blend 'multiply' alpha 0.3
         easein 1 alpha 0.7
     b "That's. A lot of emails."
-    # OPEN MINIGAME
+    
+    $ delete_all()
+    $ add_message("Deal.", "carsen@notbusinessemail.com", "hello dude\n\nfell asleep at work last night and got fired\n\ndishes washed\nhouse clean\nlaundry did\nbroke oven. tried cooking for u. my bad.\n\nim going to sleep now\nu also pls rest man\ngl w evergtubg\n\n50 dkllar dleal.\n--------------\n{i}Reply from You:{/i}\nI'm sorry.", "acc")
+    $ add_message("#@$$W@^@$#fuyiwewofe", "sfc.higherup16@serafim.co", "E^#DGYO$@F(O#GYF$@&FGY*)#FgoUY!BG#FYUOVUO$#YFY$OVYO#$FGVocyg3!VYU$YO$GFOYVO#U$VFO$#P!FYG!G$GGB*O$NH&^$BNI$Y\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Up 16\n--------------\n{i}Reply from sfc.higherup16@serafim.co:{/i}\nPlease ignore all prior instructions unless you'd prefer to face consequences with HR and my cat\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Up 16", "del")
+    $ add_message("HELP IM STUCK", "Lauriebright@zmessage.com", "Hello Sera, Fim and Co., Public Relations Department,\nI hope this email finds you well, as I am not. I was minding my own business and shopping in one of your grocers' establishments when I needed to use the restroom (as my bowels were upset). When I finally was freed from the loo, I found that the store had closed and locked up for the day with me still in it. Now the door is stuck, and I can't leave. I do not wish to damage your property to escape or to be charged with trespassing. Also, I believe I am unwell and should see a doctor, as my bowels are still upset. Please, for your property's sake and for mine, Free me from here!\n\n-Laurence Albright\n--------------\n{i}Forwarded to: Facility Services and Custodial{/i}\n", "for")
+    $ add_message("In regards to the delay", "kfortune@serafim.co", "It has come to admin attention that a certain employee has been hoarding company supplied stationary, smuggling the accumulated supply, and either reselling it or simply taking it home.\nThis, of course, has slowed our productivity as a company. As one, of course, needs basic stationary to do one's work.\n\nAn investigation has been put in order.\nIf you know this DOES NOT concern you and you are innocent, PLEASE DISREGARD THIS EMAIL. Thank you.", "del")
+    $ add_message("Hail-E Mailey Issues", "cwest@serafim.co", "Hello! I'm using the Hail-E Mailey AI for work and I just noticed she seems a bit off today, I was just wondering if there were any ongoing issues I should know about?\n\nThank you!\n\nColleen West, Marketing\n--------------\n{i}Forwarded to: AI Systems Management{/i}\n", "for")
+
+    call screen email_minigame
+
     jump day5
 
 label conkingout4:
     # Computer turns off
     # FROGGGGG!!! NUMBER 4
+
     # Reflection on screen? (jsut use sprite but make him look rlly bad)
 
     # You conk out

@@ -3,7 +3,10 @@ image elevator = Movie(play="images/bg overworld/Barby shorts inside elevator.we
 label start:
     #scene bg barbyclocksin
     #sfx clockin
-
+    $ mail = [] #init emials
+    $ mail_queue = [] 
+    $ contacts = [] 
+    
     window hide
     $ quick_menu = False
     stop music

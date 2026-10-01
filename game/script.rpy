@@ -75,3 +75,4 @@ image circle:
     "gui/circle3.png"
     pause 0.5
     repeat
+    

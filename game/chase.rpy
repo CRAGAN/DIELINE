@@ -132,12 +132,12 @@ label qte_crawl:
     scene black with dissolve
     $ renpy.pause(1, hard = True)   
     scene chase_crawl_jumpscare with dissolve
-    $ renpy.pause(3, hard = True)    
+    $ renpy.pause(2.5, hard = True)    
     scene black with dissolve
     $ renpy.pause(1, hard = True)       
     jump qte_start
 
 label qte_hop:
     scene chase_qte_hop with dissolve
-    $ renpy.pause(37, hard = True)
+    $ renpy.pause(36, hard = True)
     jump chase

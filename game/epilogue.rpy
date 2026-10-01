@@ -89,5 +89,10 @@ label cutscene_end:
     # Every day ever left
     #CREDITS HERE
 
+    show credits
+    $ renpy.pause(minutes, hard=True)
+    
+    image credits = Movie(play="images/credits.webm", loop = False)
+
 
     $ renpy.full_restart()

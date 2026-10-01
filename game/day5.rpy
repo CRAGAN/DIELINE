@@ -434,7 +434,7 @@ label prechase:
     #voice "audio/Apollo/Day 5/apollo_line180.mp3"
     #a "Hihihi, Let's start with a BIIIIG hug!" 
 
-    call qte_start
+    call qte_start from _call_qte_start
 
     # show chase1 with dissolve
     # $ renpy.pause(21.0, hard=True)

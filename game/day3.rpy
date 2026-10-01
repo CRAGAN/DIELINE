@@ -1,3 +1,6 @@
+image mj_scene = Movie(channel="movie_dp", play = "videos/mj.webm", loop=False,  size=(1920, 1080))
+
+
 label day3:
     #Intro
 # Calendar pop up
@@ -269,47 +272,50 @@ label encounter3:
     #mj play flute
     pause 3.0
     voice "audio/MJ/Day 3 Encounter/MJ_line076.mp3"
-    m_sub "!"
-    scene black
-    voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
-    b_sub "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
-    voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
-    m_sub "No... no..."
-    # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
-    voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
-    m_sub "Wait, I’m working! I’m working, I swear."
-    voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
-    b_sub "I-It’s okay, MJ, you can take a break, it’s okay–"
-    voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
-    m_sub "No! I’m not– I’m not supposed to–"
-    voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
-    m_sub "I’m a hard worker! I work so hard!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
-    m_sub "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
-    m_sub "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
-    voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
-    b_sub "No, no, please, you can- you can be whatever you want to be-"
-    voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
-    m_sub "STOP! STOP LOOKING AT ME!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
-    m_sub "I GAVE IT ALL UP FOR WHAT. NOTHING?"
-    voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
-    m_sub "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
-    voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
-    m_sub "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
-    # concern trying to call out to them but trying to be consoling/comforting
-    voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
-    b_sub "MJ-" 
-    # MJ snaps back to "normal" before devolving again
-    voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
-    m_sub "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
-    m_sub "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
-    m_sub "STOP WATCHING ME."
-    voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
-    m_sub "I’LL GET BACK TO WORK!"
+
+    scene mj_scene
+    $ renpy.pause(47)
+    # m_sub "!"
+    # scene black
+    # voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
+    # b_sub "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
+    # m_sub "No... no..."
+    # # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
+    # voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
+    # m_sub "Wait, I’m working! I’m working, I swear."
+    # voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
+    # b_sub "I-It’s okay, MJ, you can take a break, it’s okay–"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
+    # m_sub "No! I’m not– I’m not supposed to–"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
+    # m_sub "I’m a hard worker! I work so hard!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
+    # m_sub "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
+    # m_sub "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
+    # voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
+    # b_sub "No, no, please, you can- you can be whatever you want to be-"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
+    # m_sub "STOP! STOP LOOKING AT ME!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
+    # m_sub "I GAVE IT ALL UP FOR WHAT. NOTHING?"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
+    # m_sub "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
+    # m_sub "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
+    # # concern trying to call out to them but trying to be consoling/comforting
+    # voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
+    # b_sub "MJ-" 
+    # # MJ snaps back to "normal" before devolving again
+    # voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
+    # m_sub "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
+    # m_sub "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
+    # m_sub "STOP WATCHING ME."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
+    # m_sub "I’LL GET BACK TO WORK!"
 
     # everything stops
     # silence

@@ -1,5 +1,9 @@
 image beforept = Movie(play="images/cg/um we never told player he doesnt know thing.webm", loop = False)
 image ppttime = Movie(play="images/cg/PPT Poo Real.webm", loop = False)
+
+
+
+
 screen skipcutscene(cutscene_end):
     textbutton "SKIP":
         align (0.95, 0.05) # Position at the top right
@@ -90,9 +94,9 @@ label cutscene_end:
     #CREDITS HERE
 
     show credits
-    $ renpy.pause(minutes, hard=True)
+    $ renpy.pause(268, hard=True)
     
-    image credits = Movie(play="images/credits.webm", loop = False)
+    image credits = Movie(play="images/credits.webm", loop = False, size=(1920, 1080))
 
 
     $ renpy.full_restart()

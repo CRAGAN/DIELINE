@@ -124,6 +124,8 @@ screen email_minigame():
         background("gui/minigame/eminigame_base.png")
 
         textbutton "Done?" style "kms":
+            text_idle_color "#ffffff"    # White when waiting
+            text_hover_color "#ff0000"   # Red when hovered
             xalign 0.93
             yalign 0.912
             action [Hide("email_sort"),Return()]

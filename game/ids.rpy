@@ -72,7 +72,7 @@ label read_id(item_name=None):
     if current_id == "Fredrick Ibarra":
         show barby_id at zoomin
         $ renpy.pause(1.5, hard=True)
-        b "Barby It’s me!"
+        b "It’s me!"
         hide barby_id
     elif current_id == "Apollo Knight":
         show apollo_id at zoomin

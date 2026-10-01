@@ -16,7 +16,12 @@ transform zoomin:
 label start:
     #scene bg barbyclocksin
     #sfx clockin
-    
+    $ mail = []
+    $ mail_queue = [] # for message delay
+    $ contacts = []  # for draft feature
+
+    $ add_message("Welcome to Ren'Py!", "Eileen", "This is a test message.", "acc")
+    $ add_message("holy fucking shit.", "oh my god", "I'm losing my ufcking shit", "del")
     b "Shucks... I haven’t seen her since we got discharged."
     b "It should be fine. It should be normal."
     b "I can’t waste time overthinking."
@@ -70,11 +75,21 @@ label start:
     show apo worried
     b "Agh, don’t be worried!"
     b "I’ll handle it for both of us :)! I don’t have too much to do yet, since it seems like a lot of my responsibilities are waiting on others."
+
+    call screen email_minigame
+    $ delete_all()
+    $ add_message("Test message", "saguaro", "sup", "for")
+    $ add_message("Delayed message test", "Eileen", "I'm going to kill someone maybe"
+    + "does this work hiiiiii", "del")
+
     show apo worriedt at downward
     a "Are you sure? I know we’re supposed to fill it out together... Sorry, but being the new manager sure has me a little frazzled. Maybe I can still help out—?" 
     show apo worried
     b "You’ve got a whole team to handle. I'd be happy to help out!"
     b "That’s what {i}assistant manager{/i} means, after all. Let me {i}assist{/i} my manager."
+
+    call screen email_minigame
+
     show apo defaultt at downward, center
     a "I—you’re right. We got this, we have to stay positive for our first day! Well, if you’re up for it... here!"
     # IDs come out

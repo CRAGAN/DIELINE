@@ -434,17 +434,19 @@ label prechase:
     #voice "audio/Apollo/Day 5/apollo_line180.mp3"
     #a "Hihihi, Let's start with a BIIIIG hug!" 
 
-    show chase1 with dissolve
-    $ renpy.pause(21.0, hard=True)
-    #Apollo’s arms wide open, you can see all the other coworkers
-    show chase3
-    $ renpy.pause(11.0, hard=True)
-    #t "{b}Thank you, Barby{/b}" 
-    #t "{b}Thank you for everything.{/b}"
-    # said at the same time
-    # CUT. BLACK.
-    # chase
-    jump chase
+    call qte_start
+
+    # show chase1 with dissolve
+    # $ renpy.pause(21.0, hard=True)
+    # #Apollo’s arms wide open, you can see all the other coworkers
+    # show chase3
+    # $ renpy.pause(11.0, hard=True)
+    # #t "{b}Thank you, Barby{/b}" 
+    # #t "{b}Thank you for everything.{/b}"
+    # # said at the same time
+    # # CUT. BLACK.
+    # # chase
+    # jump chase
 
 label chase:
     scene off_bg
@@ -515,10 +517,12 @@ label chase:
     menu:
         "It’s okay it’s okay!":
             # WRONG!!! WRONGGG ANSWER
+            $ quick_menu = False
             voice "audio/Apollo/Day 5/apollo_line182.mp3"
             a_sub "IT'S NOT OKAY! IT'S NOT, IT'S NOT!! LET ME MAKE IT OKAY!! I’M BEGGING YOU, PLEASE!!" with hpunch
 # return to dialogue
         "STOP!":
+            $ quick_menu = False            
             voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line296.mp3"
             b_sub "I’VE SET MY BOUNDARIES! DON’T FUCKING BREAK THEM! LEAVE ME THE FUCK ALONE! I NEED MY GODDAMN SPACE. I DON’T WANT A HUG. I DON’T!!" with hpunch
 # pause. Sound effects die down. Everything goes quiet again except Apollo’s voice

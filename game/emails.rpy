@@ -160,7 +160,7 @@ screen email_inbox():
                             $ current_message = i
                             button:
                                 style "email_inbox"
-                                text (i.subject[:15] + "...") style "email_subject"
+                                text (i.subject[:10] + "...") style "email_subject"
                                 action Show("email_sort", None, current_message)
 
             vbar value YScrollValue("inbox"):
@@ -205,8 +205,8 @@ screen email_sort(current_message):
 
                     if current_message:
                         $ renpy.log("clicke?????")
-                        text ("Subject: " + current_message.subject + "") style "email_body"
-                        text ("From: " + current_message.sender + "") style "email_body"
+                        text ("Subject: " + current_message.subject + "") style "email_subj"
+                        text ("From: " + current_message.sender + "") style "email_from"
                         text current_message.body style "email_body"
 
                     # text "{b}DON'T TRASH THIS EMAIL!!{/b}" style "email_body"
@@ -255,7 +255,17 @@ screen email_sort(current_message):
                     auto "gui/minigame/eminigame_forward-%s.png"
                     action None
                 
-            
+
+style email_subj:
+    color("#000000")
+    font gui.mg_text_font
+    bold True
+
+style email_from:
+    color("#000000")
+    font gui.mg_text_font
+    italic True
+
 style email_body:
     color("#000000")
     font gui.mg_text_font

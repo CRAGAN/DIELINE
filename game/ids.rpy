@@ -74,7 +74,7 @@ label read_id(item_name=None):
         $ renpy.pause(1.5, hard=True)
         voice "audio/Barby/Day 1 ID/barby_line020.mp3"
       
-        b_id "Barby It’s me!"
+        b_id "It’s me!"
         hide barby_id
     elif current_id == "Apollo Knight":
         show apollo_id at zoomin
@@ -190,6 +190,7 @@ label read_id(item_name=None):
     elif current_id == "done":
         show apo defaultt with dissolve
         $ quick_menu = True
+        voice "audio/Apollo/Day 1 ID/apollo_line039.mp3"
         a "Okay, I need to go to the meeting now. You’ve got this, don’t you, Barby?"
         show apo default
         voice "audio/Barby/Day 1 ID/barby_line042.mp3"
@@ -211,17 +212,18 @@ label read_id(item_name=None):
         show apo defaultt
         voice "audio/Apollo/Day 1 ID/apollo_line042.mp3"
         a "Thanks Barb, I'll see you later!"
-        a "Thank you!"
+        
         $ quick_menu = False
         scene black with fade
-        voice "audio/Apollo/Day 1 Team Meeting/apollo_line043.mp3"
+        
         $ quick_menu = True
-        a "Now go on, Barby, those IDs aren’t going to distribute themselves."
+        
         voice "audio/Barby/Day 1 OW/barby_line046.mp3"
         b default "Just gotta meet people, old and new, with the new little position of assistant manager."
         voice "audio/Barby/Day 1 OW/barby_line047.mp3"
         b default "Easy peasy…!"
         $ quick_menu = False
+        play sound "audio/SFX/Day 1/sfx_door.mp3"
         jump rooms
     
     call screen id_screen

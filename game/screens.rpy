@@ -537,14 +537,8 @@ default hover_tab = "gui/button/hover_menu_button_background.png"
 image start_button = im.Scale("gui/start.png", 318, 162)
 image start_hover_button =im.Scale("gui/starthover.png",318,162)
 
-#image load_button = im.Scale("gui/load.png",318,162)
-default load_button = "gui/load.png"
-default load_hover_button = "gui/load.png"
-default settings_button = "gui/setting.png"
-default settings_hover_button = "gui/setting.png"
-
 screen load_from_menu():
-    tag menu
+    tag menu 
 
     use file_slots()
 
@@ -576,26 +570,22 @@ screen navigation():
                         xpos 120
                         ypos 175
 
-                    add "gui/logodeadline.png":
+                    add "gui/logodeadline.png" at floating:
                         xpos 50
                         ypos 160
 
 
-                vbox:                    
+                vbox:
                     xpos 650
                     ypos 700
                     spacing 10
-                    imagebutton:
-                        idle "gui/start.png"
-                        hover "gui/starthover.png"
+                    imagebutton auto "gui/start%s.png":
                         xanchor 0.5
                         yanchor 0.5
                         action Start()
 
 
-                    imagebutton:
-                        idle load_button
-                        hover load_hover_button
+                    imagebutton auto "gui/load%s.png":
                         xanchor 0.5
                         yanchor 0.5
                         ypos -80
@@ -603,9 +593,7 @@ screen navigation():
                         action ShowMenu("load_from_menu")
 
                         
-                    imagebutton:
-                        idle settings_button
-                        hover settings_hover_button
+                    imagebutton auto "gui/settings%s.png":
                         ypos -184
                         xpos -78
                         action ShowMenu("setting_from_menu")     
@@ -754,6 +742,10 @@ screen navigation():
                         action Show("preferences")
                     text _("Settings"):
                         align (0.5, 0.5)      
+            imagebutton auto "gui/arrow%s.png":
+                action Return()
+                xpos 50
+                ypos 675                               
 
 
 
@@ -764,8 +756,8 @@ screen navigation():
             if not main_menu:
                 imagebutton auto "gui/house%s.png":
                     action MainMenu()
-                    xpos 50
-                    ypos 800              
+                    xpos 62
+                    ypos 700       
       
                 
 
@@ -1145,7 +1137,10 @@ screen file_slots():
                     $ slot = i + 1
 
                     button:
-                        action FileAction(slot)
+                        if renpy.get_screen("load_from_menu"):
+                            action FileLoad(slot)
+                        else:
+                            action FileAction(slot)
 
                         has vbox
 

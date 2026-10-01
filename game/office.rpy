@@ -1,5 +1,5 @@
 ### TODO: Is this file unused? ###
-
+image deezscene1 = Movie(play="images/cg/deeze scene.1.webm", loop = True)
 # default employee_id = ""
 
 # transform down:
@@ -30,4 +30,26 @@ label officewalk5:
 
 
 
-# return
+
+
+# Clicking around anywhere else in the area
+
+    # static comes back
+    # he steps out
+    # sfx footstep
+    # barby turns as he comes out
+    # moment of pause
+    # deez turns to the right.
+    # hes clickable now
+    # steps, stands for 3 seconds, steps, stands for 3 seconds (clickable during standing for 3 seconds)
+    # he enters the breakroom
+
+    #If player clicks him early
+    
+    # deez stops
+    # flash black
+    # hand lets go and reaches out to barby (can just be one img) ID YOU VANT DO IT I WILL DO IT ITS GONNA JUST BE A HAND BUT PURPLE JUNPSCARE FIRST PERSON 
+    # sfx jumpscare 
+    # black screen
+    # return back to the moment he open door
+

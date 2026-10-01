@@ -14,7 +14,7 @@ label start:
     b_sub "It should be fine. It should be normal."
 
     scene elevator
-    play sound "audio/SFX/Day 1 /sfx_firsttask.mp3"
+    play sound "audio/SFX/Day 1/sfx_firsttask.mp3"
     voice "audio/Barby/Day 1 Intro/barby_line003.mp3"
     b_sub "I can’t waste time overthinking."
 
@@ -43,7 +43,6 @@ label start:
         blend 'multiply'
     show apo defaultt at downward, center
     voice "audio/Apollo/Day 1 Intro/apollo_line005.mp3"
-    $ quick_menu = True
     a_sub "And hey, congratulations on {i}your{/i} promotion...! I mean look at you, ohoho, assistant manager now? You’re totally killing it!"
     show apo default at center, jumper
     voice "audio/Barby/Day 1 Intro/barby_line008.mp3"
@@ -121,7 +120,7 @@ label start:
             voice "audio/Apollo/Day 1 Intro/apollo_line016.mp3"
             a "It’s kinda complicated. I’m not good at technology— but I’m positive I’ll figure it out!"
             show apo default
-            play sound "audio/SFX/Day 1 /sfx_id1.mp3"
+            play sound "audio/SFX/Day 1/sfx_id1.mp3"
             jump idchoice
             # return to choices
 
@@ -357,6 +356,7 @@ label meeting:
     show apo worried
     
     "..."
+    $ quick_menu = False
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line058.mp3"
     scene meetingbg
     show overlay:
@@ -533,6 +533,7 @@ label meeting:
         set said
         "Digital Marketing":
             $ talked += 1
+            $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line167.mp3"
             b_sub "But... uh, how about digital marketing? Gathering the data of what an effective marketing campaign means nowadays, all of that..."
             a_sub "Oh... you’re right. Dave used to be pretty good at that."
@@ -568,6 +569,7 @@ label meeting:
                 jump clockingout
         "Social Media":
             $ talked += 1
+            $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line170.mp3"
             b_sub "How about... social media? It’s pretty big when it comes to advertising nowadays... Do we have anyone who’s good with that?"
             a_sub "Haha... Well, not me... Deez, you’re probably the youngest one here, right?"
@@ -619,6 +621,7 @@ label meeting:
                 jump clockingout
         "Picking up deliveries":
             $ talked += 1
+            $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line172.mp3"
             b_sub "We’re gonna have some deliveries coming in from other departments, right? Or things we have to pick up from other buildings?"
             voice "audio/Apollo/Day 1 Team Meeting/apollo_line92.mp3"
@@ -699,6 +702,7 @@ label clockingout:
     show borders
     show overlay
     show apo worriedt
+    $ quick_menu = True
     a "Hey, uhm, Barby? Do you have a minute? I just wanted to talk to you about something I’ve noticed about you today..."
 
     a "You’ve been acting a little off all day, and I know it’s probably just some sort of first day jitters after being gone for so long but..."

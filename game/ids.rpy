@@ -74,7 +74,7 @@ label read_id(item_name=None):
         $ renpy.pause(1.5, hard=True)
         voice "audio/Barby/Day 1 ID/barby_line020.mp3"
       
-        b_id "Barby It’s me!"
+        b_id "It’s me!"
         hide barby_id
     elif current_id == "Apollo Knight":
         show apollo_id at zoomin
@@ -223,7 +223,7 @@ label read_id(item_name=None):
         voice "audio/Barby/Day 1 OW/barby_line047.mp3"
         b default "Easy peasy…!"
         $ quick_menu = False
-        play sound "audio/SFX/Day 1 /sfx_door.mp3"
+        play sound "audio/SFX/Day 1/sfx_door.mp3"
         jump rooms
     
     call screen id_screen

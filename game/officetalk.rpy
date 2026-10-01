@@ -678,6 +678,7 @@ label mjtalking2:
         zoom 0.6 ypos 0.33 xpos 0.6
     
     $ talkedtomj = True
+    $ quick_menu = True
 
     b "Good morning, MJ!"
     m "Good morning! How are you?"
@@ -701,6 +702,7 @@ label deeztalking2:
         ypos 0.45
         zoom 0.3
     $ talkedtodeez = True
+    $ quick_menu = True
     b "Good morning, Deez!"
     voice "audio/Deez/Voice Barks/deez_happy1.mp3"
     d "Good morning."
@@ -727,7 +729,8 @@ label kendratalking2:
         zoom 0.3
      
     $ talkedtokendra = True
-    $ talkedtokendra = True
+    $ quick_menu = True
+
     b "Good morning, Kendra!"
     k "Oh! Hi! Good morning!" 
     voice "audio/Barby/Voice Barks/barby_happy1.mp3"
@@ -739,8 +742,6 @@ label kendratalking2:
 #Office Walk
 label kendratalking3:
     #Click Breakroom
-    b "I need to go to Kendra’s cubicle."
-
     #when u enter cubicles room, auto dialogue
     #Barby slow turn to Kendra gulp!
     
@@ -753,6 +754,7 @@ label kendratalking3:
         blend 'multiply' alpha 0.3
     show ken monster
     with fade
+    $ quick_menu = True
     b "...Good morning, Kendra...!"
     voice "audio/Barby/Voice Barks/barby_confused2.mp3"
     b "Here. I... I made you breakfast."
@@ -831,7 +833,7 @@ label breakroomnokendra:
                 a "T-team meeting exercises?" 
                 show apo worried
                 "This is standard procedure. Please comply with the procedure as employees of SFC, even if your team member may not be. You are not just employees, after all."
-                " You are also representing our company’s values and lifestyle. You are all feathers under our wings."
+                "You are also representing our company’s values and lifestyle. You are all feathers under our wings."
                 "So go out there and fly high!"
                 show apo nervoust
                 voice "audio/Apollo/Voice Barks/apollo_surprised3.mp3"
@@ -1028,6 +1030,7 @@ label mjtalking5:
     jump room5
 
 label deeztalking5:
+    
     b "..."
     jump room5
     

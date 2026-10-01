@@ -2,15 +2,17 @@ label day3:
     #Intro
 # Calendar pop up
     scene black
+    $ quick_menu = False
     pause 2.0
-    centered "Wednesday Oct 28"
-    centered "3 days left"
+    centered "{color=#FFFFFF}Wednesday Oct 28{/color}"
+    centered "{color=#FFFFFF}3 days left{/color}"
     stop music
     
-
+    $ quick_menu = True
     b "...Apollo texted to go to the break room as soon as I got here?"
     b "...I need to go to Kendra's cubicle."
     play music "audio/Music/Free Horror Ambience (Dark Project).mp3" loop fadein 1
+    $ quick_menu = False
     jump kendratalking3
 
    
@@ -231,7 +233,7 @@ label meeting3:
     voice "audio/Kendra/Day 3 Encounter/kendra_line088.mp3"
     k "They’re taking a break."
     voice "audio/Barby/Day 3 Encounter/barby_line212.mp3"
-    b "they are? Where are they going?"
+    b "They are? Where are they going?"
     voice "audio/Kendra/Day 3 Encounter/kendra_line089.mp3"
     k "..."
     voice "audio/Barby/Day 3 Encounter/barby_line213.mp3"
@@ -242,7 +244,8 @@ label meeting3:
     #Kendra Again
     voice "audio/Barby/Day 3 Encounter/barby_line215.mp3"
     b "I should check on MJ."
-
+    $ quick_menu = False
+    jump encounter3
 
     #go to breakroom
 label encounter3:
@@ -256,47 +259,48 @@ label encounter3:
     #mj play flute
     pause 3.0
     voice "audio/MJ/Day 3 Encounter/MJ_line076.mp3"
-    m "!"
+    m_sub "!"
     scene black
     voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
-    b "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
+    b_sub "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
     voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
-    m "No... no..."
+    m_sub "No... no..."
     # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
     voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
-    m "Wait, I’m working! I’m working, I swear."
+    m_sub "Wait, I’m working! I’m working, I swear."
     voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
-    b "I-It’s okay, MJ, you can take a break, it’s okay–"
+    b_sub "I-It’s okay, MJ, you can take a break, it’s okay–"
     voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
-    m "No! I’m not– I’m not supposed to–"
+    m_sub "No! I’m not– I’m not supposed to–"
     voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
-    m "I’m a hard worker! I work so hard!"
+    m_sub "I’m a hard worker! I work so hard!"
     voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
-    m "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
+    m_sub "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
     voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
-    m "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
+    m_sub "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
     voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
-    b "No, no, please, you can- you can be whatever you want to be-"
+    b_sub "No, no, please, you can- you can be whatever you want to be-"
     voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
-    m "STOP! STOP LOOKING AT ME!"
+    m_sub "STOP! STOP LOOKING AT ME!"
     voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
-    m "I GAVE IT ALL UP FOR WHAT. NOTHING?"
+    m_sub "I GAVE IT ALL UP FOR WHAT. NOTHING?"
     voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
-    m "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
+    m_sub "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
     voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
-    m "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
+    m_sub "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
     # concern trying to call out to them but trying to be consoling/comforting
     voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
-    b "MJ-" 
+    b_sub "MJ-" 
     # MJ snaps back to "normal" before devolving again
     voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
-    m "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
+    m_sub "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
     voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
-    m "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
+    m_sub "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
     voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
-    m "STOP WATCHING ME."
+    m_sub "STOP WATCHING ME."
     voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
-    m "I’LL GET BACK TO WORK!"
+    m_sub "I’LL GET BACK TO WORK!"
+
     # everything stops
     # silence
 
@@ -315,6 +319,7 @@ label encounter3:
     play music "audio/Music/Ominous Background Music.mp3" loop
     menu:
         "Take a break":
+            $ quick_menu = False 
             voice "audio/Barby/Day 3 Encounter/barby_line220.mp3"
             b_sub "Please take a break—"
             voice "audio/MJ/Day 3 Encounter/MJ_line091.mp3"
@@ -326,22 +331,24 @@ label encounter3:
             # pain
             hide m monstershadow
             show black 
-            pause 1
+            $ renpy.pause(1, hard=True)
             show m monster at center, shaking:
                 zoom 1.2
             show noises:
                 alpha 0.1
                 blend 'add'
+            $ renpy.pause(2, hard=True)                
             jump encounter3
             # JUMPSCARE DIE
             # GAME OVER
 
         "Get back to work":
             voice "audio/Barby/Day 3 Encounter/barby_line221a.mp3"
+            $ quick_menu = False            
             b_sub "...Can you still work? Like this?"
             # MJ silent 
             voice "audio/MJ/Day 3 Encounter/MJ_line092.mp3"
-            m _sub"Of course. :)"
+            m_sub "Of course. :)"
             voice "audio/MJ/Day 3 Encounter/MJ_line093.mp3"
             m_sub "Whatever I can do to help."
             voice "audio/MJ/Day 3 Encounter/MJ_line094.mp3"
@@ -364,13 +371,14 @@ label encounter3:
         blend 'multiply' 
     show de sad at downward, center
     with fade
-    d_sub "..."
+    $ quick_menu = True
+    d "..."
     #Deez
     # blubur note: only time deez ask question, deez very vulnerable and genuine
     show de sadt
     # about to ask are they okay but stops cause he doesnt wanna ask questions, so he instead states that everything will be fine
-    d_sub "Are they...?"
-    d_sub "... I'm sure everything's going to come out the way they're supposed to."
+    d "Are they...?"
+    d "... I'm sure everything's going to come out the way they're supposed to."
 
     # black screen
     scene black 
@@ -378,6 +386,8 @@ label encounter3:
     pause 2.0
     # sad, but stern 
     stop music
+    $ quick_menu = False
+    
     b_sub "No." 
 
     # black screen 
@@ -387,4 +397,3 @@ label encounter3:
     # end
 
     jump day4
-

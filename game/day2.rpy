@@ -8,11 +8,12 @@ label day2:
     $ talkedtomj = False
     $ talkedtodeez = False
     $ day = 2
-    
+    $ quick_menu = False
     scene black with fade
-    centered "October 27th, Tuesday"
-    centered "Deadline: >30 days"
+    centered "{color=#FFFFFF}October 27th, Tuesday{/color}"
+    centered "{color=#FFFFFF}Deadline: >30 days{/color}"
     play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
+    $ quick_menu = True
     b "Another day at work. Alright, we got this!"
     b "Huh... no reply from Dave, yet. Wonder where he is."
     b "Well I better get to work, soon. Let’s not dilly dally."
@@ -22,10 +23,14 @@ label rooms2:
     $ janitor = False
     $ bathroom = False
     $ managerroom = False
+    $ quick_menu = False
+
     call screen rooms2 with fade
 
 label minigametime:
         scene black
+        $ quick_menu = False
+
         b "...Huh. Dave's still working remotely. He hasn't replied to any emails..."
         b "Odd."
         b "Well, I better get back to work!"
@@ -46,6 +51,8 @@ label teammeetingpt2:
         blend 'multiply'
     show ken worried at downward, center
     voice "audio/Kendra/Day 2 TM/kendra_line070.mp3"
+    $ quick_menu = True
+    
     k "..."
     show ken worried at left with move
     show apo awkwardt at center
@@ -201,85 +208,89 @@ label teammeetingpt2:
 # (kendra banging her head on the computer then breaking the screen)
 # kendra groaning 
 label kendragobrr:
-#VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
-scene room_1 
-show blue:
-    blend 'multiply' alpha 0.2
-with fade
+    #VA note: Kendra is wailing and groaning about her head hurting. She sounds more angry at herself than in pain. 
+    scene room_1 
+    show blue:
+        blend 'multiply' alpha 0.2
+    with fade
 
-k "{b}My head... it- my head hurts.{/b}"
-voice "audio/Barby/Day 2 TM/barby_line188.mp3"
-b "K-Kendra? Is... everything okay? What's that noise...?!"
-voice "audio/Kendra/Day 2 TM/kendra_line077.mp3"
-k "{b}It needs to stop.{/b}"
+    k "{b}My head... it- my head hurts.{/b}"
+    voice "audio/Barby/Day 2 TM/barby_line188.mp3"
+    b "K-Kendra? Is... everything okay? What's that noise...?!"
+    voice "audio/Kendra/Day 2 TM/kendra_line077.mp3"
+    k "{b}It needs to stop.{/b}"
 
-#IF POSSIBLE ONLY IDK there's a sickening THUD each time Kendra talks
-voice "audio/Kendra/Day 2 TM/kendra_line078.mp3"
-k "{b}I Need.{/b}" with hpunch
-#THUD
-voice "audio/Kendra/Day 2 TM/kendra_line079.mp3"
-k "{b}To.{/b}" with hpunch
-#THUD
-voice "audio/Kendra/Day 2 TM/kendra_line080.mp3"
-k "{b}Stop.{/b}" with hpunch
-#THUD
+    #IF POSSIBLE ONLY IDK there's a sickening THUD each time Kendra talks
+    voice "audio/Kendra/Day 2 TM/kendra_line078.mp3"
+    k "{b}I Need.{/b}" with hpunch
+    #THUD
+    voice "audio/Kendra/Day 2 TM/kendra_line079.mp3"
+    k "{b}To.{/b}" with hpunch
+    #THUD
+    voice "audio/Kendra/Day 2 TM/kendra_line080.mp3"
+    k "{b}Stop.{/b}" with hpunch
+    #THUD
 
-#Thudding continues
-centered " " with hpunch
+    #Thudding continues
+    $ quick_menu = False
+    centered " " with hpunch
 
-# overworld control access
-# go to cubicles 
-pause 3.0
-scene room_2 
-show borders
-show noises:
-    alpha 0.1
-    blend 'add'
-show borders
+    # overworld control access
+    # go to cubicles 
+    pause 3.0
+    scene room_2 
+    show borders
+    show noises:
+        alpha 0.1
+        blend 'add'
+    show borders
 
-show blue:
-    blend 'multiply' alpha 0.5
-with fade
-# sfx, thudding footsteps
-centered " " with vpunch
-# loud grunt/screaming like every step she takes is painful
-voice "audio/Kendra/Day 2 TM/kendra_line081.mp3"
-k "{b}A A A A{/b}" with vpunch
-scene room_3 
-show noises:
-    alpha 0.2
-    blend 'add'
-show borders1
-show blue:
-    blend 'multiply' alpha 0.8
-with fade
-# long hallway
-centered " "
+    show blue:
+        blend 'multiply' alpha 0.5
+    with fade
+    # sfx, thudding footsteps
+    centered " " with vpunch
+    # loud grunt/screaming like every step she takes is painful
+    voice "audio/Kendra/Day 2 TM/kendra_line081.mp3"
+    $ quick_menu = True
 
-# door closing (breakroom door closing sound)
-jump encounterday2
+    k "{b}A A A A{/b}" with vpunch
+    $ quick_menu = False
+
+    scene room_3 
+    show noises:
+        alpha 0.2
+        blend 'add'
+    show borders1
+    show blue:
+        blend 'multiply' alpha 0.8
+    with fade
+    # long hallway
+    centered " "
+
+    # door closing (breakroom door closing sound)
+    jump encounterday2
 
 label encounterday2:
     scene kendramonster1 with fade
     voice "audio/Barby/Day 2 Encounter/barby_line189.mp3"
     b_sub "Kendra? Did—did something happen to you—?"
-    pause 2.0
+    $ renpy.pause(2.0, hard=True)
     # kendra cg
     scene black 
-    pause 2.0
+    $ renpy.pause(2.0, hard=True)
     scene kendramonster2 
     show noises:
         alpha 0.1
         blend 'add'
-    pause 2.0
-    
+    $ renpy.pause(2.0, hard=True)
     b_sub "..."
     # scary... reverb on voice
     voice "audio/Barby/Day 2 Encounter/barby_line190.mp3"
     b_sub "...Oh god..."
     play music "audio/Music/Free Horror Ambience (Dark Project).mp3" loop fadein 1
     scene black
-    pause 2.0
+    $ renpy.pause(2.0, hard=True)
     camera:
         subpixel True
         zoom 4 xoffset -2500 yoffset -700 
@@ -295,6 +306,7 @@ label encounterday2:
         alpha 0.1
         blend 'add'
     with vpunch
+    $ renpy.pause(6.0, hard=True)
     # pause, let the atmosphere sink in
     # barby's in like trance like state kind of so muffle, under water style, apollo voice
 
@@ -375,17 +387,18 @@ label encounterday2:
         blend 'multiply' 
     show de fear at shaking, downward, center
     with fade
+    $ quick_menu = True
     "..."
     #Deez
     # blubur note: only time deez ask question, deez very vulnerable and genuine
     show de feart
-    d_sub "...What happened...? Do we call someone?"
-    d_sub "I don't know... what do I do?"
+    d "...What happened...? Do we call someone?"
+    d "I don't know... what do I do?"
 
     #Barby himself is too overwhelmed to have an answer
     show de fear
     voice "audio/Barby/Day 2 Encounter/barby_line194.mp3"
-    b_sub "... I don't know."
+    b "... I don't know."
     menu:
         "walk to cubicle":
             scene room_2 
@@ -397,6 +410,7 @@ label encounterday2:
                 blend 'add'
             show borders
             with fade
+            ## might want to change this somehow?
             " "
             show blue:
                 blend 'multiply' alpha 1.0

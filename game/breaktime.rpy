@@ -1061,6 +1061,7 @@ label breakroomtalkday2:
 
     #CG?
     scene teamphoto
+    $ quick_menu = False
     a_sub "Ohh... this looks fantastic! Thank you everyone, I'm so happy... I'm going to frame this!" 
     k_sub "{i}I... okay. Just talk to her.{/i}"
     k_sub "Ahh... Apollo? I-I just... can we talk, actually? Somewhere—"
@@ -1394,29 +1395,38 @@ label breaktime4:
     with fade
     stop music
     b "Is Deez still in the bathroom?"
-
+    $ quick_menu = False
     # cubicle
     scene room_2 with fade
     #Kendra
     show borders
     show ken monster
     with fade
+    $ quick_menu = True    
     b "..."
-    k "sobbing"
+    $ quick_menu = False
+    voice "audio/Kendra/Day 4 Non-compliance/kendra_line095.mp3"
+    k_sub "..."
+ 
 
     # manager office front
     #MJ
     scene room_1
     show m monster
     with fade
+    $ quick_menu = True       
     b "..."
-    m "humming"
+    $ quick_menu = False
+    voice "audio/MJ/Day 4 Non-compliant/MJ_line103.mp3"
+ 
+    m_sub "{i}humming~{/i}"
     scene managerroom
     #Manager Office (inside)
     # apollo sitting there
     show apo default at center
     play music "audio/Music/Working Overtime 1m (small speaker edition).mp3" loop fadein 1
     with fade
+    $ quick_menu = True       
     b "..."
     a "Hm? Hi, Barby. I'm working right now. What's up?"
     $ deezwhere = False
@@ -1445,6 +1455,7 @@ label breaktime4:
                 show apo default
                 b "Nothing, just checking in."
                 a "Neat!"
+    $ quick_menu = False
     scene black with fade
     pause 2
     play music "audio/Music/Fluorescent Light Humming - Sound Effect (HD).mp3" loop fadein 1

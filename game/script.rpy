@@ -49,7 +49,7 @@ label splashscreen:
     with dissolve
     pause 2.0
     centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}Delve And Murder:\n Nevermore Studios"
-    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}WARNING: this game contains\nflashing lights, violence, profanity, and loud noises"
+    centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}CONTENT WARNING: \nPotentially Eyestraining Colors, Epilepsy Warning, Cartoon “Gore” (Fantasy Transformations),\nDisturbing Imagery, Distressing Themes, Jumpscares(?), Arachnophobia warning, Bugs, \nPink Mold, Foul Language, J*b, 9-to-5, Employment 16+ \nThis game does not contain blood or real gore, \nbut there are cartoony artistic renditions of scenes that could be considered gruesome."
     centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}reach that quota but most importantly-"
     centered "\n\n\n\n\n\n{cps=25}{sc=1}{color=#FFFFFF}have fun~!"
     hide logo2 with dissolve
@@ -75,3 +75,4 @@ image circle:
     "gui/circle3.png"
     pause 0.5
     repeat
+    

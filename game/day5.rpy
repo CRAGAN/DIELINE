@@ -5,8 +5,8 @@ label day5:
     scene room_2
     show borders
  
-    centered "October 30, Friday"
-    centered "1 day left."
+    centered "{color=#FFFFFF}October 30, Friday{/color}"
+    centered "{color=#FFFFFF}1 day left.{/color}"
     #if you click anyone a second time barby goes "..."
     #sfx_dooropen
     #Managers room
@@ -15,15 +15,16 @@ label day5:
     
     jump room5
 label room5:
+    $ quick_menu = False
     scene black
     pause 2
     play music "audio/Music/Fluorescent Light Humming - Sound Effect (HD).mp3" loop fadein 1.0
     call screen rooms5 with fade
 # Not yet transformed fully but hints she's in the process
 label apolloweirdtime:
-    play sound "audio/SFX/Day 1 /sfx_door.mp3"
+    play sound "audio/SFX/Day 1/sfx_door.mp3"
     $ quick_menu = True
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line253 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line253 (no echo).mp3"
     b "Uhh, hiya Apollo...! Sorry for sleeping—"
     scene managerroom 
     show overlay:
@@ -39,7 +40,7 @@ label apolloweirdtime:
     a "BARBYYY! OH MY DEATH, YOU’RE AWAKEEE! I’M SO HAPPY, HAHAHA!"
     voice "audio/Apollo/Day 5/apollo_line139.mp3"
     a "Oh goodness... I’m so very sorry Barby!! You must’ve been utterly exhausted, working nonstop like that?! It’s GOOD you slept. I... I truly wouldn’t know what to do with myself if you..."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line254 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line254 (no echo).mp3"
     show apo nervous
     b "Apollo..."
     voice "audio/Apollo/Day 5/apollo_line140.mp3"
@@ -54,62 +55,65 @@ label apolloweirdtime:
     #K  inda want that textbox scary thing where everything is going crazy and the text is flying out of the text box at the end
     # would be cool if you could cut it out auto skip to next line after voiceline	
     show apo nervous at downward
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line255 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line255 (no echo).mp3"
     b "Y-YES! Yes, Apollo, I do, I swear—!! Hah, uhh— actually, i-it’s the last day, I should go do my usual rounds—"
     voice "audio/Apollo/Day 5/apollo_line143.mp3"
     show apo awkwardt
     a "Oh, but you know, they haven’t exactly been feeling their best either... so down in the dumps, the poor things." 
     voice "audio/Apollo/Day 5/apollo_line144.mp3"
     a "I just feel like we’re not really... connecting. As a team. Right now."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line256 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line256 (no echo).mp3"
     show apo awkward
     b "O-oh, I see.. Well, you can leave the bonding to me, I’ll bridge the—"
     voice "audio/Apollo/Day 5/apollo_line146.mp3"
     show apo nervoust at jumper
     a "Ahaha, you know what? Maybe I’LL do it this time! Yes— maybe I can be the one to encourage them to cross the finish line! It IS my job afterall. My responsibility, as their manager!"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line257 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line257 (no echo).mp3"
     show apo nervous
     b "...Are you sure? Have you slept at all since—"
     voice "audio/Apollo/Day 5/apollo_line147.mp3"
     show apo nervoust
     a "Haha, of course, of course! They probably just need a little morale boost, that's all!! I can raise their spirits... Hahaha—"
     show apo nervous
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line258 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line258 (no echo).mp3"
     b "I-I mean I can still handle that...! I’ve been doing it since the start!" 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line259 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line259 (no echo).mp3"
     b "Listen— you look kind of stressed. Do you need anything? I could get you coffee! Or, or handle some of your work, even—"
-    voice "audio/Apollo/Day 5/apollo_line148.mp3"
+    voice "audio/Apollo/Day 5/apollo_line147.mp3"
     show apo fear at forward
     show black:
         easein 5 alpha 0.8
     stop music fadeout 1.0
     a "{sc=2}B   a  r R   b    Y."
     # CAN THIS TEXT SHAKE AND FLOAT – maybe put it around the screen instead of on the text box
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line260 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line260 (no echo).mp3"
     b "...!!!"
     show apo nervoust at downward
     play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 5.mp3" fadein 1.0 loop
-    voice "audio/Apollo/Day 5/apollo_line149.mp3"
+    voice "audio/Apollo/Day 5/apollo_line148.mp3"
     a "Haha sorry, that came out wrong... Barby, can you go do your little minigames?"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line261 (no echo).mp3"
+    show apo nervous at downward
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line261 (no echo).mp3"
     b "... M-my what?"
-    voice "audio/Apollo/Day 5/apollo_line150.mp3"
+    voice "audio/Apollo/Day 5/apollo_line149.mp3"
+    show apo nervoust at downward
     a "Silly billy! Your computer things! Your beep-boop-beep things, the ones you do everyday, haha!"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line262 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line262 (no echo).mp3"
+    show apo nervous at downward
     b "Oh! I... my emails? Y-yes, of course, I can do that—"
     scene black
-    voice "audio/Apollo/Day 5/apollo_line151.mp3"
+    voice "audio/Apollo/Day 5/apollo_line150.mp3"
     a "Perfect! Off you go, my favorite assistant manager!"
     
     # barby wants to pipe up but awkwardly leaves the room
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line263 (no echo).mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line263 (no echo).mp3"
     b "...What was THAT?! Gosh. Apollo, she seems so..."
     
     b "..."
     scene room_1
     
-    
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line265 (no echo).mp3"
+    $ quick_menu = True
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line265 (no echo).mp3"
     b "...The sooner we finish this project, the sooner things can get better."
     jump minigameday5
 label minigameday5:
@@ -122,13 +126,14 @@ label breaktimeday5:
         alpha 0.3
         easein 0.5 alpha 0.6
     pause 0.9
+    $ quick_menu = True
     stop music 
     play sound "audio/SFX/Day 5/Big switch sound effect.mp3"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line301.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line301.mp3"
     b "H-huh?!"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line302.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line302.mp3"
     b "..."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line303.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line303.mp3"
     b "I’d better go check on everyone." 
     # Lights are off, overworld time
     scene room_2
@@ -136,35 +141,36 @@ label breaktimeday5:
 
     show black:
         alpha 0.8
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line304.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line304.mp3"
     b "Is everyone okay...?"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line305.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line305.mp3"
     b "Hello...?"
     scene room_3
     show borders1
     show black:
         alpha 0.9
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line306.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line306.mp3"
     b "Can somebody fix the power...? The deadline’s so close, we need to—"
     
     #sfx_(dark)walk
     # walk in dark sounds are scary 
     
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line272.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line272.mp3"
     b "...Hello?"
     # click around and no one's there 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line273.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line273.mp3"
     b "Apollo said she'd be... boosting team morale. Maybe they're all in the breakroom."
     #sfx_doorcreak
 label apolloandgang:
     scene black
-    $ quick_menu = False
     pause 2 
-    play sound "audio/SFX/Day 1 /sfx_door.mp3"
+    $ quick_menu = True    
+    play sound "audio/SFX/Day 1/sfx_door.mp3"
     # open breakroom 
     # apollo, only silhouette with faint outline of normal sprite 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line274.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line274.mp3"
     b "Apollo...?"
+    $ quick_menu = False
     play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 6.mp3" loop fadein 1.0
     scene room_4
     show black:
@@ -192,13 +198,13 @@ label apolloandgang:
     voice "audio/Apollo/Day 5/apollo_line152.mp3"
     a_sub "Hmm? Oh, Barby! Hahaha, gosh, what a predicament. It's so dark in here I almost missed you! I missed you. I really did... Thank the stars you’re here."
     # talking about something important
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line275.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line275.mp3"
     b_sub "Huh? I-I... I missed you too?? A-anyway, we need to fix the power... we can’t get anything done like this! We’re SO close to the deadline, we can’t fall behind now."
     voice "audio/Apollo/Day 5/apollo_line153.mp3"
     a_sub "Oh, hahaha! You’re so right, Barby! So smart! We should fix it, we CAN fix it! We won’t let a teeny tiny power outage get us down, Haha!"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line276.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line276.mp3"
     b_sub "R-right! So..."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line277.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line277.mp3"
     b_sub "We should tell the others about this..." 
     voice "audio/Apollo/Day 5/apollo_line154.mp3"
     a_sub "Aha... ahahaha!"
@@ -250,24 +256,27 @@ label lightson:
     # very very slow quicktime
     menu:
         "Yes...": #← text shakes like crazy
+            $ quick_menu = False
             centered "{color=#F5F5F5}(nononono- no why was I thinking of saying yes??)"
             # like, the player would select "yes" but it’s weird and shaky and swaps to "no" 
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line278.mp3"
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line278.mp3"
             b_sub "NO! NO, NO, NO! I DON’T!" with hpunch
             # VA note: like fighting off the thought of opening up despite desperately needing support
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line279.mp3"
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line279.mp3"
             b_sub "Please. I don’t."
         "No.":
+            $ quick_menu = False
             #VA note: hushed, under breath, horrified but trying to keep voice steady
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line281.mp3"
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line281.mp3"
             b_sub "I don’t need anything right now."
             # continuing ^^ but faltering closer to the end
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line282.mp3"
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line282.mp3"
             b_sub "Maybe later. We don’t have much time. Sorry—"
         "...":
             scene black
             stop music
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line283.mp3"
+            $ quick_menu = False
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line283.mp3"
             b_sub "I... I—"
             voice "audio/Apollo/Day 5/apollo_line165.mp3"
             a_sub "Shh, shh, it’s okay, Barby. You just need a great big hug..."
@@ -289,7 +298,6 @@ label lightson:
                 blend 'add'
             pause 2
             scene black
-            
             jump apolloandgang
 
             #DEATH SCREEN (black screen core, save the jumpscare for actual chase) 
@@ -297,7 +305,7 @@ label lightson:
             #sfx_slowstep
     voice "audio/Apollo/Day 5/apollo_line166.mp3"
     a_sub "Where... where are you going?"
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line284.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line284.mp3"
     b_sub "I just... I need to take a break."
     
     # slam door closed
@@ -305,7 +313,7 @@ label lightson:
     #sfx_doorslam
     voice "audio/Apollo/Day 5/apollo_line167.mp3"
     a_sub"Hahaha, oh, you’re so funny, Barby! The breakroom’s RIGHT here, you frazzled little ol’ scatterbrain! Take a break with {b}US{/b}!" 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line285.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line285.mp3"
     b_sub " I THOUGHT THAT WAS A TEAM MEETING!?!?!?"
     voice "audio/Apollo/Day 5/apollo_line168.mp3"
     a_sub "Haha! Team meetings ARE breaks— from being aloneeee!!"
@@ -313,7 +321,7 @@ label lightson:
     a_sub "C’mon, you don’t want to be alone, do you? That’s not very nice of you, Barby. Didn’t you say teamwork makes the dream work?"
     voice "audio/Apollo/Day 5/apollo_line170.mp3"
     a_sub "{b}{i}So why aren’t you cooperating with me?{/b}{/i}" 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line286.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line286.mp3"
     b_sub "{i}Ah...{/i}"
     show apo boot at up, shaking
     voice "audio/Apollo/Day 5/apollo_line171.mp3"
@@ -323,7 +331,8 @@ label lightson:
     # loop banging door while waiting for player response
     menu loop:
         "Take a Break":
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line287.mp3"
+            $ quick_menu = False
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line287.mp3"
             b_sub "I'm taking a break!!"
             voice "audio/Apollo/Day 5/apollo_line172.mp3"
             a_sub "Hahahahaaa!"
@@ -337,7 +346,8 @@ label lightson:
             # back to choice menu (only Keep working left)
             
         "Keep working":
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line288.mp3"
+            $ quick_menu = False
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line288.mp3"
             b_sub "Y-you said we needed to stay positive and keep working!! I-I already took my break, remember?! I slept in! THAT was my break! I'm gonna—! I have to get back to work!!"
             # pause between lines
            
@@ -359,25 +369,25 @@ label prechase:
     scene black
     $ quick_menu = False
     #VA note: Heavy breathing
-    play sound "audio/SFX/Day 1 /sfx_door.mp3"
+    play sound "audio/SFX/Day 1/sfx_door.mp3"
     pause 2.0
     scene mirrorfear2
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line289.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line289.mp3"
     b_sub "Hah... hah..."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line290.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line290.mp3"
     b_sub "..."
     scene mirrorfear with hpunch
 
     # barby hum the melody that MJ was playing
     # At some point when the lights flickers on and off again, a split second of # something horrifying in the mirror
     # Barby goes AHH!! 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line291.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line291.mp3"
     b_sub "AAAHH!!"
     scene mirrorfear2
     # Lights go back on
     #sfx_lighton
     pause 3
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line292.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line292.mp3"
     b_sub "Hah... Oh, I’m just... tired."
 
     # And THEN lights on, the door sound effect plays
@@ -403,7 +413,7 @@ label prechase:
     centered "{color=#FFFFFF}{b}AND GET BACK TO WORK.{/b}"
 
     #Scary chase music starts here
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line293.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line293.mp3"
     b_sub "I... I don't need the help... I think I can handle it."
 
     # All at the same time/same voiceline?
@@ -446,10 +456,10 @@ label chase:
         blend 'multiply' alpha 0.4
 
 
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line294.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line294.mp3"
     
     b_sub "I don’t want a hug."
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line295.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line295.mp3"
     b_sub "I DONT WANT A HUG!"    
     #Barby "AGHH" sound effect for when player succeed
 
@@ -509,7 +519,7 @@ label chase:
             a_sub "IT'S NOT OKAY! IT'S NOT, IT'S NOT!! LET ME MAKE IT OKAY!! I’M BEGGING YOU, PLEASE!!" with hpunch
 # return to dialogue
         "STOP!":
-            voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line296.mp3"
+            voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line296.mp3"
             b_sub "I’VE SET MY BOUNDARIES! DON’T FUCKING BREAK THEM! LEAVE ME THE FUCK ALONE! I NEED MY GODDAMN SPACE. I DON’T WANT A HUG. I DON’T!!" with hpunch
 # pause. Sound effects die down. Everything goes quiet again except Apollo’s voice
 
@@ -525,11 +535,11 @@ label chase:
 # silence
 
 label pcminigame:
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line297.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line297.mp3"
     b_sub "Apollo? Are you still there?"
 
 # silence VERY LONG
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line298.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line298.mp3"
     b_sub "Apollo?"
     voice "audio/Apollo/Day 5/apollo_line186.mp3"
     a_sub "... please, don’t give up on me."
@@ -540,7 +550,7 @@ label pcminigame:
     a_sub "You’re... you’re the only family I’ve got, now..."
     jump clockingoutend
 label clockingoutend:
-    voice "audio/Barby/Day 5/CODERS For Input /Copy of barby_line299.mp3"
+    voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line299.mp3"
     b_sub "I did it."
     scene black with fade
     jump epilogue

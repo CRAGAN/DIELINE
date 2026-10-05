@@ -8,6 +8,8 @@ label day4:
         xoffset 250
     show de sad at center:
         xoffset -250
+    $ quick_menu = True
+
     b "Oh, what are we going to do... what are we going to do..." 
     
     a "Ugh..."
@@ -259,6 +261,7 @@ label breakroom4:
             b "Like. That you should take a break."
             
             d "take a break? take a break, TAKE A BREAK, TAKE A BREAK, TAKE A BREAK? TAKE A BREAK???"
+            $ quick_menu = False
             scene black
             pause 2
             show de monstert at shaking, center:
@@ -374,11 +377,13 @@ label breakroom4:
                     scene black
                     # Fade out 
                     # Quick slam of door sfx 
+                    $ quick_menu = False
                     voice "audio/Barby/Day 4 Encounter/barby_line236.mp3"
                     b_sub "...Shit."
                     jump clockingout4
                     # fade out into clocking out
                 "Hug":
+                    $ quick_menu = False
                     voice "audio/Barby/Day 4 Encounter/barby_line237.mp3"
                     b_sub "..."
                     # sfx hug, fabric rustling
@@ -408,6 +413,7 @@ label breakroom4:
                     jump clockingout4
                     # fade out into clocking out
                 "High five a purple hand":
+                    $ quick_menu = False
                     voice "audio/Barby/Day 4 Encounter/barby_line241.mp3"
                     b_sub "Uhhgh..."
                     # High five sfx
@@ -456,8 +462,8 @@ label breakroom4:
 label clockingout4:
     stop music
     scene black
-    
-    b "ok."
+    $ quick_menu = True
+    b "Ok."
     #Go to cubicles
 
     b "Wait a second... why is..."

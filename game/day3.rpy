@@ -1,3 +1,6 @@
+image mj_scene = Movie(channel="movie_dp", play = "videos/mj.webm", loop=False,  size=(1920, 1080))
+
+
 label day3:
     #Intro
 # Calendar pop up
@@ -79,7 +82,17 @@ label kendracubic:
     jump meeting3
 label minigames3:
         # FROG OVER HERE
-    jump mjtalking3
+        $ delete_all()
+        $ add_message("Newest Brand Deal.", "carsen@notbusinessemail.com", "carsen. brand deal.\n\ni didnt get to thank you for teaching me how to cook (food. not the other kind) or talk to u at all after actually\n\ndidnt realize the accident hit that hard . not a pun. idk if u noticed but u could barely hold anything without dropping it like u were shaking and every time i pointed it out u were like \"okat, team! lets finish cooking first!! we can talk abt that stuff later!!\" and muttering \"kendra\" like respectfully wth is wrong with u\n\nthe food was rlly good tho\ntook some to work and it stayed warm in the new containers we got\n\nalso i washed the dishes again so dw\n--------------\n{i}Reply from You:{/i}\nHiya, Carsen!\nWish I could respond more but I got a lot to do right now!\nI'm so so sorry that I didn't clean up! I'll do better, I promise. So, so sorry.\n\nI was just thinking about Kendra, haha! Nothing weird sorry just we had a pretty crazy work day.\nThank you for the brand deal.\n--------------\n{i}Reply from carsen@notbusinessemail.com:{/i}\nits ok i can wash a few dishes lol\nyeah srry idk yk i dont rlly get any of that stuff, but gl with kendra rooting for u\n\nsrry if txts weird work kinda draining\n--------------\n{i}Reply from You:{/i}\nWDYM ROOTING FOR ME???\n--------------\n{i}Reply from carsen@notbusinessemail.com:{/i}\nwith kendra lol\nanyways i haven't even heard abt how ur day went bro like wheres the reenactment roleplay thing lmao where my play at\njk just be safe and lmk if u need anything\n--------------\n{i}Reply from You:{/i}\nThat's not it! Sorry! It's that she was just we kept working together on stuff don't have time to keep chatting I have so much work right now, bye!", "acc")
+        $ add_message("DON'T TRASH THIS EMAIL!!", "CoolchipzYT@abcfunmail.edu", "DON'T TRASH THIS EMAIL!!\n\nThere was once a little girl named Marian Ward who lived in Cedarville West Virginia. Her dad was the local cobbler and he was teaching her the trade. Marian didn't have any friends because she was ugly and smelled like shit, so she drew a face on the first steel-toed shoe (left shoe) she ever cobbled and named it Shoe.\n\nOne day, at 3:00AM, it was thunderstorming! Marian was scared, so she grabbed Shoe and went to stare at her reflection in the mirror until she wasn't scared. Unfortunately, she remembered she was ugly and she ran out of her house.\n\nMarian couldn't see where she was and fell down the town's local big chasm in the middle of the town where she was in. She falled for a long time, and at the bottom, all the townspeople and her three bullied were there. It was she was scared.\n\n\"No one can see you in the Chasm.\" The townspeople said.\n\nOne of the bullies was mean and he took Shoe, taking it from Marian, who couldn't stop him because scary. He put Shoe on and kicked Marian until she accidentally died. And nobody ever found out.\n\nIn revenge, Marian will come to you tonight and take you're left leg and give you some amnesia and turn you ginger.", "del")
+        $ add_message("Your Responsibilities", "sfc@serafim.co", "Kendra Bell,\nYou have failed to show sufficient productivity today. Please fix this behavior before we have to take action.\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Ups\n--------------\n{i}Reply from You:{/i}\nHiya!\nThis isn’t Kendra, but I am her assistant manager and she is doing the best she can. I will speak with her today about this. Thank you.\n\nYour professional pal,\nFredrick \"Barby\" Ibarra", "acc")
+        $ add_message("Reminder and Concern", "sfc@serafim.co", "Mr. Ibarra,\n\nYou can do it! No more giving feedback that is indisposed to the positive vibes we have been predisposing you to have!\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Ups\n--------------\n{i}Reply from You:{/i}\nHiya, Higher Ups,\nVery sorry about the improper vibe disposition. I will do my best to correct this shortly.\n\nYour professional pal,\nFredrick \"Barby\" Ibarra", "acc")
+        $ add_message("Importance of This Project", "popik@cock.com", "The world is changing, and so is the way we should commune with the nature of it we must sit down in proper fashion and style and meet with the deeper question as our very soul finds its essence pouring out from them, cleansing the negative flow that clogs the essence of their effluvium. It is only with this proper recourse that we can act in the fashion needed in our daily process.\n\nThe best client,\nPopikcock\n--------------\n{i}Reply from You:{/i}\nHiya, Client!\nI understand everything you are saying. We will keep this in mind when preparing the marketing pitch.\n\nYour professional pal,\nFredrick \"Barby\" Ibarra", "acc")
+
+        call screen email_minigame
+        
+        jump mjtalking3
+
 label meeting3:
     play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
     $ quick_menu = False
@@ -259,47 +272,50 @@ label encounter3:
     #mj play flute
     pause 3.0
     voice "audio/MJ/Day 3 Encounter/MJ_line076.mp3"
-    m_sub "!"
-    scene black
-    voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
-    b_sub "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
-    voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
-    m_sub "No... no..."
-    # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
-    voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
-    m_sub "Wait, I’m working! I’m working, I swear."
-    voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
-    b_sub "I-It’s okay, MJ, you can take a break, it’s okay–"
-    voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
-    m_sub "No! I’m not– I’m not supposed to–"
-    voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
-    m_sub "I’m a hard worker! I work so hard!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
-    m_sub "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
-    m_sub "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
-    voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
-    b_sub "No, no, please, you can- you can be whatever you want to be-"
-    voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
-    m_sub "STOP! STOP LOOKING AT ME!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
-    m_sub "I GAVE IT ALL UP FOR WHAT. NOTHING?"
-    voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
-    m_sub "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
-    voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
-    m_sub "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
-    # concern trying to call out to them but trying to be consoling/comforting
-    voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
-    b_sub "MJ-" 
-    # MJ snaps back to "normal" before devolving again
-    voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
-    m_sub "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
-    m_sub "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
-    voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
-    m_sub "STOP WATCHING ME."
-    voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
-    m_sub "I’LL GET BACK TO WORK!"
+
+    scene mj_scene
+    $ renpy.pause(47)
+    # m_sub "!"
+    # scene black
+    # voice "audio/Barby/Day 3 Encounter/barby_line216.mp3"
+    # b_sub "Oh, I’m sorry, did I interrupt? I-I didn’t mean to."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line077.mp3"
+    # m_sub "No... no..."
+    # # MJs voicelines get progressively worse and start layering and being just evhossnon top of eadh other  until they yell last line ans transform 
+    # voice "audio/MJ/Day 3 Encounter/MJ_line078.mp3"
+    # m_sub "Wait, I’m working! I’m working, I swear."
+    # voice "audio/Barby/Day 3 Encounter/barby_line217.mp3"
+    # b_sub "I-It’s okay, MJ, you can take a break, it’s okay–"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line079.mp3"
+    # m_sub "No! I’m not– I’m not supposed to–"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line080.mp3"
+    # m_sub "I’m a hard worker! I work so hard!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line081.mp3"
+    # m_sub "I know! I know it's not enough. No matter how hard I work it’s not enough. So I’ll keep working!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line082.mp3"
+    # m_sub "I’ll stop wanting to be something else!! I’m not supposed to be here but I'll sure try my best to act like it!!"
+    # voice "audio/Barby/Day 3 Encounter/barby_line218.mp3"
+    # b_sub "No, no, please, you can- you can be whatever you want to be-"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line083.mp3"
+    # m_sub "STOP! STOP LOOKING AT ME!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line084.mp3"
+    # m_sub "I GAVE IT ALL UP FOR WHAT. NOTHING?"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line085.mp3"
+    # m_sub "I’M GONNA DIE IN HERE. I’M NEVER LEAVING I’M STUCK HERE FOREVER."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line086.mp3"
+    # m_sub "I NEVER WANTED THIS I NEVER WANTED TO BE HERE."
+    # # concern trying to call out to them but trying to be consoling/comforting
+    # voice "audio/Barby/Day 3 Encounter/barby_line219.mp3"
+    # b_sub "MJ-" 
+    # # MJ snaps back to "normal" before devolving again
+    # voice "audio/MJ/Day 3 Encounter/MJ_line087.mp3"
+    # m_sub "If I just work hard enough, if I keep it all tidy and keep on a BIIIG smile, then one day I can leave!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line088.mp3"
+    # m_sub "But it’s never hard enough! It’ll never be enough! I’LL NEVER BE ENOUGH, GOD I’LL NEVER BE ENOUGH!"
+    # voice "audio/MJ/Day 3 Encounter/MJ_line089.mp3"
+    # m_sub "STOP WATCHING ME."
+    # voice "audio/MJ/Day 3 Encounter/MJ_line090.mp3"
+    # m_sub "I’LL GET BACK TO WORK!"
 
     # everything stops
     # silence

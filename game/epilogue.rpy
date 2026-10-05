@@ -1,5 +1,9 @@
 image beforept = Movie(play="images/cg/um we never told player he doesnt know thing.webm", loop = False)
 image ppttime = Movie(play="images/cg/PPT Poo Real.webm", loop = False)
+
+
+
+
 screen skipcutscene(cutscene_end):
     textbutton "SKIP":
         align (0.95, 0.05) # Position at the top right
@@ -8,12 +12,12 @@ label epilogue:
     scene black
     centered "{color=#F5F5F5}October 31, Saturday"
     centered "{color=#F5F5F5}0 days left."
-    scene black
-    pause 2
+    scene black with dissolve
+    pause 1.5
     $ quick_menu = False
-    scene beforept
-    $ renpy.pause(21.0, hard=True)
-    pause 3
+    scene beforept with dissolve
+    $ renpy.pause(19.5, hard=True)
+    
     jump pptcutscene
 label pptcutscene:
     show screen skipcutscene("cutscene_end")
@@ -54,6 +58,9 @@ label cutscene_end:
     centered "{color=#F5F5F5}It’s okay!" 
     centered "{color=#F5F5F5}You tried your best."
     # friends image
+    scene image "ending.png" with fade
+    show image "ending_lineart.png"
+    #scene image "ending_lineart.png"
     centered "{color=#F5F5F5}Congratulations! You did it!"
     # friends zoom into Kendra
     # switches to silent film text (black screen with white text)
@@ -85,6 +92,11 @@ label cutscene_end:
     centered "{color=#F5F5F5}November 1, Sunday"
     # Every day ever left
     #CREDITS HERE
+
+    show credits
+    $ renpy.pause(268, hard=True)
+    
+    image credits = Movie(play="images/credits.webm", loop = False, size=(1920, 1080))
 
 
     $ renpy.full_restart()

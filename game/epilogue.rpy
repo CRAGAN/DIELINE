@@ -20,7 +20,7 @@ label pptcutscene:
     show screen skipcutscene("cutscene_end")
 
     scene ppttime with dissolve
-    $ renpy.pause(363, hard=True)
+    $ renpy.pause(364, hard=True)
 
     hide screen skipcutscene
     jump cutscene_end

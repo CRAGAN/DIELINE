@@ -1160,7 +1160,7 @@ label mjtalking3:
 label deeztalking3:
     scene storage
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show de default at center:
         xoffset 250
     show m default at center:
@@ -1199,10 +1199,10 @@ label deeztalking3:
                 b "Oh! True. Fair enough... someone asking out of the blue where she is."
                 b "...It could’ve been someone who knew her, though."
                 d "He did say she hasn’t come home and... that he was worried."
-                d "I just thought it was in the best interest of the. Company."
+                d "I just thought it was in the best interest of the Company."
                 b "Oh. Man."
                 b "I guess we really have to finish this soon... maybe things will get better... after."
-                b "When we have. More time to fix things."
+                b "When we have more time to fix things."
 
             "What’re you even carrying?" if not whatcarry:
                 $ whatcarry = True
@@ -1211,7 +1211,7 @@ label deeztalking3:
                 m "Yeah, they’ve been sending us stuff."
                 b "Any of it hint to what we’re actually supposed to be marketing?"
                 d "This is a metal pipe."
-                b "Wow. Is it for. Anything in particular?"
+                b "Wow. Is it for anything in particular?"
                 m "Yesterday, most of the boxes I was helping Kendra carry had a bunch of rattling things in them, too. So... maybe more pipes."
                 b "Is it pipes? Are we advertising pipes?"
                 d "The answer is probably yes."
@@ -1273,7 +1273,7 @@ label apollotalking3:
     #Bring up to apollo (MJ is there) that kendra thought she hated her
     scene room_4
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show apo default at center:
         xoffset 250
     show m default at center:

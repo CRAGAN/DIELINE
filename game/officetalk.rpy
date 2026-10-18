@@ -673,6 +673,8 @@ label mjtalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders
+    show barby_standing_pants:
+        zoom 0.40 xpos 0.25 ypos 0.32
     show mj_standing:
         zoom 0.6 ypos 0.33 xpos 0.6
     
@@ -690,6 +692,8 @@ label deeztalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders1
+    show barby_standing_pants:
+        zoom 0.23 xpos 0.25 ypos 0.45
     show deez_standing:
         xpos 0.5
         ypos 0.4
@@ -716,6 +720,8 @@ label kendratalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders1
+    show barby_standing_pants:
+        zoom 0.25 xpos 0.25 ypos 0.45
     show deez_standing:
         xpos 0.5
         ypos 0.4

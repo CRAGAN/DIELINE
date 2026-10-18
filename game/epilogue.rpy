@@ -91,6 +91,7 @@ label cutscene_end:
     pause 3
     centered "{color=#F5F5F5}November 1, Sunday"
     # Every day ever left
+    stop music fadeout 3.0
     #CREDITS HERE
 
     show credits

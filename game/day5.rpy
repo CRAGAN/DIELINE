@@ -65,13 +65,13 @@ label apolloweirdtime:
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line256 (no echo).mp3"
     show apo awkward
     b "O-oh, I see.. Well, you can leave the bonding to me, I’ll bridge the—"
-    voice "audio/Apollo/Day 5/apollo_line146.mp3"
+    voice "audio/Apollo/Day 5/apollo_line145.mp3"
     show apo nervoust at jumper
     a "Ahaha, you know what? Maybe I’LL do it this time! Yes— maybe I can be the one to encourage them to cross the finish line! It IS my job afterall. My responsibility, as their manager!"
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line257 (no echo).mp3"
     show apo nervous
     b "...Are you sure? Have you slept at all since—"
-    voice "audio/Apollo/Day 5/apollo_line147.mp3"
+    voice "audio/Apollo/Day 5/apollo_line146.mp3"
     show apo nervoust
     a "Haha, of course, of course! They probably just need a little morale boost, that's all!! I can raise their spirits... Hahaha—"
     show apo nervous
@@ -111,8 +111,11 @@ label apolloweirdtime:
     
     b "..."
     scene room_1
+    show overlay:
+        blend 'multiply' alpha 0.5
     
     $ quick_menu = True
+    with fade
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line265 (no echo).mp3"
     b "...The sooner we finish this project, the sooner things can get better."
     jump minigameday5
@@ -459,7 +462,6 @@ label chase:
 
 
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line294.mp3"
-    
     b_sub "I don’t want a hug."
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line295.mp3"
     b_sub "I DONT WANT A HUG!"    

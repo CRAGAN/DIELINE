@@ -541,6 +541,7 @@ label chase:
 # silence
 
 label pcminigame:
+    #call screen email_minigame
     voice "audio/Barby/Day 5/CODERS For Input/Copy of barby_line297.mp3"
     b_sub "Apollo? Are you still there?"
 

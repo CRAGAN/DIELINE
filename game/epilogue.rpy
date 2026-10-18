@@ -1,9 +1,6 @@
 image beforept = Movie(play="images/cg/um we never told player he doesnt know thing.webm", loop = False)
 image ppttime = Movie(play="images/cg/PPT Poo Real.webm", loop = False)
 
-
-
-
 screen skipcutscene(cutscene_end):
     textbutton "SKIP":
         align (0.95, 0.05) # Position at the top right
@@ -23,7 +20,7 @@ label pptcutscene:
     show screen skipcutscene("cutscene_end")
 
     scene ppttime with dissolve
-    $ renpy.pause(372, hard=True)
+    $ renpy.pause(363, hard=True)
 
     hide screen skipcutscene
     jump cutscene_end

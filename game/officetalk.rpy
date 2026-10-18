@@ -224,7 +224,7 @@ label kendratalking:
         k_sub "Okay... if you say so."
         voice "audio/Barby/Day 1 OW/barby_line083.mp3"
         b_sub "..."
-        voice "audio/Kendra/Day 1 OW/kendra_line008.mp3"
+        voice "audio/Kendra/Voice Barks/kendra_sad2.mp3"
         k_sub "..."
     
         #sfx_id2

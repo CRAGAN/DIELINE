@@ -33,7 +33,7 @@ label mjtalking:
         with dissolve
         $ renpy.pause(1.5, hard=True)
         #sfx_id2
-        voice "audio/MJ/Day 1 OW/MJ_line004mp3"
+        voice "audio/MJ/Day 1 OW/MJ_line004.mp3"
         m_sub "Neat, thanks. Hey, I don’t look bad."
         voice "audio/Barby/Day 1 OW/barby_line053.mp3"
         b_sub "Yeah... you and I worked together before, right?"
@@ -215,17 +215,17 @@ label kendratalking:
         b_sub "Ah, well, after the accident, my memory’s a little spotty, haha! Oops."
         voice "audio/Barby/Day 1 OW/barby_line081.mp3"
         b_sub "Concussion, coma... both went away, so the amnesia should, too! Hopefully I don’t, uh, fumble anything before then."
-        voice "audio/Kendra/Day 1 OW/kendra_line005.mp3"
-        k_sub "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
         voice "audio/Kendra/Day 1 OW/kendra_line006.mp3"
+        k_sub "You... you really forgot everything? Oh, I see... I’m— I’m really sorry..."
+        voice "audio/Kendra/Day 1 OW/kendra_line007.mp3"
         k_sub "About the accident..."
         voice "audio/Barby/Day 1 OW/barby_line082.mp3"
         b_sub "It’ll come back to me!!! I’ll try my hardest!"
-        voice "audio/Kendra/Day 1 OW/kendra_line007.mp3"
+        voice "audio/Kendra/Day 1 OW/kendra_line008.mp3"
         k_sub "Okay... if you say so."
         voice "audio/Barby/Day 1 OW/barby_line083.mp3"
         b_sub "..."
-        voice "audio/Kendra/Day 1 OW/kendra_line008.mp3"
+      
         k_sub "..."
     
         #sfx_id2
@@ -266,13 +266,13 @@ label kendratalking:
             menu:
                 "Compliment" if not compliment:
                     $ compliment = True
-                    voice "audio/Barby/Day 1 ID/barby_line085.mp3"
+                    voice "audio/Barby/Day 1 OW/barby_line085.mp3"
                     
                     b "You’ve got a really cool surname. It’s got a nice ring to it."
                     show ken defaultt
-                    voice "audio/Kendra/Day 1 OW/kendra_line10.mp3"
+                    voice "audio/Kendra/Day 1 OW/kendra_line010.mp3"
                     k "Oh, uh, thanks! It isn’t my birth name but..."
-                    voice "audio/Kendra/Day 1 OW/kendra_line11.mp3"
+                    voice "audio/Kendra/Day 1 OW/kendra_line011.mp3"
                     k "Everyone at my work- well, the theater one, called me ‘Bell’. ‘Cause I looked like one, and they said I was really noisy whenever I reacted to anything."
                     show ken default
                     voice "audio/Barby/Day 1 OW/barby_line086.mp3"
@@ -300,7 +300,7 @@ label kendratalking:
 
                 "Roller skating" if not rollerskating:
                     $ rollerskating = True
-                    voice "audio/Barby/Day 1 ID/barby_line090.mp3"
+                    voice "audio/Barby/Day 1 OW/barby_line090.mp3"
                     b "I heard you do roller skating? I think that’s really neat! I’ve always wanted to learn how to do that."
                     show ken awkwardt
                     voice "audio/Kendra/Day 1 OW/kendra_line016.mp3"
@@ -344,7 +344,7 @@ label kendratalking:
 
                 "How's work?" if not howsworkkendra:
                     $ howsworkkendra = True
-                    voice "audio/Barby/Day 1 ID/barby_line096.mp3"
+                    voice "audio/Barby/Day 1 OW/barby_line096.mp3"
                     
                     b "How’s work been for ya?"
                     show ken defaultt
@@ -415,7 +415,7 @@ label kendratalking:
         k "Ah! You’re going? Thank... thank you!"
         jump rooms
     else:
-        m "I'm a little busy right now..."
+        k "I'm a little busy right now..."
         jump rooms
 #DEEZ
 label deeztalking:
@@ -472,7 +472,7 @@ label deeztalking:
         d_sub "OH! Uh—wow! It’s sooo-sooo good for a hand-made card! Explenditure!"
         voice "audio/Deez/Day 1 OW/deez_line009.mp3"
         d_sub "She got my...pupils, my orbs right."
-        voice "audio/Deez/Day 1 OW/deez_line10.mp3"
+        voice "audio/Deez/Day 1 OW/deez_line010.mp3"
         d_sub "I love it."
 
 

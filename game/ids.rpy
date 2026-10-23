@@ -130,7 +130,7 @@ label read_id(item_name=None):
         b_id "Right... What’s their job, again?"
         voice "audio/Apollo/Day 1 ID/apollo_line027.mp3"
         a_id "... I don’t. Know."
-        voice "audio/Apollo/Day 1 ID/apollo_line029.mp3"
+        voice "audio/Apollo/Day 1 ID/apollo_line028.mp3"
         a_id "Well, as long as they’re doing their part in the team, it should be fine!"
         voice "audio/Barby/Day 1 ID/barby_line030.mp3"
         b_id "I wonder what MJ stands for."

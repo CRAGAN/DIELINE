@@ -164,12 +164,12 @@ label rooms:
 
     if talkedtodeez and talkedtokendra and talkedtomj: 
         scene black with dissolve
-        voice "audio/Barby/Day 1 ID/barby_line0142.mp3"
+        voice "audio/Barby/Day 1 OW/barby_line142.mp3"
         $ quick_menu = True
         b "I think that’s everyone! I haven't seen Dave around... he's probably working from home again."
-        voice "audio/Barby/Day 1 ID/barby_line0143.mp3"
+        voice "audio/Barby/Day 1 OW/barby_line143.mp3"
         b "He doesn't live too far from here, so if I ship his ID now, he should receive it soon!"
-        voice "audio/Barby/Day 1 ID/barby_line0144.mp3"
+        voice "audio/Barby/Day 1 OW/barby_line144.mp3"
         b "Just gotta get on my computer."
         $ current_room = 2
         $ talkedtokendra = False
@@ -184,7 +184,10 @@ label rooms:
         $ add_message("Team Member List", "sfc@serafim.co", "Greetings, Sera, Fim & Co. employee!\n\nCongratulations on your ascension into assistant manager! Please list down your new team to us so we can confirm it with our Employee Management Team.\n\nFrom the pearly gates above,\nSera, Fim & Co. Higher Ups\n--------------\n{i}Reply from You:{/i}\nHello Sera, Fim and Co.,\nThank you for your congratulations! These are employees part of the team listed down below:\n\n1. Apollo\n2. MJ\n3. Kendra\n4. Deez\n5. Dave\n6. Fredrick Ibarra\n\nYour professional pal,\nFredrick “Barby” Ibarra", "acc")
         
         play music "audio/Music/Minigames/E-Mployment_.mp3" loop fadein 1.0
-        call screen email_minigame
+        $ quick_menu = False
+        call screen email_minigame with fade
+        $ quick_menu = True
+        play music "audio/Music/Breaktime/Breaktime Draft 3.mp3" loop
 
         jump breaktime1
     call screen rooms with fade
@@ -200,12 +203,13 @@ label rooms:
 label meeting:
     $ talked = 0
     play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1.0
-    scene room_2
+    scene meetingroom 
     show borders
     show overlay:
         blend 'multiply'
     show apo defaultt at center:
         xoffset -150
+    with fade
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line043.mp3"
     a "Hello everyone! I’m so glad you all made it! It’s nice to see you all again, it’s been such a long time!"
     show ken defaultt at left
@@ -235,7 +239,7 @@ label meeting:
     a "I’m sure you’re all wondering about my suddenly horrible handwriting and Barby’s little wobble bobble."
     show apo default
     voice "audio/Barby/Day 1 TM/barby_line146.mp3"
-    b worriedt "My {b}{i}what{/i}{/b}!?"
+    b "My {b}{i}what{/i}{/b}!?"
     show m defaultt at center:
         xoffset 250
     voice "audio/MJ/Day 1 TM/MJ_line024.mp3"
@@ -266,6 +270,7 @@ label meeting:
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line048.mp3"
     a "So uhm unfortunately, this is what happened to my left hand..."
     show m hmt
+    show apo awkward
     #CG_She rolls up her sleeves and reveals super scarred left arm from hand till shoulder
     voice "audio/MJ/Day 1 TM/MJ_line025.mp3"
     m "Oh goodness."
@@ -434,7 +439,7 @@ label meeting:
     b_sub "Aw man."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line067.mp3"
     a_sub "It’s okay, Barbyyy! You’ll get ‘em next time."
-    voice "audio/MJ/Day 1 TM/MJ_line0393.mp3"
+    voice "audio/MJ/Day 1 TM/MJ_line033.mp3"
 
     m_sub "Maybe I can ask the client directly to help ease the situation."
     voice "audio/Deez/Day 1 TM/deez_line048.mp3"
@@ -508,7 +513,7 @@ label meeting:
     d_sub "If you read my resume, you’d know I already know how to do all of that. But... If you want."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line076.mp3"
     a_sub "Great!"
-    voice "audio/Apollo/Day 1 Team Meeting/apollo_line076.mp3"
+    voice "audio/Apollo/Day 1 Team Meeting/apollo_line077.mp3"
     a_sub "Barby, you can sort through what other SFC departments might be contacting us about! As well as filling out any forms we might need."
     voice "audio/Apollo/Day 1 Team Meeting/apollo_line078.mp3"
     a_sub "Oh and maybe just checking on everyone, making sure they’re doing what they’re supposed to- Don’t worry, I’ll also be doing that with you!"
@@ -518,9 +523,9 @@ label meeting:
     a_sub "And I’ll be in charge of the overall presentation, organizing all the contact info, budget, timeline, and minutes of the meeting."
     voice "audio/MJ/Day 1 TM/MJ_line042.mp3"
     m_sub "Shouldn’t you have a secretary for that last one? Especially with your hand—"
-    voice "audio/Apollo/Day 1 Team Meeting/apollo_line077.mp3"
+    voice "audio/Apollo/Day 1 Team Meeting/apollo_line080.mp3"
     a_sub "Oh! Uh... I suppose you’re right. If Deez and Kendra finish up their mentoring thing, maybe he can do it? Would you, Deez?"
-    voice "audio/Apollo/Day 1 Team Meeting/apollo_line078.mp3"
+    voice "audio/Apollo/Day 1 Team Meeting/apollo_line081.mp3"
     a_sub "Aha, Not to take your assistant from you, Kendra?"
     voice "audio/Kendra/Day 1 TM/kendra_line057.mp3"
     k_sub "Huh!?"
@@ -547,15 +552,17 @@ label meeting:
             $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line167.mp3"
             b_sub "But... uh, how about digital marketing? Gathering the data of what an effective marketing campaign means nowadays, all of that..."
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line082.mp3"
             a_sub "Oh... you’re right. Dave used to be pretty good at that."
             voice "audio/Kendra/Day 1 TM/kendra_line059.mp3"
             k_sub "I-I used to do that for a volunteering program that I was handling once."
-            voice "audio/Apollo/Day 1 Team Meeting/apollo_line079.mp3"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line083.mp3"
             a_sub "You did? Wait... that’d be perfect! Could you, uh, handle that, too, Kendra?"
             voice "audio/Kendra/Day 1 TM/kendra_line060.mp3"
             k_sub "I mean... sure, haha! I could do that!"
             voice "audio/Barby/Day 1 TM/barby_line168.mp3"
             b_sub "Great!"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line084.mp3"
             a_sub "Is there anything else?"
             voice "audio/Barby/Day 1 TM/barby_line169.mp3"
             b_sub "Hm..."
@@ -583,31 +590,38 @@ label meeting:
             $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line170.mp3"
             b_sub "How about... social media? It’s pretty big when it comes to advertising nowadays... Do we have anyone who’s good with that?"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line085.mp3"
             a_sub "Haha... Well, not me... Deez, you’re probably the youngest one here, right?"
             voice "audio/Deez/Day 1 TM/deez_line056.mp3"
             d_sub "No—"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line086.mp3"
             a_sub "Would you be able to do anything about that?"
             voice "audio/Deez/Day 1 TM/deez_line057.mp3"
             d_sub "I’m... yes. I’m very social."
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line087.mp3"
             a_sub "Great!" 
             voice "audio/Kendra/Day 1 TM/kendra_line061.mp3"
             k_sub "Um... I-I don’t know if..."
             voice "audio/MJ/Day 1 TM/MJ_line045.mp3"
             m_sub "Yeah... I see what you mean, Kendra."
-        
+            voice "audio/MJ/Day 1 TM/MJ_line046.mp3"
             m_sub "I mean, I’d offer to help but I just don’t know too much about that myself, either! My expertise lies somewhere else, sadly."
             voice "audio/Kendra/Day 1 TM/kendra_line062.mp3"
             k_sub "... I-I could help him out with that if needed, haha... sometimes I have to, um, help with social media sites of the programs I’m part of."
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line088.mp3"
             a_sub "Oh! Um... that’s great! Well, if you want, you could handle that, too!"
             voice "audio/Kendra/Day 1 TM/kendra_line063.mp3"
             k_sub "Sure...!"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line089.mp3"
             a_sub "If that’s okay with you, Deez?"
             voice "audio/Deez/Day 1 TM/deez_line058.mp3"
             d_sub "I can help her..."
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line090.mp3"
             a_sub "Perfect."
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line091.mp3"
             a_sub "Okie dokie, is that everything?"
             voice "audio/Barby/Day 1 TM/barby_line171.mp3"
-            b "Um... let me see..."
+            b_sub "Um... let me see..."
             if talked < 3:
                 jump chat
             else:
@@ -635,7 +649,7 @@ label meeting:
             $ quick_menu = False
             voice "audio/Barby/Day 1 TM/barby_line172.mp3"
             b_sub "We’re gonna have some deliveries coming in from other departments, right? Or things we have to pick up from other buildings?"
-            voice "audio/Apollo/Day 1 Team Meeting/apollo_line92.mp3"
+            voice "audio/Apollo/Day 1 Team Meeting/apollo_line092.mp3"
             a_sub "You’re right! For this project and other things, correct?" 
             voice "audio/Apollo/Day 1 Team Meeting/apollo_line93.mp3"
             a_sub "Who’s gonna be in charge of going down and getting them?"

@@ -471,7 +471,7 @@ label kendratalking22:
                 k "All three of us."
                 show ken awkward
                 b "Alright! I'll let her know!"
-                b "Actually... hold on. It might be better for you to tell her. See how she feels about it first hand,"
+                b "Actually... hold on. It might be better for you to tell her. See how she feels about it first hand."
                 b "Maybe it'll help ease your nerves, you know?"
                 show ken awkwardt
                 k "Ough... ooh... okay...! Yeah, sure! Yeah, yeah, you're right. After all of this is over, yeah I'll... ask her!"
@@ -513,8 +513,8 @@ label kendratalking22:
                 show ken surprisedt at jumper
                 k "Aah, you– you really don't have to! Do any of these things." 
                 show ken surprised
-                b "Kendra,please,take the help; it's only fair. You're already helping us so much!"  #(Note the change from comma to semicolon for better flow) 
-                b "And besides it's not too much effort for me to do any of these things. It's okay- I gotta make breakfast for myself and my roommate,anyway." #(Note the change from comma to semicolon for better flow) 
+                b "Kendra, please, take the help; it's only fair. You're already helping us so much!"  #(Note the change from comma to semicolon for better flow) 
+                b "And besides it's not too much effort for me to do any of these things. It's okay- I gotta make breakfast for myself and my roommate, anyway." #(Note the change from comma to semicolon for better flow) 
                 show ken defaultt
                 k "Barby... thank you so much."
                 show ken default
@@ -541,7 +541,7 @@ label kendratalking22:
                 k "Uhh yeaah, I am maybe... more than a little stressed out over the tasks given to me,but I really am doing alright!"  #(Note the change from comma to semicolon for better flow) 
                 k "I-I don't think you really remember,but I've adopted a kid,andI co-parent with a friend,not to mention this lovely job and great coworkers! It's all l could ever ask for..."  #(Note the change from comma to semicolon for better flow) 
                 show ken default
-                b "That's... wonderful Kendra,really! I'm happy for you..."  #(Note the change from comma to semicolon for better flow) 
+                b "That's... wonderful Kendra, really! I'm happy for you..."  #(Note the change from comma to semicolon for better flow) 
                 b "And happy to, uh, be a part of it and see you happy."
                 show ken fear at jumper
                 b "Maybe we can just be more than great coworkers in the future!" 
@@ -615,7 +615,7 @@ label apollotalking22: #apollo at cubicles
                 show apo worriedt
                 a "... I dunno... would she even want to talk to me? She must—she must hate me after everything I've done!" 
                 show apo worried
-                b "Hey,it's worth a shot,right?" 
+                b "Hey, it's worth a shot, right?" 
                 b "And don't worry, I'm sure she doesn't hate you or is upset with you about it..." 
                 b "If anything, she looks... just nervous about getting it done right. So, honestly, she might need the encouragement."
                 b "And if there's anyone I know who's great at giving that... well..."
@@ -1023,7 +1023,7 @@ label breakroomtalkday2:
     b "{i}Internal monologue... Aw man... I'm supposed to be the one helping them... They're all being so supportive...{/i}"
     m "You know, I usually tune your narration out, but this calls for an intervention someday."
     k "That's- haha, no offense, but, that's what I was thinking!"
-    d "Yes. A Barby intention."
+    d "Yes. A Barby intervention."
     k "Haha! You know, m-maybe we can call it that!"
     m "Where we all tell Barby to accept accommodation so he stops freaking out at every little possibility of inconveniencing someone?"
     d "Yes, he needs to stop. Grown ass man."
@@ -1159,7 +1159,7 @@ label mjtalking3:
 label deeztalking3:
     scene storage
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show de default at center:
         xoffset 250
     show m default at center:
@@ -1198,10 +1198,10 @@ label deeztalking3:
                 b "Oh! True. Fair enough... someone asking out of the blue where she is."
                 b "...It could’ve been someone who knew her, though."
                 d "He did say she hasn’t come home and... that he was worried."
-                d "I just thought it was in the best interest of the. Company."
+                d "I just thought it was in the best interest of the Company."
                 b "Oh. Man."
                 b "I guess we really have to finish this soon... maybe things will get better... after."
-                b "When we have. More time to fix things."
+                b "When we have more time to fix things."
 
             "What’re you even carrying?" if not whatcarry:
                 $ whatcarry = True
@@ -1210,7 +1210,7 @@ label deeztalking3:
                 m "Yeah, they’ve been sending us stuff."
                 b "Any of it hint to what we’re actually supposed to be marketing?"
                 d "This is a metal pipe."
-                b "Wow. Is it for. Anything in particular?"
+                b "Wow. Is it for anything in particular?"
                 m "Yesterday, most of the boxes I was helping Kendra carry had a bunch of rattling things in them, too. So... maybe more pipes."
                 b "Is it pipes? Are we advertising pipes?"
                 d "The answer is probably yes."
@@ -1272,7 +1272,7 @@ label apollotalking3:
     #Bring up to apollo (MJ is there) that kendra thought she hated her
     scene room_4
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show apo default at center:
         xoffset 250
     show m default at center:

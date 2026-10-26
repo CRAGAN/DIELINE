@@ -3,7 +3,7 @@ label day4:
     scene room_1
     play music "audio/Music/Clock In.mp3" loop fadein 1
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show apo worried at center:
         xoffset 250
     show de sad at center:
@@ -76,10 +76,13 @@ label guymeeting:
     show de shy at center:
         xoffset 250
     with fade
+    voice "audio/Ryann/Day 4 Meeting/ryann_line010.mp3"
     r "Hey man, no worries about being a mess, I get it y'know, I heard the deadline got moved earlier and, man that’s gotta suck."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line011.mp3"
     r "It's happened to me before. God... corporate hellscape. It never ends."
     show de shyt
     d "Haha yeah. But we’re totally doing fine though. Don't worry, haha."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line012.mp3"
     r "Instead of laughing, you keep saying ‘haha’ out lou—"
     b "Hiya—"
     show de feart at jumper, shaking
@@ -92,8 +95,8 @@ label guymeeting:
     b "Wha-"
     show ry default at center:
         easein 0.5 xoffset 0
+    voice "audio/Ryann/Day 4 Meeting/ryann_line013.mp3"
     r "Oh damn he needed to go? He could've just said so. Anyway what’s up, man?"
-    voice "audio/Barby/Day 4 Encounter/barby_line231.mp3"
     b "Well, I was, uh, just checking in, but."
     $ whichdep = False
     $ doyoujob = False
@@ -104,65 +107,83 @@ label guymeeting:
                 $ whichdep = True
                 b "Which department are you from, again?"
                 show ry sexy
+                voice "audio/Ryann/Day 4 Meeting/ryann_line014.mp3"
                 r "Oh, I’m just a warehouse guy. They sent me in to check on you guys because you haven’t sent the go ahead."
                 b "A-ah! That's just because we don't need them! We're doing all fine on our own."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line015.mp3"
                 r "That’s. What? Not how it works?"
                 b "Crap. Crap. No I’m joking, this is a joke."
                 b "Yeah, no, like Apollo said, we’ll give the go ahead soon! Prommy."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line016.mp3"
                 r "Sure, mann."
                 
             "Do you know what our job is" if not doyoujob:
                 $ doyoujob = True
                 show ry shy
+                voice "audio/Ryann/Day 4 Meeting/ryann_line018.mp3"
                 r "Shouldn't you guys know that?"
                 b "WE KNOW DON’T WORRY. I was just curious if they told you anything, haha."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line017.mp3"
                 r "Sure, mann."
                 
             "How is everything" if not howeverything:
                 $ howeverything = True
                 show ry default
+                voice "audio/Ryann/Day 4 Meeting/ryann_line020.mp3"
                 r "Well, it kind of looks like you guys have it handled? Your coworker only showed me this hallway and the breakroom, though."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line021.mp3"
                 r "I’m just a little worried about your manager and the guy I was talking to."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line022.mp3"
                 r "They, uh. Seemed kind of... Off?"
                 b "Oh, they're just a little sleep deprived and tired after, y’know everything."
                 b "It happens, you know... unfortunate as it is."
                 show ry angry
+                voice "audio/Ryann/Day 4 Meeting/ryann_line023.mp3"
                 r "Mann. That’s not how that. Works."
+                voice "audio/Ryann/Day 4 Meeting/ryann_line024.mp3"
                 r "You know, you clock out, then get sleep, then clock back in the next day??"
+                voice "audio/Ryann/Day 4 Meeting/ryann_line025.mp3"
                 r "It’s just a job, bro."
                 show ry shy
                 b ". . ."
                 b "Ok."
-    
+    voice "audio/Ryann/Day 4 Meeting/ryann_line026.mp3"
     r "Oh by the way, I was just curious, where are the rest of you guys? I thought there were more of you."
     b "Oh they're, you know, working really hard right now! Too busy to come out, haha."
     b "Everyone here has been giving it their all to reach the deadline." 
+    voice "audio/Ryann/Day 4 Meeting/ryann_line027.mp3"
     r "Wow, that's so cool. You guys are pretty admirable, working through the time crunch. They should give you a raise or something after this." 
     b "We do our best!"
+    voice "audio/Ryann/Day 4 Meeting/ryann_line028.mp3"
     r "But you know, it's probably still pretty tough chasing after a deadline. You guys can ask for help if you need it."
     menu:
         "Yes":
             b "Yes!"
+            voice "audio/Ryann/Day 4 Meeting/ryann_line029.mp3"
             r "Cool, I’ll let them kno-"
             b "Is what I would say if we needed help, which we don’t!"
+            voice "audio/Ryann/Day 4 Meeting/ryann_line030.mp3"
             r "Ok...?"
             jump continued
             #continue
         "No":
-            voice "audio/Barby/Day 4 Encounter/barby_line246.mp3"
             b "Thank you, but we’re good!"
+            voice "audio/Ryann/Day 4 Meeting/ryann_line031.mp3"
             r "Sure, mann."
             jump continued
 #continue
 label continued:
+    voice "audio/Ryann/Day 4 Meeting/ryann_line032.mp3"
     r "Alright, I think you guys got it handled. I don’t doubt you guys or anything."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line033.mp3"
     r "But we really need to ship out soon. So, if you can at least send a demo to corporate so we can start working."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line034.mp3"
     r "Also, really, let us know if you need any help; we’re not doing anything at the moment."
-    voice "audio/Barby/Day 4 Encounter/barby_line247.mp3"
     b "Yeah. Will do, man."
-    voice "audio/Barby/Day 4 Encounter/barby_line248.mp3"
     b "Thanks a lot."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line035.mp3"
     r "‘Sure, mann."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line036.mp3"
     r "Contact if ya need anything."
     # elevator ding 
     # audience cheer as he leaves 
@@ -176,34 +197,27 @@ label encounter4:
     with fade
     #Click bathroom door
     # not VA'd except screams and groans from Deez
-    voice "audio/Barby/Day 4 Encounter/barby_line249.mp3"
     b_sub "Hey, Deez? Are you in there?"
     # knock
-    voice "audio/Barby/Day 4 Encounter/barby_line250.mp3"
     b_sub "Daniel?"
     # groans and oahh
 
-    voice "audio/Deez/Day 4/deez_groan1.mp3"
+    voice "audio/Deez/Day 4/Bathroom/deez_groan1.mp3"
     d_sub "Fine. Just fine. I just- aghhh..."
     voice "audio/Deez/Day 4/Bathroom/deez_groan2.mp3"
     d_sub "Taking a massive shit."
-    voice "audio/Barby/Day 4 Encounter/barby_line251.mp3"
     b_sub "O-oh..."
-    voice "audio/Barby/Day 4 Encounter/barby_line252.mp3"
     b_sub "Y-yeah, why do they call it a {i}rest{/i} room, you're fighting for your life in there."
     # sfx bad joke but cut it off Barby talking
-    voice "audio/Barby/Day 4 Encounter/barby_line253.mp3"
     b_sub "That was so bad, sorry."
     voice "audio/Deez/Day 4/Bathroom/deez_groan3.mp3"
     d_sub "Ughh..."
-    voice "audio/Barby/Day 4 Encounter/barby_line254.mp3"
     b_sub "Sorry..."
     d_sub "No... don't sorry... I'm just..."
     voice "audio/Deez/Day 4/Bathroom/deez_groan4.mp3"
     d_sub "AGH." with hpunch
     stop music
     # Deez make a few groans before AGHHHH AHHHHHH (his head splits open) but it could be mistaken for a really bad sht , but the sfx is fcking scary and the static stops
-    voice "audio/Barby/Day 4 Encounter/barby_line255.mp3"
     b_sub "ARE YOU OKAY!?"
     # silence. Not even static
     # silence 
@@ -363,6 +377,7 @@ label breakroom4:
             # squelching 
             # flash open with the CG in sync with deez cry/wail pain
             # sfx quiet slow semi disort ba dum tss
+            voice "audio/Barby/Day 4 Encounter/barby_line235.mp3"
             b_sub "Oh, god."
             pause 2
             show deez monstershadow at center

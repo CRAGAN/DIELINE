@@ -55,11 +55,11 @@ label teammeetingpt2:
     play music "audio/Music/Working Overtime 2m.mp3" loop fadein 1
     scene meetingroom
     show overlay:
-        blend 'multiply'
+        blend 'multiply' alpha 0.5
     show ken worried at downward, center
-    voice "audio/Kendra/Day 2 TM/kendra_line070.mp3"
     $ quick_menu = True
-    
+    with fade
+    voice "audio/Kendra/Day 2 TM/kendra_line070.mp3"
     k "..."
     show ken worried at left with move
     show apo awkwardt at center
@@ -162,11 +162,11 @@ label teammeetingpt2:
     voice "audio/Apollo/Day 2 TM/apollo_line113.mp3"
     a "It's a full turn key contract- so we only get any bonuses if we finish the product in a way that's satisfying enough for the clients, and they, uh, feel like giving the employees bonuses!" 
     voice "audio/Apollo/Day 2 TM/apollo_line114.mp3"
-    a "So, so maybe if we work hard enough? And do really really well?"
+    a "So, maybe if we work hard enough? And do really really well?"
     show apo worried
     show m defaultt
     voice "audio/MJ/Day 2 TM/MJ_line055.mp3"
-    m "You heard her, though. We {i} could{/i} get a bonus by the end."
+    m "You heard her, though. We {i}could{/i} get a bonus by the end."
     show m hm at downward
     voice "audio/Barby/Day 2 TM/barby_line185.mp3"
     b "But no guaranteed overtime."
@@ -185,7 +185,7 @@ label teammeetingpt2:
     k "Haha... hah! No... no breaks for me, I guess!"
     show ken feart
     voice "audio/Kendra/Day 2 TM/kendra_line074.mp3"
-    k "I-I should... ooohhh... oh god I'm so... I feel like my head is going to explode!"
+    k "I-I should...ooohhh... oh god I'm so... I feel like my head is going to explode!"
     show ken fear at jump
     voice "audio/Barby/Day 2 TM/barby_line186.mp3"
     b "K-Kendra? Are you okay? Maybe you should head to the clinic—"
@@ -316,11 +316,11 @@ label encounterday2:
     $ renpy.pause(6.0, hard=True)
     # pause, let the atmosphere sink in
     # barby's in like trance like state kind of so muffle, under water style, apollo voice
-
+    voice "audio/Apollo/Day 2 Encounter/apollo_line117.mp3"
     a_sub "Barby?"
 
     # apollo's voice becomes a bit clearer but reverby
-    voice "audio/Apollo/Day 2 Encounter/apollo_line117.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line118.mp3"
     a_sub "What's going– AAAAAAH!"
     # mj and deez are off screen here, so make them quiet, muffled, also under water style
     voice "audio/MJ/Day 2 Encounter/MJ_line057.mp3"
@@ -350,7 +350,7 @@ label encounterday2:
     a_sub "We need to tell the higher ups what happened... and ask... um..." 
     voice "audio/MJ/Day 2 Encounter/MJ_line061.mp3"
     m_sub "Kendra? Hey, let's get you... somewhere."
-    voice "audio/Apollo/Day 2 Encounter/apollo_line124.mp3"
+    voice "audio/Apollo/Day 2 Encounter/apollo_line125.mp3"
     a_sub "..." 
 
     # The CG shifts and its mouth opens as if it's a talking sprite. SQUELCH SQUELCH her JAW is breaking and is MUSHY   make her talk slowly cause her jaw is breaking every time it moves up and down
@@ -360,7 +360,7 @@ label encounterday2:
     voice "audio/Kendra/Day 2 TM/kendra_line082.mp3"
     k_sub "{b}Don't worry. I'll get all of it done.{/b}"
     show ken monsterr
-    voice "audio/MJ/Day 2 TM/MJ_line062.mp3"
+    voice "audio/MJ/Day 2 Encounter/MJ_line062.mp3"
     m_sub "Wh...what?" 
     show ken monstertt
     voice "audio/Kendra/Day 2 Encounter/kendra_line083.mp3"
@@ -423,6 +423,7 @@ label encounterday2:
                 blend 'multiply' alpha 1.0
             "..."
             show black
+            voice "audio/Barby/Day 2 Encounter/barby_line195.mp3"
             b "Ah... It's broken."
             stop music
             jump day3

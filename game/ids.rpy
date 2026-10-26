@@ -155,7 +155,7 @@ label read_id(item_name=None):
         b_id "I miss Dave."
         voice "audio/Apollo/Day 1 ID/apollo_line033.mp3"
 
-        a_id "Me too... it’s been so long since his employee of the month streak."
+        a_id "Me too... it’s been so long since the last time he's been employee of the month."
         voice "audio/Barby/Day 1 ID/barby_line034.mp3"
         b_id "He didn’t come in to take a photo?"
         voice "audio/Apollo/Day 1 ID/apollo_line034.mp3"
@@ -205,7 +205,7 @@ label read_id(item_name=None):
         b "Are you sure you don’t want me to help you figure it out?"
         show apo defaultt
         voice "audio/Apollo/Day 1 ID/apollo_line041.mp3"
-        a "I’m sure! Now go on, Barby, those IDs aren’t going to distribute themselves."
+        a "I’m sure, Thanks for asking! Now go on, Barby, those IDs aren’t going to distribute themselves."
         show apo default
         voice "audio/Barby/Day 1 ID/barby_line045.mp3"
         b "If you say so. Well, good luck with the meeting!"

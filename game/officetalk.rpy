@@ -66,7 +66,6 @@ label mjtalking:
 
         while not (whatdepartmentareyoufrom and whatdoesitstandfor and howsworkmj and howslifemj):
             menu:
-                
                 "What does it stand for?" if not whatdoesitstandfor:
                     $ whatdoesitstandfor = True
                     voice "audio/Barby/Day 1 OW/barby_line056.mp3"
@@ -225,7 +224,7 @@ label kendratalking:
         k_sub "Okay... if you say so."
         voice "audio/Barby/Day 1 OW/barby_line083.mp3"
         b_sub "..."
-      
+        voice "audio/Kendra/Voice Barks/kendra_sad2.mp3"
         k_sub "..."
     
         #sfx_id2
@@ -261,7 +260,7 @@ label kendratalking:
         default rollerskating = False
         default howsworkkendra = False
         default howslifekendra= False
-        while not (compliment and rollerskating and howsworkkendra):
+        while not (compliment and rollerskating and howsworkkendra and howslifekendra):
             
             menu:
                 "Compliment" if not compliment:
@@ -375,7 +374,7 @@ label kendratalking:
 
                 "How's life?" if not howslifekendra:
                     $ howslifekendra = True
-                    voice "audio/Barby/Day 1 ID/barby_line100.mp3"
+                    voice "audio/Barby/Day 1 OW/barby_line100.mp3"
                     
                     b "How’s life?"
                     show ken awkwardt
@@ -674,6 +673,8 @@ label mjtalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders
+    show barby_standing_pants:
+        zoom 0.40 xpos 0.25 ypos 0.32
     show mj_standing:
         zoom 0.6 ypos 0.33 xpos 0.6
     
@@ -691,6 +692,8 @@ label deeztalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders1
+    show barby_standing_pants:
+        zoom 0.23 xpos 0.25 ypos 0.45
     show deez_standing:
         xpos 0.5
         ypos 0.4
@@ -717,6 +720,8 @@ label kendratalking2:
     show lighter:
         blend 'add' alpha 0.3
     show borders1
+    show barby_standing_pants:
+        zoom 0.25 xpos 0.25 ypos 0.45
     show deez_standing:
         xpos 0.5
         ypos 0.4
@@ -987,19 +992,25 @@ label ryantime:
     show de surprised
     d "..."
     play music "audio/Music/Breaktime/Breaktime Draft 3_Variation 4.mp3" loop fadein 1
+    voice "audio/Ryann/Day 4 Meeting/ryann_line001.mp3"
     r "Hey, how are you, all? I'm Ryann Glenn."
     # music change as he talks
+    voice "audio/Ryann/Day 4 Meeting/ryann_line002.mp3"
     r "I work at the warehouse and, ahh, we just wanted to check up on your team."
     a "A-ah! Hi, there! I'm Apollo, the manager! I take it your name is Ryann. Glenn…!"
+    voice "audio/Ryann/Day 4 Meeting/ryann_line003.mp3"
     r "Yep, that's my name."
     show de shy
     show apo default
     a "This is Deez, he's our… he's the one who's gonna tour you! Ahaha, yes!"
+    voice "audio/Ryann/Day 4 Meeting/ryann_line004.mp3"
     r "Hey, man, I'm not looking for a formal tour or anything. We at the warehouse were just concerned you hadn't given us the go ahead to ship out yet?"
     d "Why is he talking like that? It's not a cutscene."
     b "O-oh! Hahaha… right, um, we've just had so much to do over here and, y’know you get so caught up in it!"
     show ry shy
+    voice "audio/Ryann/Day 4 Meeting/ryann_line005.mp3"
     r "Cool, yeah, I get ya."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line006.mp3"
     r "But what are you getting caught up inn if we haven’t shipped out yet?"
     d "You're not supposed to say ‘in' like that."
     show apo worried
@@ -1009,12 +1020,15 @@ label ryantime:
     d "(going to shit myself) Hi."
     d "Let us go to a more… dignified place to talk. About business. Because I am very good at that."
     show ry sexy at jumper
+    voice "audio/Ryann/Day 4 Meeting/ryann_line007.mp3"
     r "Sure, mann."
     show de surprised
     d "Wh-why do you say it like that."
     b "You can't just say that to someone, Deez."
+    voice "audio/Ryann/Day 4 Meeting/ryann_line008.mp3"
     r "It's okay, I don't take offense or anything. I don't know what he means, though. "
     b "Stay safe! Have a safe tour!"
+    voice "audio/Ryann/Day 4 Meeting/ryann_line009.mp3"
     r "I don't see why it wouldn't be…!"
     b "I should go check on my emails…"
     scene black with fade

@@ -414,7 +414,7 @@ label kendratalking:
         k "Ah! You’re going? Thank... thank you!"
         jump rooms
     else:
-        m "I'm a little busy right now..."
+        k "I'm a little busy right now..."
         jump rooms
 #DEEZ
 label deeztalking:

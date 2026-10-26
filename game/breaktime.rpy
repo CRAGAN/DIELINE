@@ -6,7 +6,6 @@ label breaktime1:
     $ bathroom = False
     $ managerroom = False
     $ quick_menu = False
-    play music "audio/Music/Breaktime/Breaktime Draft 3.mp3" loop
     if talkedtodeez and talkedtokendra and talkedtomj and talkedtoapollo:
         scene black with dissolve
         $ quick_menu = True
@@ -14,7 +13,7 @@ label breaktime1:
         b "So much talking to people..."
         jump meeting
     
-    call screen breaktime1
+    call screen breaktime1 with fade
 label deezandapollo:
     # Apollo & Deez 
     if not talkedtodeez and not talkedtoapollo:

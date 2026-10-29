@@ -424,11 +424,11 @@ label prechase:
     voice "audio/Apollo/Day 5/apollo_line179.mp3"
 
     a_sub "Your help means so much."
-    voice "audio/Deez/Day 4/deez_line111.mp3"
-    d_sub "You always believe in me."
+    voice "audio/Deez/Day 5/deez_line112.mp3"
+    d_sub "You always believed in me."
     voice "audio/Kendra/Day 5/kendra_line099.mp3"
     k_sub "You make the work easier to handle."
-    voice "audio/MJ/Day 5 Chase Scene/MJ_monstereffort10.mp3"
+    voice "audio/MJ/Day 5 Chase Scene/MJ_line104.mp3"
     m_sub "Haha. I guess you won in the end." 
     voice "audio/Everyone/everyone2.mp3"
     centered "{color=#FFFFFF} {b}I   t’ S  t im  E  Fo  r   US  t o    g iV e   b  A   C k .{/b}" 
@@ -509,11 +509,11 @@ label chase:
     centered "{color=#FFFFFF}{b}OPEN THE DOOR!!!{/b}" with vpunch
     voice "audio/Apollo/Day 5/apollo_line181.mp3"
     a_sub "IM SORRY! I'M SORRY FOR MAKING YOU DO SO MUCH WORK!" 
-    voice "audio/Kendra/Day 5/Chase Scene/kendra_monsterefforts4.mp3"
+    voice "audio/Kendra/Day 5/kendra_line100.mp3"
     k_sub "STOP IT, PLEASE! LET ME IN, LET ME DO THE WORK! LET ME DO MY JOB!" 
     voice "audio/MJ/Day 5 Chase Scene/MJ_monstereffort02.mp3"
     m_sub "LET. ME. FINISH. MY WORK!! LET IT BE DONE, LET IT BE OVER, PLEASE, PLEASE, PLEASE, LET IT END!"
-    voice "audio/Deez/Day 4/deez_line097.mp3"
+    voice "audio/Deez/Day 5/deez_line113.mp3"
     d_sub "I CAN DO IT!!! I CAN DO IT!! I’M GOOD! I'M GOOD!!! TELL ME I’M GOOD ENOUGH!"
 
     menu:

@@ -77,6 +77,7 @@ label cutscene_end:
     centered "{color=#F5F5F5}Congratulations! Thank you for being there for all of us."
 
     # barby face, barby smile
+    voice "audio/Barby/Epilogue/barby_line300a.mp3"
     centered "{color=#F5F5F5}Congratulations, everyone! We did it!"
 
     # pop up just like the dates in the other days

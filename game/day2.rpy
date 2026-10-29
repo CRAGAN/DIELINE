@@ -325,6 +325,7 @@ label encounterday2:
     # mj and deez are off screen here, so make them quiet, muffled, also under water style
     voice "audio/MJ/Day 2 Encounter/MJ_line057.mp3"
     m_sub "Did someone scream?"
+    voice "audio/Deez/Day 2 Encounter/deez_line068a.mp3"
     d_sub "Yes."
     voice "audio/MJ/Day 2 Encounter/MJ_line058.mp3"
     m_sub " Stay out here, Deez, let me check..."
@@ -399,7 +400,9 @@ label encounterday2:
     #Deez
     # blubur note: only time deez ask question, deez very vulnerable and genuine
     show de feart
+    voice "audio/Deez/Day 2 Encounter/deez_line069.mp3"
     d "...What happened...? Do we call someone?"
+    voice "audio/Deez/Day 2 Encounter/deez_line070.mp3"
     d "I don't know... what do I do?"
 
     #Barby himself is too overwhelmed to have an answer
